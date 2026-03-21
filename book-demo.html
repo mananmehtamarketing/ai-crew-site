@@ -88,7 +88,7 @@
             backdrop-filter: blur(12px);
         }
     </style>
-</head>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></head>
 <body class="bg-background text-on-background font-body selection:bg-primary/30">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/40 backdrop-blur-xl border-b border-[#aec6ff]/10 shadow-[0_8px_32px_0_rgba(6,14,32,0.8)]">
@@ -108,7 +108,7 @@
 </nav>
 <main class="pt-32 pb-20">
 <!-- Hero Section -->
-<section class="max-w-7xl mx-auto px-8 mb-24">
+<section class="max-w-7xl mx-auto px-8 mb-24" data-aos=\"fade-up\">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 <div class="lg:col-span-7">
 <span class="font-label text-tertiary tracking-widest uppercase text-xs font-bold mb-4 block">Consultation Portal</span>
@@ -124,7 +124,7 @@
 </div>
 <!-- Booking Form -->
 <div class="lg:col-span-5">
-<div class="glass-panel p-8 rounded-xl ghost-border relative overflow-hidden">
+<div class="glass-panel p-8 rounded-xl ghost-border relative overflow-hidden" data-aos=\"fade-up\" data-aos-delay=\"100\">
 <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
 <form class="space-y-6 relative z-10">
 <div class="space-y-2">
@@ -162,7 +162,7 @@
 </div>
 </section>
 <!-- Team Section -->
-<section class="bg-surface-container-low py-24">
+<section class="bg-surface-container-low py-24" data-aos=\"fade-up\">
 <div class="max-w-7xl mx-auto px-8">
 <div class="mb-16">
 <h2 class="text-3xl font-headline font-bold mb-4">Meet Your AI Consultants</h2>
@@ -172,7 +172,7 @@
 <!-- Consultant 1 -->
 <div class="group relative">
 <div class="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container mb-6 relative">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" data-alt="Portrait of a professional male tech consultant in dark studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAXrOnAS1j5zCWVoUI02nT7mjGHme8SDp3JIowTwqn7m0KBDli8BL4bIRjpeGxbDfzhkaXm3U4NoGlaqoPuGriA0stOPlI9H_kf4SG_kko0Ga1J6eleFUsISnPUIFGyUfel8caqzq2u6_3I4w_lIdoKocQfolHmuf51vl98-oqsMEaETOCRSTi-6MlIToYDwIMFIZHZTYFzKUbPM5jXQqyPWLkkaRnVIeaWD3BSDE85_KS-m-K98vsg9WVYzx343fJe77mXfy3UWCn"/>
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" data-alt="Portrait of a professional male tech consultant in dark studio lighting" src=\"/dashboard-ui.png\"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
 </div>
 <h3 class="text-xl font-headline font-bold text-on-surface">Dr. Elias Vance</h3>
@@ -182,7 +182,7 @@
 <!-- Consultant 2 -->
 <div class="group relative">
 <div class="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container mb-6 relative">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" data-alt="Portrait of a professional female AI researcher in a modern dark office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvTFZtP6JiZCWQZtPsAFTxbw5MVJRmrUsgB6TuXrJApSKp13ATHN3f1o1TNPCxmKBbaNcD0Tw3n3X6XV_OgJ8zBQxy_SgZ47iBt7fygvubidfyIV7yYvj3aud3rcy1ZQp2kIHf7lbRXveChnYahZlJrGryimXiYqAdDimIl4qidR_RSmPN17z5qwDrdmgsXzYZqej5Qom4TGjOTbudHH301Us6iTg1Hb-Bi374nYATJXo_g8IjtLQWkb_br7_tTKNXpY5FCFElEGtx"/>
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" data-alt="Portrait of a professional female AI researcher in a modern dark office" src=\"/dashboard-ui.png\"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
 </div>
 <h3 class="text-xl font-headline font-bold text-on-surface">Sarah Chen</h3>
@@ -192,7 +192,7 @@
 <!-- Consultant 3 -->
 <div class="group relative">
 <div class="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container mb-6 relative">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" data-alt="Portrait of a male data scientist looking at holographic displays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCWagSssJMMR0qVLZZVj5FyhrajcO2lm1dZondBlStfb-sdIE7bjzUObiLpMsPW8uJnW4cg1X0EaVeei70wsTXnTaCNcuDrgLSVmEIma1ySJL7xhv-QcRPOzuwwPj4uI6SmxpaEonur-wrrmSoME1irKa4QydehiCI49ho4MlApMNuFgnVp2ORO8WW0fyAMil6617xqlU13ILMMGbnU360s91t88IYW__ghtfU4FTrPNLY1v6YUTkk4kctjT5I_5E5jXmWyA0cOi6L"/>
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" data-alt="Portrait of a male data scientist looking at holographic displays" src=\"/dashboard-ui.png\"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
 </div>
 <h3 class="text-xl font-headline font-bold text-on-surface">Marcus Thorne</h3>
@@ -203,7 +203,7 @@
 </div>
 </section>
 <!-- Final CTA -->
-<section class="max-w-7xl mx-auto px-8 py-32 text-center">
+<section class="max-w-7xl mx-auto px-8 py-32 text-center" data-aos=\"fade-up\">
 <div class="max-w-4xl mx-auto bg-surface-container-high rounded-3xl p-16 ghost-border relative overflow-hidden">
 <div class="absolute -top-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-[100px]"></div>
 <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
@@ -257,4 +257,4 @@
 </div>
 </div>
 </footer>
-</body></html>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init({duration: 800, once: true, offset: 50});</script></body></html>
