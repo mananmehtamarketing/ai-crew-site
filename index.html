@@ -287,4 +287,36 @@
 </div>
 </div>
 </footer>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init({duration: 800, once: true, offset: 50});</script></body></html>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init({duration: 800, once: true, offset: 50});</script>
+<!-- Cursor Glow Effect -->
+<div id="cursor-glow" class="fixed pointer-events-none z-50 w-[800px] h-[800px] rounded-full translate-x-[-50%] translate-y-[-50%] opacity-60 mix-blend-screen transition-transform duration-300 ease-out" style="background: radial-gradient(circle, rgba(136, 246, 223, 0.08) 0%, rgba(0,0,0,0) 60%); top: -1000px; left: -1000px;"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const glow = document.getElementById("cursor-glow");
+        let isMoving = false;
+        document.addEventListener("mousemove", (e) => {
+            if (!isMoving) {
+                requestAnimationFrame(() => {
+                    glow.style.left = e.clientX + "px";
+                    glow.style.top = e.clientY + "px";
+                    isMoving = false;
+                });
+                isMoving = true;
+            }
+        });
+        
+        // Enhance glow smartly when hovering over interactive/glass elements
+        const clickables = document.querySelectorAll("a, button, .glass-panel");
+        clickables.forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                glow.style.background = "radial-gradient(circle, rgba(174, 198, 255, 0.15) 0%, rgba(0,0,0,0) 60%)";
+                glow.style.transform = "translate(-50%, -50%) scale(1.1)";
+            });
+            el.addEventListener("mouseleave", () => {
+                glow.style.background = "radial-gradient(circle, rgba(136, 246, 223, 0.08) 0%, rgba(0,0,0,0) 60%)";
+                glow.style.transform = "translate(-50%, -50%) scale(1)";
+            });
+        });
+    });
+</script>
+\n</body></html>
