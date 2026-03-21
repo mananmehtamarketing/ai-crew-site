@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marketin Crew AI | The Neural Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#dae2fd",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed": "#88f6df",
+              "on-primary-fixed": "#001a43",
+              "outline-variant": "#44474f",
+              "tertiary-fixed-dim": "#6ad9c3",
+              "on-primary": "#122f60",
+              "on-tertiary-fixed-variant": "#005045",
+              "on-secondary-fixed-variant": "#5d4200",
+              "surface-container-highest": "#2d3449",
+              "on-tertiary-container": "#42b5a0",
+              "on-secondary": "#412d00",
+              "primary-container": "#1d386a",
+              "outline": "#8e909a",
+              "tertiary": "#6ad9c3",
+              "inverse-primary": "#455e92",
+              "background": "#0b1326",
+              "secondary-fixed": "#ffdea6",
+              "secondary-container": "#e0a301",
+              "surface-tint": "#aec6ff",
+              "on-tertiary": "#00382f",
+              "primary-fixed": "#d8e2ff",
+              "on-primary-container": "#8aa3db",
+              "surface-dim": "#0b1326",
+              "on-secondary-fixed": "#271900",
+              "on-primary-fixed-variant": "#2c4678",
+              "secondary-fixed-dim": "#fcbc29",
+              "primary-fixed-dim": "#aec6ff",
+              "surface-container": "#171f33",
+              "on-surface-variant": "#c4c6d0",
+              "error-container": "#93000a",
+              "surface-container-high": "#222a3d",
+              "on-tertiary-fixed": "#00201b",
+              "surface-container-low": "#131b2e",
+              "on-secondary-container": "#573d00",
+              "on-error": "#690005",
+              "inverse-surface": "#dae2fd",
+              "tertiary-container": "#004238",
+              "secondary": "#ffbe2e",
+              "inverse-on-surface": "#283044",
+              "surface-variant": "#2d3449",
+              "error": "#ffb4ab",
+              "surface-bright": "#31394d",
+              "primary": "#aec6ff",
+              "on-surface": "#dae2fd",
+              "surface": "#0b1326",
+              "surface-container-lowest": "#060e20"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .insight-rail {
+            width: 2px;
+            background: linear-gradient(to bottom, #aec6ff, transparent);
+        }
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(142, 144, 154, 0.15);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% -20%, rgba(174, 198, 255, 0.15) 0%, rgba(11, 19, 38, 0) 60%);
+        }
+        .glow-accent {
+            filter: drop-shadow(0 0 8px rgba(174, 198, 255, 0.4));
+        }
+    </style>
+</head>
+<body class="bg-background selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/40 backdrop-blur-xl border-b border-[#aec6ff]/10 shadow-[0_8px_32px_0_rgba(6,14,32,0.8)]">
+<div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto">
+<a href=\"index.html\" class=\"text-xl font-bold tracking-tighter text-[#aec6ff] font-headline\">Marketin Crew AI</a>
+<div class="hidden md:flex items-center space-x-10 font-['Plus_Jakarta_Sans'] tracking-tight text-sm font-semibold">
+<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href=\"web-dev.html\">AI Web Dev</a>
+<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href=\"content-studio.html\">AI Content</a>
+<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href=\"outreach.html\">AI Outreach</a>
+<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="#">Insights</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="px-5 py-2 text-sm font-semibold text-on-surface hover:text-primary transition-colors">Login</button>
+<a href=\"book-demo.html\"><button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-bold text-sm hover:scale-95 active:scale-90 transition-all duration-200 shadow-lg shadow-primary/10">Book a Demo</button></a>
+</div>
+</div>
+</nav>
+<main class="relative pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center px-8 hero-gradient">
+<div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-8">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-secondary mr-3 animate-pulse"></span>
+<span class="text-[10px] font-label font-bold tracking-[0.2em] uppercase text-primary">Neural Protocol Active</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-[0.9] text-on-background">
+                        The Future of <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">Marketing is Here.</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl font-body leading-relaxed">
+                        Architecting hyper-growth through autonomous AI systems. We don't just optimize campaigns; we rewire your entire marketing DNA.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:scale-95 active:scale-90 transition-all text-lg shadow-xl shadow-primary/20">Initialize Architecture</button>
+<button class="px-8 py-4 border border-outline-variant/30 text-on-surface font-bold rounded-xl hover:bg-surface-bright transition-all text-lg flex items-center justify-center gap-2">
+                            View Case Studies
+                            <span class="material-symbols-outlined text-secondary">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-5 relative hidden lg:block">
+<div class="relative w-full aspect-square rounded-full border border-primary/10 flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl"></div>
+<img alt="AI Network Structure" class="w-4/5 h-4/5 object-cover rounded-full border border-primary/20 glow-accent opacity-80" data-alt="Abstract 3D neural network grid glowing blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbE8GIZ4mwGzyi4RX9mpLFAedQY90X70mOMwj4BTZ8nnJdy4UCQ71tkN3_qW0hzhKYHw1U1JIDxhS-6YUG05WtfZuqb1xD-uRRFoLUc18oVAuV8vFktToukBBOryEA1gGPUbulxSFYWqFBMgeSCkJrki31mfyUT_KOj4_wEL4ZFF690PZtcJC6J19bGaJMx4FdfbH0CZB6wdf_oPRPywo8c4EEVkVJ0eqMR36dWcaez9JOliUq0J5BxLSop7B8TJol-wr1dXYr0OwY"/>
+<!-- Floating Glass Metric -->
+<div class="absolute top-10 right-0 glass-panel p-6 rounded-xl space-y-2">
+<span class="text-[10px] font-label font-bold text-tertiary tracking-widest uppercase">Efficiency Peak</span>
+<div class="text-3xl font-headline font-bold text-on-background">98.4%</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Pillars (Bento Grid) -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<div class="mb-20">
+<div class="flex items-center gap-4 mb-4">
+<div class="insight-rail h-8"></div>
+<h2 class="text-3xl font-headline font-bold">Core Neural Pillars</h2>
+</div>
+<p class="text-on-surface-variant max-w-2xl">Deploy specialized AI agents across your entire funnel to eliminate bottlenecks and accelerate throughput.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- AI Web Dev -->
+<div class="glass-panel p-10 rounded-xl group hover:border-primary/40 transition-all duration-500">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">code</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">AI Web Dev</h3>
+<p class="text-on-surface-variant font-body leading-relaxed mb-8">Self-optimizing interfaces that adapt in real-time to user behavior and intent patterns.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-on-surface/70">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Dynamic Hero A/B Testing
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Predictive Layout Flows
+                        </li>
+</ul>
+</div>
+<!-- AI Content -->
+<div class="glass-panel p-10 rounded-xl group hover:border-secondary/40 transition-all duration-500">
+<div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">AI Content</h3>
+<p class="text-on-surface-variant font-body leading-relaxed mb-8">Hyper-personalized narrative engines that speak directly to your target segment's pain points.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-on-surface/70">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Multi-Channel Synthesis
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Brand Voice Guardrails
+                        </li>
+</ul>
+</div>
+<!-- AI Outreach -->
+<div class="glass-panel p-10 rounded-xl group hover:border-tertiary/40 transition-all duration-500">
+<div class="w-14 h-14 rounded-xl bg-tertiary/10 flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-3xl">hub</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">AI Outreach</h3>
+<p class="text-on-surface-variant font-body leading-relaxed mb-8">Autonomous prospecting and nurturing cycles that operate 24/7 without human intervention.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-on-surface/70">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Intent-Based Lead Scoring
+                        </li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Warm-Handover Automation
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-md">
+<h2 class="text-sm font-label font-bold tracking-[0.3em] uppercase text-outline-variant mb-6">Powered by Marketin Crew</h2>
+<p class="text-2xl font-headline font-semibold text-on-surface leading-snug italic">
+                            "The transition from manual marketing to the Neural Architect was like moving from a steam engine to a warp drive."
+                        </p>
+<div class="mt-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="CEO Portrait" class="w-full h-full object-cover" data-alt="Close up portrait of professional smiling male executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj_cW1-kFN8_ULBk_D4kLle05cYzhPNx1Bzy11m1aHBSw2OSlUjuJJHp4kjVy60oSV2YaYZCmnbAAgmyDlxtRdf4wMrQkVamP2cD1YJT05NfAltIEIA_ueiUPoxWTbvnow7VkbBeWzIuaYI7y1EE3PcmrxI7fcTzI3bBArlGY650hWevAMx_Z_RVoKgJhsSMnadZ6j2L49SfbBBNjv8Ph7dceUvqeWh4ceo-jTUEJJ5CtmLr3AVuO5Rpb4Q0NUwjb7xsS4nOsDYe3K"/>
+</div>
+<div>
+<div class="text-sm font-bold text-on-background">Marcus Thorne</div>
+<div class="text-xs text-outline font-label uppercase tracking-widest">Director of Growth, NeuraLink Systems</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="h-8 w-32 bg-on-surface-variant/20 rounded"></div>
+<div class="h-8 w-24 bg-on-surface-variant/20 rounded"></div>
+<div class="h-8 w-28 bg-on-surface-variant/20 rounded"></div>
+<div class="h-8 w-24 bg-on-surface-variant/20 rounded"></div>
+<div class="h-8 w-36 bg-on-surface-variant/20 rounded"></div>
+<div class="h-8 w-20 bg-on-surface-variant/20 rounded"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-8 relative">
+<div class="max-w-5xl mx-auto glass-panel p-16 rounded-[2rem] text-center relative overflow-hidden">
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-[100px]"></div>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold mb-8 text-on-background leading-tight">Ready to evolve your <br/> marketing ecosystem?</h2>
+<p class="text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto">Join the 1% of firms leveraging the full spectrum of The Neural Architect. Secure your competitive advantage today.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl text-lg hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-primary/30">Request Neural Audit</button>
+<button class="px-10 py-5 border border-outline/30 font-bold rounded-xl text-lg hover:bg-surface-bright transition-all">Explore Platform</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b1326] w-full py-12 px-8 border-t border-[#aec6ff]/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-lg font-black text-[#aec6ff] mb-4">Marketin Crew AI</div>
+<p class="text-slate-500 text-sm leading-relaxed max-w-xs">Autonomous marketing infrastructure for the post-SaaS world.</p>
+</div>
+<div>
+<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 mb-6">Solutions</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href=\"web-dev.html\">AI Web Dev</a></li>
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href=\"content-studio.html\">AI Content Engine</a></li>
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="#">Outreach Protocols</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 mb-6">Ecosystem</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="#">AI Ethics</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 mb-6">Status</h4>
+<div class="flex items-center gap-2 mb-4">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-xs text-slate-400 font-label tracking-wide uppercase">All Systems Operational</span>
+</div>
+<div class="text-[10px] text-slate-600 font-label tracking-tighter uppercase">Network Status: 99.99% Uptime</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500">© 2024 Marketin Crew AI. The Neural Architect Ecosystem.</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">language</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">alternate_email</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">share</span>
+</div>
+</div>
+</footer>
+</body></html>
