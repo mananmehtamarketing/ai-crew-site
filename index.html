@@ -3,7 +3,8 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI CREW | The Neural Architect</title>
+<title>AI Crew — AI-Powered Marketing Systems</title>
+<meta name="description" content="AI Crew builds intelligent marketing systems — websites, content, automations, and outreach — that work around the clock for your business. An arm of Marketing Crew." />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -97,33 +98,76 @@
         .glow-accent {
             filter: drop-shadow(0 0 8px rgba(174, 198, 255, 0.4));
         }
-    </style>
+        /* Mobile nav */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background: rgba(11,19,38,0.98);
+            border-top: 1px solid rgba(174,198,255,0.1);
+            padding: 1.5rem 2rem;
+            gap: 1.25rem;
+        }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a {
+            color: #c4c6d0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .mobile-nav a:hover { color: #aec6ff; }
+        .mobile-nav .mobile-cta {
+            margin-top: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #aec6ff, #1d386a);
+            color: #122f60;
+            font-weight: 700;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: #aec6ff; border-radius: 2px; transition: all 0.3s; }
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+        }
+</style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></head>
 <body class="bg-background selection:bg-primary/30">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/40 backdrop-blur-xl border-b border-[#aec6ff]/10 shadow-[0_8px_32px_0_rgba(6,14,32,0.8)]">
 <div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto">
-<a href="/" class=\"text-xl font-bold tracking-tighter text-[#aec6ff] font-headline\">AI CREW</a>
+<a href="/" class="text-xl font-bold tracking-tighter text-[#aec6ff] font-headline">AI CREW</a>
 <div class="hidden md:flex items-center space-x-10 font-['Plus_Jakarta_Sans'] tracking-tight text-sm font-semibold">
 <a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/web-dev">AI Web Dev</a>
 <a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/content-studio">AI Content</a>
 <a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/outreach">AI Outreach</a>
-<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="#">Insights</a>
+<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/automations">AI Automations</a>
 </div>
 <div class="flex items-center space-x-4">
-<button class="px-5 py-2 text-sm font-semibold text-on-surface hover:text-primary transition-colors">Login</button>
+<a href="mailto:hello@marketincrew.com" class="hidden md:block px-5 py-2 text-sm font-semibold text-on-surface hover:text-primary transition-colors">Contact Us</a>
 <a href="/book-demo"><button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-bold text-sm hover:scale-95 active:scale-90 transition-all duration-200 shadow-lg shadow-primary/10">Book a Demo</button></a>
+<button class="hamburger" id="menuToggle" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
 </div>
+</div>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/web-dev">AI Web Dev</a>
+  <a href="/content-studio">AI Content</a>
+  <a href="/outreach">AI Outreach</a>
+  <a href="/automations">AI Automations</a>
+  <a href="mailto:hello@marketincrew.com">Contact Us</a>
+  <a href="/book-demo" class="mobile-cta">Book a Demo →</a>
 </div>
 </nav>
 <main class="relative pt-20">
 <!-- Hero Section -->
-<section class="relative min-h-[921px] flex items-center justify-center px-8 hero-gradient" data-aos=\"fade-up\">
+<section class="relative min-h-[921px] flex items-center justify-center px-8 hero-gradient" data-aos="fade-up">
 <div class="max-w-4xl mx-auto w-full flex flex-col items-center text-center gap-12">
 <div class="space-y-8 flex flex-col items-center text-center">
 <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
 <span class="w-2 h-2 rounded-full bg-secondary mr-3 animate-pulse"></span>
-<span class="text-[10px] font-label font-bold tracking-[0.2em] uppercase text-primary">Neural Protocol Active</span>
+<span class="text-[10px] font-label font-bold tracking-[0.2em] uppercase text-primary">An Arm of Marketing Crew</span>
 </div>
 <h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-[0.9] text-on-background">
                         The Future of <br/>
@@ -133,115 +177,123 @@
                         Architecting hyper-growth through autonomous AI systems. We don't just optimize campaigns; we rewire your entire marketing DNA.
                     </p>
 <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-<button id="hero-cta-button" class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:scale-95 active:scale-90 transition-all text-lg shadow-xl shadow-primary/20">Initialize Architecture</button>
-<button class="px-8 py-4 border border-outline-variant/30 text-on-surface font-bold rounded-xl hover:bg-surface-bright transition-all text-lg flex items-center justify-center gap-2">
-                            View Case Studies
+<a href="/book-demo"><button id="hero-cta-button" class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:scale-95 active:scale-90 transition-all text-lg shadow-xl shadow-primary/20">Book a Free Strategy Call</button></a>
+<a href="/web-dev"><button class="px-8 py-4 border border-outline-variant/30 text-on-surface font-bold rounded-xl hover:bg-surface-bright transition-all text-lg flex items-center justify-center gap-2">
+                            Explore Our Services
                             <span class="material-symbols-outlined text-secondary">arrow_forward</span>
-</button>
+</button></a>
 </div>
 </div>
 
 </section>
 <!-- Core Pillars (Bento Grid) -->
-<section class="py-32 px-8 max-w-7xl mx-auto" data-aos=\"fade-up\">
+<section class="py-32 px-8 max-w-7xl mx-auto" data-aos="fade-up">
 <div class="mb-20">
 <div class="flex items-center gap-4 mb-4">
 <div class="insight-rail h-8"></div>
-<h2 class="text-3xl font-headline font-bold">Core Neural Pillars</h2>
+<h2 class="text-3xl font-headline font-bold">Our AI Marketing Services</h2>
 </div>
-<p class="text-on-surface-variant max-w-2xl">Deploy specialized AI agents across your entire funnel to eliminate bottlenecks and accelerate throughput.</p>
+<p class="text-on-surface-variant max-w-2xl">Four AI-powered systems that work together to grow your business faster, smarter, and around the clock.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
 <!-- AI Web Dev -->
-<div class="glass-panel p-10 rounded-xl group hover:border-primary/40 transition-all duration-500" data-aos=\"fade-up\" data-aos-delay=\"100\">
-<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary text-3xl">code</span>
+<a href="/web-dev" class="glass-panel p-8 rounded-xl group hover:border-primary/40 transition-all duration-500 block" data-aos="fade-up" data-aos-delay="0">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl">code</span>
 </div>
-<h3 class="text-2xl font-headline font-bold mb-4">AI Web Dev</h3>
-<p class="text-on-surface-variant font-body leading-relaxed mb-8">Self-optimizing interfaces that adapt in real-time to user behavior and intent patterns.</p>
-<ul class="space-y-3">
-<li class="flex items-center gap-3 text-sm text-on-surface/70">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Dynamic Hero A/B Testing
-                        </li>
-<li class="flex items-center gap-3 text-sm text-on-surface/70">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Predictive Layout Flows
-                        </li>
+<h3 class="text-xl font-headline font-bold mb-3">AI Website Dev</h3>
+<p class="text-on-surface-variant font-body leading-relaxed mb-6 text-sm">Blazing-fast, conversion-optimised websites built with AI — from design to deployment in days, not months.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> AI-generated design systems</li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Performance-first architecture</li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> CMS & automation-ready</li>
 </ul>
-</div>
+<div class="mt-6 text-primary text-sm font-semibold">Learn more →</div>
+</a>
 <!-- AI Content -->
-<div class="glass-panel p-10 rounded-xl group hover:border-secondary/40 transition-all duration-500" data-aos=\"fade-up\" data-aos-delay=\"100\">
-<div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
+<a href="/content-studio" class="glass-panel p-8 rounded-xl group hover:border-secondary/40 transition-all duration-500 block" data-aos="fade-up" data-aos-delay="100">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-2xl">psychology</span>
 </div>
-<h3 class="text-2xl font-headline font-bold mb-4">AI Content</h3>
-<p class="text-on-surface-variant font-body leading-relaxed mb-8">Hyper-personalized narrative engines that speak directly to your target segment's pain points.</p>
-<ul class="space-y-3">
-<li class="flex items-center gap-3 text-sm text-on-surface/70">
-<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Multi-Channel Synthesis
-                        </li>
-<li class="flex items-center gap-3 text-sm text-on-surface/70">
-<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Brand Voice Guardrails
-                        </li>
+<h3 class="text-xl font-headline font-bold mb-3">AI Content Creation</h3>
+<p class="text-on-surface-variant font-body leading-relaxed mb-6 text-sm">Blogs, social posts, ad copy, video scripts — on-brand content at scale while you focus on running your business.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span> SEO-optimised long-form content</li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span> Multi-channel content calendars</li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span> Brand voice training</li>
 </ul>
+<div class="mt-6 text-secondary text-sm font-semibold">Learn more →</div>
+</a>
+<!-- AI Automations -->
+<a href="/automations" class="glass-panel p-8 rounded-xl group hover:border-[#6ad9c3]/40 transition-all duration-500 block" data-aos="fade-up" data-aos-delay="200">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-2xl">autorenew</span>
 </div>
+<h3 class="text-xl font-headline font-bold mb-3">AI Automations</h3>
+<p class="text-on-surface-variant font-body leading-relaxed mb-6 text-sm">Connect your tools, eliminate busywork, and build workflows that run 24/7 — so your team handles what actually needs them.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-tertiary flex-shrink-0"></span> CRM & lead pipeline automation</li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-tertiary flex-shrink-0"></span> AI-powered email sequences</li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-tertiary flex-shrink-0"></span> Multi-platform integrations</li>
+</ul>
+<div class="mt-6 text-tertiary text-sm font-semibold">Learn more →</div>
+</a>
 <!-- AI Outreach -->
-<div class="glass-panel p-10 rounded-xl group hover:border-tertiary/40 transition-all duration-500" data-aos=\"fade-up\" data-aos-delay=\"100\">
-<div class="w-14 h-14 rounded-xl bg-tertiary/10 flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-tertiary text-3xl">hub</span>
+<a href="/outreach" class="glass-panel p-8 rounded-xl group hover:border-primary/40 transition-all duration-500 block" data-aos="fade-up" data-aos-delay="300">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl">hub</span>
 </div>
-<h3 class="text-2xl font-headline font-bold mb-4">AI Outreach</h3>
-<p class="text-on-surface-variant font-body leading-relaxed mb-8">Autonomous prospecting and nurturing cycles that operate 24/7 without human intervention.</p>
-<ul class="space-y-3">
-<li class="flex items-center gap-3 text-sm text-on-surface/70">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Intent-Based Lead Scoring
-                        </li>
-<li class="flex items-center gap-3 text-sm text-on-surface/70">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Warm-Handover Automation
-                        </li>
+<h3 class="text-xl font-headline font-bold mb-3">AI Outreach</h3>
+<p class="text-on-surface-variant font-body leading-relaxed mb-6 text-sm">Hyper-personalised cold outreach at scale — AI researches prospects, writes the message, manages follow-ups automatically.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Personalised at scale (1000s/day)</li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Multi-channel: email, LinkedIn, SMS</li>
+<li class="flex items-center gap-3 text-sm text-on-surface/70"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> A/B testing & optimisation</li>
 </ul>
-</div>
+<div class="mt-6 text-primary text-sm font-semibold">Learn more →</div>
+</a>
 </div>
 </section>
 <!-- Trust Section -->
-<section class="py-24 bg-surface-container-lowest overflow-hidden" data-aos=\"fade-up\">
+<section class="py-24 bg-surface-container-lowest overflow-hidden" data-aos="fade-up">
 <div class="max-w-7xl mx-auto px-8">
 <div class="flex flex-col md:flex-row items-center justify-between gap-12">
 <div class="max-w-md">
-<h2 class="text-sm font-label font-bold tracking-[0.3em] uppercase text-outline-variant mb-6">Powered by Marketin Crew</h2>
+<h2 class="text-sm font-label font-bold tracking-[0.3em] uppercase text-outline-variant mb-6">Powered by Marketing Crew</h2>
 <p class="text-2xl font-headline font-semibold text-on-surface leading-snug italic">
-                            "The transition from manual marketing to the Neural Architect was like moving from a steam engine to a warp drive."
+                            "AI Crew set up our outreach system in a week. We booked 14 meetings in the first month — more than we'd done in the previous six."
                         </p>
 <div class="mt-8 flex items-center gap-4">
-<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
-<img alt="CEO Portrait" class="w-full h-full object-cover" data-alt="Close up portrait of professional smiling male executive" src="/ceo-portrait.png"/>
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/20">
+<span class="text-sm font-bold text-primary">JS</span>
 </div>
 <div>
-<div class="text-sm font-bold text-on-background">Marcus Thorne</div>
-<div class="text-xs text-outline font-label uppercase tracking-widest">Director of Growth, NeuraLink Systems</div>
+<div class="text-sm font-bold text-on-background">James S.</div>
+<div class="text-xs text-outline font-label uppercase tracking-widest">Founder, B2B SaaS Company</div>
 </div>
 </div>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-<div class="h-8 w-32 bg-on-surface-variant/20 rounded"></div>
-<div class="h-8 w-24 bg-on-surface-variant/20 rounded"></div>
-<div class="h-8 w-28 bg-on-surface-variant/20 rounded"></div>
-<div class="h-8 w-24 bg-on-surface-variant/20 rounded"></div>
-<div class="h-8 w-36 bg-on-surface-variant/20 rounded"></div>
-<div class="h-8 w-20 bg-on-surface-variant/20 rounded"></div>
+<div class="flex flex-wrap items-center gap-8 opacity-50">
+<span class="text-on-surface-variant font-semibold text-sm tracking-wider">Zapier</span>
+<span class="text-on-surface-variant font-semibold text-sm tracking-wider">OpenAI</span>
+<span class="text-on-surface-variant font-semibold text-sm tracking-wider">HubSpot</span>
+<span class="text-on-surface-variant font-semibold text-sm tracking-wider">Apollo</span>
+<span class="text-on-surface-variant font-semibold text-sm tracking-wider">n8n</span>
+<span class="text-on-surface-variant font-semibold text-sm tracking-wider">Airtable</span>
 </div>
 </div>
 </div>
 </section>
 <!-- CTA Section -->
-<section class="py-32 px-8 relative" data-aos=\"fade-up\">
-<div class="max-w-5xl mx-auto glass-panel p-16 rounded-[2rem] text-center relative overflow-hidden" data-aos=\"fade-up\" data-aos-delay=\"100\">
+<section class="py-32 px-8 relative" data-aos="fade-up">
+<div class="max-w-5xl mx-auto glass-panel p-16 rounded-[2rem] text-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
 <div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
 <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-[100px]"></div>
-<h2 class="text-4xl md:text-5xl font-headline font-extrabold mb-8 text-on-background leading-tight">Ready to evolve your <br/> marketing ecosystem?</h2>
-<p class="text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto">Join the 1% of firms leveraging the full spectrum of The Neural Architect. Secure your competitive advantage today.</p>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold mb-8 text-on-background leading-tight">Ready to put AI<br/>to work for you?</h2>
+<p class="text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto">Book a free 30-minute strategy call. We'll audit your marketing, find the highest-leverage AI opportunities, and give you a clear roadmap — no obligation.</p>
 <div class="flex flex-wrap justify-center gap-6">
-<button class="px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl text-lg hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-primary/30">Request Neural Audit</button>
-<button class="px-10 py-5 border border-outline/30 font-bold rounded-xl text-lg hover:bg-surface-bright transition-all">Explore Platform</button>
+<a href="/book-demo"><button class="px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl text-lg hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-primary/30">Book a Free Strategy Call</button></a>
+<a href="/web-dev"><button class="px-10 py-5 border border-outline/30 font-bold rounded-xl text-lg hover:bg-surface-bright transition-all">Explore Our Services</button></a>
 </div>
 </div>
 </section>
@@ -258,15 +310,16 @@
 <ul class="space-y-4">
 <li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="/web-dev">AI Web Dev</a></li>
 <li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="/content-studio">AI Content Engine</a></li>
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="#">Outreach Protocols</a></li>
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="/outreach">AI Outreach</a></li>
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="/automations">AI Automations</a></li>
 </ul>
 </div>
 <div>
-<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 mb-6">Ecosystem</h4>
+<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 mb-6">Company</h4>
 <ul class="space-y-4">
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="#">Privacy Policy</a></li>
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="#">Terms of Service</a></li>
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="#">AI Ethics</a></li>
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="/book-demo">Book a Demo</a></li>
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="mailto:hello@marketincrew.com">Contact Us</a></li>
+<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors text-sm" href="https://marketincrew.com" target="_blank">Marketing Crew ↗</a></li>
 </ul>
 </div>
 <div>
@@ -279,7 +332,7 @@
 </div>
 </div>
 <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-<div class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500">© 2024 AI CREW. The Neural Architect Ecosystem.</div>
+<div class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500">© 2025 AI Crew · An arm of <a href="https://marketincrew.com" target="_blank" class="hover:text-[#6ad9c3] transition-colors">Marketing Crew</a>. All rights reserved.</div>
 <div class="flex gap-6">
 <span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">language</span>
 <span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">alternate_email</span>
@@ -288,6 +341,15 @@
 </div>
 </footer>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init({duration: 800, once: true, offset: 50});</script>
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  if (menuToggle && mobileNav) {
+    menuToggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+  }
+</script>
 <!-- Cursor Glow Effect -->
 <div id="cursor-glow" class="fixed pointer-events-none z-50 w-[800px] h-[800px] rounded-full translate-x-[-50%] translate-y-[-50%] opacity-60 mix-blend-screen transition-transform duration-300 ease-out" style="background: radial-gradient(circle, rgba(136, 246, 223, 0.08) 0%, rgba(0,0,0,0) 60%); top: -1000px; left: -1000px;"></div>
 <script>
@@ -319,7 +381,7 @@
         });
     });
 </script>
-\n<!-- Canvas Arrow Animation -->
+<!-- Canvas Arrow Animation -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.createElement("canvas");
