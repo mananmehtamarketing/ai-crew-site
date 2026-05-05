@@ -1,394 +1,218 @@
-<html class="dark"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AI Websites &amp; Landing Pages | AI Crew · Built Fast, AI-Ready</title>
 <meta name="description" content="AI Crew builds AI-ready websites, landing pages and micro-sites for founders, lawyers, doctors and professional service businesses. Fast, conversion-first, SEO baked in." />
 <meta name="keywords" content="AI website development, AI landing page, AI website India, AI website for founders, AI web design, conversion-first website" />
 <link rel="canonical" href="https://aicrew.io/web-dev" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://aicrew.io/web-dev" />
 <meta property="og:title" content="AI Websites &amp; Landing Pages | AI Crew · Built Fast, AI-Ready" />
 <meta property="og:description" content="AI Crew builds AI-ready websites, landing pages and micro-sites for founders, lawyers, doctors and professional service businesses. Fast, conversion-first, SEO baked in." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aicrew.io/web-dev" />
 <meta property="og:site_name" content="AI Crew" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="AI Websites &amp; Landing Pages | AI Crew · Built Fast, AI-Ready" />
-<meta name="twitter:description" content="AI Crew builds AI-ready websites, landing pages and micro-sites for founders, lawyers, doctors and professional service businesses. Fast, conversion-first, SEO baked in." />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "on-background": "#dae2fd",
-            "on-error-container": "#ffdad6",
-            "tertiary-fixed": "#88f6df",
-            "on-primary-fixed": "#001a43",
-            "outline-variant": "#44474f",
-            "tertiary-fixed-dim": "#64d9c3",
-            "on-primary": "#122f60",
-            "on-tertiary-fixed-variant": "#005045",
-            "on-secondary-fixed-variant": "#5d4200",
-            "surface-container-highest": "#2d3449",
-            "on-tertiary-container": "#42b5a0",
-            "on-secondary": "#412d00",
-            "primary-container": "#1d386a",
-            "outline": "#8e909a",
-            "tertiary": "#6ad9c3",
-            "inverse-primary": "#455e92",
-            "background": "#0b1326",
-            "secondary-fixed": "#ffdea6",
-            "secondary-container": "#e0a301",
-            "surface-tint": "#aec6ff",
-            "on-tertiary": "#00382f",
-            "primary-fixed": "#d8e2ff",
-            "on-primary-container": "#8aa3db",
-            "surface-dim": "#0b1326",
-            "on-secondary-fixed": "#271900",
-            "on-primary-fixed-variant": "#2c4678",
-            "secondary-fixed-dim": "#fcbc29",
-            "primary-fixed-dim": "#aec6ff",
-            "surface-container": "#171f33",
-            "on-surface-variant": "#c4c6d0",
-            "error-container": "#93000a",
-            "surface-container-high": "#222a3d",
-            "on-tertiary-fixed": "#00201b",
-            "surface-container-low": "#131b2e",
-            "on-secondary-container": "#573d00",
-            "on-error": "#690005",
-            "inverse-surface": "#dae2fd",
-            "tertiary-container": "#004238",
-            "secondary": "#ffbe2e",
-            "inverse-on-surface": "#283044",
-            "surface-variant": "#2d3449",
-            "error": "#ffb4ab",
-            "surface-bright": "#31394d",
-            "primary": "#aec6ff",
-            "on-surface": "#dae2fd",
-            "surface": "#0b1326",
-            "surface-container-lowest": "#060e20"
-          },
-          fontFamily: {
-            "headline": ["Plus Jakarta Sans"],
-            "body": ["Inter"],
-            "label": ["Inter"]
-          },
-          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-        },
-      },
-    }
-  </script>
+  tailwind.config = { theme:{ extend:{
+    colors:{"bg":"#FFFFFF","bg-soft":"#F8F9FB","bg-mute":"#F1F4FA","ink":"#0B1326","ink-soft":"#3A4256","ink-mute":"#6B7280","border":"#E5E7EB","border-soft":"#F0F2F5"},
+    fontFamily:{"headline":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"serif":["Instrument Serif","serif"]},
+    borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","full":"9999px"}
+  }}}
+</script>
 <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      vertical-align: middle;
-    }
-    .ghost-border {
-      border: 1px solid rgba(142, 144, 154, 0.15);
-    }
-    .glass-panel {
-      background: rgba(45, 52, 73, 0.4);
-      backdrop-filter: blur(16px);
-    }
-    .insight-rail {
-      position: relative;
-    }
-    .insight-rail::before {
-      content: '';
-      position: absolute;
-      left: -1rem;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #aec6ff, transparent);
-    }
-    .mobile-nav { display: none; flex-direction: column; background: rgba(11,19,38,0.98); border-top: 1px solid rgba(174,198,255,0.1); padding: 1.5rem 2rem; gap: 1.25rem; }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { color: #c4c6d0; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: color 0.2s; }
-    .mobile-nav a:hover { color: #aec6ff; }
-    .mobile-nav .mobile-cta { margin-top: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #aec6ff, #1d386a); color: #122f60; font-weight: 700; border-radius: 0.5rem; text-align: center; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: #aec6ff; border-radius: 2px; }
-    @media (max-width: 768px) { .hamburger { display: flex; } }
+  body { background:#fff; color:#0B1326; font-family:'Inter',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  .grad-text { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .grad-bg { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); }
+  .glass-light { background:rgba(255,255,255,0.65); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); }
+  .glass-card { background:#fff; border:1px solid #E5E7EB; transition:all .35s; }
+  .glass-card:hover { box-shadow:0 20px 60px -10px rgba(174,198,255,0.4), 0 0 0 1px rgba(174,198,255,0.3); transform:translateY(-2px); }
+  .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
+  .footer-svg-stroke { fill:transparent; stroke:#0B1326; stroke-width:0.6; opacity:0.08; }
+  .footer-svg-grad { fill:transparent; stroke:url(#footerGrad); stroke-width:0.6; }
+  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); }
+  .mobile-nav.open { display:flex; }
+  .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
+  .mobile-nav .mobile-cta { margin-top:.5rem; padding:.875rem 1.5rem; background:#0B1326; color:#fff; border-radius:.5rem; text-align:center; }
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
+  .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; }
+  @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
+  html { scroll-behavior:smooth; scroll-padding-top:80px; }
+  .dot-grid { background-image:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
 </style>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></head>
-<body class="bg-background text-on-surface font-body selection:bg-primary/30">
-<!-- Top Navigation Shell -->
-<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/40 backdrop-blur-xl border-b border-[#aec6ff]/10 shadow-[0_8px_32px_0_rgba(6,14,32,0.8)]">
-<div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto">
-<a href="/" class="text-xl font-bold tracking-tighter text-[#aec6ff] font-headline">AI CREW</a>
-<div class="hidden md:flex items-center space-x-10 font-['Plus_Jakarta_Sans'] tracking-tight text-sm font-semibold">
-<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/how-we-work">How We Work</a>
-<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/built-with-ai">Built With AI</a>
-<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/case-studies">Case Studies</a>
-<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/about">About</a>
-</div>
-<div class="flex items-center space-x-4">
-<a href="/book-demo"><button class="px-6 py-2.5 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm shadow-[0_0_20px_rgba(174,198,255,0.2)] hover:shadow-[0_0_30px_rgba(174,198,255,0.4)] transition-all scale-95 active:scale-90 duration-200">Book a Call</button></a>
-<button class="hamburger" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-</div>
-</div>
-<div class="mobile-nav" id="mobileNav">
-  <a href="/how-we-work">How We Work</a>
-  <a href="/built-with-ai">Built With AI</a>
-  <a href="/case-studies">Case Studies</a>
-  <a href="/about">About</a>
-  <a href="/book-demo" class="mobile-cta">Book a Call →</a>
-</div>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+</head>
+<body>
+<nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
+  <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
+    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></a>
+    <div class="desktop-nav flex items-center gap-2 font-headline text-sm font-semibold">
+      <a href="/how-we-work" class="px-4 py-2 text-ink hover:text-ink/70">How We Work</a>
+      <a href="/industries" class="px-4 py-2 text-ink hover:text-ink/70">Industries</a>
+      <a href="/case-studies" class="px-4 py-2 text-ink hover:text-ink/70">Case Studies</a>
+      <a href="/about" class="px-4 py-2 text-ink hover:text-ink/70">About</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="/book-demo" class="hidden lg:block mag-btn"><button class="px-5 py-2.5 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90">Book a Call</button></a>
+      <button class="hamburger" id="menuToggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/how-we-work">How We Work</a><a href="/industries">Industries</a>
+    <a href="/case-studies">Case Studies</a><a href="/about">About</a>
+    <a href="/book-demo" class="mobile-cta">Book a Call →</a>
+  </div>
 </nav>
-<main class="pt-20">
-<!-- Hero Section -->
-<section class="relative min-h-[819px] flex items-center justify-center px-8 py-20 overflow-hidden" data-aos="fade-up">
-<div class="absolute inset-0 z-0">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]"></div>
-<div class="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px]"></div>
-</div>
-<div class="relative z-10 max-w-5xl mx-auto text-center">
-<span class="inline-block mb-6 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 text-tertiary text-[10px] tracking-[0.2em] uppercase font-bold">
-          Beyond No-Code
-        </span>
-<h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-surface mb-8 leading-[0.9]">
-          The AI-First <br/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary">Web Experience.</span>
-</h1>
-<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-12">
-          We don't just build websites; we architect neural interfaces that evolve. Eliminate the latency between strategy and deployment with AI-native architecture.
-        </p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-<button class="px-8 py-4 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-lg shadow-lg hover:shadow-primary/20 transition-all flex items-center gap-2">
-            Initiate Project <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
-</button>
-<button class="px-8 py-4 rounded-xl ghost-border text-on-surface font-semibold text-lg hover:bg-surface-bright/10 transition-all">
-            View Live Architecture
-          </button>
-</div>
-</div>
+<main class="pt-16">
+
+<section class="px-6 lg:px-10 py-20 lg:py-32 max-w-[1400px] mx-auto">
+  <div class="max-w-4xl" data-aos="fade-up">
+    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-6">Fractional AI Agency · Web</div>
+    <h1 class="font-headline font-extrabold text-ink text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter leading-[0.92] mb-8">
+      AI websites that ship in days, <br/>
+      <span class="grad-text">not months.</span>
+    </h1>
+    <p class="text-lg md:text-xl text-ink-soft leading-relaxed max-w-3xl">High-converting websites and landing pages built using AI in the loop. Code, copy, design, deployment. From discovery to live URL in 7-14 days.</p>
+  </div>
 </section>
-<!-- Comparison Section: Tonal Transition -->
-<section class="py-24 bg-surface-container-low px-8" data-aos="fade-up">
-<div class="max-w-7xl mx-auto">
-<div class="mb-16">
-<h2 class="text-4xl font-headline font-bold text-on-surface mb-4">Evolutionary Shift</h2>
-<div class="w-24 h-1 bg-secondary rounded-full"></div>
-</div>
-<div class="grid md:grid-cols-2 gap-12 items-stretch">
-<!-- Traditional Dev -->
-<div class="glass-panel p-10 rounded-xl ghost-border space-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-<h3 class="text-2xl font-headline font-bold text-outline">Traditional Development</h3>
-<div class="space-y-6">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-error mt-1" data-icon="close">close</span>
-<div>
-<p class="font-bold text-on-surface">6-12 Week Delivery</p>
-<p class="text-sm text-on-surface-variant">Manual coding, back-and-forth design sprints.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-error mt-1" data-icon="close">close</span>
-<div>
-<p class="font-bold text-on-surface">Static Content</p>
-<p class="text-sm text-on-surface-variant">Fixed pages requiring manual updates and SEO tuning.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-error mt-1" data-icon="close">close</span>
-<div>
-<p class="font-bold text-on-surface">Brittle Scalability</p>
-<p class="text-sm text-on-surface-variant">Hard-coded features that break during updates.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- AI Web Dev -->
-<div class="relative p-10 rounded-xl bg-surface-container-highest ghost-border border-primary/30 shadow-2xl shadow-primary/5 space-y-8">
-<div class="absolute -top-4 right-8 bg-secondary px-3 py-1 rounded text-[10px] font-black text-on-secondary uppercase tracking-widest">Superior</div>
-<h3 class="text-2xl font-headline font-bold text-primary">Neural Web Architect</h3>
-<div class="space-y-6">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-tertiary mt-1" data-icon="check_circle">check_circle</span>
-<div>
-<p class="font-bold text-on-surface">48-Hour Rapid Prototyping</p>
-<p class="text-sm text-on-surface-variant">AI-accelerated coding workflows for instant deployment.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-tertiary mt-1" data-icon="check_circle">check_circle</span>
-<div>
-<p class="font-bold text-on-surface">Dynamic Self-Optimization</p>
-<p class="text-sm text-on-surface-variant">Pages that rewrite their own SEO meta-data in real-time.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-tertiary mt-1" data-icon="check_circle">check_circle</span>
-<div>
-<p class="font-bold text-on-surface">Component Fluidity</p>
-<p class="text-sm text-on-surface-variant">Self-healing code architecture that adapts to user behavior.</p>
-</div>
-</div>
-</div>
-<div class="pt-4">
-<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
-<div class="h-full w-4/5 bg-gradient-to-r from-primary to-tertiary"></div>
-</div>
-<p class="text-[10px] uppercase font-bold text-tertiary mt-2 tracking-widest">92% Efficiency Gain</p>
-</div>
-</div>
-</div>
-</div>
+
+<section class="py-12 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">rocket_launch</span></div>
+      <h3 class="font-headline font-bold text-xl text-ink mb-3">Ship in days</h3>
+      <p class="text-sm text-ink-soft leading-relaxed">Discovery to live URL in 7-14 days, not months.</p>
+    </div>
+    <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">design_services</span></div>
+      <h3 class="font-headline font-bold text-xl text-ink mb-3">AI-coded, human-polished</h3>
+      <p class="text-sm text-ink-soft leading-relaxed">Stitch + Claude Code + our design team. AI does the heavy lifting, humans add the taste.</p>
+    </div>
+    <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">speed</span></div>
+      <h3 class="font-headline font-bold text-xl text-ink mb-3">Performance + SEO baked in</h3>
+      <p class="text-sm text-ink-soft leading-relaxed">Lighthouse 90+, Core Web Vitals green, schema markup, meta + Open Graph done right.</p>
+    </div>
+    <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">hub</span></div>
+      <h3 class="font-headline font-bold text-xl text-ink mb-3">Built for AI integration</h3>
+      <p class="text-sm text-ink-soft leading-relaxed">Forms wired to your CRM, GPT-powered chat, content engines plugged in. Future-ready.</p>
+    </div>
+  </div>
 </section>
-<!-- Case Study Previews (Bento Grid) -->
-<section class="py-32 px-8 overflow-hidden" data-aos="fade-up">
-<div class="max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
-<div class="max-w-2xl">
-<h2 class="text-4xl md:text-5xl font-headline font-bold tracking-tight mb-6">Case Studies: <br/><span class="text-primary/60">The Neural Proof.</span></h2>
-<div class="insight-rail ml-4">
-<p class="text-on-surface-variant italic">"We transitioned from a legacy React site to Marketing Crew's Neural architecture and saw a 400% increase in mobile retention within the first month."</p>
-</div>
-</div>
-<button class="text-secondary font-bold flex items-center gap-2 hover:gap-4 transition-all">
-            Explore All Experiments <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-</button>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-<!-- Main Showcase -->
-<div class="md:col-span-8 group relative aspect-video md:aspect-auto h-[500px] rounded-xl overflow-hidden ghost-border">
-<img alt="Cyberpunk dashboard interface" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="High-tech glowing digital dashboard with complex UI elements" src="/dashboard-ui.png"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-<div class="absolute inset-0 border-[8px] border-primary/20 pointer-events-none rounded-xl"></div>
-<div class="absolute bottom-0 left-0 p-10 w-full">
-<div class="flex items-center gap-2 mb-4">
-<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
-<span class="text-[10px] font-black uppercase tracking-[0.3em] text-tertiary">Live Deployment</span>
-</div>
-<h3 class="text-3xl font-headline font-bold mb-2">Vortex FinTech</h3>
-<p class="text-on-surface-variant max-w-md">Automated SaaS dashboard for high-frequency trading visualization.</p>
-</div>
-</div>
-<!-- Secondary Study -->
-<div class="md:col-span-4 group relative h-[500px] rounded-xl overflow-hidden ghost-border">
-<img alt="Abstract futuristic geometry" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract vibrant geometric structures with neon accents" src="/abstract-art.png"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-8">
-<h3 class="text-2xl font-headline font-bold mb-2">Omni-Channel UI</h3>
-<p class="text-on-surface-variant text-sm mb-6">Cross-platform neural design for decentralized logistics.</p>
-<button class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="north_east">north_east</span>
-</button>
-</div>
-</div>
-<!-- Tertiary Study (Compact) -->
-<div class="md:col-span-12 glass-panel p-8 rounded-xl ghost-border flex flex-col md:flex-row items-center gap-12" data-aos="fade-up" data-aos-delay="100">
-<div class="flex-1">
-<h3 class="text-xl font-headline font-bold text-secondary mb-2">The Neural Framework</h3>
-<p class="text-on-surface-variant leading-relaxed">Our proprietary CSS-in-AI engine allows for real-time visual evolution based on current session heatmaps.</p>
-</div>
-<div class="flex gap-4">
-<div class="w-16 h-16 rounded-xl bg-surface-container-high flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="speed">speed</span>
-</div>
-<div class="w-16 h-16 rounded-xl bg-surface-container-high flex items-center justify-center">
-<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="deployed_code">deployed_code</span>
-</div>
-<div class="w-16 h-16 rounded-xl bg-surface-container-high flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary text-3xl" data-icon="hub">hub</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<section class="py-24 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-3xl mb-16" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">How a website ships</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">A clean engagement, every time.</h2>
+    </div>
+    <div class="space-y-6">
+      <div class="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row gap-8 items-start" data-aos="fade-up">
+        <div class="flex-shrink-0">
+          <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">01</div>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Day 1-2</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-3">Brief + design direction</h3>
+          <p class="text-ink-soft leading-relaxed">Discovery call, Stitch references, brand audit. We lock the design feel.</p>
+        </div>
+      </div>
+      <div class="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row gap-8 items-start" data-aos="fade-up">
+        <div class="flex-shrink-0">
+          <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">02</div>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Day 3-7</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-3">AI-coded build</h3>
+          <p class="text-ink-soft leading-relaxed">Stitch + Claude Code build the structure. Our team adds copy, polish, custom interactions.</p>
+        </div>
+      </div>
+      <div class="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row gap-8 items-start" data-aos="fade-up">
+        <div class="flex-shrink-0">
+          <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">03</div>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Day 8-12</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-3">Refine + content</h3>
+          <p class="text-ink-soft leading-relaxed">Real copy. Real images. Real interactions. Mobile + perf + accessibility passes.</p>
+        </div>
+      </div>
+      <div class="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row gap-8 items-start" data-aos="fade-up">
+        <div class="flex-shrink-0">
+          <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">04</div>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Day 13-14</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-3">Deploy + handover</h3>
+          <p class="text-ink-soft leading-relaxed">Push to Vercel/your host. SEO + analytics wired. Your team trained.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Final CTA Area -->
-<section class="py-24 px-8" data-aos="fade-up">
-<div class="max-w-4xl mx-auto text-center glass-panel p-16 rounded-[2rem] ghost-border border-primary/20 overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
-<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>
-<div class="relative z-10">
-<h2 class="text-4xl font-headline font-bold mb-6">Ready to launch your AI-built website?</h2>
-<p class="text-on-surface-variant mb-10 text-lg">Book a free 30-minute call and we'll show you exactly what we'd build for your business.</p>
-<div class="flex flex-wrap justify-center gap-4">
-<a href="/book-demo"><button class="px-10 py-4 rounded-xl bg-on-surface text-background font-black uppercase text-xs tracking-widest hover:bg-primary transition-all">Book a Free Strategy Call</button></a>
-<a href="/"><button class="px-10 py-4 rounded-xl ghost-border font-bold text-xs tracking-widest uppercase hover:bg-surface-variant">Back to Home</button></a>
-</div>
-</div>
-</div>
+
+<section class="py-24 lg:py-32 px-6 lg:px-10">
+  <div class="max-w-5xl mx-auto relative rounded-[2.5rem] overflow-hidden" data-aos="fade-up">
+    <div class="absolute inset-0 grad-bg"></div>
+    <div class="absolute inset-0 dot-grid"></div>
+    <div class="relative p-12 md:p-20 text-center">
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6">Need a site that ships fast?</h2>
+      <p class="text-lg text-ink/80 max-w-2xl mx-auto mb-10">45 minutes. We map your business and walk you through what we would build.</p>
+      <a href="/book-demo" class="mag-btn"><button class="px-10 py-5 bg-ink text-white rounded-xl font-headline font-bold text-lg hover:bg-ink/90 inline-flex items-center gap-2">Book a strategy call <span class="material-symbols-outlined">arrow_forward</span></button></a>
+    </div>
+  </div>
 </section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#0b1326] w-full py-12 px-8 border-t border-[#aec6ff]/5">
-<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-<div class="col-span-1 md:col-span-1">
-<a href="/" class="text-2xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-[#aec6ff] via-[#88f6df] to-[#ffbe2e] font-headline drop-shadow-md hover:scale-105 transition-transform">AI CREW</a>
-<p class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 leading-loose">
-          © 2026 AI Crew · From the makers of MarketinCrew. All rights reserved.
-        </p>
-</div>
-<div class="space-y-4">
-<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 font-bold">Solutions</h4>
-<ul class="space-y-2">
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="/web-dev">AI Web Dev</a></li>
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="/content-studio">AI Content</a></li>
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="/outreach">AI Outreach</a></li>
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="/automations">AI Automations</a></li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 font-bold">Company</h4>
-<ul class="space-y-2">
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="/book-demo">Book a Demo</a></li>
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="mailto:hello@marketincrew.com">Contact Us</a></li>
-<li><a class="text-slate-500 hover:text-[#6ad9c3] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="https://marketincrew.com" target="_blank">Marketing Crew ↗</a></li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 font-bold">Status</h4>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-tertiary"></span>
-<span class="text-slate-500 font-['Inter'] text-xs tracking-widest uppercase">All Systems Operational</span>
-</div>
-</div>
-</div>
+
+<footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
+    <div class="col-span-2">
+      <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">The AI studio for founders, business owners and high-earning professionals.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">Instagram</a>
+        <a href="https://www.mananmehta.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">mananmehta.com</a>
+      </div>
+    </div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Work</h4><ul class="space-y-2.5 text-sm"><li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li><li><a href="/industries" class="text-ink-soft hover:text-ink">Industries</a></li><li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case studies</a></li></ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4><ul class="space-y-2.5 text-sm"><li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li><li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content</a></li><li><a href="/automations" class="text-ink-soft hover:text-ink">AI Automations</a></li><li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li></ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4><ul class="space-y-2.5 text-sm"><li><a href="/about" class="text-ink-soft hover:text-ink">About Manan</a></li><li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li></ul></div>
+  </div>
+  <div class="max-w-[1400px] mx-auto -mb-8 select-none">
+    <svg viewBox="0 0 800 200" class="w-full" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#aec6ff"/><stop offset="50%" stop-color="#6ad9c3"/><stop offset="100%" stop-color="#ffbe2e"/></linearGradient></defs>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-stroke" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-grad" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+    </svg>
+  </div>
+  <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
+    <span>© 2026 AI Crew · From the makers of MarketinCrew · 300+ brands shipped</span>
+    <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
+  </div>
 </footer>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init({duration: 800, once: true, offset: 50});</script>
+
+</main>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuToggle && mobileNav) {
-    menuToggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
-    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
-  }
-</script>
-<!-- Cursor Glow Effect -->
-<div id="cursor-glow" class="fixed pointer-events-none z-50 w-[800px] h-[800px] rounded-full translate-x-[-50%] translate-y-[-50%] opacity-60 mix-blend-screen transition-transform duration-300 ease-out" style="background: radial-gradient(circle, rgba(136, 246, 223, 0.08) 0%, rgba(0,0,0,0) 60%); top: -1000px; left: -1000px;"></div>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const glow = document.getElementById("cursor-glow");
-        let isMoving = false;
-        document.addEventListener("mousemove", (e) => {
-            if (!isMoving) {
-                requestAnimationFrame(() => {
-                    glow.style.left = e.clientX + "px";
-                    glow.style.top = e.clientY + "px";
-                    isMoving = false;
-                });
-                isMoving = true;
-            }
-        });
-        
-        // Enhance glow smartly when hovering over interactive/glass elements
-        const clickables = document.querySelectorAll("a, button, .glass-panel");
-        clickables.forEach(el => {
-            el.addEventListener("mouseenter", () => {
-                glow.style.background = "radial-gradient(circle, rgba(174, 198, 255, 0.15) 0%, rgba(0,0,0,0) 60%)";
-                glow.style.transform = "translate(-50%, -50%) scale(1.1)";
-            });
-            el.addEventListener("mouseleave", () => {
-                glow.style.background = "radial-gradient(circle, rgba(136, 246, 223, 0.08) 0%, rgba(0,0,0,0) 60%)";
-                glow.style.transform = "translate(-50%, -50%) scale(1)";
-            });
-        });
+  AOS.init({ duration:700, once:true, offset:80 });
+  const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
+  mt.addEventListener('click',()=>mn.classList.toggle('open'));
+  document.querySelectorAll('.mag-btn').forEach(btn => {
+    let raf;
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const dx=(e.clientX-(r.left+r.width/2))*0.25, dy=(e.clientY-(r.top+r.height/2))*0.25;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => { btn.style.transform = `translate(${dx}px, ${dy}px)`; });
     });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
+  });
 </script>
-\n</body></html>
+</body>
+</html>

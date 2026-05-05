@@ -1,616 +1,670 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI Crew | AI Consultancy for Founders &amp; Professionals · AI Transformation</title>
-<meta name="description" content="AI Crew works one-to-one with founders, business owners, lawyers, doctors and high-earning professionals to install AI across their work, life and business. From the makers of MarketinCrew." />
-<meta name="keywords" content="AI consultancy, AI transformation, AI for founders, AI for professionals, AI for lawyers, AI for doctors, AI for CAs, AI productivity, fractional AI agency, AI agency India, AI consultancy India, AI transformation India, AI strategy" />
+<title>AI Crew | The AI Studio for Founders &amp; Professionals</title>
+<meta name="description" content="AI Crew is the AI studio for founders, business owners, lawyers, doctors and high-earning professionals. We step inside your universe and rebuild it with AI. From the makers of MarketinCrew." />
+<meta name="keywords" content="AI consultancy, AI studio, AI transformation, AI for founders, AI for professionals, AI for lawyers, AI for doctors, AI for CAs, AI productivity, fractional AI agency, AI agency India, AI consultancy India, AI transformation India, AI strategy, AI operators" />
 <meta name="author" content="AI Crew · From the makers of MarketinCrew" />
 <link rel="canonical" href="https://aicrew.io/" />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://aicrew.io/" />
-<meta property="og:title" content="AI Crew | AI Consultancy for Founders &amp; Professionals" />
-<meta property="og:description" content="We step inside your universe and rebuild it with AI. One-to-one AI consultancy for founders, business owners and high-earning professionals." />
-<meta property="og:image" content="https://aicrew.io/og-image.png" />
+<meta property="og:title" content="AI Crew | The AI Studio for Founders &amp; Professionals" />
+<meta property="og:description" content="We step inside your universe and rebuild it with AI. The AI studio for founders, business owners and high-earning professionals." />
+<meta property="og:image" content="https://aicrew.io/images/stock/hero.jpg" />
 <meta property="og:site_name" content="AI Crew" />
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="AI Crew | AI Consultancy for Founders &amp; Professionals" />
-<meta name="twitter:description" content="We step inside your universe and rebuild it with AI. One-to-one AI consultancy for founders and professionals." />
-<meta name="twitter:image" content="https://aicrew.io/og-image.png" />
+<meta name="twitter:title" content="AI Crew | The AI Studio for Founders &amp; Professionals" />
+<meta name="twitter:description" content="We step inside your universe and rebuild it with AI." />
+<meta name="twitter:image" content="https://aicrew.io/images/stock/hero.jpg" />
 
-<!-- Schema.org -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "AI Crew",
-  "description": "Premium one-to-one AI consultancy for founders, business owners and high-earning professionals. We install AI across your work, life and business.",
+  "description": "The AI studio for founders, business owners and high-earning professionals. We install AI across your work, life and business.",
   "url": "https://aicrew.io",
-  "logo": "https://aicrew.io/logo.png",
-  "founder": {
-    "@type": "Person",
-    "name": "Manan Mehta"
-  },
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "MarketinCrew",
-    "url": "https://marketincrew.com"
-  },
-  "areaServed": ["IN", "FR", "GB", "US", "AE"],
-  "serviceType": [
-    "AI Consultancy",
-    "AI Transformation",
-    "AI Strategy",
-    "AI Automation",
-    "Fractional AI Agency",
-    "AI for Founders",
-    "AI for Professionals"
-  ],
-  "audience": {
-    "@type": "BusinessAudience",
-    "audienceType": "Founders, business owners, lawyers, doctors, surgeons, chartered accountants, financial advisors, architects, agency owners"
-  }
+  "founder": {"@type":"Person","name":"Manan Mehta","url":"https://www.mananmehta.com","sameAs":["https://www.instagram.com/manan.mehta.marketing/"]},
+  "parentOrganization": {"@type":"Organization","name":"MarketinCrew","url":"https://marketincrew.com"},
+  "areaServed": ["IN","FR","GB","US","AE"],
+  "serviceType": ["AI Consultancy","AI Transformation","AI Strategy","AI Automation","Fractional AI Agency","AI for Founders","AI for Professionals","AI for Lawyers","AI for Doctors","AI for CAs"],
+  "audience": {"@type":"BusinessAudience","audienceType":"Founders, business owners, lawyers, doctors, surgeons, chartered accountants, financial advisors, architects, agency owners"}
 }
 </script>
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
 <script id="tailwind-config">
   tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "background": "#0b1326",
-          "surface": "#171f33",
-          "surface-bright": "#31394d",
-          "surface-container": "#171f33",
-          "surface-container-high": "#222a3d",
-          "surface-container-lowest": "#060e20",
-          "primary": "#aec6ff",
-          "primary-container": "#1d386a",
-          "on-primary": "#122f60",
-          "secondary": "#ffbe2e",
-          "tertiary": "#6ad9c3",
-          "on-background": "#dae2fd",
-          "on-surface": "#dae2fd",
-          "on-surface-variant": "#c4c6d0",
-          "outline": "#8e909a",
-          "outline-variant": "#44474f"
-        },
-        fontFamily: {
-          "headline": ["Plus Jakarta Sans", "sans-serif"],
-          "body": ["Inter", "sans-serif"],
-          "label": ["Inter", "sans-serif"]
-        },
-        borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+    theme: { extend: {
+      colors: {
+        "bg": "#FFFFFF",
+        "bg-soft": "#F8F9FB",
+        "bg-mute": "#F1F4FA",
+        "ink": "#0B1326",
+        "ink-soft": "#3A4256",
+        "ink-mute": "#6B7280",
+        "border": "#E5E7EB",
+        "border-soft": "#F0F2F5",
+        "accent-1": "#aec6ff",
+        "accent-2": "#6ad9c3",
+        "accent-3": "#ffbe2e",
+        "accent-4": "#0B1326"
       },
-    },
+      fontFamily: {
+        "headline": ["Plus Jakarta Sans","sans-serif"],
+        "body": ["Inter","sans-serif"],
+        "serif": ["Instrument Serif","serif"]
+      },
+      borderRadius: {"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","full":"9999px"}
+    }}
   }
 </script>
 
 <style>
-  body {
-    background-color: #0b1326;
-    color: #dae2fd;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-  }
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
-  .insight-rail {
-    width: 2px;
-    background: linear-gradient(to bottom, #aec6ff, transparent);
-  }
-  .glass-panel {
-    background: rgba(45, 52, 73, 0.4);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(142, 144, 154, 0.15);
-  }
-  .hero-gradient {
-    background: radial-gradient(circle at 50% -10%, rgba(174, 198, 255, 0.18) 0%, rgba(11, 19, 38, 0) 60%);
-  }
-  .glow-accent {
-    filter: drop-shadow(0 0 8px rgba(174, 198, 255, 0.4));
-  }
-  .cursor-glow {
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(174,198,255,0.06) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s;
-  }
-  .marquee {
-    display: flex;
-    gap: 3rem;
-    animation: scroll 40s linear infinite;
-    width: max-content;
-  }
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .mobile-nav {
-    display: none;
-    flex-direction: column;
-    background: rgba(11,19,38,0.98);
-    border-top: 1px solid rgba(174,198,255,0.1);
-    padding: 1.5rem 2rem;
-    gap: 1.25rem;
-  }
-  .mobile-nav.open { display: flex; }
-  .mobile-nav a {
-    color: #c4c6d0;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .mobile-nav a:hover { color: #aec6ff; }
-  .mobile-nav .mobile-cta {
-    margin-top: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #aec6ff, #1d386a);
-    color: #122f60;
-    font-weight: 700;
-    border-radius: 0.5rem;
-    text-align: center;
-  }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
-  .hamburger span { display: block; width: 22px; height: 2px; background: #aec6ff; border-radius: 2px; transition: all 0.3s; }
-  @media (max-width: 768px) {
-    .hamburger { display: flex; }
-  }
-  .step-line {
-    background: linear-gradient(180deg, rgba(174,198,255,0.5) 0%, rgba(174,198,255,0) 100%);
-  }
-  .grain::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(174,198,255,0.04) 1px, transparent 1px);
-    background-size: 4px 4px;
-    pointer-events: none;
-    opacity: 0.5;
-  }
+  body { background:#fff; color:#0B1326; font-family:'Inter',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  .grad-text { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .grad-bg { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); }
+  .grad-overlay { background:linear-gradient(135deg, rgba(174,198,255,0.85) 0%, rgba(106,217,195,0.7) 50%, rgba(255,190,46,0.6) 100%); }
+  .glass-light { background:rgba(255,255,255,0.65); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); }
+  .glass-dark { background:rgba(11,19,38,0.4); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.1); }
+  .glass-card { background:#fff; border:1px solid #E5E7EB; transition:all .35s; }
+  .glass-card:hover { border-color:transparent; box-shadow:0 20px 60px -10px rgba(174,198,255,0.4), 0 0 0 1px rgba(174,198,255,0.3); transform:translateY(-2px); }
+
+  /* Hero accordion */
+  .accordion-item { transition:width .7s cubic-bezier(.23,1,.32,1); }
+  .accordion-item img { transition:transform 1.2s; }
+  .accordion-item:hover img { transform:scale(1.05); }
+
+  /* Mega menu */
+  .mega-trigger:hover .mega-panel, .mega-panel:hover { opacity:1; pointer-events:auto; transform:translateY(0); }
+  .mega-panel { opacity:0; pointer-events:none; transform:translateY(-8px); transition:all .3s; }
+
+  /* Magnetic button */
+  .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
+
+  /* Logo cloud */
+  .marquee-track { display:flex; gap:4rem; animation:scroll 50s linear infinite; width:max-content; }
+  @keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .marquee-mask { mask-image:linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image:linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+
+  /* Footer SVG text effect */
+  .footer-svg-text { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:24vw; letter-spacing:-0.04em; }
+  .footer-svg-stroke { fill:transparent; stroke:#0B1326; stroke-width:0.6; opacity:0.08; }
+  .footer-svg-grad { fill:transparent; stroke:url(#footerGrad); stroke-width:0.6; }
+
+  /* Mobile nav */
+  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem 1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); }
+  .mobile-nav.open { display:flex; }
+  .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
+  .mobile-nav .mobile-cta { margin-top:.5rem; padding:.875rem 1.5rem; background:#0B1326; color:#fff; border-radius:.5rem; text-align:center; }
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
+  .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; transition:all .25s; }
+  @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
+
+  /* Industries gradient overlay tile */
+  .industry-tile { position:relative; overflow:hidden; transition:all .4s; }
+  .industry-tile img { transition:transform .8s; }
+  .industry-tile:hover img { transform:scale(1.08); }
+  .industry-tile::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%); }
+  .industry-label { position:absolute; bottom:1.5rem; left:1.5rem; right:1.5rem; z-index:2; color:#fff; }
+
+  /* Hero glass over image */
+  .hero-bg { position:absolute; inset:0; background-image:url('/images/stock/hero.jpg'); background-size:cover; background-position:center; }
+  .hero-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(248,249,251,0.96) 50%, rgba(255,255,255,1) 100%); }
+
+  /* Testimonial card */
+  .testi-card { transition:all .35s; cursor:pointer; }
+  .testi-card:hover { transform:translateY(-4px) scale(1.02); box-shadow:0 24px 48px -12px rgba(11,19,38,0.18); }
+
+  /* Anchor scroll padding */
+  html { scroll-behavior:smooth; scroll-padding-top:80px; }
+
+  /* Subtle dot pattern */
+  .dot-grid { background-image:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
 </style>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
-<body class="bg-background selection:bg-primary/30">
+<body>
 
-<!-- Cursor glow -->
-<div class="cursor-glow" id="cursorGlow"></div>
+<!-- ============================== NAV ============================== -->
+<nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
+  <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
+    <!-- Logo (gradient text) -->
+    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter">
+      <span class="grad-text">AI</span>
+      <span class="text-ink">CREW</span>
+    </a>
 
-<!-- Top Nav -->
-<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/40 backdrop-blur-xl border-b border-[#aec6ff]/10 shadow-[0_8px_32px_0_rgba(6,14,32,0.8)]">
-  <div class="flex justify-between items-center px-6 md:px-8 h-20 max-w-7xl mx-auto">
-    <a href="/" class="text-xl font-bold tracking-tighter text-[#aec6ff] font-headline">AI CREW</a>
-    <div class="hidden md:flex items-center space-x-10 font-['Plus_Jakarta_Sans'] tracking-tight text-sm font-semibold">
-      <a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/how-we-work">How We Work</a>
-      <a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/built-with-ai">Built With AI</a>
-      <a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/case-studies">Case Studies</a>
-      <a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/about">About</a>
+    <!-- Desktop nav -->
+    <div class="desktop-nav flex items-center gap-2 font-headline text-sm font-semibold">
+      <!-- Services trigger -->
+      <div class="mega-trigger relative">
+        <button class="px-4 py-2 text-ink hover:text-ink/70 flex items-center gap-1 transition-colors">
+          AI Services
+          <span class="material-symbols-outlined text-base">expand_more</span>
+        </button>
+        <!-- Mega panel -->
+        <div class="mega-panel fixed left-0 right-0 top-16 bg-white border-b border-border shadow-[0_24px_48px_-12px_rgba(11,19,38,0.12)]">
+          <div class="max-w-[1400px] mx-auto px-10 py-12 grid grid-cols-12 gap-10">
+            <div class="col-span-3">
+              <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Three Pillars</div>
+              <ul class="space-y-3">
+                <li><a href="/how-we-work#founder-os" class="font-headline font-bold text-lg text-ink hover:grad-text transition-all">Founder OS</a><div class="text-xs text-ink-mute mt-1">Your time, inbox, calendar, run by AI</div></li>
+                <li><a href="/how-we-work#company-layer" class="font-headline font-bold text-lg text-ink hover:grad-text transition-all">Company AI Layer</a><div class="text-xs text-ink-mute mt-1">Agents, automations, outreach, content</div></li>
+                <li><a href="/how-we-work#fractional-agency" class="font-headline font-bold text-lg text-ink hover:grad-text transition-all">Fractional AI Agency</a><div class="text-xs text-ink-mute mt-1">A 50-person agency behind one face</div></li>
+              </ul>
+            </div>
+            <div class="col-span-3">
+              <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Build with us</div>
+              <ul class="space-y-3 text-sm">
+                <li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li>
+                <li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content Studio</a></li>
+                <li><a href="/automations" class="text-ink-soft hover:text-ink">AI Automations</a></li>
+                <li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li>
+              </ul>
+            </div>
+            <div class="col-span-3">
+              <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">For</div>
+              <ul class="space-y-3 text-sm">
+                <li><a href="/industries#tech" class="text-ink-soft hover:text-ink">Tech &amp; SaaS Founders</a></li>
+                <li><a href="/industries#legal" class="text-ink-soft hover:text-ink">Lawyers &amp; Law Firms</a></li>
+                <li><a href="/industries#healthcare" class="text-ink-soft hover:text-ink">Doctors &amp; Clinics</a></li>
+                <li><a href="/industries#finance" class="text-ink-soft hover:text-ink">CAs &amp; Wealth Advisors</a></li>
+                <li><a href="/industries#architects" class="text-ink-soft hover:text-ink">Architects &amp; Studios</a></li>
+                <li><a href="/industries" class="text-ink font-bold mt-2 inline-block">All industries →</a></li>
+              </ul>
+            </div>
+            <div class="col-span-3">
+              <a href="/case-studies" class="block relative rounded-xl overflow-hidden h-full min-h-[180px]">
+                <img src="/images/stock/team.jpg" class="absolute inset-0 w-full h-full object-cover" alt="AI Crew clients"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-ink/90 to-ink/10"></div>
+                <div class="relative p-5 h-full flex flex-col justify-end text-white">
+                  <div class="text-xs uppercase tracking-[0.2em] font-bold opacity-80">Featured</div>
+                  <div class="font-headline font-bold text-lg mt-1">Real outcomes from real engagements</div>
+                  <div class="text-xs opacity-80 mt-2 inline-flex items-center gap-1">See case studies <span class="material-symbols-outlined text-sm">arrow_forward</span></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/industries" class="px-4 py-2 text-ink hover:text-ink/70 transition-colors">Industries</a>
+      <a href="/case-studies" class="px-4 py-2 text-ink hover:text-ink/70 transition-colors">Case Studies</a>
+      <a href="/about" class="px-4 py-2 text-ink hover:text-ink/70 transition-colors">About</a>
     </div>
-    <div class="flex items-center space-x-4">
-      <a href="/book-demo" class="hidden md:block">
-        <button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-bold text-sm hover:scale-95 active:scale-90 transition-all duration-200 shadow-lg shadow-primary/10">Book a Call</button>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-3">
+      <a href="/book-demo" class="hidden lg:block mag-btn">
+        <button class="px-5 py-2.5 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90 transition-all">Book a Call</button>
       </a>
-      <button class="hamburger" id="menuToggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>
   <div class="mobile-nav" id="mobileNav">
     <a href="/how-we-work">How We Work</a>
-    <a href="/built-with-ai">Built With AI</a>
+    <a href="/industries">Industries</a>
     <a href="/case-studies">Case Studies</a>
     <a href="/about">About</a>
     <a href="/book-demo" class="mobile-cta">Book a Call →</a>
   </div>
 </nav>
 
-<main class="relative pt-20">
+<main class="pt-16">
 
-<!-- 1. HERO -->
-<section class="relative min-h-[88vh] flex items-center justify-center px-6 md:px-8 hero-gradient grain" data-aos="fade-up">
-  <div class="max-w-5xl mx-auto w-full flex flex-col items-center text-center gap-10 relative z-10">
-    <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-      <span class="w-2 h-2 rounded-full bg-secondary mr-3 animate-pulse"></span>
-      <span class="text-[10px] font-label font-bold tracking-[0.2em] uppercase text-primary">From the makers of MarketinCrew</span>
-    </div>
-    <h1 class="text-5xl md:text-7xl lg:text-8xl font-headline font-extrabold tracking-tighter leading-[0.95] text-on-background">
-      We step inside your <br />
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">universe</span> and rebuild it<br />
-      with AI.
-    </h1>
-    <p class="text-lg md:text-2xl text-on-surface-variant max-w-3xl font-body leading-relaxed">
-      One-to-one AI consultancy for founders, business owners and high-earning professionals. We install AI across your work, your life and your business.
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-      <a href="/book-demo">
-        <button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:scale-95 active:scale-90 transition-all text-lg shadow-xl shadow-primary/20">
-          Book a Strategy Call
-        </button>
-      </a>
-      <a href="/how-we-work">
-        <button class="px-8 py-4 border border-outline-variant/40 text-on-surface font-bold rounded-xl hover:bg-surface-bright transition-all text-lg flex items-center justify-center gap-2">
-          See how we work
-          <span class="material-symbols-outlined text-secondary">arrow_forward</span>
-        </button>
-      </a>
-    </div>
-    <div class="flex items-center gap-6 text-xs text-outline tracking-widest uppercase font-label pt-6">
-      <span>Founders</span>
-      <span class="w-1 h-1 rounded-full bg-outline"></span>
-      <span>Doctors</span>
-      <span class="w-1 h-1 rounded-full bg-outline"></span>
-      <span>Lawyers</span>
-      <span class="w-1 h-1 rounded-full bg-outline"></span>
-      <span>CAs</span>
-      <span class="w-1 h-1 rounded-full bg-outline"></span>
-      <span>Architects</span>
-    </div>
-  </div>
-</section>
+<!-- ============================== HERO ============================== -->
+<section class="relative overflow-hidden">
+  <div class="hero-bg"></div>
+  <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-32 grid grid-cols-12 gap-10 items-center">
 
-<!-- 2. THE PROBLEM -->
-<section class="py-32 px-6 md:px-8 max-w-6xl mx-auto" data-aos="fade-up">
-  <div class="flex items-center gap-4 mb-10">
-    <div class="insight-rail h-8"></div>
-    <span class="text-xs font-label font-bold tracking-[0.3em] uppercase text-outline">01 · The reality</span>
-  </div>
-  <h2 class="text-3xl md:text-5xl font-headline font-bold leading-tight max-w-4xl mb-12">
-    AI is everywhere. <span class="text-on-surface-variant">Almost none of it is plugged into your work.</span>
-  </h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-    <div class="glass-panel p-8 rounded-xl">
-      <div class="text-5xl font-headline font-bold text-primary mb-4">14h</div>
-      <p class="text-on-surface-variant leading-relaxed text-sm">Hours a week the average founder loses to inbox, calendar gymnastics and tasks AI could already handle.</p>
-    </div>
-    <div class="glass-panel p-8 rounded-xl">
-      <div class="text-5xl font-headline font-bold text-secondary mb-4">87%</div>
-      <p class="text-on-surface-variant leading-relaxed text-sm">Of professionals say they want to use AI more, but cannot figure out where to start, or who to trust to set it up.</p>
-    </div>
-    <div class="glass-panel p-8 rounded-xl">
-      <div class="text-5xl font-headline font-bold text-tertiary mb-4">3x</div>
-      <p class="text-on-surface-variant leading-relaxed text-sm">The output uplift founders see in the first 90 days when AI is installed properly across the business, not as a plugin, as a system.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 3. THE METHOD (3 STEPS) -->
-<section class="py-32 px-6 md:px-8 bg-surface-container-lowest relative overflow-hidden">
-  <div class="max-w-6xl mx-auto" data-aos="fade-up">
-    <div class="flex items-center gap-4 mb-10">
-      <div class="insight-rail h-8"></div>
-      <span class="text-xs font-label font-bold tracking-[0.3em] uppercase text-outline">02 · The method</span>
-    </div>
-    <h2 class="text-3xl md:text-5xl font-headline font-bold leading-tight max-w-4xl mb-20">
-      We get inside your business. Then we rebuild it.
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-      <div class="relative">
-        <div class="text-7xl font-headline font-extrabold text-primary/20 mb-6">01</div>
-        <h3 class="text-2xl font-headline font-bold mb-4 text-on-background">Map your universe</h3>
-        <p class="text-on-surface-variant leading-relaxed">We sit with you and learn how your work actually runs. How you win, how you make money, where time leaks, what only you can do.</p>
+    <!-- LEFT: Text -->
+    <div class="col-span-12 lg:col-span-7" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-light text-xs font-headline font-bold tracking-wider uppercase text-ink mb-8">
+        <span class="w-1.5 h-1.5 rounded-full grad-bg animate-pulse"></span>
+        From the makers of MarketinCrew
       </div>
-      <div class="relative">
-        <div class="text-7xl font-headline font-extrabold text-secondary/20 mb-6">02</div>
-        <h3 class="text-2xl font-headline font-bold mb-4 text-on-background">Plug AI in, surgically</h3>
-        <p class="text-on-surface-variant leading-relaxed">We map every workflow to an AI agent, automation, system or model. Nothing generic. Everything tailored to how you operate.</p>
-      </div>
-      <div class="relative">
-        <div class="text-7xl font-headline font-extrabold text-tertiary/20 mb-6">03</div>
-        <h3 class="text-2xl font-headline font-bold mb-4 text-on-background">Build, run, manage</h3>
-        <p class="text-on-surface-variant leading-relaxed">We do not hand you a deck and leave. We build the systems, run them, train your team, and stay on as your AI operating partner.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. THREE PILLARS -->
-<section class="py-32 px-6 md:px-8 max-w-7xl mx-auto" data-aos="fade-up">
-  <div class="flex items-center gap-4 mb-10">
-    <div class="insight-rail h-8"></div>
-    <span class="text-xs font-label font-bold tracking-[0.3em] uppercase text-outline">03 · What we build</span>
-  </div>
-  <h2 class="text-3xl md:text-5xl font-headline font-bold leading-tight max-w-4xl mb-6">
-    Three layers of AI. <br/>
-    <span class="text-on-surface-variant">Wired into your day, your team, your growth.</span>
-  </h2>
-  <p class="text-on-surface-variant text-lg max-w-2xl mb-16">From your inbox to your outreach engine, we install AI as a system, not a side tool.</p>
-
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <!-- Pillar 1: Founder OS -->
-    <div class="glass-panel p-10 rounded-xl group hover:border-primary/40 transition-all duration-500 flex flex-col">
-      <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-        <span class="material-symbols-outlined text-primary text-3xl">target</span>
-      </div>
-      <div class="text-xs font-label font-bold tracking-[0.2em] uppercase text-primary mb-3">Pillar 01</div>
-      <h3 class="text-2xl font-headline font-bold mb-4">Founder OS</h3>
-      <p class="text-on-surface-variant font-body leading-relaxed mb-8">Your time, inbox, calendar, knowledge and decisions, run by AI. We give you back ten to fifteen hours a week.</p>
-      <ul class="space-y-3 mb-8 flex-1">
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span> Inbox triage + drafted replies in your voice</li>
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span> Calendar + meeting prep, run automatically</li>
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span> Personal knowledge base, searchable in seconds</li>
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span> Tasks, reminders + decisions, all in one stream</li>
-      </ul>
-      <a href="/how-we-work#founder-os" class="text-primary text-sm font-semibold mt-auto">Learn more →</a>
-    </div>
-
-    <!-- Pillar 2: Company AI Layer -->
-    <div class="glass-panel p-10 rounded-xl group hover:border-secondary/40 transition-all duration-500 flex flex-col">
-      <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-        <span class="material-symbols-outlined text-secondary text-3xl">hub</span>
-      </div>
-      <div class="text-xs font-label font-bold tracking-[0.2em] uppercase text-secondary mb-3">Pillar 02</div>
-      <h3 class="text-2xl font-headline font-bold mb-4">Company AI Layer</h3>
-      <p class="text-on-surface-variant font-body leading-relaxed mb-8">AI agents, automations and systems plugged in across your business. Marketing, outreach, ops, support, internal tooling.</p>
-      <ul class="space-y-3 mb-8 flex-1">
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0 mt-2"></span> AI outreach systems that book meetings</li>
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0 mt-2"></span> Content engines for social, blog, video</li>
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0 mt-2"></span> Ops + finance + support automations</li>
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0 mt-2"></span> Custom GPTs + agents for your team</li>
-      </ul>
-      <a href="/how-we-work#company-layer" class="text-secondary text-sm font-semibold mt-auto">Learn more →</a>
-    </div>
-
-    <!-- Pillar 3: Fractional AI Agency -->
-    <div class="glass-panel p-10 rounded-xl group hover:border-tertiary/40 transition-all duration-500 flex flex-col">
-      <div class="w-14 h-14 rounded-xl bg-tertiary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-        <span class="material-symbols-outlined text-tertiary text-3xl">rocket_launch</span>
-      </div>
-      <div class="text-xs font-label font-bold tracking-[0.2em] uppercase text-tertiary mb-3">Pillar 03</div>
-      <h3 class="text-2xl font-headline font-bold mb-4">Fractional AI Agency</h3>
-      <p class="text-on-surface-variant font-body leading-relaxed mb-8">We become the AI build arm of your business. Whatever needs to be created, we make it, run it, and stay on it.</p>
-      <ul class="space-y-3 mb-8 flex-1">
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-tertiary flex-shrink-0 mt-2"></span> AI websites, landing pages, micro sites</li>
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-tertiary flex-shrink-0 mt-2"></span> Custom AI agents + multi-agent workflows</li>
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-tertiary flex-shrink-0 mt-2"></span> Voice, image, video AI pipelines</li>
-        <li class="flex items-start gap-3 text-sm text-on-surface/80"><span class="w-1.5 h-1.5 rounded-full bg-tertiary flex-shrink-0 mt-2"></span> A 50-person agency behind one face</li>
-      </ul>
-      <a href="/how-we-work#fractional-agency" class="text-tertiary text-sm font-semibold mt-auto">Learn more →</a>
-    </div>
-  </div>
-</section>
-
-<!-- 5. BUILT WITH AI -->
-<section class="py-32 px-6 md:px-8 bg-surface-container-lowest relative overflow-hidden">
-  <div class="max-w-6xl mx-auto relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" data-aos="fade-up">
-      <div>
-        <div class="flex items-center gap-4 mb-10">
-          <div class="insight-rail h-8"></div>
-          <span class="text-xs font-label font-bold tracking-[0.3em] uppercase text-outline">04 · The meta layer</span>
-        </div>
-        <h2 class="text-3xl md:text-5xl font-headline font-bold leading-tight mb-8">
-          AI Crew is itself <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">built using AI.</span>
-        </h2>
-        <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-          Every page, every system, every campaign you see here was built with AI in the loop. We are documenting the entire journey publicly. The same way we will build yours.
-        </p>
-        <p class="text-on-surface-variant text-lg leading-relaxed mb-10">
-          Follow along on Instagram and LinkedIn as we build a global AI consultancy in the open, day by day.
-        </p>
-        <a href="/built-with-ai">
-          <button class="px-8 py-4 border border-primary/30 text-primary font-bold rounded-xl hover:bg-primary/10 transition-all text-lg flex items-center gap-2 inline-flex">
-            See the journey
-            <span class="material-symbols-outlined">arrow_forward</span>
+      <h1 class="font-headline font-extrabold text-ink leading-[0.92] tracking-tighter text-5xl md:text-6xl lg:text-7xl xl:text-[92px] mb-8">
+        We step inside your <span class="grad-text">universe</span> and rebuild it with AI.
+      </h1>
+      <p class="text-lg md:text-xl text-ink-soft max-w-2xl leading-relaxed mb-10">
+        AI Crew is the AI studio for founders, business owners and high-earning professionals. We install AI across your work, your life and your business. One face. A 50-person agency behind it.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <a href="/book-demo" class="mag-btn">
+          <button class="px-8 py-4 bg-ink text-white rounded-xl font-headline font-bold text-base hover:bg-ink/90 transition-all flex items-center gap-2">
+            Book a strategy call
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
           </button>
         </a>
+        <a href="/how-we-work" class="mag-btn">
+          <button class="px-8 py-4 bg-white border border-border text-ink rounded-xl font-headline font-bold text-base hover:bg-bg-mute transition-all">See how we work</button>
+        </a>
       </div>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="glass-panel p-6 rounded-xl">
-          <div class="text-3xl font-headline font-bold text-primary mb-2">Day 01</div>
-          <p class="text-sm text-on-surface-variant">Brand kit + tagline drafted with AI in 90 minutes</p>
+
+      <!-- Audience pills -->
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-ink-mute uppercase tracking-[0.18em] font-bold">
+        <span>Founders</span><span class="text-border">·</span>
+        <span>Doctors</span><span class="text-border">·</span>
+        <span>Lawyers</span><span class="text-border">·</span>
+        <span>CAs</span><span class="text-border">·</span>
+        <span>Architects</span><span class="text-border">·</span>
+        <span>Advisors</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Image accordion -->
+    <div class="col-span-12 lg:col-span-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="flex gap-2 h-[480px] md:h-[520px]" id="heroAccordion">
+        <div class="accordion-item relative rounded-2xl overflow-hidden cursor-pointer flex-shrink-0 w-[60px]" data-active="false">
+          <img src="/images/stock/founder.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Founder"/>
+          <div class="absolute inset-0 grad-overlay opacity-0 transition-opacity duration-700"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent"></div>
+          <span class="absolute left-1/2 bottom-24 -translate-x-1/2 rotate-90 origin-center text-white text-xs font-headline font-bold tracking-[0.2em] uppercase whitespace-nowrap">Founder OS</span>
         </div>
-        <div class="glass-panel p-6 rounded-xl mt-8">
-          <div class="text-3xl font-headline font-bold text-secondary mb-2">Day 03</div>
-          <p class="text-sm text-on-surface-variant">First version of this site shipped, AI-coded</p>
+        <div class="accordion-item relative rounded-2xl overflow-hidden cursor-pointer flex-shrink-0 w-[60px]" data-active="false">
+          <img src="/images/stock/team.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Team"/>
+          <div class="absolute inset-0 grad-overlay opacity-0 transition-opacity duration-700"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent"></div>
+          <span class="absolute left-1/2 bottom-24 -translate-x-1/2 rotate-90 origin-center text-white text-xs font-headline font-bold tracking-[0.2em] uppercase whitespace-nowrap">Company Layer</span>
         </div>
-        <div class="glass-panel p-6 rounded-xl">
-          <div class="text-3xl font-headline font-bold text-tertiary mb-2">Day 07</div>
-          <p class="text-sm text-on-surface-variant">Outreach engine live. First 50 conversations</p>
-        </div>
-        <div class="glass-panel p-6 rounded-xl mt-8">
-          <div class="text-3xl font-headline font-bold text-on-background mb-2">Day 14</div>
-          <p class="text-sm text-on-surface-variant">First retainer client. Built and shared in public</p>
+        <div class="accordion-item relative rounded-2xl overflow-hidden cursor-pointer flex-1" data-active="true">
+          <img src="/images/stock/professional.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Professional"/>
+          <div class="absolute inset-0 grad-overlay opacity-30 transition-opacity duration-700"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 text-white">
+            <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">Pillar 03</div>
+            <div class="font-headline font-bold text-2xl mt-1">Fractional AI Agency</div>
+            <div class="text-sm opacity-80 mt-2">A 50-person agency behind one face. Yours.</div>
+          </div>
         </div>
       </div>
+      <div class="mt-4 text-xs text-ink-mute text-center font-headline tracking-wider">Hover the columns to switch pillar</div>
     </div>
   </div>
 </section>
 
-<!-- 6. WHO IT IS FOR -->
-<section class="py-32 px-6 md:px-8 max-w-6xl mx-auto" data-aos="fade-up">
-  <div class="flex items-center gap-4 mb-10">
-    <div class="insight-rail h-8"></div>
-    <span class="text-xs font-label font-bold tracking-[0.3em] uppercase text-outline">05 · Who this is for</span>
+<!-- ============================== LOGO CLOUD (TOOLS) ============================== -->
+<section class="py-16 border-y border-border-soft bg-bg-soft overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+    <div>
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-2">Built on the best</div>
+      <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink">The AI stack we install for you</h3>
+    </div>
+    <p class="text-sm text-ink-soft max-w-md">From frontier models to workflow tools. We pick what fits your business, not what is trending.</p>
   </div>
-  <h2 class="text-3xl md:text-5xl font-headline font-bold leading-tight max-w-4xl mb-6">
-    Built for the people running the show.
-  </h2>
-  <p class="text-on-surface-variant text-lg max-w-2xl mb-16">If your time is the bottleneck and AI sounds like noise, this is for you.</p>
-
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="glass-panel p-6 rounded-xl text-center">
-      <div class="material-symbols-outlined text-primary text-3xl mb-3">trending_up</div>
-      <div class="font-headline font-bold text-on-background">Founders</div>
-      <div class="text-xs text-on-surface-variant mt-1">Solo to 200-person</div>
-    </div>
-    <div class="glass-panel p-6 rounded-xl text-center">
-      <div class="material-symbols-outlined text-secondary text-3xl mb-3">stethoscope</div>
-      <div class="font-headline font-bold text-on-background">Doctors</div>
-      <div class="text-xs text-on-surface-variant mt-1">Surgeons + clinics</div>
-    </div>
-    <div class="glass-panel p-6 rounded-xl text-center">
-      <div class="material-symbols-outlined text-tertiary text-3xl mb-3">gavel</div>
-      <div class="font-headline font-bold text-on-background">Lawyers</div>
-      <div class="text-xs text-on-surface-variant mt-1">Solo + boutique firms</div>
-    </div>
-    <div class="glass-panel p-6 rounded-xl text-center">
-      <div class="material-symbols-outlined text-primary text-3xl mb-3">calculate</div>
-      <div class="font-headline font-bold text-on-background">CAs &amp; CPAs</div>
-      <div class="text-xs text-on-surface-variant mt-1">Practice owners</div>
-    </div>
-    <div class="glass-panel p-6 rounded-xl text-center">
-      <div class="material-symbols-outlined text-secondary text-3xl mb-3">domain</div>
-      <div class="font-headline font-bold text-on-background">Architects</div>
-      <div class="text-xs text-on-surface-variant mt-1">Studio owners</div>
-    </div>
-    <div class="glass-panel p-6 rounded-xl text-center">
-      <div class="material-symbols-outlined text-tertiary text-3xl mb-3">account_balance</div>
-      <div class="font-headline font-bold text-on-background">Advisors</div>
-      <div class="text-xs text-on-surface-variant mt-1">Wealth + finance</div>
-    </div>
-    <div class="glass-panel p-6 rounded-xl text-center">
-      <div class="material-symbols-outlined text-primary text-3xl mb-3">storefront</div>
-      <div class="font-headline font-bold text-on-background">Owners</div>
-      <div class="text-xs text-on-surface-variant mt-1">Family + SME</div>
-    </div>
-    <div class="glass-panel p-6 rounded-xl text-center">
-      <div class="material-symbols-outlined text-secondary text-3xl mb-3">campaign</div>
-      <div class="font-headline font-bold text-on-background">Agencies</div>
-      <div class="text-xs text-on-surface-variant mt-1">Creative + service</div>
+  <div class="marquee-mask">
+    <div class="marquee-track">
+      <!-- 20 logos · doubled for infinite loop -->
+      <img src="https://cdn.simpleicons.org/openai/0B1326" alt="OpenAI" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/anthropic/0B1326" alt="Anthropic" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/googlegemini/0B1326" alt="Google Gemini" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/zapier/0B1326" alt="Zapier" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/n8n/0B1326" alt="n8n" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/make/0B1326" alt="Make" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/notion/0B1326" alt="Notion" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/slack/0B1326" alt="Slack" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/whatsapp/0B1326" alt="WhatsApp" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/airtable/0B1326" alt="Airtable" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/hubspot/0B1326" alt="HubSpot" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/stripe/0B1326" alt="Stripe" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/github/0B1326" alt="GitHub" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/vercel/0B1326" alt="Vercel" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/elevenlabs/0B1326" alt="ElevenLabs" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/figma/0B1326" alt="Figma" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/linear/0B1326" alt="Linear" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/replit/0B1326" alt="Replit" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/perplexity/0B1326" alt="Perplexity" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/runway/0B1326" alt="Runway" class="h-7"/>
+      <!-- duplicates for infinite scroll -->
+      <img src="https://cdn.simpleicons.org/openai/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/anthropic/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/googlegemini/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/zapier/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/n8n/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/make/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/notion/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/slack/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/whatsapp/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/airtable/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/hubspot/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/stripe/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/github/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/vercel/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/elevenlabs/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/figma/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/linear/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/replit/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/perplexity/0B1326" alt="" class="h-7"/>
+      <img src="https://cdn.simpleicons.org/runway/0B1326" alt="" class="h-7"/>
     </div>
   </div>
 </section>
 
-<!-- 7. PROOF -->
-<section class="py-32 px-6 md:px-8 bg-surface-container-lowest" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto">
-    <div class="flex items-center gap-4 mb-10">
-      <div class="insight-rail h-8"></div>
-      <span class="text-xs font-label font-bold tracking-[0.3em] uppercase text-outline">06 · The receipts</span>
-    </div>
-    <h2 class="text-3xl md:text-5xl font-headline font-bold leading-tight max-w-4xl mb-16">
-      We have already done this. <br/>
-      <span class="text-on-surface-variant">For our own agency. For 80+ clients.</span>
+<!-- ============================== THE METHOD ============================== -->
+<section class="py-24 lg:py-32 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="max-w-3xl mb-20" data-aos="fade-up">
+    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">01 · The method</div>
+    <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6">
+      Three weeks from <span class="font-serif italic text-ink-soft">"where do I start?"</span> to live AI inside your business.
     </h2>
+    <p class="text-lg text-ink-soft leading-relaxed">No AI workshops. No coursework. We sit with you, learn how you actually win, and install AI as a system across your day, your team, your growth.</p>
+  </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-      <div>
-        <div class="text-5xl font-headline font-bold text-primary mb-2">10x</div>
-        <p class="text-sm text-on-surface-variant">Output uplift on internal team using AI workflows</p>
-      </div>
-      <div>
-        <div class="text-5xl font-headline font-bold text-secondary mb-2">50</div>
-        <p class="text-sm text-on-surface-variant">People in our agency, running on AI systems</p>
-      </div>
-      <div>
-        <div class="text-5xl font-headline font-bold text-tertiary mb-2">80+</div>
-        <p class="text-sm text-on-surface-variant">Brands shipped, India + Europe + North America</p>
-      </div>
-      <div>
-        <div class="text-5xl font-headline font-bold text-on-background mb-2">14</div>
-        <p class="text-sm text-on-surface-variant">Meetings booked in month one for a B2B client via AI outreach</p>
-      </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+    <div data-aos="fade-up">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">target</span></div>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Week 1</div>
+      <h3 class="font-headline font-bold text-2xl text-ink mb-3">Map your universe</h3>
+      <p class="text-ink-soft leading-relaxed">We sit with you for two to three sessions. We learn how your business wins, where the money comes from, where time leaks, what only you can do.</p>
     </div>
-
-    <div class="glass-panel p-12 rounded-xl">
-      <p class="text-2xl md:text-3xl font-headline font-semibold text-on-surface leading-snug italic mb-8">
-        "AI Crew set up our outreach in a week. We booked 14 meetings in the first month. More than we had done in the previous six."
-      </p>
-      <div class="flex items-center gap-4">
-        <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/20">
-          <span class="text-sm font-bold text-primary">JS</span>
-        </div>
-        <div>
-          <div class="text-sm font-bold text-on-background">James S.</div>
-          <div class="text-xs text-outline font-label uppercase tracking-widest">Founder, B2B SaaS</div>
-        </div>
-      </div>
+    <div data-aos="fade-up" data-aos-delay="100">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">hub</span></div>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Week 2</div>
+      <h3 class="font-headline font-bold text-2xl text-ink mb-3">Plug AI in, surgically</h3>
+      <p class="text-ink-soft leading-relaxed">Every workflow becomes a candidate for an AI agent, automation or system. We score by impact, build a 90-day roadmap, walk you through what gets built and when.</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="200">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">rocket_launch</span></div>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Week 3 onwards</div>
+      <h3 class="font-headline font-bold text-2xl text-ink mb-3">Build, run, manage</h3>
+      <p class="text-ink-soft leading-relaxed">We build the systems, run them with you, train your team, and stay on as your fractional AI partner. The AI stack is never done, so we never stop.</p>
     </div>
   </div>
 </section>
 
-<!-- 8. FINAL CTA -->
-<section class="py-32 px-6 md:px-8 relative" data-aos="fade-up">
-  <div class="max-w-5xl mx-auto glass-panel p-12 md:p-16 rounded-[2rem] text-center relative overflow-hidden">
-    <div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
-    <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-[100px]"></div>
-    <div class="relative z-10">
-      <span class="text-xs font-label font-bold tracking-[0.3em] uppercase text-primary mb-6 block">Book a strategy call</span>
-      <h2 class="text-4xl md:text-6xl font-headline font-extrabold mb-8 text-on-background leading-tight">
-        45 minutes. <br/> Your AI roadmap, drawn live.
+<!-- ============================== THREE PILLARS ============================== -->
+<section class="py-24 lg:py-32 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-3xl mb-16" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">02 · What we install</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">
+        Three layers of AI. <br/>
+        <span class="grad-text">Wired into your business.</span>
       </h2>
-      <p class="text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto">
-        On the call we map your business, surface the highest-leverage AI plays, and walk you through exactly what we would build. Free. No deck. No pitch.
-      </p>
-      <div class="flex flex-wrap justify-center gap-6">
-        <a href="/book-demo">
-          <button class="px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl text-lg hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-primary/30">
-            Book your call
-          </button>
-        </a>
-        <a href="/how-we-work">
-          <button class="px-10 py-5 border border-outline/30 font-bold rounded-xl text-lg hover:bg-surface-bright transition-all">
-            See how we work
-          </button>
-        </a>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <a href="/how-we-work#founder-os" class="glass-card p-10 rounded-2xl flex flex-col" data-aos="fade-up">
+        <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Pillar 01</div>
+        <h3 class="font-headline font-bold text-3xl text-ink mb-4">Founder OS</h3>
+        <p class="text-ink-soft leading-relaxed mb-8 flex-1">Your time, inbox, calendar, knowledge and decisions, run by AI. Most founders get back 10-15 hours a week in 30 days.</p>
+        <ul class="space-y-2 text-sm text-ink-soft mb-6">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Inbox AI in your voice</li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Calendar + meeting prep</li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Personal knowledge base</li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Task + decision OS</li>
+        </ul>
+        <span class="text-ink font-headline font-bold text-sm flex items-center gap-1 mt-auto">Learn more <span class="material-symbols-outlined text-base">arrow_forward</span></span>
+      </a>
+
+      <a href="/how-we-work#company-layer" class="glass-card p-10 rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Pillar 02</div>
+        <h3 class="font-headline font-bold text-3xl text-ink mb-4">Company AI Layer</h3>
+        <p class="text-ink-soft leading-relaxed mb-8 flex-1">AI agents, automations and systems plugged in across your business. Marketing, outreach, ops, support, internal tooling.</p>
+        <ul class="space-y-2 text-sm text-ink-soft mb-6">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> AI outreach that books meetings</li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Content engines for social, blog, video</li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Ops + finance + support workflows</li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Custom GPTs for your team</li>
+        </ul>
+        <span class="text-ink font-headline font-bold text-sm flex items-center gap-1 mt-auto">Learn more <span class="material-symbols-outlined text-base">arrow_forward</span></span>
+      </a>
+
+      <a href="/how-we-work#fractional-agency" class="glass-card p-10 rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Pillar 03</div>
+        <h3 class="font-headline font-bold text-3xl text-ink mb-4">Fractional AI Agency</h3>
+        <p class="text-ink-soft leading-relaxed mb-8 flex-1">When the AI plays scale beyond what one or two people can run, you tap into our 50-person agency through one point of contact.</p>
+        <ul class="space-y-2 text-sm text-ink-soft mb-6">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> AI websites + landing pages</li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Multi-agent workflows</li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Voice + image + video AI</li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-accent-2 mt-0.5">check</span> Strategic AI partner on retainer</li>
+        </ul>
+        <span class="text-ink font-headline font-bold text-sm flex items-center gap-1 mt-auto">Learn more <span class="material-symbols-outlined text-base">arrow_forward</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INDUSTRIES ============================== -->
+<section class="py-24 lg:py-32 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12" data-aos="fade-up">
+    <div class="max-w-3xl">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">03 · Who we serve</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">
+        Built for the people <br/>
+        <span class="font-serif italic text-ink-soft">running the show.</span>
+      </h2>
+    </div>
+    <a href="/industries" class="text-ink font-headline font-bold flex items-center gap-1 whitespace-nowrap">All industries <span class="material-symbols-outlined">arrow_forward</span></a>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
+    <a href="/industries#tech" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/tech.jpg" class="w-full h-full object-cover" alt="Tech founders"/>
+      <div class="industry-label">
+        <div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div>
+        <div class="font-headline font-bold text-xl mt-1">Tech &amp; B2B SaaS Founders</div>
+      </div>
+    </a>
+    <a href="/industries#healthcare" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/healthcare.jpg" class="w-full h-full object-cover" alt="Healthcare"/>
+      <div class="industry-label">
+        <div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div>
+        <div class="font-headline font-bold text-xl mt-1">Doctors &amp; Clinics</div>
+      </div>
+    </a>
+    <a href="/industries#legal" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/legal.jpg" class="w-full h-full object-cover" alt="Lawyers"/>
+      <div class="industry-label">
+        <div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div>
+        <div class="font-headline font-bold text-xl mt-1">Lawyers &amp; Law Firms</div>
+      </div>
+    </a>
+    <a href="/industries#finance" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/finance.jpg" class="w-full h-full object-cover" alt="Finance"/>
+      <div class="industry-label">
+        <div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div>
+        <div class="font-headline font-bold text-xl mt-1">CAs &amp; Wealth Advisors</div>
+      </div>
+    </a>
+    <a href="/industries#architects" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/architect.jpg" class="w-full h-full object-cover" alt="Architects"/>
+      <div class="industry-label">
+        <div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div>
+        <div class="font-headline font-bold text-xl mt-1">Architects &amp; Studios</div>
+      </div>
+    </a>
+    <a href="/industries#agencies" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/creative.jpg" class="w-full h-full object-cover" alt="Creative agencies"/>
+      <div class="industry-label">
+        <div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div>
+        <div class="font-headline font-bold text-xl mt-1">Creative Agencies</div>
+      </div>
+    </a>
+    <a href="/industries#hospitality" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/team.jpg" class="w-full h-full object-cover" alt="Hospitality"/>
+      <div class="industry-label">
+        <div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div>
+        <div class="font-headline font-bold text-xl mt-1">Hospitality &amp; F&amp;B</div>
+      </div>
+    </a>
+    <a href="/industries#dtc" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/professional.jpg" class="w-full h-full object-cover" alt="D2C"/>
+      <div class="industry-label">
+        <div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div>
+        <div class="font-headline font-bold text-xl mt-1">D2C &amp; E-commerce</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIAL WALL (300+ CLIENTS) ============================== -->
+<section class="py-24 lg:py-32 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">04 · The receipts</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6">
+        Trusted by <span class="grad-text">300+ founders</span> <br/>and brands.
+      </h2>
+      <p class="text-lg text-ink-soft max-w-2xl mx-auto">14 years of MarketinCrew DNA. India, Europe, North America. Click any cover to see the story.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-12">
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/dr-sheths.jpg" class="w-full h-full object-cover" alt="Dr Sheths"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/ls-chemicals.jpg" class="w-full h-full object-cover" alt="LS Chemicals"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/yoga.jpg" class="w-full h-full object-cover" alt="Yoga"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/coffee-with-strangers.jpg" class="w-full h-full object-cover" alt="Coffee with Strangers"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/inventure.jpg" class="w-full h-full object-cover" alt="Inventure"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/rolling-pin.jpg" class="w-full h-full object-cover" alt="Rolling Pin"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/silla.jpg" class="w-full h-full object-cover" alt="Silla"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/rm.jpg" class="w-full h-full object-cover" alt="RM"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/ceque.jpg" class="w-full h-full object-cover" alt="Ceque"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/debs.jpg" class="w-full h-full object-cover" alt="Debs"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/debs-street-food.jpg" class="w-full h-full object-cover" alt="Debs Street Food"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/elam-vital.jpg" class="w-full h-full object-cover" alt="Elam Vital"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/gut-health.jpg" class="w-full h-full object-cover" alt="Gut Health"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/we-do-things.jpg" class="w-full h-full object-cover" alt="We Do Things"/></a>
+    </div>
+
+    <!-- Big stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 max-w-5xl mx-auto" data-aos="fade-up">
+      <div class="text-center">
+        <div class="font-headline font-extrabold text-5xl md:text-6xl grad-text mb-2">300+</div>
+        <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Brands shipped</div>
+      </div>
+      <div class="text-center">
+        <div class="font-headline font-extrabold text-5xl md:text-6xl grad-text mb-2">50</div>
+        <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">People in the agency</div>
+      </div>
+      <div class="text-center">
+        <div class="font-headline font-extrabold text-5xl md:text-6xl grad-text mb-2">14</div>
+        <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Years building</div>
+      </div>
+      <div class="text-center">
+        <div class="font-headline font-extrabold text-5xl md:text-6xl grad-text mb-2">10x</div>
+        <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Internal output uplift</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="border-t border-outline-variant/20 py-16 px-6 md:px-8 bg-surface-container-lowest">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-12">
+<!-- ============================== PROOF / CASE ============================== -->
+<section class="py-24 lg:py-32 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+    <div class="order-2 lg:order-1">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">Featured outcome</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl tracking-tighter leading-[0.95] mb-6">
+        14 meetings booked in month one. <span class="font-serif italic text-ink-soft">More than the previous six combined.</span>
+      </h2>
+      <p class="text-lg text-ink-soft leading-relaxed mb-8">A founder-led B2B SaaS in Mumbai had been doing manual outreach with a two-person team. We installed an AI outreach engine and a Founder OS in 14 days.</p>
+      <div class="grid grid-cols-2 gap-6 mb-8">
+        <div><div class="font-headline font-bold text-3xl grad-text">14</div><div class="text-sm text-ink-mute">Meetings, month 1</div></div>
+        <div><div class="font-headline font-bold text-3xl grad-text">8h</div><div class="text-sm text-ink-mute">Hours given back, weekly</div></div>
+        <div><div class="font-headline font-bold text-3xl grad-text">3x</div><div class="text-sm text-ink-mute">Pipeline coverage in 90d</div></div>
+        <div><div class="font-headline font-bold text-3xl grad-text">14d</div><div class="text-sm text-ink-mute">Kickoff to live engine</div></div>
+      </div>
+      <a href="/case-studies" class="text-ink font-headline font-bold inline-flex items-center gap-1">All case studies <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
+    <div class="order-1 lg:order-2 relative rounded-3xl overflow-hidden">
+      <img src="/images/stock/hero.jpg" class="w-full aspect-[5/4] object-cover" alt="Founder team"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent"></div>
+      <div class="absolute bottom-8 left-8 right-8 glass-light p-6 rounded-2xl">
+        <p class="text-base font-headline italic leading-snug text-ink mb-3">"AI Crew set up our outreach in a week. We booked 14 meetings in the first month. More than we had done in the previous six."</p>
+        <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full grad-bg flex items-center justify-center font-bold text-ink text-xs">JS</div><div><div class="text-sm font-bold text-ink">James S.</div><div class="text-xs text-ink-mute">Founder, B2B SaaS</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA ============================== -->
+<section class="py-24 lg:py-32 px-6 lg:px-10">
+  <div class="max-w-5xl mx-auto relative rounded-[2.5rem] overflow-hidden" data-aos="fade-up">
+    <div class="absolute inset-0 grad-bg"></div>
+    <div class="absolute inset-0 dot-grid"></div>
+    <div class="relative p-12 md:p-20 text-center">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink font-bold mb-6">Strategy call</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-7xl tracking-tighter leading-[0.95] mb-6">
+        45 minutes. <br/>
+        Your AI roadmap, drawn live.
+      </h2>
+      <p class="text-lg text-ink/80 max-w-2xl mx-auto mb-10">We map your business, surface the highest-leverage AI plays, walk you through what we would build. Free. No deck. No pitch.</p>
+      <a href="/book-demo" class="mag-btn">
+        <button class="px-10 py-5 bg-ink text-white rounded-xl font-headline font-bold text-lg hover:bg-ink/90 transition-all inline-flex items-center gap-2">
+          Book your call
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
     <div class="col-span-2">
-      <a href="/" class="text-xl font-bold tracking-tighter text-primary font-headline">AI CREW</a>
-      <p class="text-sm text-on-surface-variant mt-4 max-w-sm leading-relaxed">
-        AI consultancy for founders, business owners and high-earning professionals. From the makers of MarketinCrew.
-      </p>
-      <div class="flex items-center gap-4 mt-6">
-        <a href="https://instagram.com/aicrew.io" class="text-on-surface-variant hover:text-primary text-sm">Instagram</a>
-        <span class="text-outline-variant">·</span>
-        <a href="https://linkedin.com" class="text-on-surface-variant hover:text-primary text-sm">LinkedIn</a>
-        <span class="text-outline-variant">·</span>
-        <a href="https://marketincrew.com" class="text-on-surface-variant hover:text-primary text-sm">MarketinCrew</a>
+      <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">The AI studio for founders, business owners and high-earning professionals. We step inside your universe and rebuild it with AI.</p>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Follow Manan</div>
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-base">photo_camera</span> Instagram</a>
+        <a href="https://www.mananmehta.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-base">link</span> mananmehta.com</a>
       </div>
     </div>
     <div>
-      <h4 class="text-xs font-label font-bold tracking-[0.2em] uppercase text-outline mb-4">Work</h4>
-      <ul class="space-y-3 text-sm">
-        <li><a href="/how-we-work" class="text-on-surface-variant hover:text-primary">How we work</a></li>
-        <li><a href="/case-studies" class="text-on-surface-variant hover:text-primary">Case studies</a></li>
-        <li><a href="/built-with-ai" class="text-on-surface-variant hover:text-primary">Built with AI</a></li>
+      <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Work</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li>
+        <li><a href="/industries" class="text-ink-soft hover:text-ink">Industries</a></li>
+        <li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case studies</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="text-xs font-label font-bold tracking-[0.2em] uppercase text-outline mb-4">Services</h4>
-      <ul class="space-y-3 text-sm">
-        <li><a href="/web-dev" class="text-on-surface-variant hover:text-primary">AI Websites</a></li>
-        <li><a href="/content-studio" class="text-on-surface-variant hover:text-primary">AI Content</a></li>
-        <li><a href="/automations" class="text-on-surface-variant hover:text-primary">AI Automations</a></li>
-        <li><a href="/outreach" class="text-on-surface-variant hover:text-primary">AI Outreach</a></li>
+      <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li>
+        <li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content</a></li>
+        <li><a href="/automations" class="text-ink-soft hover:text-ink">AI Automations</a></li>
+        <li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="text-xs font-label font-bold tracking-[0.2em] uppercase text-outline mb-4">Contact</h4>
-      <ul class="space-y-3 text-sm">
-        <li><a href="/about" class="text-on-surface-variant hover:text-primary">About Manan</a></li>
-        <li><a href="/book-demo" class="text-on-surface-variant hover:text-primary">Book a call</a></li>
-        <li><a href="mailto:hello@aicrew.io" class="text-on-surface-variant hover:text-primary">hello@aicrew.io</a></li>
+      <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/about" class="text-ink-soft hover:text-ink">About Manan</a></li>
+        <li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li>
+        <li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li>
       </ul>
     </div>
   </div>
-  <div class="max-w-7xl mx-auto border-t border-outline-variant/10 mt-12 pt-8 flex flex-col md:flex-row justify-between text-xs text-outline">
-    <span>© 2026 AI Crew · From the makers of MarketinCrew</span>
-    <span class="mt-4 md:mt-0">Mumbai · Paris · Built in public with AI</span>
+
+  <!-- Floating SVG text -->
+  <div class="max-w-[1400px] mx-auto -mb-8 select-none">
+    <svg viewBox="0 0 800 200" class="w-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#aec6ff"/>
+          <stop offset="50%" stop-color="#6ad9c3"/>
+          <stop offset="100%" stop-color="#ffbe2e"/>
+        </linearGradient>
+      </defs>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-stroke" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-grad" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+    </svg>
+  </div>
+
+  <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
+    <span>© 2026 AI Crew · From the makers of MarketinCrew · 300+ brands shipped</span>
+    <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
   </div>
 </footer>
 
@@ -618,23 +672,47 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 800, once: true, offset: 100 });
+  AOS.init({ duration:700, once:true, offset:80 });
 
-  // Cursor glow
-  const glow = document.getElementById('cursorGlow');
-  let raf;
-  document.addEventListener('mousemove', (e) => {
-    cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(() => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
+  // Mobile menu
+  const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
+  mt.addEventListener('click',()=>mn.classList.toggle('open'));
+
+  // Hero accordion
+  const accItems = document.querySelectorAll('.accordion-item');
+  accItems.forEach((item, idx) => {
+    item.addEventListener('mouseenter', () => {
+      accItems.forEach(i => {
+        i.classList.add('w-[60px]');
+        i.classList.remove('flex-1');
+        const overlay = i.querySelector('.grad-overlay');
+        if (overlay) overlay.style.opacity = '0';
+      });
+      item.classList.remove('w-[60px]');
+      item.classList.add('flex-1');
+      const overlay = item.querySelector('.grad-overlay');
+      if (overlay) overlay.style.opacity = '0.3';
     });
   });
 
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  menuToggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  // Magnetic buttons
+  document.querySelectorAll('.mag-btn').forEach(btn => {
+    let raf;
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) * 0.25;
+      const dy = (e.clientY - cy) * 0.25;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        btn.style.transform = `translate(${dx}px, ${dy}px)`;
+      });
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
 </script>
 </body>
 </html>

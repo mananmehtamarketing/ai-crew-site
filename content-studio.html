@@ -1,350 +1,218 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AI Content Studio | AI Crew · On-Brand Content at Volume</title>
 <meta name="description" content="AI Crew runs an AI-powered content engine. Blogs, social, video scripts, ads. On brand, at volume, for founders and professional service brands." />
-<meta name="keywords" content="AI content creation, AI content studio, AI content for founders, AI content marketing, AI blog writing, AI social content" />
+<meta name="keywords" content="AI content creation, AI content studio, AI content for founders, AI content marketing, AI blog writing, AI social content, AI video scripts" />
 <link rel="canonical" href="https://aicrew.io/content-studio" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://aicrew.io/content-studio" />
 <meta property="og:title" content="AI Content Studio | AI Crew · On-Brand Content at Volume" />
 <meta property="og:description" content="AI Crew runs an AI-powered content engine. Blogs, social, video scripts, ads. On brand, at volume, for founders and professional service brands." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aicrew.io/content-studio" />
 <meta property="og:site_name" content="AI Crew" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="AI Content Studio | AI Crew · On-Brand Content at Volume" />
-<meta name="twitter:description" content="AI Crew runs an AI-powered content engine. Blogs, social, video scripts, ads. On brand, at volume, for founders and professional service brands." />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-background": "#dae2fd",
-              "on-error-container": "#ffdad6",
-              "tertiary-fixed": "#88f6df",
-              "on-primary-fixed": "#001a43",
-              "outline-variant": "#44474f",
-              "tertiary-fixed-dim": "#6ad9c3",
-              "on-primary": "#122f60",
-              "on-tertiary-fixed-variant": "#005045",
-              "on-secondary-fixed-variant": "#5d4200",
-              "surface-container-highest": "#2d3449",
-              "on-tertiary-container": "#42b5a0",
-              "on-secondary": "#412d00",
-              "primary-container": "#1d386a",
-              "outline": "#8e909a",
-              "tertiary": "#6ad9c3",
-              "inverse-primary": "#455e92",
-              "background": "#0b1326",
-              "secondary-fixed": "#ffdea6",
-              "secondary-container": "#e0a301",
-              "surface-tint": "#aec6ff",
-              "on-tertiary": "#00382f",
-              "primary-fixed": "#d8e2ff",
-              "on-primary-container": "#8aa3db",
-              "surface-dim": "#0b1326",
-              "on-secondary-fixed": "#271900",
-              "on-primary-fixed-variant": "#2c4678",
-              "secondary-fixed-dim": "#fcbc29",
-              "primary-fixed-dim": "#aec6ff",
-              "surface-container": "#171f33",
-              "on-surface-variant": "#c4c6d0",
-              "error-container": "#93000a",
-              "surface-container-high": "#222a3d",
-              "on-tertiary-fixed": "#00201b",
-              "surface-container-low": "#131b2e",
-              "on-secondary-container": "#573d00",
-              "on-error": "#690005",
-              "inverse-surface": "#dae2fd",
-              "tertiary-container": "#004238",
-              "secondary": "#ffbe2e",
-              "inverse-on-surface": "#283044",
-              "surface-variant": "#2d3449",
-              "error": "#ffb4ab",
-              "surface-bright": "#31394d",
-              "primary": "#aec6ff",
-              "on-surface": "#dae2fd",
-              "surface": "#0b1326",
-              "surface-container-lowest": "#060e20"
-            },
-            fontFamily: {
-              "headline": ["Plus Jakarta Sans"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
-    </script>
+  tailwind.config = { theme:{ extend:{
+    colors:{"bg":"#FFFFFF","bg-soft":"#F8F9FB","bg-mute":"#F1F4FA","ink":"#0B1326","ink-soft":"#3A4256","ink-mute":"#6B7280","border":"#E5E7EB","border-soft":"#F0F2F5"},
+    fontFamily:{"headline":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"serif":["Instrument Serif","serif"]},
+    borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","full":"9999px"}
+  }}}
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-panel {
-            background: rgba(45, 52, 73, 0.4);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(142, 144, 154, 0.15);
-        }
-        .insight-rail {
-            position: relative;
-        }
-        .insight-rail::before {
-            content: '';
-            position: absolute;
-            left: -1rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #aec6ff, transparent);
-        }
-        .mobile-nav { display: none; flex-direction: column; background: rgba(11,19,38,0.98); border-top: 1px solid rgba(174,198,255,0.1); padding: 1.5rem 2rem; gap: 1.25rem; }
-        .mobile-nav.open { display: flex; }
-        .mobile-nav a { color: #c4c6d0; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: color 0.2s; }
-        .mobile-nav a:hover { color: #aec6ff; }
-        .mobile-nav .mobile-cta { margin-top: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #aec6ff, #1d386a); color: #122f60; font-weight: 700; border-radius: 0.5rem; text-align: center; }
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
-        .hamburger span { display: block; width: 22px; height: 2px; background: #aec6ff; border-radius: 2px; }
-        @media (max-width: 768px) { .hamburger { display: flex; } }
+  body { background:#fff; color:#0B1326; font-family:'Inter',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  .grad-text { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .grad-bg { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); }
+  .glass-light { background:rgba(255,255,255,0.65); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); }
+  .glass-card { background:#fff; border:1px solid #E5E7EB; transition:all .35s; }
+  .glass-card:hover { box-shadow:0 20px 60px -10px rgba(174,198,255,0.4), 0 0 0 1px rgba(174,198,255,0.3); transform:translateY(-2px); }
+  .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
+  .footer-svg-stroke { fill:transparent; stroke:#0B1326; stroke-width:0.6; opacity:0.08; }
+  .footer-svg-grad { fill:transparent; stroke:url(#footerGrad); stroke-width:0.6; }
+  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); }
+  .mobile-nav.open { display:flex; }
+  .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
+  .mobile-nav .mobile-cta { margin-top:.5rem; padding:.875rem 1.5rem; background:#0B1326; color:#fff; border-radius:.5rem; text-align:center; }
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
+  .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; }
+  @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
+  html { scroll-behavior:smooth; scroll-padding-top:80px; }
+  .dot-grid { background-image:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
 </style>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></head>
-<body class="bg-background text-on-background font-body">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/40 backdrop-blur-xl border-b border-[#aec6ff]/10 shadow-[0_8px_32px_0_rgba(6,14,32,0.8)]">
-<div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto">
-<a href="/" class="text-xl font-bold tracking-tighter text-[#aec6ff] font-headline">AI CREW</a>
-<!-- Desktop Links -->
-<div class="hidden md:flex items-center space-x-8 font-headline tracking-tight text-sm font-semibold">
-<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/web-dev">AI Web Dev</a>
-<a class="text-[#aec6ff] border-b-2 border-[#aec6ff] pb-1" href="/content-studio">AI Content</a>
-<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/outreach">AI Outreach</a>
-<a class="text-slate-400 hover:text-[#aec6ff] transition-colors" href="/automations">AI Automations</a>
-</div>
-<div class="flex items-center space-x-4">
-<a href="/book-demo"><button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-xl font-headline text-sm font-bold shadow-[0_0_20px_rgba(174,198,255,0.2)] hover:scale-95 active:scale-90 transition-all duration-200">Book a Call</button></a>
-<button class="hamburger" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-</div>
-</div>
-<div class="mobile-nav" id="mobileNav">
-  <a href="/how-we-work">How We Work</a>
-  <a href="/built-with-ai">Built With AI</a>
-  <a href="/case-studies">Case Studies</a>
-  <a href="/about">About</a>
-  <a href="/book-demo" class="mobile-cta">Book a Call →</a>
-</div>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+</head>
+<body>
+<nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
+  <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
+    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></a>
+    <div class="desktop-nav flex items-center gap-2 font-headline text-sm font-semibold">
+      <a href="/how-we-work" class="px-4 py-2 text-ink hover:text-ink/70">How We Work</a>
+      <a href="/industries" class="px-4 py-2 text-ink hover:text-ink/70">Industries</a>
+      <a href="/case-studies" class="px-4 py-2 text-ink hover:text-ink/70">Case Studies</a>
+      <a href="/about" class="px-4 py-2 text-ink hover:text-ink/70">About</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="/book-demo" class="hidden lg:block mag-btn"><button class="px-5 py-2.5 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90">Book a Call</button></a>
+      <button class="hamburger" id="menuToggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/how-we-work">How We Work</a><a href="/industries">Industries</a>
+    <a href="/case-studies">Case Studies</a><a href="/about">About</a>
+    <a href="/book-demo" class="mobile-cta">Book a Call →</a>
+  </div>
 </nav>
-<main class="pt-32 pb-20 px-8 max-w-7xl mx-auto overflow-hidden">
-<!-- Hero Section -->
-<section class="mb-32" data-aos="fade-up">
-<div class="max-w-3xl">
-<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-tertiary-container/30 border border-tertiary/20 mb-8">
-<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
-<span class="text-tertiary font-label text-[10px] tracking-widest uppercase font-bold">Creative Intelligence Engine</span>
-</div>
-<h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-background mb-8 leading-[0.9]">
-                    Infinite Content, <span class="text-primary italic">Zero Friction.</span>
-</h1>
-<p class="text-xl text-on-surface-variant leading-relaxed mb-12 insight-rail">
-                    Our AI Content &amp; Creative Studio fuses neural networks with expert human curators to deliver high-velocity assets that don't just fill feeds—they dominate them.
-                </p>
-</div>
+<main class="pt-16">
+
+<section class="px-6 lg:px-10 py-20 lg:py-32 max-w-[1400px] mx-auto">
+  <div class="max-w-4xl" data-aos="fade-up">
+    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-6">Company AI Layer · Content</div>
+    <h1 class="font-headline font-extrabold text-ink text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter leading-[0.92] mb-8">
+      Your content engine, <br/>
+      <span class="grad-text">running on AI.</span>
+    </h1>
+    <p class="text-lg md:text-xl text-ink-soft leading-relaxed max-w-3xl">Blogs, social posts, ad copy, video scripts, podcast episodes. On brand, at volume, with humans editing what matters and AI doing what scales.</p>
+  </div>
 </section>
-<!-- Bento Grid: The Creative Output -->
-<section class="mb-32" data-aos="fade-up">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
-<!-- Social Media Block -->
-<div class="md:col-span-8 glass-panel rounded-xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="100">
-<div class="absolute inset-0 z-0">
-<img alt="" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="Vibrant neon social media dashboard preview" src="/dashboard-ui.png"/>
-</div>
-<div class="relative z-10 p-8 flex flex-col h-full justify-between">
-<div>
-<span class="text-secondary font-label text-xs tracking-widest uppercase">Social Mastery</span>
-<h3 class="text-3xl font-headline font-bold mt-2">Dynamic Viral Systems</h3>
-</div>
-<p class="text-on-surface-variant text-sm max-w-sm">Automated trend-hijacking visuals and copy designed for peak algorithmic performance.</p>
-</div>
-</div>
-<!-- Blog/Longform Block -->
-<div class="md:col-span-4 glass-panel rounded-xl p-8 flex flex-col justify-between border-tertiary/20" data-aos="fade-up" data-aos-delay="100">
-<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="article">article</span>
-<div>
-<h3 class="text-2xl font-headline font-bold mb-2">Authority Longform</h3>
-<p class="text-on-surface-variant text-sm">2,500+ word technical deep-dives written by AI, polished by industry specialists.</p>
-</div>
-</div>
-<!-- High-Impact Ad Block -->
-<div class="md:col-span-4 glass-panel rounded-xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="100">
-<div class="absolute inset-0 z-0">
-<img alt="" class="w-full h-full object-cover opacity-30 group-hover:rotate-2 transition-transform duration-700" data-alt="Data driven advertising performance visualization" src="/dashboard-ui.png"/>
-</div>
-<div class="relative z-10 p-8 h-full flex flex-col justify-end">
-<h3 class="text-2xl font-headline font-bold mb-2">Performance Ads</h3>
-<p class="text-on-surface-variant text-sm">Iterative A/B creative testing at 10x speed.</p>
-</div>
-</div>
-<!-- Motion/Video Block -->
-<div class="md:col-span-8 bg-surface-container-highest rounded-xl overflow-hidden relative border border-outline-variant/20">
-<div class="absolute inset-0 bg-gradient-to-tr from-background to-transparent z-10 opacity-60"></div>
-<img alt="" class="w-full h-full object-cover" data-alt="Dark aesthetic cinematic video production still" src="/dashboard-ui.png"/>
-<div class="absolute bottom-8 left-8 z-20">
-<h3 class="text-4xl font-headline font-extrabold text-on-background">Short-Form Motion</h3>
-<div class="flex items-center space-x-4 mt-4">
-<span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-lg text-xs font-bold uppercase tracking-wider">TikTok</span>
-<span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-lg text-xs font-bold uppercase tracking-wider">Reels</span>
-<span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-lg text-xs font-bold uppercase tracking-wider">Shorts</span>
-</div>
-</div>
-</div>
-</div>
+
+<section class="py-12 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">edit_note</span></div>
+      <h3 class="font-headline font-bold text-xl text-ink mb-3">On-brand at volume</h3>
+      <p class="text-sm text-ink-soft leading-relaxed">Trained on your voice, your tone, your audience. Output looks like you wrote it.</p>
+    </div>
+    <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">schedule</span></div>
+      <h3 class="font-headline font-bold text-xl text-ink mb-3">Publish weekly, daily, hourly</h3>
+      <p class="text-sm text-ink-soft leading-relaxed">Whatever cadence your channel needs. AI drafts, humans approve, calendar runs itself.</p>
+    </div>
+    <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">campaign</span></div>
+      <h3 class="font-headline font-bold text-xl text-ink mb-3">Cross-channel</h3>
+      <p class="text-sm text-ink-soft leading-relaxed">Same idea reshaped for blog, LinkedIn, Instagram, YouTube, X, email. One brief, ten outputs.</p>
+    </div>
+    <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+      <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">insights</span></div>
+      <h3 class="font-headline font-bold text-xl text-ink mb-3">Tied to performance</h3>
+      <p class="text-sm text-ink-soft leading-relaxed">Content that ships is content that ranks. We track what works and double down.</p>
+    </div>
+  </div>
 </section>
-<!-- The Process: Human-in-the-Loop -->
-<section class="mb-32 relative" data-aos="fade-up">
-<div class="absolute -right-20 -top-20 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-<div>
-<h2 class="text-4xl md:text-5xl font-headline font-bold tracking-tight mb-8">The Human-in-the-Loop <br/><span class="text-tertiary">QA Protocol</span></h2>
-<p class="text-on-surface-variant mb-12 leading-relaxed">AI creates the volume, but humans curate the soul. Our proprietary "Neural Checkpoint" process ensures every piece of content meets brand integrity, emotional resonance, and factual precision.</p>
-<ul class="space-y-8">
-<li class="flex items-start space-x-4">
-<div class="mt-1 w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/30 text-secondary">
-<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-</div>
-<div>
-<h4 class="font-headline font-bold text-on-background">Phase 01: Generative Synthesis</h4>
-<p class="text-sm text-on-surface-variant mt-1">AI generates 50+ variations based on target audience data and current market sentiment.</p>
-</div>
-</li>
-<li class="flex items-start space-x-4">
-<div class="mt-1 w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/30 text-tertiary">
-<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
-</div>
-<div>
-<h4 class="font-headline font-bold text-on-background">Phase 02: Expert Curation</h4>
-<p class="text-sm text-on-surface-variant mt-1">Senior Creative Directors select the top 5% and inject high-level brand nuance.</p>
-</div>
-</li>
-<li class="flex items-start space-x-4">
-<div class="mt-1 w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/30 text-primary">
-<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
-</div>
-<div>
-<h4 class="font-headline font-bold text-on-background">Phase 03: Final Deployment</h4>
-<p class="text-sm text-on-surface-variant mt-1">Assets are multi-channel optimized and scheduled for peak engagement windows.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="relative">
-<div class="aspect-square rounded-full border-2 border-dashed border-outline-variant/40 flex items-center justify-center p-8">
-<div class="w-full h-full glass-panel rounded-full flex flex-col items-center justify-center text-center p-12" data-aos="fade-up" data-aos-delay="100">
-<div class="w-24 h-24 bg-gradient-to-br from-primary to-tertiary rounded-3xl rotate-45 flex items-center justify-center mb-8 shadow-[0_0_40px_rgba(106,217,195,0.4)]">
-<span class="material-symbols-outlined text-background text-5xl -rotate-45" data-icon="shield_with_heart" data-weight="fill">shield_with_heart</span>
-</div>
-<h3 class="text-3xl font-headline font-black mb-4 tracking-tighter uppercase">Brand Safe. <br/>Always.</h3>
-<p class="text-sm text-on-surface-variant font-label tracking-wide uppercase">Zero Hallucinations. 100% Impact.</p>
-</div>
-</div>
-</div>
-</div>
+
+<section class="py-24 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-3xl mb-16" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">How content runs</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">A clean engagement, every time.</h2>
+    </div>
+    <div class="space-y-6">
+      <div class="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row gap-8 items-start" data-aos="fade-up">
+        <div class="flex-shrink-0">
+          <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">01</div>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Week 1</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-3">Voice + brand training</h3>
+          <p class="text-ink-soft leading-relaxed">We train custom GPTs on your voice, your past content, your offering. Output sounds like you.</p>
+        </div>
+      </div>
+      <div class="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row gap-8 items-start" data-aos="fade-up">
+        <div class="flex-shrink-0">
+          <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">02</div>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Week 2</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-3">Editorial calendar</h3>
+          <p class="text-ink-soft leading-relaxed">90-day plan. Pillar topics, channel strategy, cadence. Lock the content engine.</p>
+        </div>
+      </div>
+      <div class="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row gap-8 items-start" data-aos="fade-up">
+        <div class="flex-shrink-0">
+          <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">03</div>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Week 3 onwards</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-3">Daily output</h3>
+          <p class="text-ink-soft leading-relaxed">AI drafts. Editors polish. You approve. We ship across all channels.</p>
+        </div>
+      </div>
+      <div class="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row gap-8 items-start" data-aos="fade-up">
+        <div class="flex-shrink-0">
+          <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">04</div>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Monthly</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-3">Performance review</h3>
+          <p class="text-ink-soft leading-relaxed">What ranked, what flopped, what to double down on. Calendar updated.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- CTA Section -->
-<section class="py-20 rounded-3xl bg-surface-container-high border border-[#aec6ff]/10 relative overflow-hidden text-center" data-aos="fade-up">
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
-<div class="relative z-10 px-8">
-<h2 class="text-4xl md:text-6xl font-headline font-black tracking-tight mb-8">Ready to Scale Your <br/>Creative Output?</h2>
-<div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
-<a href="/book-demo" class="w-full md:w-auto"><button class="w-full px-10 py-4 rounded-xl bg-primary text-on-primary font-headline font-bold text-lg hover:scale-105 transition-transform">Book a Free Strategy Call</button></a>
-<a href="/" class="w-full md:w-auto"><button class="w-full px-10 py-4 rounded-xl border border-outline text-on-background font-headline font-bold text-lg hover:bg-surface-bright transition-colors">Back to Home</button></a>
-</div>
-</div>
+
+<section class="py-24 lg:py-32 px-6 lg:px-10">
+  <div class="max-w-5xl mx-auto relative rounded-[2.5rem] overflow-hidden" data-aos="fade-up">
+    <div class="absolute inset-0 grad-bg"></div>
+    <div class="absolute inset-0 dot-grid"></div>
+    <div class="relative p-12 md:p-20 text-center">
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6">Want a content engine that runs itself?</h2>
+      <p class="text-lg text-ink/80 max-w-2xl mx-auto mb-10">45 minutes. We map your content gap and show you exactly what we would build.</p>
+      <a href="/book-demo" class="mag-btn"><button class="px-10 py-5 bg-ink text-white rounded-xl font-headline font-bold text-lg hover:bg-ink/90 inline-flex items-center gap-2">Book a strategy call <span class="material-symbols-outlined">arrow_forward</span></button></a>
+    </div>
+  </div>
 </section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#0b1326] w-full py-12 px-8 border-t border-[#aec6ff]/5">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
-<div class="col-span-1 md:col-span-1">
-<a href="/" class="text-2xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-[#aec6ff] via-[#88f6df] to-[#ffbe2e] font-headline drop-shadow-md hover:scale-105 transition-transform">AI CREW</a>
-<p class="text-slate-500 font-body text-sm leading-relaxed">Architecting the future of marketing through neural intelligence and human creativity.</p>
-</div>
-<div class="space-y-4">
-<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 font-bold">Solutions</h4>
-<ul class="space-y-2 text-slate-400 text-sm">
-<li><a class="hover:text-[#6ad9c3] transition-colors" href="/web-dev">AI Web Dev</a></li>
-<li><a class="hover:text-[#6ad9c3] transition-colors" href="/content-studio">AI Content</a></li>
-<li><a class="hover:text-[#6ad9c3] transition-colors" href="/outreach">AI Outreach</a></li>
-<li><a class="hover:text-[#6ad9c3] transition-colors" href="/automations">AI Automations</a></li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 font-bold">Company</h4>
-<ul class="space-y-2 text-slate-400 text-sm">
-<li><a class="hover:text-[#6ad9c3] transition-colors" href="/book-demo">Book a Demo</a></li>
-<li><a class="hover:text-[#6ad9c3] transition-colors" href="mailto:hello@marketincrew.com">Contact Us</a></li>
-<li><a class="hover:text-[#6ad9c3] transition-colors" href="https://marketincrew.com" target="_blank">Marketing Crew ↗</a></li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 font-bold">Join the Fleet</h4>
-<div class="flex">
-<input class="bg-surface-container-lowest border border-outline-variant/10 rounded-l-lg px-4 py-2 w-full focus:ring-1 focus:ring-primary focus:outline-none text-sm" placeholder="Email address" type="email"/>
-<button class="bg-primary text-on-primary px-4 py-2 rounded-r-lg font-bold text-sm">Go</button>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-[#aec6ff]/5 flex flex-col md:row justify-between items-center text-center md:text-left gap-4">
-<p class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500">© 2026 AI Crew · From the makers of MarketinCrew. All rights reserved.</p>
-<div class="flex space-x-6">
-<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-primary transition-colors" data-icon="share">share</span>
-<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-primary transition-colors" data-icon="hub">hub</span>
-<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-primary transition-colors" data-icon="language">language</span>
-</div>
-</div>
+
+<footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
+    <div class="col-span-2">
+      <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">The AI studio for founders, business owners and high-earning professionals.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">Instagram</a>
+        <a href="https://www.mananmehta.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">mananmehta.com</a>
+      </div>
+    </div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Work</h4><ul class="space-y-2.5 text-sm"><li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li><li><a href="/industries" class="text-ink-soft hover:text-ink">Industries</a></li><li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case studies</a></li></ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4><ul class="space-y-2.5 text-sm"><li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li><li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content</a></li><li><a href="/automations" class="text-ink-soft hover:text-ink">AI Automations</a></li><li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li></ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4><ul class="space-y-2.5 text-sm"><li><a href="/about" class="text-ink-soft hover:text-ink">About Manan</a></li><li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li></ul></div>
+  </div>
+  <div class="max-w-[1400px] mx-auto -mb-8 select-none">
+    <svg viewBox="0 0 800 200" class="w-full" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#aec6ff"/><stop offset="50%" stop-color="#6ad9c3"/><stop offset="100%" stop-color="#ffbe2e"/></linearGradient></defs>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-stroke" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-grad" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+    </svg>
+  </div>
+  <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
+    <span>© 2026 AI Crew · From the makers of MarketinCrew · 300+ brands shipped</span>
+    <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
+  </div>
 </footer>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init({duration: 800, once: true, offset: 50});</script>
+
+</main>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuToggle && mobileNav) {
-    menuToggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
-    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
-  }
-</script>
-<!-- Cursor Glow Effect -->
-<div id="cursor-glow" class="fixed pointer-events-none z-50 w-[800px] h-[800px] rounded-full translate-x-[-50%] translate-y-[-50%] opacity-60 mix-blend-screen transition-transform duration-300 ease-out" style="background: radial-gradient(circle, rgba(136, 246, 223, 0.08) 0%, rgba(0,0,0,0) 60%); top: -1000px; left: -1000px;"></div>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const glow = document.getElementById("cursor-glow");
-        let isMoving = false;
-        document.addEventListener("mousemove", (e) => {
-            if (!isMoving) {
-                requestAnimationFrame(() => {
-                    glow.style.left = e.clientX + "px";
-                    glow.style.top = e.clientY + "px";
-                    isMoving = false;
-                });
-                isMoving = true;
-            }
-        });
-        
-        // Enhance glow smartly when hovering over interactive/glass elements
-        const clickables = document.querySelectorAll("a, button, .glass-panel");
-        clickables.forEach(el => {
-            el.addEventListener("mouseenter", () => {
-                glow.style.background = "radial-gradient(circle, rgba(174, 198, 255, 0.15) 0%, rgba(0,0,0,0) 60%)";
-                glow.style.transform = "translate(-50%, -50%) scale(1.1)";
-            });
-            el.addEventListener("mouseleave", () => {
-                glow.style.background = "radial-gradient(circle, rgba(136, 246, 223, 0.08) 0%, rgba(0,0,0,0) 60%)";
-                glow.style.transform = "translate(-50%, -50%) scale(1)";
-            });
-        });
+  AOS.init({ duration:700, once:true, offset:80 });
+  const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
+  mt.addEventListener('click',()=>mn.classList.toggle('open'));
+  document.querySelectorAll('.mag-btn').forEach(btn => {
+    let raf;
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const dx=(e.clientX-(r.left+r.width/2))*0.25, dy=(e.clientY-(r.top+r.height/2))*0.25;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => { btn.style.transform = `translate(${dx}px, ${dy}px)`; });
     });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
+  });
 </script>
-\n</body></html>
+</body>
+</html>

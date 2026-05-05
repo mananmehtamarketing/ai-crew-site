@@ -1,224 +1,383 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Book a Strategy Call | AI Crew · 45 Minutes, Free, Live AI Roadmap</title>
 <meta name="description" content="Book 45 minutes with AI Crew. We map your business, surface highest-leverage AI plays, walk you through what we would build. Free. No deck. No pitch." />
-<meta name="keywords" content="book AI consultancy call, AI strategy call, AI consultancy India, AI consultant Manan Mehta" />
+<meta name="keywords" content="book AI consultancy call, AI strategy call, AI consultant call, AI Crew booking, Manan Mehta call" />
 <link rel="canonical" href="https://aicrew.io/book-demo" />
 
 <meta property="og:title" content="Book a Strategy Call | AI Crew" />
 <meta property="og:description" content="45 minutes. Your AI roadmap, drawn live." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aicrew.io/book-demo" />
+<meta property="og:site_name" content="AI Crew" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-  tailwind.config = { darkMode:"class", theme:{ extend:{
-    colors:{"background":"#0b1326","surface":"#171f33","surface-bright":"#31394d","surface-container":"#171f33","surface-container-high":"#222a3d","surface-container-lowest":"#060e20","primary":"#aec6ff","primary-container":"#1d386a","on-primary":"#122f60","secondary":"#ffbe2e","tertiary":"#6ad9c3","on-background":"#dae2fd","on-surface":"#dae2fd","on-surface-variant":"#c4c6d0","outline":"#8e909a","outline-variant":"#44474f"},
-    fontFamily:{"headline":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"label":["Inter","sans-serif"]},
-    borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"}
+  tailwind.config = { theme:{ extend:{
+    colors:{"bg":"#FFFFFF","bg-soft":"#F8F9FB","bg-mute":"#F1F4FA","ink":"#0B1326","ink-soft":"#3A4256","ink-mute":"#6B7280","border":"#E5E7EB","border-soft":"#F0F2F5"},
+    fontFamily:{"headline":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"serif":["Instrument Serif","serif"]},
+    borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","full":"9999px"}
   }}}
 </script>
 <style>
-  body { background-color:#0b1326; color:#dae2fd; font-family:'Inter',sans-serif; overflow-x:hidden; }
+  body { background:#fff; color:#0B1326; font-family:'Inter',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
-  .insight-rail { width:2px; background:linear-gradient(to bottom,#aec6ff,transparent); }
-  .glass-panel { background:rgba(45,52,73,0.4); backdrop-filter:blur(16px); border:1px solid rgba(142,144,154,0.15); }
-  .hero-gradient { background:radial-gradient(circle at 50% -10%,rgba(174,198,255,0.15) 0%,rgba(11,19,38,0) 60%); }
-  .cursor-glow { position:fixed; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(174,198,255,0.06) 0%,transparent 50%); pointer-events:none; z-index:1; transform:translate(-50%,-50%); }
-  .form-input { background:rgba(45,52,73,0.4); border:1px solid rgba(142,144,154,0.2); color:#dae2fd; padding:0.875rem 1rem; border-radius:0.5rem; width:100%; font-size:0.95rem; }
-  .form-input:focus { outline:none; border-color:#aec6ff; background:rgba(45,52,73,0.6); }
-  .form-input::placeholder { color:#8e909a; }
-  .form-label { font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#c4c6d0; margin-bottom:0.5rem; display:block; }
-  .mobile-nav { display:none; flex-direction:column; background:rgba(11,19,38,0.98); border-top:1px solid rgba(174,198,255,0.1); padding:1.5rem 2rem; gap:1.25rem; }
+  .grad-text { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .grad-bg { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); }
+  .glass-light { background:rgba(255,255,255,0.65); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); }
+  .glass-card { background:#fff; border:1px solid #E5E7EB; transition:all .35s; box-shadow:0 4px 24px -6px rgba(11,19,38,0.06); }
+  .form-step { display:none; }
+  .form-step.active { display:block; }
+  .form-input { width:100%; background:#fff; border:1px solid #E5E7EB; border-radius:.5rem; padding:.875rem 1rem; font-size:.95rem; color:#0B1326; transition:all .25s; }
+  .form-input:focus { outline:none; border-color:#0B1326; box-shadow:0 0 0 3px rgba(174,198,255,0.3); }
+  .form-input::placeholder { color:#6B7280; }
+  .form-label { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#3A4256; margin-bottom:.5rem; display:block; }
+  .option-card { border:1px solid #E5E7EB; padding:1rem 1.25rem; border-radius:.5rem; cursor:pointer; transition:all .2s; background:#fff; }
+  .option-card:hover { border-color:#0B1326; }
+  .option-card.selected { border-color:#0B1326; background:#0B1326; color:#fff; }
+  .progress-pill { width:32px; height:4px; background:#E5E7EB; border-radius:99px; transition:all .3s; }
+  .progress-pill.active { background:#0B1326; width:48px; }
+  .progress-pill.done { background:#6ad9c3; }
+  .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
+  .footer-svg-stroke { fill:transparent; stroke:#0B1326; stroke-width:0.6; opacity:0.08; }
+  .footer-svg-grad { fill:transparent; stroke:url(#footerGrad); stroke-width:0.6; }
+  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); }
   .mobile-nav.open { display:flex; }
-  .mobile-nav a { color:#c4c6d0; font-size:0.95rem; font-weight:600; text-decoration:none; }
-  .mobile-nav .mobile-cta { margin-top:0.5rem; padding:0.75rem 1.5rem; background:linear-gradient(135deg,#aec6ff,#1d386a); color:#122f60; font-weight:700; border-radius:0.5rem; text-align:center; }
+  .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
+  .mobile-nav .mobile-cta { margin-top:.5rem; padding:.875rem 1.5rem; background:#0B1326; color:#fff; border-radius:.5rem; text-align:center; }
   .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
-  .hamburger span { display:block; width:22px; height:2px; background:#aec6ff; border-radius:2px; }
-  @media (max-width:768px) { .hamburger { display:flex; } }
+  .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; }
+  @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
-<body class="bg-background selection:bg-primary/30">
-<div class="cursor-glow" id="cursorGlow"></div>
+<body>
 
-<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/40 backdrop-blur-xl border-b border-[#aec6ff]/10 shadow-[0_8px_32px_0_rgba(6,14,32,0.8)]">
-  <div class="flex justify-between items-center px-6 md:px-8 h-20 max-w-7xl mx-auto">
-    <a href="/" class="text-xl font-bold tracking-tighter text-[#aec6ff] font-headline">AI CREW</a>
-    <div class="hidden md:flex items-center space-x-10 font-['Plus_Jakarta_Sans'] tracking-tight text-sm font-semibold">
-      <a class="text-slate-400 hover:text-[#aec6ff]" href="/how-we-work">How We Work</a>
-      <a class="text-slate-400 hover:text-[#aec6ff]" href="/built-with-ai">Built With AI</a>
-      <a class="text-slate-400 hover:text-[#aec6ff]" href="/case-studies">Case Studies</a>
-      <a class="text-slate-400 hover:text-[#aec6ff]" href="/about">About</a>
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
+  <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
+    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></a>
+    <div class="desktop-nav flex items-center gap-2 font-headline text-sm font-semibold">
+      <a href="/how-we-work" class="px-4 py-2 text-ink hover:text-ink/70">How We Work</a>
+      <a href="/industries" class="px-4 py-2 text-ink hover:text-ink/70">Industries</a>
+      <a href="/case-studies" class="px-4 py-2 text-ink hover:text-ink/70">Case Studies</a>
+      <a href="/about" class="px-4 py-2 text-ink hover:text-ink/70">About</a>
     </div>
-    <div class="flex items-center space-x-4">
-      <a href="/" class="hidden md:block text-sm font-semibold text-on-surface hover:text-primary">← Home</a>
+    <div class="flex items-center gap-3">
+      <a href="/" class="hidden lg:block text-sm font-headline font-semibold text-ink-soft hover:text-ink">← Home</a>
       <button class="hamburger" id="menuToggle"><span></span><span></span><span></span></button>
     </div>
   </div>
   <div class="mobile-nav" id="mobileNav">
-    <a href="/how-we-work">How We Work</a><a href="/built-with-ai">Built With AI</a>
+    <a href="/how-we-work">How We Work</a><a href="/industries">Industries</a>
     <a href="/case-studies">Case Studies</a><a href="/about">About</a>
     <a href="/" class="mobile-cta">← Home</a>
   </div>
 </nav>
 
-<main class="relative pt-20">
+<main class="pt-16">
 
-<section class="px-6 md:px-8 hero-gradient py-16">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+<section class="px-6 lg:px-10 py-16 lg:py-24 max-w-[1400px] mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
     <!-- LEFT: VALUE PROP -->
-    <div data-aos="fade-up">
-      <div class="flex items-center gap-4 mb-8">
-        <div class="insight-rail h-8"></div>
-        <span class="text-xs font-label font-bold tracking-[0.3em] uppercase text-outline">Strategy call</span>
-      </div>
-      <h1 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter leading-[0.95] mb-8">
+    <div class="lg:col-span-5" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-6">Strategy call</div>
+      <h1 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-8">
         45 minutes. <br/>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">Your AI roadmap.</span> <br/>
-        Drawn live.
+        <span class="grad-text">Your AI roadmap.</span> <br/>
+        <span class="font-serif italic text-ink-soft">Drawn live.</span>
       </h1>
-      <p class="text-lg text-on-surface-variant leading-relaxed mb-10">
-        On the call, we map how your business actually works. We surface the highest-leverage AI plays. We walk you through exactly what we would build, in what order, and what changes for you. Free. No deck. No pitch.
+      <p class="text-lg text-ink-soft leading-relaxed mb-10 max-w-md">
+        On the call, we map how your business actually works. We surface the highest-leverage AI plays. We walk you through exactly what we would build. Free. No deck. No pitch.
       </p>
 
       <div class="space-y-5 mb-10">
         <div class="flex items-start gap-4">
-          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary text-xl">schedule</span></div>
+          <div class="grad-bg w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-ink text-xl">schedule</span></div>
           <div>
-            <h4 class="font-bold text-on-background mb-1">45 minutes, no fluff</h4>
-            <p class="text-sm text-on-surface-variant">Quick setup, deep dive, walk you through the playbook</p>
+            <h4 class="font-headline font-bold text-ink mb-1">45 minutes, no fluff</h4>
+            <p class="text-sm text-ink-soft">Quick setup, deep dive, walk you through the playbook</p>
           </div>
         </div>
         <div class="flex items-start gap-4">
-          <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-secondary text-xl">map</span></div>
+          <div class="grad-bg w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-ink text-xl">map</span></div>
           <div>
-            <h4 class="font-bold text-on-background mb-1">A live AI roadmap</h4>
-            <p class="text-sm text-on-surface-variant">Drawn on screen during the call. Yours to keep, work with us or not</p>
+            <h4 class="font-headline font-bold text-ink mb-1">A live AI roadmap</h4>
+            <p class="text-sm text-ink-soft">Drawn on screen during the call. Yours to keep, work with us or not</p>
           </div>
         </div>
         <div class="flex items-start gap-4">
-          <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-tertiary text-xl">handshake</span></div>
+          <div class="grad-bg w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-ink text-xl">handshake</span></div>
           <div>
-            <h4 class="font-bold text-on-background mb-1">No-pressure, no-pitch</h4>
-            <p class="text-sm text-on-surface-variant">We work with you only if the fit is right for both sides</p>
+            <h4 class="font-headline font-bold text-ink mb-1">No-pressure, no-pitch</h4>
+            <p class="text-sm text-ink-soft">We work with you only if the fit is right for both sides</p>
           </div>
         </div>
       </div>
 
-      <div class="glass-panel p-6 rounded-xl">
-        <p class="text-sm text-on-surface italic font-headline leading-snug">"Best use of 45 minutes I've spent on AI in 2026. We left with a roadmap and three things to ship by Friday."</p>
-        <div class="flex items-center gap-3 mt-4">
-          <div class="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center border border-primary/20"><span class="text-xs font-bold text-primary">JS</span></div>
-          <div><div class="text-xs font-bold text-on-background">James S.</div><div class="text-[10px] text-outline tracking-widest uppercase">Founder, B2B SaaS</div></div>
+      <div class="glass-card p-6 rounded-2xl">
+        <p class="text-base font-headline italic leading-snug text-ink mb-4">"Best 45 minutes I've spent on AI in 2026. We left with a roadmap and three things to ship by Friday."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full grad-bg flex items-center justify-center text-xs font-bold text-ink">JS</div>
+          <div><div class="text-sm font-bold text-ink">James S.</div><div class="text-xs text-ink-mute uppercase tracking-widest">Founder, B2B SaaS</div></div>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: FORM -->
-    <div data-aos="fade-up" data-aos-delay="200">
-      <div class="glass-panel p-8 md:p-10 rounded-2xl">
-        <h2 class="text-2xl font-headline font-bold mb-2">Book your strategy call</h2>
-        <p class="text-sm text-on-surface-variant mb-8">Tell us a bit about you. We'll be in touch within 24 hours with a calendar link.</p>
+    <!-- RIGHT: QUALIFIER FORM -->
+    <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="200">
+      <div class="glass-card rounded-3xl p-8 md:p-12">
 
-        <form id="bookForm" class="space-y-5">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label class="form-label">First name</label>
-              <input type="text" required class="form-input" placeholder="Your first name" />
-            </div>
-            <div>
-              <label class="form-label">Last name</label>
-              <input type="text" required class="form-input" placeholder="Your last name" />
-            </div>
-          </div>
-          <div>
-            <label class="form-label">Work email</label>
-            <input type="email" required class="form-input" placeholder="you@company.com" />
-          </div>
-          <div>
-            <label class="form-label">Company / practice</label>
-            <input type="text" required class="form-input" placeholder="Company or practice name" />
-          </div>
-          <div>
-            <label class="form-label">You are a...</label>
-            <select required class="form-input">
-              <option value="">Select one</option>
-              <option>Founder / business owner</option>
-              <option>Doctor / surgeon / clinic owner</option>
-              <option>Lawyer / advocate</option>
-              <option>CA / CPA / accountant</option>
-              <option>Architect / designer</option>
-              <option>Financial advisor / wealth manager</option>
-              <option>Agency owner</option>
-              <option>Other professional</option>
-            </select>
-          </div>
-          <div>
-            <label class="form-label">What is the biggest time-suck right now?</label>
-            <textarea rows="3" class="form-input" placeholder="Be honest. What is eating your week?"></textarea>
-          </div>
-          <div>
-            <label class="form-label">Country</label>
-            <select required class="form-input">
-              <option value="">Select one</option>
-              <option>India</option>
-              <option>France</option>
-              <option>United Kingdom</option>
-              <option>United States</option>
-              <option>UAE</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <button type="submit" class="w-full mt-6 px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:scale-95 transition-all text-base shadow-lg shadow-primary/20">
-            Request my call
-          </button>
-          <p class="text-xs text-outline text-center">No newsletters. No spam. We reply within 24 hours.</p>
-        </form>
-
-        <div id="successState" class="hidden text-center py-12">
-          <div class="w-16 h-16 rounded-full bg-tertiary/20 flex items-center justify-center mx-auto mb-6"><span class="material-symbols-outlined text-tertiary text-3xl">check</span></div>
-          <h3 class="text-2xl font-headline font-bold mb-3">Got it.</h3>
-          <p class="text-on-surface-variant">We will be in touch within 24 hours with a calendar link.</p>
+        <!-- Progress -->
+        <div class="flex items-center gap-2 mb-2" id="progress">
+          <div class="progress-pill active"></div>
+          <div class="progress-pill"></div>
+          <div class="progress-pill"></div>
+          <div class="progress-pill"></div>
+          <div class="progress-pill"></div>
         </div>
+        <div class="text-xs text-ink-mute uppercase tracking-widest font-bold mb-6" id="stepLabel">Step 1 of 5</div>
+
+        <form id="qualifyForm">
+
+          <!-- STEP 1: Who are you -->
+          <div class="form-step active" data-step="1">
+            <h2 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-2">Who are you?</h2>
+            <p class="text-ink-soft mb-8">Helps me prep for the call. No wrong answer.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+              <div class="option-card font-headline text-sm font-semibold" data-field="role" data-value="Founder / CEO">Founder / CEO</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="role" data-value="Doctor / Surgeon / Clinic owner">Doctor / Surgeon / Clinic owner</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="role" data-value="Lawyer / Advocate">Lawyer / Advocate</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="role" data-value="CA / CPA / Accountant">CA / CPA / Accountant</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="role" data-value="Architect / Designer">Architect / Designer</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="role" data-value="Wealth / Financial Advisor">Wealth / Financial Advisor</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="role" data-value="Agency Owner">Agency Owner</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="role" data-value="Other Professional">Other Professional</div>
+            </div>
+            <button type="button" class="next-btn px-6 py-3 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90 inline-flex items-center gap-2">Next <span class="material-symbols-outlined text-base">arrow_forward</span></button>
+          </div>
+
+          <!-- STEP 2: Business stage -->
+          <div class="form-step" data-step="2">
+            <h2 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-2">How big is the team?</h2>
+            <p class="text-ink-soft mb-8">Lets me know if it is a solo play or a team rollout.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+              <div class="option-card font-headline text-sm font-semibold" data-field="size" data-value="Just me / solo">Just me / solo</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="size" data-value="2 - 10 people">2 - 10 people</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="size" data-value="11 - 50 people">11 - 50 people</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="size" data-value="51 - 200 people">51 - 200 people</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="size" data-value="200+ people">200+ people</div>
+            </div>
+            <div class="flex gap-3">
+              <button type="button" class="back-btn px-6 py-3 bg-white border border-border text-ink rounded-lg font-headline font-bold text-sm hover:bg-bg-mute">Back</button>
+              <button type="button" class="next-btn px-6 py-3 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90 inline-flex items-center gap-2">Next <span class="material-symbols-outlined text-base">arrow_forward</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Time leak -->
+          <div class="form-step" data-step="3">
+            <h2 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-2">Where is your time leaking right now?</h2>
+            <p class="text-ink-soft mb-8">Be honest. You can pick more than one.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8" id="leaks">
+              <div class="option-card multi font-headline text-sm font-semibold" data-field="leaks" data-value="Email + inbox">Email + inbox</div>
+              <div class="option-card multi font-headline text-sm font-semibold" data-field="leaks" data-value="Sales / outreach">Sales / outreach</div>
+              <div class="option-card multi font-headline text-sm font-semibold" data-field="leaks" data-value="Content + marketing">Content + marketing</div>
+              <div class="option-card multi font-headline text-sm font-semibold" data-field="leaks" data-value="Operations + admin">Operations + admin</div>
+              <div class="option-card multi font-headline text-sm font-semibold" data-field="leaks" data-value="Reporting + analysis">Reporting + analysis</div>
+              <div class="option-card multi font-headline text-sm font-semibold" data-field="leaks" data-value="Customer support">Customer support</div>
+              <div class="option-card multi font-headline text-sm font-semibold" data-field="leaks" data-value="Drafting / writing">Drafting / writing</div>
+              <div class="option-card multi font-headline text-sm font-semibold" data-field="leaks" data-value="Hiring / managing team">Hiring / managing team</div>
+            </div>
+            <div class="flex gap-3">
+              <button type="button" class="back-btn px-6 py-3 bg-white border border-border text-ink rounded-lg font-headline font-bold text-sm hover:bg-bg-mute">Back</button>
+              <button type="button" class="next-btn px-6 py-3 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90 inline-flex items-center gap-2">Next <span class="material-symbols-outlined text-base">arrow_forward</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 4: AI maturity + budget -->
+          <div class="form-step" data-step="4">
+            <h2 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-2">Where are you with AI today?</h2>
+            <p class="text-ink-soft mb-8">No judgement. We meet you where you are.</p>
+            <div class="space-y-3 mb-8">
+              <div class="option-card font-headline text-sm font-semibold" data-field="maturity" data-value="Curious, not started">Curious, but haven't really started</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="maturity" data-value="Personal use only">I use ChatGPT / Claude personally, nothing in the business</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="maturity" data-value="Some tools, not connected">A few tools running, none of it is connected</div>
+              <div class="option-card font-headline text-sm font-semibold" data-field="maturity" data-value="Stack in place, want to scale">A real AI stack in place, want to scale it</div>
+            </div>
+            <h3 class="font-headline font-bold text-lg text-ink mb-3">Indicative monthly budget for AI work</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+              <div class="option-card font-headline text-sm font-semibold text-center" data-field="budget" data-value="Under $1k">Under $1k</div>
+              <div class="option-card font-headline text-sm font-semibold text-center" data-field="budget" data-value="$1k - $3k">$1k - $3k</div>
+              <div class="option-card font-headline text-sm font-semibold text-center" data-field="budget" data-value="$3k - $10k">$3k - $10k</div>
+              <div class="option-card font-headline text-sm font-semibold text-center" data-field="budget" data-value="$10k+">$10k+</div>
+            </div>
+            <div class="flex gap-3">
+              <button type="button" class="back-btn px-6 py-3 bg-white border border-border text-ink rounded-lg font-headline font-bold text-sm hover:bg-bg-mute">Back</button>
+              <button type="button" class="next-btn px-6 py-3 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90 inline-flex items-center gap-2">Next <span class="material-symbols-outlined text-base">arrow_forward</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 5: Contact details -->
+          <div class="form-step" data-step="5">
+            <h2 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-2">Last bit. Where do I send the calendar link?</h2>
+            <p class="text-ink-soft mb-8">I reply within 24 hours, personally.</p>
+            <div class="space-y-4 mb-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div><label class="form-label">First name</label><input type="text" name="firstName" class="form-input" placeholder="Your first name" required/></div>
+                <div><label class="form-label">Last name</label><input type="text" name="lastName" class="form-input" placeholder="Your last name" required/></div>
+              </div>
+              <div><label class="form-label">Work email</label><input type="email" name="email" class="form-input" placeholder="you@company.com" required/></div>
+              <div><label class="form-label">Company / practice</label><input type="text" name="company" class="form-input" placeholder="Company or practice name" required/></div>
+              <div><label class="form-label">Country</label>
+                <select name="country" class="form-input" required>
+                  <option value="">Select one</option>
+                  <option>India</option><option>France</option><option>United Kingdom</option>
+                  <option>United States</option><option>UAE</option><option>Other</option>
+                </select>
+              </div>
+              <div><label class="form-label">Anything else I should know? (Optional)</label><textarea name="notes" rows="3" class="form-input" placeholder="The biggest thing on your mind right now..."></textarea></div>
+            </div>
+            <div class="flex gap-3">
+              <button type="button" class="back-btn px-6 py-3 bg-white border border-border text-ink rounded-lg font-headline font-bold text-sm hover:bg-bg-mute">Back</button>
+              <button type="submit" class="px-8 py-3 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90 inline-flex items-center gap-2">Request my call <span class="material-symbols-outlined text-base">send</span></button>
+            </div>
+          </div>
+
+          <!-- SUCCESS -->
+          <div class="form-step" data-step="success">
+            <div class="text-center py-8">
+              <div class="w-16 h-16 rounded-full grad-bg flex items-center justify-center mx-auto mb-6"><span class="material-symbols-outlined text-ink text-3xl">check</span></div>
+              <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-ink mb-4">Got it.</h2>
+              <p class="text-ink-soft text-lg mb-8 max-w-md mx-auto">I will personally email you within 24 hours with a calendar link. Look out for an email from <strong class="text-ink">manan.mehta@marketincrew.com</strong>.</p>
+              <a href="/" class="text-ink font-headline font-bold inline-flex items-center gap-1">Back to home <span class="material-symbols-outlined">arrow_forward</span></a>
+            </div>
+          </div>
+
+        </form>
       </div>
     </div>
 
   </div>
 </section>
 
-<footer class="border-t border-outline-variant/20 py-16 px-6 md:px-8 bg-surface-container-lowest mt-16">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-12">
-    <div class="col-span-2"><a href="/" class="text-xl font-bold tracking-tighter text-primary font-headline">AI CREW</a><p class="text-sm text-on-surface-variant mt-4 max-w-sm leading-relaxed">AI consultancy for founders, business owners and high-earning professionals. From the makers of MarketinCrew.</p></div>
-    <div><h4 class="text-xs font-label font-bold tracking-[0.2em] uppercase text-outline mb-4">Work</h4><ul class="space-y-3 text-sm"><li><a href="/how-we-work" class="text-on-surface-variant hover:text-primary">How we work</a></li><li><a href="/case-studies" class="text-on-surface-variant hover:text-primary">Case studies</a></li><li><a href="/built-with-ai" class="text-on-surface-variant hover:text-primary">Built with AI</a></li></ul></div>
-    <div><h4 class="text-xs font-label font-bold tracking-[0.2em] uppercase text-outline mb-4">Services</h4><ul class="space-y-3 text-sm"><li><a href="/web-dev" class="text-on-surface-variant hover:text-primary">AI Websites</a></li><li><a href="/content-studio" class="text-on-surface-variant hover:text-primary">AI Content</a></li><li><a href="/automations" class="text-on-surface-variant hover:text-primary">AI Automations</a></li><li><a href="/outreach" class="text-on-surface-variant hover:text-primary">AI Outreach</a></li></ul></div>
-    <div><h4 class="text-xs font-label font-bold tracking-[0.2em] uppercase text-outline mb-4">Contact</h4><ul class="space-y-3 text-sm"><li><a href="/about" class="text-on-surface-variant hover:text-primary">About Manan</a></li><li><a href="/book-demo" class="text-on-surface-variant hover:text-primary">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-on-surface-variant hover:text-primary">hello@aicrew.io</a></li></ul></div>
+<!-- FOOTER -->
+<footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
+    <div class="col-span-2">
+      <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">The AI studio for founders, business owners and high-earning professionals.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">Instagram</a>
+        <a href="https://www.mananmehta.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">mananmehta.com</a>
+      </div>
+    </div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Work</h4><ul class="space-y-2.5 text-sm"><li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li><li><a href="/industries" class="text-ink-soft hover:text-ink">Industries</a></li><li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case studies</a></li></ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4><ul class="space-y-2.5 text-sm"><li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li><li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content</a></li><li><a href="/automations" class="text-ink-soft hover:text-ink">AI Automations</a></li><li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li></ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4><ul class="space-y-2.5 text-sm"><li><a href="/about" class="text-ink-soft hover:text-ink">About Manan</a></li><li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li></ul></div>
   </div>
-  <div class="max-w-7xl mx-auto border-t border-outline-variant/10 mt-12 pt-8 flex flex-col md:flex-row justify-between text-xs text-outline">
-    <span>© 2026 AI Crew · From the makers of MarketinCrew</span>
-    <span class="mt-4 md:mt-0">Mumbai · Paris · Built in public with AI</span>
+  <div class="max-w-[1400px] mx-auto -mb-8 select-none">
+    <svg viewBox="0 0 800 200" class="w-full" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#aec6ff"/><stop offset="50%" stop-color="#6ad9c3"/><stop offset="100%" stop-color="#ffbe2e"/></linearGradient></defs>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-stroke" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-grad" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+    </svg>
+  </div>
+  <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
+    <span>© 2026 AI Crew · From the makers of MarketinCrew · 300+ brands shipped</span>
+    <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
   </div>
 </footer>
 
 </main>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({ duration:800, once:true, offset:100 });
-  const glow=document.getElementById('cursorGlow'); let raf;
-  document.addEventListener('mousemove',(e)=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';});});
+  AOS.init({ duration:700, once:true, offset:80 });
   const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
   mt.addEventListener('click',()=>mn.classList.toggle('open'));
 
-  document.getElementById('bookForm').addEventListener('submit', (e) => {
+  // Multi-step form logic
+  let currentStep = 1;
+  const totalSteps = 5;
+  const formData = { role:'', size:'', leaks:[], maturity:'', budget:'' };
+  const steps = document.querySelectorAll('.form-step');
+  const progress = document.querySelectorAll('.progress-pill');
+  const stepLabel = document.getElementById('stepLabel');
+
+  function showStep(n) {
+    steps.forEach(s => s.classList.remove('active'));
+    document.querySelector(`[data-step="${n}"]`).classList.add('active');
+    progress.forEach((p, i) => {
+      p.classList.remove('active', 'done');
+      if (i + 1 < n) p.classList.add('done');
+      if (i + 1 === n) p.classList.add('active');
+    });
+    stepLabel.textContent = `Step ${n} of ${totalSteps}`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Single-select cards
+  document.querySelectorAll('.option-card:not(.multi)').forEach(card => {
+    card.addEventListener('click', () => {
+      const field = card.dataset.field;
+      const value = card.dataset.value;
+      document.querySelectorAll(`.option-card[data-field="${field}"]`).forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      formData[field] = value;
+    });
+  });
+
+  // Multi-select cards
+  document.querySelectorAll('.option-card.multi').forEach(card => {
+    card.addEventListener('click', () => {
+      const field = card.dataset.field;
+      const value = card.dataset.value;
+      card.classList.toggle('selected');
+      if (!Array.isArray(formData[field])) formData[field] = [];
+      if (card.classList.contains('selected')) formData[field].push(value);
+      else formData[field] = formData[field].filter(v => v !== value);
+    });
+  });
+
+  document.querySelectorAll('.next-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (currentStep < totalSteps) { currentStep++; showStep(currentStep); }
+    });
+  });
+  document.querySelectorAll('.back-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (currentStep > 1) { currentStep--; showStep(currentStep); }
+    });
+  });
+
+  document.getElementById('qualifyForm').addEventListener('submit', (e) => {
     e.preventDefault();
     setTimeout(() => {
-      document.getElementById('bookForm').classList.add('hidden');
-      document.getElementById('successState').classList.remove('hidden');
-    }, 1200);
+      steps.forEach(s => s.classList.remove('active'));
+      document.querySelector('[data-step="success"]').classList.add('active');
+      progress.forEach(p => { p.classList.remove('active'); p.classList.add('done'); });
+      stepLabel.textContent = 'Submitted';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 800);
+  });
+
+  // Magnetic buttons
+  document.querySelectorAll('.mag-btn').forEach(btn => {
+    let raf;
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const dx=(e.clientX-(r.left+r.width/2))*0.25, dy=(e.clientY-(r.top+r.height/2))*0.25;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => { btn.style.transform = `translate(${dx}px, ${dy}px)`; });
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
   });
 </script>
 </body>

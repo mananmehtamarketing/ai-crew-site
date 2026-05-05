@@ -1,186 +1,388 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Manan Mehta | Founder, AI Crew</title>
-<meta name="description" content="Manan Mehta. Restaurateur turned marketer. Founder of MarketinCrew (50-person agency, 80+ brands shipped). Now building AI Crew, a one-to-one AI consultancy for founders and professionals." />
-<meta name="keywords" content="Manan Mehta, AI Crew founder, MarketinCrew founder, AI consultant India, AI consultant France" />
+<title>About Manan Mehta | Founder, AI Crew · From the makers of MarketinCrew</title>
+<meta name="description" content="Manan Mehta. Restaurateur turned marketer turned AI operator. Founder of MarketinCrew (50-person agency, 300+ brands shipped) and AI Crew. Why AI Crew exists." />
+<meta name="keywords" content="Manan Mehta, AI Crew founder, MarketinCrew founder, AI operator India, AI consultant Paris" />
 <link rel="canonical" href="https://aicrew.io/about" />
 
 <meta property="og:title" content="About Manan Mehta | AI Crew Founder" />
-<meta property="og:description" content="Restaurateur turned marketer turned AI consultant. 50-person agency. 80+ brands shipped. Now building AI Crew." />
+<meta property="og:description" content="Restaurateur turned marketer turned AI operator. 50-person agency. 300+ brands shipped. Now building AI Crew." />
+<meta property="og:image" content="https://aicrew.io/images/me/manan.jpg" />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://aicrew.io/about" />
+<meta property="og:site_name" content="AI Crew" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Manan Mehta",
-  "jobTitle": "Founder, AI Crew",
-  "worksFor": {"@type":"Organization","name":"AI Crew"},
-  "alumniOf": "MarketinCrew",
-  "url": "https://aicrew.io/about",
-  "sameAs": ["https://linkedin.com/in/mananmehta", "https://instagram.com/mananmehta"]
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Manan Mehta",
+  "jobTitle":"Founder, AI Crew",
+  "worksFor":{"@type":"Organization","name":"AI Crew"},
+  "alumniOf":"MarketinCrew",
+  "url":"https://aicrew.io/about",
+  "sameAs":["https://www.mananmehta.com/","https://www.instagram.com/manan.mehta.marketing/"],
+  "image":"https://aicrew.io/images/me/manan.jpg"
 }
 </script>
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-  tailwind.config = { darkMode:"class", theme:{ extend:{
-    colors:{"background":"#0b1326","surface":"#171f33","surface-bright":"#31394d","surface-container":"#171f33","surface-container-high":"#222a3d","surface-container-lowest":"#060e20","primary":"#aec6ff","primary-container":"#1d386a","on-primary":"#122f60","secondary":"#ffbe2e","tertiary":"#6ad9c3","on-background":"#dae2fd","on-surface":"#dae2fd","on-surface-variant":"#c4c6d0","outline":"#8e909a","outline-variant":"#44474f"},
-    fontFamily:{"headline":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"label":["Inter","sans-serif"]},
-    borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"}
+  tailwind.config = { theme:{ extend:{
+    colors:{"bg":"#FFFFFF","bg-soft":"#F8F9FB","bg-mute":"#F1F4FA","ink":"#0B1326","ink-soft":"#3A4256","ink-mute":"#6B7280","border":"#E5E7EB","border-soft":"#F0F2F5","accent-1":"#aec6ff","accent-2":"#6ad9c3","accent-3":"#ffbe2e"},
+    fontFamily:{"headline":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"serif":["Instrument Serif","serif"]},
+    borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","full":"9999px"}
   }}}
 </script>
 <style>
-  body { background-color:#0b1326; color:#dae2fd; font-family:'Inter',sans-serif; overflow-x:hidden; }
+  body { background:#fff; color:#0B1326; font-family:'Inter',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
-  .insight-rail { width:2px; background:linear-gradient(to bottom,#aec6ff,transparent); }
-  .glass-panel { background:rgba(45,52,73,0.4); backdrop-filter:blur(16px); border:1px solid rgba(142,144,154,0.15); }
-  .hero-gradient { background:radial-gradient(circle at 50% -10%,rgba(174,198,255,0.15) 0%,rgba(11,19,38,0) 60%); }
-  .cursor-glow { position:fixed; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(174,198,255,0.06) 0%,transparent 50%); pointer-events:none; z-index:1; transform:translate(-50%,-50%); }
-  .mobile-nav { display:none; flex-direction:column; background:rgba(11,19,38,0.98); border-top:1px solid rgba(174,198,255,0.1); padding:1.5rem 2rem; gap:1.25rem; }
+  .grad-text { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .grad-bg { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); }
+  .glass-light { background:rgba(255,255,255,0.65); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); }
+  .glass-card { background:#fff; border:1px solid #E5E7EB; transition:all .35s; }
+  .glass-card:hover { box-shadow:0 20px 60px -10px rgba(174,198,255,0.4), 0 0 0 1px rgba(174,198,255,0.3); transform:translateY(-2px); }
+  .testi-card { transition:all .35s; cursor:pointer; }
+  .testi-card:hover { transform:translateY(-4px) scale(1.02); box-shadow:0 24px 48px -12px rgba(11,19,38,0.18); }
+  .universe-tile { background:#fff; border:1px solid #E5E7EB; transition:all .35s; }
+  .universe-tile:hover { border-color:transparent; box-shadow:0 16px 40px -8px rgba(174,198,255,0.4), 0 0 0 1px rgba(174,198,255,0.3); transform:translateY(-3px); }
+  .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
+  .footer-svg-stroke { fill:transparent; stroke:#0B1326; stroke-width:0.6; opacity:0.08; }
+  .footer-svg-grad { fill:transparent; stroke:url(#footerGrad); stroke-width:0.6; }
+  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); }
   .mobile-nav.open { display:flex; }
-  .mobile-nav a { color:#c4c6d0; font-size:0.95rem; font-weight:600; text-decoration:none; }
-  .mobile-nav .mobile-cta { margin-top:0.5rem; padding:0.75rem 1.5rem; background:linear-gradient(135deg,#aec6ff,#1d386a); color:#122f60; font-weight:700; border-radius:0.5rem; text-align:center; }
+  .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
+  .mobile-nav .mobile-cta { margin-top:.5rem; padding:.875rem 1.5rem; background:#0B1326; color:#fff; border-radius:.5rem; text-align:center; }
   .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
-  .hamburger span { display:block; width:22px; height:2px; background:#aec6ff; border-radius:2px; }
-  @media (max-width:768px) { .hamburger { display:flex; } }
+  .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; }
+  @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
+  html { scroll-behavior:smooth; scroll-padding-top:80px; }
+  .dot-grid { background-image:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
+  .timeline-line { position:absolute; left:1.5rem; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, #aec6ff, #6ad9c3, #ffbe2e, transparent); }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
-<body class="bg-background selection:bg-primary/30">
-<div class="cursor-glow" id="cursorGlow"></div>
+<body>
 
-<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/40 backdrop-blur-xl border-b border-[#aec6ff]/10 shadow-[0_8px_32px_0_rgba(6,14,32,0.8)]">
-  <div class="flex justify-between items-center px-6 md:px-8 h-20 max-w-7xl mx-auto">
-    <a href="/" class="text-xl font-bold tracking-tighter text-[#aec6ff] font-headline">AI CREW</a>
-    <div class="hidden md:flex items-center space-x-10 font-['Plus_Jakarta_Sans'] tracking-tight text-sm font-semibold">
-      <a class="text-slate-400 hover:text-[#aec6ff]" href="/how-we-work">How We Work</a>
-      <a class="text-slate-400 hover:text-[#aec6ff]" href="/built-with-ai">Built With AI</a>
-      <a class="text-slate-400 hover:text-[#aec6ff]" href="/case-studies">Case Studies</a>
-      <a class="text-primary" href="/about">About</a>
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
+  <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
+    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></a>
+    <div class="desktop-nav flex items-center gap-2 font-headline text-sm font-semibold">
+      <a href="/how-we-work" class="px-4 py-2 text-ink hover:text-ink/70">How We Work</a>
+      <a href="/industries" class="px-4 py-2 text-ink hover:text-ink/70">Industries</a>
+      <a href="/case-studies" class="px-4 py-2 text-ink hover:text-ink/70">Case Studies</a>
+      <a href="/about" class="px-4 py-2 grad-text">About</a>
     </div>
-    <div class="flex items-center space-x-4">
-      <a href="/book-demo" class="hidden md:block"><button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-bold text-sm hover:scale-95 transition-all shadow-lg shadow-primary/10">Book a Call</button></a>
+    <div class="flex items-center gap-3">
+      <a href="/book-demo" class="hidden lg:block mag-btn"><button class="px-5 py-2.5 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90">Book a Call</button></a>
       <button class="hamburger" id="menuToggle"><span></span><span></span><span></span></button>
     </div>
   </div>
   <div class="mobile-nav" id="mobileNav">
-    <a href="/how-we-work">How We Work</a><a href="/built-with-ai">Built With AI</a>
+    <a href="/how-we-work">How We Work</a><a href="/industries">Industries</a>
     <a href="/case-studies">Case Studies</a><a href="/about">About</a>
     <a href="/book-demo" class="mobile-cta">Book a Call →</a>
   </div>
 </nav>
 
-<main class="relative pt-20">
+<main class="pt-16">
 
 <!-- HERO -->
-<section class="px-6 md:px-8 hero-gradient py-32" data-aos="fade-up">
-  <div class="max-w-5xl mx-auto">
-    <div class="flex items-center gap-4 mb-8">
-      <div class="insight-rail h-8"></div>
-      <span class="text-xs font-label font-bold tracking-[0.3em] uppercase text-outline">The founder</span>
+<section class="px-6 lg:px-10 py-20 lg:py-32 max-w-[1400px] mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-6">The founder</div>
+      <h1 class="font-headline font-extrabold text-ink text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter leading-[0.92] mb-8">
+        Hi, I'm <span class="grad-text">Manan.</span> <br/>
+        <span class="font-serif italic text-ink-soft text-4xl md:text-5xl lg:text-6xl">I run AI Crew.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-ink-soft leading-relaxed mb-8 max-w-2xl">
+        Restaurateur turned marketer turned AI operator. I have spent the last decade building businesses, the last two years installing AI inside them, and the last six months turning that into a separate practice for founders and professionals.
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="mag-btn">
+          <button class="px-6 py-3 bg-ink text-white rounded-xl font-headline font-bold text-sm hover:bg-ink/90 inline-flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">photo_camera</span>
+            Follow on Instagram
+          </button>
+        </a>
+        <a href="https://www.mananmehta.com/" target="_blank" rel="noopener" class="mag-btn">
+          <button class="px-6 py-3 bg-white border border-border text-ink rounded-xl font-headline font-bold text-sm hover:bg-bg-mute inline-flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">link</span>
+            mananmehta.com
+          </button>
+        </a>
+      </div>
     </div>
-    <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-[0.95] mb-8">
-      Hi, I'm Manan. <br/>
-      <span class="text-on-surface-variant">I run AI Crew.</span>
-    </h1>
-    <p class="text-lg md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed">
-      Restaurateur turned marketer turned AI operator. I have spent the last decade building businesses, and the last two years installing AI inside them.
+    <div class="lg:col-span-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="relative rounded-3xl overflow-hidden">
+        <img src="/images/me/manan.jpg" alt="Manan Mehta, founder of AI Crew" class="w-full aspect-[4/5] object-cover"/>
+        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ink/80 to-transparent text-white">
+          <div class="text-xs uppercase tracking-[0.2em] font-bold opacity-80 mb-1">Manan Mehta</div>
+          <div class="font-headline font-bold">Founder · AI Crew + MarketinCrew</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE STORY -->
+<section class="py-24 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-3xl mx-auto" data-aos="fade-up">
+    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">The story</div>
+    <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl tracking-tighter leading-[0.95] mb-12">Why AI Crew exists.</h2>
+
+    <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+      <p>I started in restaurants. Built and ran them. Got burnt out. Walked away and started MarketinCrew, a marketing agency that grew into a 50-person team, shipping work for <strong class="text-ink">300+ brands</strong> across India, Europe and North America.</p>
+
+      <p>Two years ago I became <span class="font-serif italic text-ink">obsessed</span> with AI. Not the hype. The actual transformation it ran on my own day. Email triaged. Meetings prepped. Content drafted. Decisions sharper. The hours I worked went down. The output went up. The quality went up.</p>
+
+      <p>So I started installing AI inside my agency. Outreach systems. Content engines. Internal tools. Custom GPTs for every team. And then I started doing the same for clients. They were marketing clients to begin with, but the work I was doing for them was no longer marketing. It was AI.</p>
+
+      <p>Founders kept asking me, almost weekly, the same thing. <span class="font-serif italic text-ink">"Can you do this for me, in my business?"</span> That question kept landing. So I made it a real thing.</p>
+
+      <p class="text-ink font-headline font-bold text-2xl leading-snug pt-4 border-t border-border">That is AI Crew. A separate practice for founders and high-earning professionals who do not have time to figure AI out themselves, and do not want a generic SaaS plug-in. They want it built for them, run for them, and managed by someone with skin in the game.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE UNIVERSE -->
+<section class="py-24 lg:py-32 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="max-w-3xl mb-16" data-aos="fade-up">
+    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">The universe</div>
+    <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6">
+      AI Crew is one part of a bigger machine.
+    </h2>
+    <p class="text-lg text-ink-soft leading-relaxed">When you work with AI Crew, you tap into the full MarketinCrew universe. 50 people. Studios. A podcast. A French marketing arm. All behind one face.</p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5" data-aos="fade-up">
+    <a href="https://marketincrew.com" target="_blank" rel="noopener" class="universe-tile rounded-2xl p-6 flex flex-col items-center justify-center aspect-square">
+      <img src="/images/universe/marketincrew.png" alt="MarketinCrew" class="w-full h-20 object-contain mb-4"/>
+      <div class="text-center">
+        <div class="font-headline font-bold text-ink text-sm">MarketinCrew</div>
+        <div class="text-xs text-ink-mute mt-1">Marketing agency</div>
+      </div>
+    </a>
+    <a href="https://marketincrew.com" target="_blank" rel="noopener" class="universe-tile rounded-2xl p-6 flex flex-col items-center justify-center aspect-square">
+      <img src="/images/universe/marketincrew-studio.jpg" alt="MarketinCrew Studio" class="w-full h-20 object-contain mb-4 rounded"/>
+      <div class="text-center">
+        <div class="font-headline font-bold text-ink text-sm">MK Studio</div>
+        <div class="text-xs text-ink-mute mt-1">Production house</div>
+      </div>
+    </a>
+    <a href="https://marketincrew.com" target="_blank" rel="noopener" class="universe-tile rounded-2xl p-6 flex flex-col items-center justify-center aspect-square">
+      <img src="/images/universe/marketincrew-podcast.jpg" alt="MK Podcast" class="w-full h-20 object-contain mb-4 rounded"/>
+      <div class="text-center">
+        <div class="font-headline font-bold text-ink text-sm">MK Podcast</div>
+        <div class="text-xs text-ink-mute mt-1">Founder stories</div>
+      </div>
+    </a>
+    <a href="https://marketincrew.com" target="_blank" rel="noopener" class="universe-tile rounded-2xl p-6 flex flex-col items-center justify-center aspect-square">
+      <img src="/images/universe/lyon-marketing.png" alt="Lyon Marketing Co" class="w-full h-20 object-contain mb-4"/>
+      <div class="text-center">
+        <div class="font-headline font-bold text-ink text-sm">Lyon Marketing Co.</div>
+        <div class="text-xs text-ink-mute mt-1">France arm</div>
+      </div>
+    </a>
+    <div class="universe-tile rounded-2xl p-6 flex flex-col items-center justify-center aspect-square bg-ink text-white border-ink">
+      <div class="font-headline font-extrabold text-3xl grad-text mb-1">AI</div>
+      <div class="font-headline font-extrabold text-2xl text-white -mt-1 mb-3">CREW</div>
+      <div class="text-xs text-white/70 text-center">The AI studio<br/>(you are here)</div>
+    </div>
+  </div>
+</section>
+
+<!-- 300+ CLIENTS WALL -->
+<section class="py-24 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">Trust, earned</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6">
+        <span class="grad-text">300+ founders</span> <br/>have trusted us with their work.
+      </h2>
+      <p class="text-lg text-ink-soft max-w-2xl mx-auto">14 years. 50 people. Brands across India, Europe and North America. Click any cover for the story.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-16">
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/dr-sheths.jpg" class="w-full h-full object-cover" alt="Dr Sheths"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/ls-chemicals.jpg" class="w-full h-full object-cover" alt="LS Chemicals"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/yoga.jpg" class="w-full h-full object-cover" alt="Yoga"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/coffee-with-strangers.jpg" class="w-full h-full object-cover" alt="Coffee with Strangers"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/inventure.jpg" class="w-full h-full object-cover" alt="Inventure"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/rolling-pin.jpg" class="w-full h-full object-cover" alt="Rolling Pin"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/silla.jpg" class="w-full h-full object-cover" alt="Silla"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/rm.jpg" class="w-full h-full object-cover" alt="RM"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/ceque.jpg" class="w-full h-full object-cover" alt="Ceque"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/debs.jpg" class="w-full h-full object-cover" alt="Debs"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/debs-street-food.jpg" class="w-full h-full object-cover" alt="Debs Street Food"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/elam-vital.jpg" class="w-full h-full object-cover" alt="Elam Vital"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/gut-health.jpg" class="w-full h-full object-cover" alt="Gut Health"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/we-do-things.jpg" class="w-full h-full object-cover" alt="We Do Things"/></a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto" data-aos="fade-up">
+      <div class="text-center"><div class="font-headline font-extrabold text-5xl md:text-6xl grad-text mb-2">300+</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Brands shipped</div></div>
+      <div class="text-center"><div class="font-headline font-extrabold text-5xl md:text-6xl grad-text mb-2">50</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">People in the agency</div></div>
+      <div class="text-center"><div class="font-headline font-extrabold text-5xl md:text-6xl grad-text mb-2">14</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Years building</div></div>
+      <div class="text-center"><div class="font-headline font-extrabold text-5xl md:text-6xl grad-text mb-2">3</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Countries (IN · FR · UK)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILT WITH AI (small section) -->
+<section class="py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="max-w-4xl">
+    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4" data-aos="fade-up">The meta layer</div>
+    <h2 class="font-headline font-extrabold text-ink text-3xl md:text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6" data-aos="fade-up">
+      AI Crew is itself <span class="grad-text">built using AI.</span>
+    </h2>
+    <p class="text-lg text-ink-soft leading-relaxed mb-12 max-w-3xl" data-aos="fade-up">
+      Every page on this site, every campaign you see go out, every system behind the scenes was built with AI in the loop. We document the journey publicly. Same way we will build yours.
     </p>
-  </div>
-</section>
 
-<!-- STORY -->
-<section class="py-24 px-6 md:px-8 bg-surface-container-lowest" data-aos="fade-up">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-12">The short story.</h2>
-    <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
-      <p>I started in restaurants. Built and ran them. Got burnt out. Walked away and built MarketinCrew, a marketing agency now 50 people strong, 80+ brands shipped across India, Europe and North America.</p>
-      <p>Two years ago, I started installing AI into our own agency. Outreach, content, ops, internal tools. The output of the team went up. The hours we worked went down. The quality went up.</p>
-      <p>Founders started asking me, almost weekly, the same thing. "Can you do this for me, in my business?" That conversation kept happening. So I made it a real thing.</p>
-      <p>That is AI Crew. A one-to-one AI consultancy for founders and high-earning professionals who do not have the time to figure this out themselves and do not want a generic plug-and-play SaaS. They want it built for them, run for them, and managed by someone who has skin in the game.</p>
-      <p>That is what we do.</p>
+    <div class="relative pl-12 mb-12" data-aos="fade-up">
+      <div class="timeline-line"></div>
+      <div class="space-y-8">
+        <div class="relative">
+          <div class="absolute -left-12 top-0 w-9 h-9 rounded-full grad-bg flex items-center justify-center font-bold text-ink text-xs">D1</div>
+          <div class="text-xs uppercase tracking-widest text-ink-mute font-bold mb-1">Day 01</div>
+          <div class="font-headline font-bold text-lg text-ink mb-1">Voice notes to strategy doc in 90 minutes</div>
+          <p class="text-sm text-ink-soft">Three audio walks in Paris, transcribed by Fireflies, turned into a full brand brief by Claude.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-12 top-0 w-9 h-9 rounded-full grad-bg flex items-center justify-center font-bold text-ink text-xs">D3</div>
+          <div class="text-xs uppercase tracking-widest text-ink-mute font-bold mb-1">Day 03</div>
+          <div class="font-headline font-bold text-lg text-ink mb-1">First version of this site, AI-coded</div>
+          <p class="text-sm text-ink-soft">Stitch + Claude Code shipped a working multi-page site to Vercel in under a day.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-12 top-0 w-9 h-9 rounded-full grad-bg flex items-center justify-center font-bold text-ink text-xs">D7</div>
+          <div class="text-xs uppercase tracking-widest text-ink-mute font-bold mb-1">Day 07</div>
+          <div class="font-headline font-bold text-lg text-ink mb-1">Outreach engine live. First 50 conversations.</div>
+          <p class="text-sm text-ink-soft">Apollo + Clay + custom GPTs. Hyper-personalised outreach to founders + professionals across IN, UK, FR.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-12 top-0 w-9 h-9 rounded-full grad-bg flex items-center justify-center font-bold text-ink text-xs">D14</div>
+          <div class="text-xs uppercase tracking-widest text-ink-mute font-bold mb-1">Day 14</div>
+          <div class="font-headline font-bold text-lg text-ink mb-1">First retainer signed. Documented in public.</div>
+          <p class="text-sm text-ink-soft">Founder of a B2B SaaS in Mumbai. Three pillars deployed in 30 days.</p>
+        </div>
+      </div>
     </div>
+    <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="text-ink font-headline font-bold inline-flex items-center gap-1 hover:gap-2 transition-all">
+      Follow the journey on Instagram <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="py-24 px-6 md:px-8 max-w-6xl mx-auto" data-aos="fade-up">
-  <h2 class="text-3xl md:text-4xl font-headline font-bold mb-16">By the numbers.</h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-    <div><div class="text-5xl font-headline font-bold text-primary mb-2">10</div><p class="text-sm text-on-surface-variant">Years building businesses, marketing brands, shipping work</p></div>
-    <div><div class="text-5xl font-headline font-bold text-secondary mb-2">50</div><p class="text-sm text-on-surface-variant">People in the MarketinCrew team behind every AI Crew engagement</p></div>
-    <div><div class="text-5xl font-headline font-bold text-tertiary mb-2">80+</div><p class="text-sm text-on-surface-variant">Brands shipped across India, Europe and North America</p></div>
-    <div><div class="text-5xl font-headline font-bold text-on-background mb-2">3</div><p class="text-sm text-on-surface-variant">Countries I split my time across (India, France, UK)</p></div>
-  </div>
-</section>
-
-<!-- WHAT I BELIEVE -->
-<section class="py-24 px-6 md:px-8 bg-surface-container-lowest" data-aos="fade-up">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-12">What I believe.</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="glass-panel p-8 rounded-xl">
-        <div class="material-symbols-outlined text-primary text-3xl mb-4">person</div>
-        <h3 class="text-lg font-headline font-bold mb-3">AI without context is noise.</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">A generic GPT plug-in for a law firm versus a clinic versus a SaaS founder is a different problem each time. Context first.</p>
+<!-- BELIEFS -->
+<section class="py-24 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-3xl mb-12" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">The way I work</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl tracking-tighter leading-[0.95]">Four things I believe.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="glass-card p-8 rounded-2xl" data-aos="fade-up">
+        <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">person</span></div>
+        <h3 class="font-headline font-bold text-xl text-ink mb-3">AI without context is noise.</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">A generic GPT plug-in for a law firm versus a clinic versus a SaaS founder is a different problem each time. Context first, tool second.</p>
       </div>
-      <div class="glass-panel p-8 rounded-xl">
-        <div class="material-symbols-outlined text-secondary text-3xl mb-4">groups</div>
-        <h3 class="text-lg font-headline font-bold mb-3">One face, full agency behind.</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">You should never need to brief five vendors. You brief me. The 50-person agency runs the build behind the scenes.</p>
+      <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+        <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">groups</span></div>
+        <h3 class="font-headline font-bold text-xl text-ink mb-3">One face, full agency behind.</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">You should never need to brief five vendors. You brief me. The 50-person agency runs the build behind the scenes.</p>
       </div>
-      <div class="glass-panel p-8 rounded-xl">
-        <div class="material-symbols-outlined text-tertiary text-3xl mb-4">visibility</div>
-        <h3 class="text-lg font-headline font-bold mb-3">Build in public. Always.</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">If we cannot show it working on our own business first, we will not sell it to you. AI Crew runs on the same systems you will get.</p>
+      <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+        <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">visibility</span></div>
+        <h3 class="font-headline font-bold text-xl text-ink mb-3">Build in public. Always.</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">If we cannot show it working on our own business first, we will not sell it to you. AI Crew runs on the same systems you will get.</p>
       </div>
-      <div class="glass-panel p-8 rounded-xl">
-        <div class="material-symbols-outlined text-primary text-3xl mb-4">handshake</div>
-        <h3 class="text-lg font-headline font-bold mb-3">Stay on, do not hand off.</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Every engagement is a partnership. We build, run and manage. The AI stack is never done, so we never stop.</p>
+      <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+        <div class="grad-bg w-12 h-12 rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-ink">handshake</span></div>
+        <h3 class="font-headline font-bold text-xl text-ink mb-3">Stay on, do not hand off.</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">Every engagement is a partnership. We build, run and manage. The AI stack is never done, so we never stop.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="py-32 px-6 md:px-8" data-aos="fade-up">
-  <div class="max-w-4xl mx-auto glass-panel p-12 md:p-16 rounded-[2rem] text-center relative overflow-hidden">
-    <div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
-    <div class="relative z-10">
-      <h2 class="text-3xl md:text-5xl font-headline font-extrabold mb-6">Want to talk?</h2>
-      <p class="text-on-surface-variant text-lg mb-10">Book 45 minutes with me. I will listen, take notes, and walk you through what I would build if you were my client.</p>
-      <a href="/book-demo"><button class="px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl text-lg hover:scale-105 transition-all shadow-2xl shadow-primary/30">Book time with me</button></a>
+<section class="py-24 lg:py-32 px-6 lg:px-10">
+  <div class="max-w-5xl mx-auto relative rounded-[2.5rem] overflow-hidden" data-aos="fade-up">
+    <div class="absolute inset-0 grad-bg"></div>
+    <div class="absolute inset-0 dot-grid"></div>
+    <div class="relative p-12 md:p-20 text-center">
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6">
+        Want to talk to me directly?
+      </h2>
+      <p class="text-lg text-ink/80 max-w-2xl mx-auto mb-10">Book 45 minutes. I will listen, take notes, and walk you through what I would build if you were my client. Free. No pitch.</p>
+      <a href="/book-demo" class="mag-btn">
+        <button class="px-10 py-5 bg-ink text-white rounded-xl font-headline font-bold text-lg hover:bg-ink/90 inline-flex items-center gap-2">
+          Book time with me
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </a>
     </div>
   </div>
 </section>
 
-<footer class="border-t border-outline-variant/20 py-16 px-6 md:px-8 bg-surface-container-lowest">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-12">
-    <div class="col-span-2"><a href="/" class="text-xl font-bold tracking-tighter text-primary font-headline">AI CREW</a><p class="text-sm text-on-surface-variant mt-4 max-w-sm leading-relaxed">AI consultancy for founders, business owners and high-earning professionals. From the makers of MarketinCrew.</p></div>
-    <div><h4 class="text-xs font-label font-bold tracking-[0.2em] uppercase text-outline mb-4">Work</h4><ul class="space-y-3 text-sm"><li><a href="/how-we-work" class="text-on-surface-variant hover:text-primary">How we work</a></li><li><a href="/case-studies" class="text-on-surface-variant hover:text-primary">Case studies</a></li><li><a href="/built-with-ai" class="text-on-surface-variant hover:text-primary">Built with AI</a></li></ul></div>
-    <div><h4 class="text-xs font-label font-bold tracking-[0.2em] uppercase text-outline mb-4">Services</h4><ul class="space-y-3 text-sm"><li><a href="/web-dev" class="text-on-surface-variant hover:text-primary">AI Websites</a></li><li><a href="/content-studio" class="text-on-surface-variant hover:text-primary">AI Content</a></li><li><a href="/automations" class="text-on-surface-variant hover:text-primary">AI Automations</a></li><li><a href="/outreach" class="text-on-surface-variant hover:text-primary">AI Outreach</a></li></ul></div>
-    <div><h4 class="text-xs font-label font-bold tracking-[0.2em] uppercase text-outline mb-4">Contact</h4><ul class="space-y-3 text-sm"><li><a href="/about" class="text-on-surface-variant hover:text-primary">About Manan</a></li><li><a href="/book-demo" class="text-on-surface-variant hover:text-primary">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-on-surface-variant hover:text-primary">hello@aicrew.io</a></li></ul></div>
+<!-- FOOTER -->
+<footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
+    <div class="col-span-2">
+      <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">The AI studio for founders, business owners and high-earning professionals. We step inside your universe and rebuild it with AI.</p>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Follow Manan</div>
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-base">photo_camera</span> Instagram</a>
+        <a href="https://www.mananmehta.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-base">link</span> mananmehta.com</a>
+      </div>
+    </div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Work</h4><ul class="space-y-2.5 text-sm"><li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li><li><a href="/industries" class="text-ink-soft hover:text-ink">Industries</a></li><li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case studies</a></li></ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4><ul class="space-y-2.5 text-sm"><li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li><li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content</a></li><li><a href="/automations" class="text-ink-soft hover:text-ink">AI Automations</a></li><li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li></ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4><ul class="space-y-2.5 text-sm"><li><a href="/about" class="text-ink-soft hover:text-ink">About Manan</a></li><li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li></ul></div>
   </div>
-  <div class="max-w-7xl mx-auto border-t border-outline-variant/10 mt-12 pt-8 flex flex-col md:flex-row justify-between text-xs text-outline">
-    <span>© 2026 AI Crew · From the makers of MarketinCrew</span>
-    <span class="mt-4 md:mt-0">Mumbai · Paris · Built in public with AI</span>
+
+  <div class="max-w-[1400px] mx-auto -mb-8 select-none">
+    <svg viewBox="0 0 800 200" class="w-full" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#aec6ff"/><stop offset="50%" stop-color="#6ad9c3"/><stop offset="100%" stop-color="#ffbe2e"/></linearGradient></defs>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-stroke" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-grad" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+    </svg>
+  </div>
+
+  <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
+    <span>© 2026 AI Crew · From the makers of MarketinCrew · 300+ brands shipped</span>
+    <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
   </div>
 </footer>
 
 </main>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({ duration:800, once:true, offset:100 });
-  const glow=document.getElementById('cursorGlow'); let raf;
-  document.addEventListener('mousemove',(e)=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';});});
+  AOS.init({ duration:700, once:true, offset:80 });
   const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
   mt.addEventListener('click',()=>mn.classList.toggle('open'));
+  document.querySelectorAll('.mag-btn').forEach(btn => {
+    let raf;
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const dx=(e.clientX-(r.left+r.width/2))*0.25, dy=(e.clientY-(r.top+r.height/2))*0.25;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => { btn.style.transform = `translate(${dx}px, ${dy}px)`; });
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
+  });
 </script>
 </body>
 </html>
