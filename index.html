@@ -97,18 +97,22 @@
   .tool-chip span { font-family:'Plus Jakarta Sans', sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:-0.01em; }
 
   /* Hero rotating word — Framer-style spring slide. Words enter from below, exit upward. */
-  .rotate-word { display:inline-block; position:relative; vertical-align:bottom; overflow:visible; }
-  .rotate-word::before { content: attr(data-longest); visibility:hidden; white-space:nowrap; }
+  .rotate-word { display:inline-block; position:relative; vertical-align:bottom; overflow:visible; line-height:1.05; padding-bottom:.05em; -webkit-text-fill-color:initial; }
+  .rotate-word::before { content: attr(data-longest); visibility:hidden; white-space:nowrap; -webkit-text-fill-color:initial; color:transparent; }
   .rotate-word .word {
     position:absolute; left:0; top:0;
     opacity:0; transform:translateY(140px);
     transition: transform .85s cubic-bezier(0.34, 1.56, 0.64, 1), opacity .55s ease;
     white-space:nowrap;
+    /* Each word carries its OWN gradient text fill so the children pop */
+    background: linear-gradient(135deg, #4a7fff 0%, #18c4a3 50%, #ffaa00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 6px 24px rgba(106,217,195,0.18));
   }
-  .rotate-word .word.active { opacity:1; transform:translateY(0); transition: transform .85s cubic-bezier(0.34, 1.56, 0.64, 1), opacity .35s ease .15s; }
+  .rotate-word .word.active { opacity:1; transform:translateY(0); transition: transform .85s cubic-bezier(0.34, 1.56, 0.64, 1), opacity .35s ease .1s; }
   .rotate-word .word.exiting { opacity:0; transform:translateY(-140px); transition: transform .65s cubic-bezier(0.55, 0, 0.45, 1), opacity .35s ease; }
-  /* clip the wrap so words slide cleanly outside the visible band */
-  .rotate-word { line-height:1.05; padding-bottom:.05em; }
 
   /* Hero accordion (restored) */
   .accordion-item { transition:width .7s cubic-bezier(.23,1,.32,1); }
@@ -360,7 +364,7 @@
       </div>
       <h1 class="font-headline font-extrabold text-ink leading-[0.95] tracking-tighter text-5xl md:text-6xl lg:text-[80px] mb-7">
         AI consultancy<br/>
-        for <span class="rotate-word grad-text" id="rotateWord" data-longest="professionals.">
+        for <span class="rotate-word" id="rotateWord" data-longest="professionals.">
           <span class="word active">founders.</span>
           <span class="word">professionals.</span>
           <span class="word">companies.</span>
