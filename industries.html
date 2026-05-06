@@ -3,26 +3,26 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI for Founders, Lawyers, Doctors, CAs &amp; Professionals | AI Crew Industries</title>
-<meta name="description" content="AI Crew works with founders, lawyers, doctors, CAs, architects, agency owners and high-earning professionals. AI installed for the people running the show." />
-<meta name="keywords" content="AI for founders, AI for lawyers, AI for doctors, AI for CAs, AI for architects, AI for agencies, AI for professionals, AI for clinics, AI for law firms, AI for finance" />
+<title>Industries | AI Crew</title>
+<meta name="description" content="AI Crew installs AI for tech, healthcare, legal, accounting, wealth, architecture, creative, hospitality, D2C and manufacturing. Industry-specific playbooks, in 3 weeks." />
 <link rel="canonical" href="https://aicrew.io/industries" />
-
-<meta property="og:title" content="Industries we serve | AI Crew" />
-<meta property="og:description" content="AI installed for founders and high-earning professionals. Industry-specific AI plays that move the needle." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://aicrew.io/industries" />
-<meta property="og:site_name" content="AI Crew" />
+<meta property="og:title" content="Industries | AI Crew" />
+<meta property="og:description" content="AI Crew installs AI for tech, healthcare, legal, accounting, wealth, architecture, creative, hospitality, D2C and manufacturing. Industry-specific playbooks, in 3 weeks." />
+<meta property="og:image" content="https://aicrew.io/images/stock/companies-hero.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-
+<meta name="twitter:title" content="Industries | AI Crew" />
+<meta name="twitter:description" content="AI Crew installs AI for tech, healthcare, legal, accounting, wealth, architecture, creative, hospitality, D2C and manufacturing. Industry-specific playbooks, in 3 weeks." />
+<meta name="twitter:image" content="https://aicrew.io/images/stock/companies-hero.jpg" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-  tailwind.config = { theme:{ extend:{
-    colors:{"bg":"#FFFFFF","bg-soft":"#F8F9FB","bg-mute":"#F1F4FA","ink":"#0B1326","ink-soft":"#3A4256","ink-mute":"#6B7280","border":"#E5E7EB","border-soft":"#F0F2F5"},
-    fontFamily:{"headline":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"serif":["Instrument Serif","serif"]},
-    borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","full":"9999px"}
+  tailwind.config = { theme: { extend: {
+    colors: {"bg":"#FFFFFF","bg-soft":"#F8F9FB","bg-mute":"#F1F4FA","ink":"#0B1326","ink-soft":"#3A4256","ink-mute":"#6B7280","border":"#E5E7EB","border-soft":"#F0F2F5","accent-1":"#aec6ff","accent-2":"#6ad9c3","accent-3":"#ffbe2e","accent-4":"#0B1326"},
+    fontFamily: {"headline":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"serif":["Instrument Serif","serif"]},
+    borderRadius: {"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","full":"9999px"}
   }}}
 </script>
 <style>
@@ -30,31 +30,31 @@
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
   .grad-text { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .grad-bg { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); }
-  .glass-light { background:rgba(255,255,255,0.65); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); }
-  .glass-card { background:#fff; border:1px solid #E5E7EB; transition:all .35s; }
-  .glass-card:hover { box-shadow:0 20px 60px -10px rgba(174,198,255,0.4), 0 0 0 1px rgba(174,198,255,0.3); transform:translateY(-2px); }
+  .glass-light { background:rgba(255,255,255,0.65); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); }
+  .mega-panel { opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity .25s, transform .25s; }
+  .mega-panel.open { opacity:1; pointer-events:auto; transform:translateY(0); }
+  .mega-trigger { position:relative; }
+  .mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
   .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
-  .industry-hero { position:relative; overflow:hidden; }
-  .industry-hero img { transition:transform 1s; }
-  .industry-hero:hover img { transform:scale(1.04); }
-  .industry-hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.9) 100%); }
-  .footer-svg-stroke { fill:transparent; stroke:#0B1326; stroke-width:0.6; opacity:0.08; }
-  .footer-svg-grad { fill:transparent; stroke:url(#footerGrad); stroke-width:0.6; }
-  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); }
+  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem 1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); max-height:calc(100vh - 64px); overflow-y:auto; }
   .mobile-nav.open { display:flex; }
   .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
+  .mobile-nav .group-title { font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:#6B7280; font-weight:700; margin-top:.5rem; }
   .mobile-nav .mobile-cta { margin-top:.5rem; padding:.875rem 1.5rem; background:#0B1326; color:#fff; border-radius:.5rem; text-align:center; }
   .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
-  .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; }
+  .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; transition:all .25s; }
   @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
   html { scroll-behavior:smooth; scroll-padding-top:80px; }
-  .dot-grid { background-image:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
+  .glass-card { background:#fff; border:1px solid #E5E7EB; transition:all .35s; }
+  .glass-card:hover { border-color:transparent; box-shadow:0 20px 60px -10px rgba(174,198,255,0.4), 0 0 0 1px rgba(174,198,255,0.3); transform:translateY(-2px); }
+  .dot-grid { background:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
+  .industry-tile { position:relative; overflow:hidden; transition:all .4s; }
+  .industry-tile img { transition:transform .8s; }
+  .industry-tile:hover img { transform:scale(1.08); }
+  .industry-tile::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%); }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-</head>
-<body>
-
-<!-- NAV -->
+</head><body>
 <nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
   <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
     <a href="/" class="font-headline font-extrabold text-xl tracking-tighter">
@@ -152,254 +152,212 @@
     <a href="/book-demo" class="mobile-cta">Book a Call →</a>
   </div>
 </nav>
-
 <main class="pt-16">
 
-<!-- HERO -->
-<section class="px-6 lg:px-10 py-20 lg:py-32 max-w-[1400px] mx-auto">
-  <div class="max-w-4xl" data-aos="fade-up">
-    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-6">Industries</div>
-    <h1 class="font-headline font-extrabold text-ink text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter leading-[0.92] mb-8">
-      Built for the people <br/>
-      <span class="font-serif italic text-ink-soft">running the show.</span>
-    </h1>
-    <p class="text-lg md:text-xl text-ink-soft leading-relaxed max-w-3xl">
-      AI looks the same on a slide deck. In practice, what we install for a clinic is nothing like what we install for a law firm or a B2B SaaS. Different time-sucks. Different revenue moves. Different rules. Same method.
-    </p>
-  </div>
-</section>
-
-<!-- INDUSTRY 1: Tech & SaaS Founders -->
-<section id="tech" class="py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-5 order-2 lg:order-1" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">For Tech &amp; B2B SaaS Founders</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6">Pipeline + product velocity, on AI rails.</h2>
-      <p class="text-ink-soft leading-relaxed mb-8">Founder-led SaaS where the founder is still in every sales call, every product spec, every hire. We give back hours and accelerate pipeline simultaneously.</p>
-      <ul class="space-y-3 text-sm text-ink-soft mb-8">
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> AI outreach engine: 100s of personalised messages a day, founder-signed</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Inbound qualifier + auto-routing across email, LinkedIn, WhatsApp</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> AI sales call notes + CRM hygiene + pipeline forecasting</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Custom GPTs for product, support, internal docs</li>
-      </ul>
-    </div>
-    <div class="lg:col-span-7 order-1 lg:order-2 industry-hero rounded-3xl aspect-[5/4]" data-aos="fade-up">
-      <img src="/images/stock/tech.jpg" class="w-full h-full object-cover" alt="Tech founder"/>
-      <div class="absolute bottom-8 left-8 right-8 z-10 text-white">
-        <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">Industry 01</div>
-        <div class="font-headline font-extrabold text-3xl mt-1">Tech &amp; B2B SaaS Founders</div>
+<section class="relative overflow-hidden bg-bg-soft">
+  <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="max-w-4xl" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-border-soft text-xs font-headline font-bold tracking-wider uppercase text-ink mb-8">
+        <span class="w-1.5 h-1.5 rounded-full grad-bg animate-pulse"></span>10 Industries · 1 Playbook each
       </div>
+      <h1 class="font-headline font-extrabold text-ink leading-[0.95] tracking-tighter text-5xl md:text-6xl lg:text-[80px] mb-7">
+        Industries we know <span class="grad-text">inside out.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-ink-soft max-w-3xl leading-relaxed">14 years of work across 300+ brands. We have built specific AI playbooks for the industries below. Click in — see the workflows we automate, the outcomes you get, the 3-week timeline to live AI.</p>
     </div>
   </div>
 </section>
 
-<!-- INDUSTRY 2: Healthcare & Clinics -->
-<section id="healthcare" class="py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-7 industry-hero rounded-3xl aspect-[5/4]" data-aos="fade-up">
-      <img src="/images/stock/healthcare.jpg" class="w-full h-full object-cover" alt="Doctor"/>
-      <div class="absolute bottom-8 left-8 right-8 z-10 text-white">
-        <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">Industry 02</div>
-        <div class="font-headline font-extrabold text-3xl mt-1">Doctors, Surgeons &amp; Clinics</div>
+<section class="py-20 lg:py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
+    
+    <a href="/industries/tech-b2b/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/tech.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Tech & B2B SaaS"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">Tech & B2B SaaS</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">Founder-led outreach, lead scoring, customer success automation.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
       </div>
-    </div>
-    <div class="lg:col-span-5" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">For Doctors &amp; Clinics</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6">More patient time. Less paperwork.</h2>
-      <p class="text-ink-soft leading-relaxed mb-8">Solo practices, surgical clinics and group practices where senior clinicians are losing hours to admin, intake and follow-up. We install AI carefully, with clinical sign-off on everything that touches a patient.</p>
-      <ul class="space-y-3 text-sm text-ink-soft mb-8">
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Patient intake automation + AI-drafted clinical notes (clinician-reviewed)</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Discharge summary + post-op follow-up workflows</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> WhatsApp + email patient comms, on-brand</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Clinic-wide knowledge base of protocols, guidelines, references</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    </a>
 
-<!-- INDUSTRY 3: Lawyers -->
-<section id="legal" class="py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-5 order-2 lg:order-1" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">For Lawyers &amp; Law Firms</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6">Drafting hours back. <br/>Confidentiality intact.</h2>
-      <p class="text-ink-soft leading-relaxed mb-8">Solo practices and boutique firms. We install private, on-premise or controlled-cloud AI. Nothing leaves your matter library. Partners get drafting time back, juniors get faster ramp.</p>
-      <ul class="space-y-3 text-sm text-ink-soft mb-8">
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Private GPT trained on your matter library + precedents</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Clause review + redline drafting workflows</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Intake screening + conflict checks automated</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> AI-drafted summaries, briefs, client updates</li>
-      </ul>
-    </div>
-    <div class="lg:col-span-7 order-1 lg:order-2 industry-hero rounded-3xl aspect-[5/4]" data-aos="fade-up">
-      <img src="/images/stock/legal.jpg" class="w-full h-full object-cover" alt="Lawyer"/>
-      <div class="absolute bottom-8 left-8 right-8 z-10 text-white">
-        <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">Industry 03</div>
-        <div class="font-headline font-extrabold text-3xl mt-1">Lawyers &amp; Law Firms</div>
+    <a href="/industries/healthcare/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/healthcare.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Doctors & Clinics"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">Doctors & Clinics</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">Patient intake, clinical scribe, follow-ups in your voice.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
       </div>
-    </div>
-  </div>
-</section>
+    </a>
 
-<!-- INDUSTRY 4: CAs & Wealth -->
-<section id="finance" class="py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-7 industry-hero rounded-3xl aspect-[5/4]" data-aos="fade-up">
-      <img src="/images/stock/finance.jpg" class="w-full h-full object-cover" alt="CA / Wealth Advisor"/>
-      <div class="absolute bottom-8 left-8 right-8 z-10 text-white">
-        <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">Industry 04</div>
-        <div class="font-headline font-extrabold text-3xl mt-1">CAs &amp; Wealth Advisors</div>
+    <a href="/industries/legal/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/legal.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Lawyers & Law Firms"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">Lawyers & Law Firms</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">Drafting, case research, discovery review, billing narratives.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
       </div>
-    </div>
-    <div class="lg:col-span-5" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">For CAs &amp; Wealth Advisors</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6">Reconcile, advise, <br/>repeat. Faster.</h2>
-      <p class="text-ink-soft leading-relaxed mb-8">Practice owners losing time to repetitive reconciliation, client comms and reporting. We free the senior people to do the high-value advisory work.</p>
-      <ul class="space-y-3 text-sm text-ink-soft mb-8">
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Reconciliation + reporting automation</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Client portfolio review prep, AI-drafted</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Compliance + filing workflows</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Client-facing AI assistants for FAQs and updates</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    </a>
 
-<!-- INDUSTRY 5: Architects -->
-<section id="architects" class="py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-5 order-2 lg:order-1" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">For Architects &amp; Studios</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6">More design. <br/>Less spec writing.</h2>
-      <p class="text-ink-soft leading-relaxed mb-8">Studio owners and senior architects who spend half their week writing project notes, client updates and tender responses. We move that load to AI, keep the design eye human.</p>
-      <ul class="space-y-3 text-sm text-ink-soft mb-8">
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> AI-drafted project briefs, tender responses, client updates</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Mood board + reference research at AI speed</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Studio knowledge base, searchable in seconds</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Marketing + social engine for the practice</li>
-      </ul>
-    </div>
-    <div class="lg:col-span-7 order-1 lg:order-2 industry-hero rounded-3xl aspect-[5/4]" data-aos="fade-up">
-      <img src="/images/stock/architect.jpg" class="w-full h-full object-cover" alt="Architect"/>
-      <div class="absolute bottom-8 left-8 right-8 z-10 text-white">
-        <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">Industry 05</div>
-        <div class="font-headline font-extrabold text-3xl mt-1">Architects &amp; Studios</div>
+    <a href="/industries/accounting/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/finance.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="CAs & Accountants"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">CAs & Accountants</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">Bookkeeping, GST, audit prep, MIS reports — automated.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
       </div>
-    </div>
-  </div>
-</section>
+    </a>
 
-<!-- INDUSTRY 6: Creative Agencies -->
-<section id="agencies" class="py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-7 industry-hero rounded-3xl aspect-[5/4]" data-aos="fade-up">
-      <img src="/images/stock/creative.jpg" class="w-full h-full object-cover" alt="Creative agency"/>
-      <div class="absolute bottom-8 left-8 right-8 z-10 text-white">
-        <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">Industry 06</div>
-        <div class="font-headline font-extrabold text-3xl mt-1">Creative Agencies</div>
+    <a href="/industries/wealth-advisory/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/wealth.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Wealth Advisors"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">Wealth Advisors</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">Personalised portfolio reports, review prep, suitability docs.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
       </div>
-    </div>
-    <div class="lg:col-span-5" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">For Creative Agencies</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6">Pitch faster. <br/>Ship more. Bill more.</h2>
-      <p class="text-ink-soft leading-relaxed mb-8">Agency owners who run a 5-50 person team. We installed AI inside our own agency first. Now we install it inside yours.</p>
-      <ul class="space-y-3 text-sm text-ink-soft mb-8">
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Pitch decks + briefs drafted at AI speed</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Content engines for client portfolios</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Internal AI tools for designers, copywriters, project managers</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> 10x output uplift on creative production</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    </a>
 
-<!-- INDUSTRY 7: Hospitality -->
-<section id="hospitality" class="py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-5 order-2 lg:order-1" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">For Hospitality &amp; F&amp;B</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6">Restaurants, cafés, retreats. <br/>Operating like ops people.</h2>
-      <p class="text-ink-soft leading-relaxed mb-8">Owners juggling reservations, vendors, content, marketing. The founder of AI Crew came from this world. We know exactly where the time goes.</p>
-      <ul class="space-y-3 text-sm text-ink-soft mb-8">
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Reservation + WhatsApp inbound automation</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Menu, content, social engine for the brand</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Vendor + ops + payroll automations</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Review + reputation management with AI</li>
-      </ul>
-    </div>
-    <div class="lg:col-span-7 order-1 lg:order-2 industry-hero rounded-3xl aspect-[5/4]" data-aos="fade-up">
-      <img src="/images/stock/team.jpg" class="w-full h-full object-cover" alt="Hospitality"/>
-      <div class="absolute bottom-8 left-8 right-8 z-10 text-white">
-        <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">Industry 07</div>
-        <div class="font-headline font-extrabold text-3xl mt-1">Hospitality &amp; F&amp;B</div>
+    <a href="/industries/architecture/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/architect.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Architects & Studios"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">Architects & Studios</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">Mood boards, renderings, briefs, BOQs in your house style.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
       </div>
-    </div>
-  </div>
-</section>
+    </a>
 
-<!-- INDUSTRY 8: D2C / E-commerce -->
-<section id="dtc" class="py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-7 industry-hero rounded-3xl aspect-[5/4]" data-aos="fade-up">
-      <img src="/images/stock/professional.jpg" class="w-full h-full object-cover" alt="D2C founder"/>
-      <div class="absolute bottom-8 left-8 right-8 z-10 text-white">
-        <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">Industry 08</div>
-        <div class="font-headline font-extrabold text-3xl mt-1">D2C &amp; E-commerce</div>
+    <a href="/industries/creative-agencies/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/creative.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Creative Agencies"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">Creative Agencies</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">Pitch decks, content engines, client reporting on autopilot.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
       </div>
-    </div>
-    <div class="lg:col-span-5" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">For D2C &amp; E-commerce</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6">Creative + commerce, <br/>both running on AI.</h2>
-      <p class="text-ink-soft leading-relaxed mb-8">Founder-led D2C brands. We install AI on the creative side (ads, content, product copy) and on the ops side (CX, returns, vendors).</p>
-      <ul class="space-y-3 text-sm text-ink-soft mb-8">
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> AI ad creative engine across Meta, Google, YouTube</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Product copy + SEO at scale</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> WhatsApp + email lifecycle on AI</li>
-        <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-ink mt-0.5">check_circle</span> Customer support + returns AI agents</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    </a>
 
-<!-- WORKING WITH OTHER INDUSTRIES -->
-<section class="py-24 px-6 lg:px-10 bg-bg-soft">
-  <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">Don't see your industry?</div>
-    <h2 class="font-headline font-extrabold text-ink text-3xl md:text-4xl lg:text-5xl tracking-tighter leading-[0.95] mb-6">If you run a business or a practice, <br/>this works for you.</h2>
-    <p class="text-lg text-ink-soft leading-relaxed mb-10 max-w-2xl mx-auto">We have shipped work for 300+ brands across 14 years and 3 continents. We have probably already seen your problem.</p>
-    <a href="/book-demo" class="mag-btn">
-      <button class="px-10 py-5 bg-ink text-white rounded-xl font-headline font-bold text-lg hover:bg-ink/90 inline-flex items-center gap-2">
-        Book a strategy call
-        <span class="material-symbols-outlined">arrow_forward</span>
-      </button>
+    <a href="/industries/hospitality/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/hospitality.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Hospitality & F&B"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">Hospitality & F&B</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">Reservations, reviews, training, inventory — wired with AI.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+      </div>
+    </a>
+
+    <a href="/industries/d2c/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/d2c.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="D2C & E-commerce"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">D2C & E-commerce</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">Content engines, ad variants, support, retention flows.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+      </div>
+    </a>
+
+    <a href="/industries/manufacturing/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
+      <img src="/images/stock/manufacturing.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Manufacturing"/>
+      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.92) 100%);"></div>
+      <div class="absolute bottom-5 left-5 right-5 z-10 text-white">
+        <div class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-80 mb-1">For</div>
+        <div class="font-headline font-bold text-xl mb-2">Manufacturing</div>
+        <p class="text-xs opacity-80 leading-snug mb-3">B2B outreach, RFQ engine, vendor coordination, daily reports.</p>
+        <span class="text-xs font-headline font-bold uppercase tracking-[0.18em] inline-flex items-center gap-1">Open the playbook <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+      </div>
     </a>
   </div>
 </section>
 
-<!-- FOOTER -->
+<section class="py-24 lg:py-32 px-6 lg:px-10">
+  <div class="max-w-5xl mx-auto relative rounded-[2.5rem] overflow-hidden" data-aos="fade-up">
+    <div class="absolute inset-0 grad-bg"></div><div class="absolute inset-0 dot-grid"></div>
+    <div class="relative p-12 md:p-20 text-center">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink font-bold mb-6">Strategy call</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-7xl tracking-tighter leading-[0.95] mb-6">Don't see your industry?</h2>
+      <p class="text-lg text-ink/80 max-w-2xl mx-auto mb-10">Book a 45-minute call. We will look at your business and tell you straight whether AI Crew is the right fit.</p>
+      <a href="/book-demo" class="mag-btn"><button class="px-10 py-5 bg-ink text-white rounded-xl font-headline font-bold text-lg hover:bg-ink/90 transition-all inline-flex items-center gap-2">Book your call<span class="material-symbols-outlined">arrow_forward</span></button></a>
+    </div>
+  </div>
+</section>
+
+
 <footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
   <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
     <div class="col-span-2">
       <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
-      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">The AI studio for founders, business owners and high-earning professionals.</p>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">AI consultancy for founders, professionals and small companies. We sit with you, learn your business, and install AI in 3 weeks.</p>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Follow Manan</div>
       <div class="flex items-center gap-4">
         <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">Instagram</a>
         <a href="https://www.mananmehta.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">mananmehta.com</a>
+        <a href="https://marketincrew.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">MarketinCrew</a>
       </div>
     </div>
-    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Work</h4><ul class="space-y-2.5 text-sm"><li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li><li><a href="/industries" class="text-ink-soft hover:text-ink">Industries</a></li><li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case studies</a></li></ul></div>
-    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4><ul class="space-y-2.5 text-sm"><li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li><li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content</a></li><li><a href="/automations" class="text-ink-soft hover:text-ink">AI Automations</a></li><li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li></ul></div>
-    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4><ul class="space-y-2.5 text-sm"><li><a href="/about" class="text-ink-soft hover:text-ink">About Manan</a></li><li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li></ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">For You</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/for-founders" class="text-ink-soft hover:text-ink">Founders</a></li>
+        <li><a href="/for-professionals" class="text-ink-soft hover:text-ink">Professionals</a></li>
+        <li><a href="/for-companies" class="text-ink-soft hover:text-ink">Companies</a></li>
+        <li><a href="/industries" class="text-ink-soft hover:text-ink">All Industries</a></li>
+      </ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/services/ai-strategy-audit" class="text-ink-soft hover:text-ink">AI Strategy &amp; Audits</a></li>
+        <li><a href="/services/ai-workflow-automation" class="text-ink-soft hover:text-ink">Workflow Automation</a></li>
+        <li><a href="/services/ai-agents" class="text-ink-soft hover:text-ink">Custom AI Agents</a></li>
+        <li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content Studio</a></li>
+        <li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li>
+        <li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li>
+        <li><a href="/services/ai-training" class="text-ink-soft hover:text-ink">AI Training</a></li>
+      </ul></div>
+    <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case Studies</a></li>
+        <li><a href="/about" class="text-ink-soft hover:text-ink">About Manan</a></li>
+        <li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li>
+        <li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li>
+      </ul></div>
   </div>
   <div class="max-w-[1400px] mx-auto -mb-8 select-none">
     <svg viewBox="0 0 800 200" class="w-full" xmlns="http://www.w3.org/2000/svg">
-      <defs><linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#aec6ff"/><stop offset="50%" stop-color="#6ad9c3"/><stop offset="100%" stop-color="#ffbe2e"/></linearGradient></defs>
-      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-stroke" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
-      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-grad" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+      <defs>
+        <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#aec6ff"/>
+          <stop offset="50%" stop-color="#6ad9c3"/>
+          <stop offset="100%" stop-color="#ffbe2e"/>
+        </linearGradient>
+        <linearGradient id="shimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#aec6ff" stop-opacity="0"/>
+          <stop offset="45%" stop-color="#6ad9c3" stop-opacity="1"/>
+          <stop offset="55%" stop-color="#ffbe2e" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#aec6ff" stop-opacity="0"/>
+          <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4s" repeatCount="indefinite"/>
+        </linearGradient>
+        <mask id="footerMask">
+          <text x="50%" y="80%" text-anchor="middle" fill="white" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
+        </mask>
+      </defs>
+      <text x="50%" y="80%" text-anchor="middle" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;fill:transparent;stroke:#0B1326;stroke-width:0.6;opacity:0.06;">AI CREW</text>
+      <rect x="0" y="0" width="800" height="200" fill="url(#shimmerGrad)" mask="url(#footerMask)" opacity="0.85"/>
     </svg>
   </div>
   <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
-    <span>© 2026 AI Crew · From the makers of MarketinCrew · 300+ brands shipped</span>
+    <span>© 2026 AI Crew · From the makers of <a href="https://marketincrew.com/" target="_blank" rel="noopener" class="text-ink hover:underline">MarketinCrew</a> · 300+ brands shipped</span>
     <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
   </div>
 </footer>
@@ -409,8 +367,9 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration:700, once:true, offset:80 });
-
-  // Mega menu — JS-controlled with delay so cursor can travel from trigger to panel
+  const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
+  if (mt && mn) mt.addEventListener('click',()=>mn.classList.toggle('open'));
+  // Mega menu hover with delay
   document.querySelectorAll('.mega-trigger').forEach(trigger => {
     const panel = trigger.querySelector('.mega-panel');
     if (!panel) return;
@@ -422,19 +381,18 @@
     panel.addEventListener('mouseenter', open);
     panel.addEventListener('mouseleave', close);
   });
-
-  const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
-  mt.addEventListener('click',()=>mn.classList.toggle('open'));
   document.querySelectorAll('.mag-btn').forEach(btn => {
     let raf;
     btn.addEventListener('mousemove', (e) => {
-      const r = btn.getBoundingClientRect();
-      const dx=(e.clientX-(r.left+r.width/2))*0.25, dy=(e.clientY-(r.top+r.height/2))*0.25;
+      const rect = btn.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) * 0.25, dy = (e.clientY - cy) * 0.25;
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => { btn.style.transform = `translate(${dx}px, ${dy}px)`; });
     });
     btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
   });
 </script>
+
 </body>
 </html>
