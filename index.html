@@ -78,9 +78,12 @@
   .glass-card { background:#fff; border:1px solid #E5E7EB; transition:all .35s; }
   .glass-card:hover { border-color:transparent; box-shadow:0 20px 60px -10px rgba(174,198,255,0.4), 0 0 0 1px rgba(174,198,255,0.3); transform:translateY(-2px); }
 
-  /* Mega menu */
-  .mega-trigger:hover .mega-panel, .mega-panel:hover { opacity:1; pointer-events:auto; transform:translateY(0); }
-  .mega-panel { opacity:0; pointer-events:none; transform:translateY(-8px); transition:all .3s; }
+  /* Mega menu — JS controlled with delay */
+  .mega-panel { opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity .25s, transform .25s; }
+  .mega-panel.open { opacity:1; pointer-events:auto; transform:translateY(0); }
+  /* Hover bridge — invisible 16px area below trigger so cursor can travel to panel without losing hover */
+  .mega-trigger { position:relative; }
+  .mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
 
   /* Magnetic button */
   .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
@@ -93,11 +96,16 @@
   .tool-chip img { height:1.1rem; width:auto; opacity:.85; }
   .tool-chip span { font-family:'Plus Jakarta Sans', sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:-0.01em; }
 
-  /* Hero rotating word */
-  .rotate-word { display:inline-block; min-width:0; position:relative; }
-  .rotate-word .word { display:inline-block; opacity:0; transform:translateY(12px); transition:opacity .55s, transform .55s; position:absolute; left:0; top:0; }
-  .rotate-word .word.active { opacity:1; transform:translateY(0); position:relative; }
-  .rotate-spacer { visibility:hidden; white-space:nowrap; }
+  /* Hero rotating word — uses ::before with longest word for stable width */
+  .rotate-word { display:inline-block; position:relative; vertical-align:bottom; }
+  .rotate-word::before { content: attr(data-longest); visibility:hidden; white-space:nowrap; }
+  .rotate-word .word { position:absolute; left:0; top:0; opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease; white-space:nowrap; }
+  .rotate-word .word.active { opacity:1; transform:translateY(0); }
+
+  /* Hero accordion (restored) */
+  .accordion-item { transition:width .7s cubic-bezier(.23,1,.32,1); }
+  .accordion-item img { transition:transform 1.2s; }
+  .accordion-item:hover img { transform:scale(1.05); }
 
   /* Footer SVG shimmer */
   .footer-svg-text { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:24vw; letter-spacing:-0.04em; }
@@ -280,17 +288,16 @@
       </div>
       <h1 class="font-headline font-extrabold text-ink leading-[0.95] tracking-tighter text-5xl md:text-6xl lg:text-[80px] mb-7">
         AI consultancy<br/>
-        for <span class="rotate-word grad-text" id="rotateWord">
-          <span class="word active" data-word="founders.">founders.</span>
-          <span class="word" data-word="professionals.">professionals.</span>
-          <span class="word" data-word="companies.">companies.</span>
-          <span class="rotate-spacer" id="rotateSpacer">professionals.</span>
+        for <span class="rotate-word grad-text" id="rotateWord" data-longest="professionals.">
+          <span class="word active">founders.</span>
+          <span class="word">professionals.</span>
+          <span class="word">companies.</span>
         </span>
       </h1>
       <p class="text-lg md:text-xl text-ink-soft max-w-2xl leading-relaxed mb-10">
         We sit with you, learn how you actually win, and install AI across your day, your team and your growth. In three weeks. No jargon. No deck. No fluff.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 mb-10">
+      <div class="flex flex-col sm:flex-row gap-4">
         <a href="/book-demo" class="mag-btn">
           <button class="px-8 py-4 bg-ink text-white rounded-xl font-headline font-bold text-base hover:bg-ink/90 transition-all flex items-center gap-2">
             Book a strategy call
@@ -301,31 +308,32 @@
           <button class="px-8 py-4 bg-white border border-border text-ink rounded-xl font-headline font-bold text-base hover:bg-bg-mute transition-all">See how we work</button>
         </a>
       </div>
-
-      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-ink-mute uppercase tracking-[0.18em] font-bold">
-        <span>Founders</span><span class="text-border">·</span>
-        <span>Doctors</span><span class="text-border">·</span>
-        <span>Lawyers</span><span class="text-border">·</span>
-        <span>CAs</span><span class="text-border">·</span>
-        <span>Architects</span><span class="text-border">·</span>
-        <span>Advisors</span>
-      </div>
     </div>
 
-    <!-- RIGHT: Single hero image, no accordion. Joyful collaboration shot. -->
+    <!-- RIGHT: 3-column accordion (founders / professionals / companies) -->
     <div class="col-span-12 lg:col-span-5" data-aos="fade-up" data-aos-delay="200">
-      <div class="relative rounded-3xl overflow-hidden aspect-[5/4] shadow-[0_30px_80px_-20px_rgba(11,19,38,0.18)]">
-        <img src="/images/stock/companies-hero.jpg" class="w-full h-full object-cover" alt="AI Crew working with a founder team"/>
-        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur p-5 rounded-2xl">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full grad-bg flex items-center justify-center font-bold text-ink text-sm">JS</div>
-            <div class="flex-1">
-              <p class="text-sm font-headline italic text-ink leading-snug">"AI Crew booked us 14 meetings in the first month. More than the previous six combined."</p>
-              <div class="text-xs text-ink-mute mt-1">James S. · Founder, B2B SaaS</div>
-            </div>
+      <div class="flex gap-2 h-[480px] md:h-[520px]" id="heroAccordion">
+        <div class="accordion-item relative rounded-2xl overflow-hidden cursor-pointer flex-shrink-0 w-[60px]">
+          <img src="/images/stock/founder.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Founders"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent"></div>
+          <span class="absolute left-1/2 bottom-24 -translate-x-1/2 rotate-90 origin-center text-white text-xs font-headline font-bold tracking-[0.2em] uppercase whitespace-nowrap">Founders</span>
+        </div>
+        <div class="accordion-item relative rounded-2xl overflow-hidden cursor-pointer flex-shrink-0 w-[60px]">
+          <img src="/images/stock/professional.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Professionals"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent"></div>
+          <span class="absolute left-1/2 bottom-24 -translate-x-1/2 rotate-90 origin-center text-white text-xs font-headline font-bold tracking-[0.2em] uppercase whitespace-nowrap">Professionals</span>
+        </div>
+        <div class="accordion-item relative rounded-2xl overflow-hidden cursor-pointer flex-1">
+          <img src="/images/stock/team.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Companies"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 text-white">
+            <div class="text-[10px] tracking-[0.25em] font-bold uppercase opacity-80">For</div>
+            <div class="font-headline font-bold text-2xl mt-1">Companies</div>
+            <div class="text-sm opacity-80 mt-2">10-200 person teams. Marketing, ops, sales — all wired with AI.</div>
           </div>
         </div>
       </div>
+      <div class="mt-4 text-xs text-ink-mute text-center font-headline tracking-wider">Hover the columns to switch audience</div>
     </div>
   </div>
 </section>
@@ -486,43 +494,43 @@
   </div>
 
   <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 lg:gap-4">
-    <a href="/industries#tech" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/tech-b2b/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/tech.jpg" class="w-full h-full object-cover" alt="Tech and B2B SaaS founders"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Tech &amp; B2B SaaS</div></div>
     </a>
-    <a href="/industries#healthcare" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/healthcare/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/healthcare.jpg" class="w-full h-full object-cover" alt="Doctors and clinics"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Doctors &amp; Clinics</div></div>
     </a>
-    <a href="/industries#legal" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/legal/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/legal.jpg" class="w-full h-full object-cover" alt="Lawyers and law firms"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Lawyers &amp; Law Firms</div></div>
     </a>
-    <a href="/industries#finance" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/accounting/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/finance.jpg" class="w-full h-full object-cover" alt="Chartered accountants"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">CAs &amp; Accountants</div></div>
     </a>
-    <a href="/industries#wealth" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/wealth-advisory/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/wealth.jpg" class="w-full h-full object-cover" alt="Wealth advisors"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Wealth Advisors</div></div>
     </a>
-    <a href="/industries#architects" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/architecture/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/architect.jpg" class="w-full h-full object-cover" alt="Architects and studios"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Architects &amp; Studios</div></div>
     </a>
-    <a href="/industries#agencies" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/creative-agencies/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/creative.jpg" class="w-full h-full object-cover" alt="Creative agencies"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Creative Agencies</div></div>
     </a>
-    <a href="/industries#manufacturing" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/manufacturing/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/manufacturing.jpg" class="w-full h-full object-cover" alt="Manufacturing"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Manufacturing</div></div>
     </a>
-    <a href="/industries#hospitality" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/hospitality/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/hospitality.jpg" class="w-full h-full object-cover" alt="Hospitality and F&B"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Hospitality &amp; F&amp;B</div></div>
     </a>
-    <a href="/industries#dtc" class="industry-tile rounded-2xl aspect-[4/5] block">
+    <a href="/industries/d2c/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/d2c.jpg" class="w-full h-full object-cover" alt="D2C and ecommerce"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">D2C &amp; E-commerce</div></div>
     </a>
@@ -684,21 +692,45 @@
 
   // Mobile menu
   const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
-  mt.addEventListener('click',()=>mn.classList.toggle('open'));
+  if (mt && mn) mt.addEventListener('click',()=>mn.classList.toggle('open'));
+
+  // Mega menu — JS-controlled with delay so cursor can travel from trigger to panel
+  document.querySelectorAll('.mega-trigger').forEach(trigger => {
+    const panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    let timer;
+    const open = () => { clearTimeout(timer); panel.classList.add('open'); };
+    const close = () => { timer = setTimeout(() => panel.classList.remove('open'), 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
 
   // Hero rotating word
   (function(){
     const wrap = document.getElementById('rotateWord');
     if (!wrap) return;
-    const words = wrap.querySelectorAll('.word:not(.rotate-spacer)');
-    const spacer = document.getElementById('rotateSpacer');
+    const words = wrap.querySelectorAll('.word');
+    if (!words.length) return;
     let i = 0;
     setInterval(()=>{
       words[i].classList.remove('active');
       i = (i + 1) % words.length;
       words[i].classList.add('active');
-      if (spacer) spacer.textContent = words[i].dataset.word;
     }, 2400);
+  })();
+
+  // Hero accordion (founders / professionals / companies)
+  (function(){
+    const items = document.querySelectorAll('#heroAccordion .accordion-item');
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        items.forEach(i => { i.classList.add('w-[60px]'); i.classList.remove('flex-1'); });
+        item.classList.remove('w-[60px]');
+        item.classList.add('flex-1');
+      });
+    });
   })();
 
   // Magnetic buttons

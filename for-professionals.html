@@ -31,8 +31,10 @@
   .grad-text { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .grad-bg { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); }
   .glass-light { background:rgba(255,255,255,0.65); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); }
-  .mega-trigger:hover .mega-panel, .mega-panel:hover { opacity:1; pointer-events:auto; transform:translateY(0); }
-  .mega-panel { opacity:0; pointer-events:none; transform:translateY(-8px); transition:all .3s; }
+  .mega-panel { opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity .25s, transform .25s; }
+  .mega-panel.open { opacity:1; pointer-events:auto; transform:translateY(0); }
+  .mega-trigger { position:relative; }
+  .mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
   .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
   .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem 1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); max-height:calc(100vh - 64px); overflow-y:auto; }
   .mobile-nav.open { display:flex; }
@@ -231,31 +233,31 @@
   </div>
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
 
-    <a href="/industries#legal" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
+    <a href="/industries/legal/" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
       <img src="/images/stock/legal.jpg" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Lawyers &amp; Law Firms"/>
       <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%);"></div>
       <div class="absolute bottom-4 left-4 right-4 z-10 text-white"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Lawyers &amp; Law Firms</div></div>
     </a>
 
-    <a href="/industries#healthcare" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
+    <a href="/industries/healthcare/" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
       <img src="/images/stock/healthcare.jpg" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Doctors &amp; Clinics"/>
       <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%);"></div>
       <div class="absolute bottom-4 left-4 right-4 z-10 text-white"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Doctors &amp; Clinics</div></div>
     </a>
 
-    <a href="/industries#finance" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
+    <a href="/industries/accounting/" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
       <img src="/images/stock/finance.jpg" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="CAs &amp; Accountants"/>
       <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%);"></div>
       <div class="absolute bottom-4 left-4 right-4 z-10 text-white"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">CAs &amp; Accountants</div></div>
     </a>
 
-    <a href="/industries#architects" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
+    <a href="/industries/architecture/" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
       <img src="/images/stock/architect.jpg" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Architects &amp; Studios"/>
       <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%);"></div>
       <div class="absolute bottom-4 left-4 right-4 z-10 text-white"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Architects &amp; Studios</div></div>
     </a>
 
-    <a href="/industries#wealth" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
+    <a href="/industries/wealth-advisory/" class="industry-tile rounded-2xl aspect-[4/5] block relative overflow-hidden" style="transition:all .4s">
       <img src="/images/stock/wealth.jpg" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Wealth Advisors"/>
       <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%);"></div>
       <div class="absolute bottom-4 left-4 right-4 z-10 text-white"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Wealth Advisors</div></div>
@@ -363,6 +365,20 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration:700, once:true, offset:80 });
+
+  // Mega menu — JS-controlled with delay so cursor can travel from trigger to panel
+  document.querySelectorAll('.mega-trigger').forEach(trigger => {
+    const panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    let timer;
+    const open = () => { clearTimeout(timer); panel.classList.add('open'); };
+    const close = () => { timer = setTimeout(() => panel.classList.remove('open'), 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
+
   const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
   if (mt && mn) mt.addEventListener('click',()=>mn.classList.toggle('open'));
   document.querySelectorAll('.mag-btn').forEach(btn => {

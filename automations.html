@@ -278,6 +278,20 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration:700, once:true, offset:80 });
+
+  // Mega menu — JS-controlled with delay so cursor can travel from trigger to panel
+  document.querySelectorAll('.mega-trigger').forEach(trigger => {
+    const panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    let timer;
+    const open = () => { clearTimeout(timer); panel.classList.add('open'); };
+    const close = () => { timer = setTimeout(() => panel.classList.remove('open'), 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
+
   const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
   mt.addEventListener('click',()=>mn.classList.toggle('open'));
   document.querySelectorAll('.mag-btn').forEach(btn => {
