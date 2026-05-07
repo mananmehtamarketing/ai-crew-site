@@ -9,5 +9,23 @@
 </head>
 <body>
 <p>This page has moved. <a href="/about">Click here to continue to About AI Crew.</a></p>
+<script>
+// === Canonical mega menu handler (injected) ===
+(function(){
+  document.querySelectorAll('.mega-trigger').forEach(function(trigger){
+    var panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    if (trigger.dataset.megaWired === '1') return;
+    trigger.dataset.megaWired = '1';
+    var timer;
+    var open = function(){ clearTimeout(timer); panel.classList.add('open'); };
+    var close = function(){ timer = setTimeout(function(){ panel.classList.remove('open'); }, 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
+})();
+</script>
 </body>
 </html>

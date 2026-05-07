@@ -45,6 +45,13 @@
   @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
   html { scroll-behavior:smooth; scroll-padding-top:80px; }
   .dot-grid { background-image:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
+
+/* === Canonical mega menu (injected) === */
+.mega-panel { opacity:0 !important; pointer-events:none !important; transform:translateY(-8px) !important; transition:opacity .25s, transform .25s !important; }
+.mega-panel.open { opacity:1 !important; pointer-events:auto !important; transform:translateY(0) !important; }
+.mega-trigger { position:relative; }
+.mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
+
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
@@ -83,7 +90,7 @@
               <div class="rounded-xl overflow-hidden aspect-[5/4] mb-4"><img src="/images/stock/team.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="For companies"/></div>
               <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Audience</div>
               <div class="font-headline font-extrabold text-2xl text-ink group-hover:grad-text transition-all">For Companies</div>
-              <p class="text-sm text-ink-soft mt-2">10 to 200 person teams. Marketing, ops, support, sales — all wired with AI agents and automations.</p>
+              <p class="text-sm text-ink-soft mt-2">10 to 200 person teams. Marketing, ops, support, sales, all wired with AI agents and automations.</p>
             </a>
           </div>
         </div>
@@ -254,7 +261,7 @@
   <div class="max-w-[1400px] mx-auto">
     <div class="max-w-3xl mb-16" data-aos="fade-up">
       <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">The engagement</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">How three weeks unfold.</h2>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">How 21 days unfold.</h2>
     </div>
 
     <div class="space-y-6">
@@ -263,7 +270,7 @@
           <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">01</div>
         </div>
         <div class="flex-1">
-          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Week 1 · Discovery</div>
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Days 1-7 · Discovery</div>
           <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-4">Map your universe.</h3>
           <p class="text-ink-soft leading-relaxed mb-4">We sit with you for two to three sessions. We learn how your business wins, where the money comes from, where you spend time, what only you can do, what should never have been on your plate. We document everything in a private workspace.</p>
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-ink-soft">
@@ -280,7 +287,7 @@
           <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">02</div>
         </div>
         <div class="flex-1">
-          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Week 2 · Roadmap</div>
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Days 8-14 · Roadmap</div>
           <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-4">Plug AI in, surgically.</h3>
           <p class="text-ink-soft leading-relaxed mb-4">Every workflow we mapped becomes a candidate for an AI agent, automation, system or model. We score them by impact and build a 90-day roadmap. You see exactly what gets built, in what order, and what changes for you.</p>
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-ink-soft">
@@ -297,7 +304,7 @@
           <div class="grad-bg w-16 h-16 rounded-2xl flex items-center justify-center font-headline font-extrabold text-2xl text-ink">03</div>
         </div>
         <div class="flex-1">
-          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Week 3 onwards · Build &amp; run</div>
+          <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Day 15 onwards · Build &amp; run</div>
           <h3 class="font-headline font-bold text-2xl md:text-3xl text-ink mb-4">Build, run, manage.</h3>
           <p class="text-ink-soft leading-relaxed mb-4">We do not hand you a deck and leave. We build the systems, run them with you, train your team, and stay on as your fractional AI partner. Most clients keep us on a monthly retainer because the AI stack is never done.</p>
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-ink-soft">
@@ -411,7 +418,7 @@
     </svg>
   </div>
   <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
-    <span>© 2026 AI Crew · From the makers of MarketinCrew · 300+ brands shipped</span>
+    <span>© 2026 AI Crew · Founders, makers of MarketinCrew · 300+ brands shipped</span>
     <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
   </div>
 </footer>
@@ -422,7 +429,7 @@
 <script>
   AOS.init({ duration:700, once:true, offset:80 });
 
-  // Mega menu — JS-controlled with delay so cursor can travel from trigger to panel
+  // Mega menu, JS-controlled with delay so cursor can travel from trigger to panel
   document.querySelectorAll('.mega-trigger').forEach(trigger => {
     const panel = trigger.querySelector('.mega-panel');
     if (!panel) return;
@@ -447,6 +454,24 @@
     });
     btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
   });
+</script>
+<script>
+// === Canonical mega menu handler (injected) ===
+(function(){
+  document.querySelectorAll('.mega-trigger').forEach(function(trigger){
+    var panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    if (trigger.dataset.megaWired === '1') return;
+    trigger.dataset.megaWired = '1';
+    var timer;
+    var open = function(){ clearTimeout(timer); panel.classList.add('open'); };
+    var close = function(){ timer = setTimeout(function(){ panel.classList.remove('open'); }, 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
+})();
 </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Manan Mehta | Founder, AI Crew · From the makers of MarketinCrew</title>
+<title>About Manan Mehta | Founder, AI Crew · Founders, makers of MarketinCrew</title>
 <meta name="description" content="Manan Mehta. Restaurateur turned marketer turned AI operator. Founder of MarketinCrew (50-person agency, 300+ brands shipped) and AI Crew. Why AI Crew exists." />
 <meta name="keywords" content="Manan Mehta, AI Crew founder, MarketinCrew founder, AI operator India, AI consultant Paris" />
 <link rel="canonical" href="https://aicrew.io/about" />
@@ -65,6 +65,13 @@
   html { scroll-behavior:smooth; scroll-padding-top:80px; }
   .dot-grid { background-image:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
   .timeline-line { position:absolute; left:1.5rem; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, #aec6ff, #6ad9c3, #ffbe2e, transparent); }
+
+/* === Canonical mega menu (injected) === */
+.mega-panel { opacity:0 !important; pointer-events:none !important; transform:translateY(-8px) !important; transition:opacity .25s, transform .25s !important; }
+.mega-panel.open { opacity:1 !important; pointer-events:auto !important; transform:translateY(0) !important; }
+.mega-trigger { position:relative; }
+.mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
+
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
@@ -103,7 +110,7 @@
               <div class="rounded-xl overflow-hidden aspect-[5/4] mb-4"><img src="/images/stock/team.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="For companies"/></div>
               <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Audience</div>
               <div class="font-headline font-extrabold text-2xl text-ink group-hover:grad-text transition-all">For Companies</div>
-              <p class="text-sm text-ink-soft mt-2">10 to 200 person teams. Marketing, ops, support, sales — all wired with AI agents and automations.</p>
+              <p class="text-sm text-ink-soft mt-2">10 to 200 person teams. Marketing, ops, support, sales, all wired with AI agents and automations.</p>
             </a>
           </div>
         </div>
@@ -369,7 +376,7 @@
       <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6">
         <span class="grad-text">300+ founders</span> <br/>have trusted us with their work.
       </h2>
-      <p class="text-lg text-ink-soft max-w-2xl mx-auto">14 years. 50 people. Brands across India, Europe and North America. Click any cover for the story.</p>
+      <p class="text-lg text-ink-soft max-w-2xl mx-auto">12 years. 50 people. Brands across India, Europe and North America. Click any cover for the story.</p>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-16">
@@ -502,11 +509,19 @@
     <div class="col-span-2">
       <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
       <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">The AI studio for founders, business owners and high-earning professionals. We step inside your universe and rebuild it with AI.</p>
-      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Follow Manan</div>
-      <div class="flex items-center gap-4">
-        <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-base">photo_camera</span> Instagram</a>
-        <a href="https://www.mananmehta.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-base">link</span> mananmehta.com</a>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Part of the family</div>
+      <div class="flex items-center gap-6 flex-wrap">
+        <a href="https://marketincrew.com" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition-opacity">
+          <img src="/images/universe/marketincrew.png" class="h-7 w-auto" alt="MarketinCrew"/>
+        </a>
+        <a href="https://www.mananmehta.com/mk-studios" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition-opacity">
+          <img src="/images/universe/marketincrew-studio.jpg" class="h-9 w-auto rounded" alt="MK Studios"/>
+        </a>
+        <a href="https://lyonmarketing.co" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition-opacity">
+          <img src="/images/universe/lyon-marketing.png" class="h-7 w-auto rounded" alt="Lyon Marketing Co"/>
+        </a>
       </div>
+      <p class="text-[11px] text-ink-mute mt-4">12 years of marketing DNA. AI Crew is the AI consultancy arm of MarketinCrew.</p>
     </div>
     <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Work</h4><ul class="space-y-2.5 text-sm"><li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li><li><a href="/industries" class="text-ink-soft hover:text-ink">Industries</a></li><li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case studies</a></li></ul></div>
     <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4><ul class="space-y-2.5 text-sm"><li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li><li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content</a></li><li><a href="/automations" class="text-ink-soft hover:text-ink">AI Automations</a></li><li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li></ul></div>
@@ -522,7 +537,7 @@
   </div>
 
   <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
-    <span>© 2026 AI Crew · From the makers of MarketinCrew · 300+ brands shipped</span>
+    <span>© 2026 AI Crew · Founders, makers of MarketinCrew · 300+ brands shipped</span>
     <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
   </div>
 </footer>
@@ -533,7 +548,7 @@
 <script>
   AOS.init({ duration:700, once:true, offset:80 });
 
-  // Mega menu — JS-controlled with delay so cursor can travel from trigger to panel
+  // Mega menu, JS-controlled with delay so cursor can travel from trigger to panel
   document.querySelectorAll('.mega-trigger').forEach(trigger => {
     const panel = trigger.querySelector('.mega-panel');
     if (!panel) return;
@@ -558,6 +573,24 @@
     });
     btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
   });
+</script>
+<script>
+// === Canonical mega menu handler (injected) ===
+(function(){
+  document.querySelectorAll('.mega-trigger').forEach(function(trigger){
+    var panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    if (trigger.dataset.megaWired === '1') return;
+    trigger.dataset.megaWired = '1';
+    var timer;
+    var open = function(){ clearTimeout(timer); panel.classList.add('open'); };
+    var close = function(){ timer = setTimeout(function(){ panel.classList.remove('open'); }, 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
+})();
 </script>
 </body>
 </html>

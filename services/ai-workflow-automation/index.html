@@ -52,6 +52,13 @@
   .industry-tile img { transition:transform .8s; }
   .industry-tile:hover img { transform:scale(1.08); }
   .industry-tile::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%); }
+
+/* === Canonical mega menu (injected) === */
+.mega-panel { opacity:0 !important; pointer-events:none !important; transform:translateY(-8px) !important; transition:opacity .25s, transform .25s !important; }
+.mega-panel.open { opacity:1 !important; pointer-events:auto !important; transform:translateY(0) !important; }
+.mega-trigger { position:relative; }
+.mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
+
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head><body>
@@ -87,7 +94,7 @@
               <div class="rounded-xl overflow-hidden aspect-[5/4] mb-4"><img src="/images/stock/team.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="For companies"/></div>
               <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Audience</div>
               <div class="font-headline font-extrabold text-2xl text-ink group-hover:grad-text transition-all">For Companies</div>
-              <p class="text-sm text-ink-soft mt-2">10 to 200 person teams. Marketing, ops, support, sales — all wired with AI agents and automations.</p>
+              <p class="text-sm text-ink-soft mt-2">10 to 200 person teams. Marketing, ops, support, sales, all wired with AI agents and automations.</p>
             </a>
           </div>
         </div>
@@ -245,7 +252,7 @@
         <span class="w-1.5 h-1.5 rounded-full grad-bg animate-pulse"></span>Service · AI Workflow Automation
       </div>
       <h1 class="font-headline font-extrabold text-ink leading-[0.95] tracking-tighter text-5xl md:text-6xl lg:text-[88px] mb-7">AI workflow automation.</h1>
-      <p class="text-lg md:text-xl text-ink-soft max-w-3xl leading-relaxed mb-10">We turn the boring repetitive work into a system that runs itself. Inbox, calendar, sales, ops, finance, support — every flow that should be automated, gets automated. Connected to the tools you already use.</p>
+      <p class="text-lg md:text-xl text-ink-soft max-w-3xl leading-relaxed mb-10">We turn the boring repetitive work into a system that runs itself. Inbox, calendar, sales, ops, finance, support, every flow that should be automated, gets automated. Connected to the tools you already use.</p>
       <a href="/book-demo" class="mag-btn"><button class="px-8 py-4 bg-ink text-white rounded-xl font-headline font-bold text-base hover:bg-ink/90 transition-all inline-flex items-center gap-2">Book a strategy call<span class="material-symbols-outlined text-lg">arrow_forward</span></button></a>
     </div>
   </div>
@@ -279,13 +286,20 @@
   <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
     <div class="col-span-2">
       <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
-      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">AI consultancy for founders, professionals and small companies. We sit with you, learn your business, and install AI in 3 weeks.</p>
-      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Follow Manan</div>
-      <div class="flex items-center gap-4">
-        <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">Instagram</a>
-        <a href="https://www.mananmehta.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">mananmehta.com</a>
-        <a href="https://marketincrew.com/" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink text-sm">MarketinCrew</a>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">AI consultancy for founders, professionals and small companies. We sit with you, learn how you make money, and install AI in 21 days.</p>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Part of the family</div>
+      <div class="flex items-center gap-6 flex-wrap">
+        <a href="https://marketincrew.com" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition-opacity">
+          <img src="/images/universe/marketincrew.png" class="h-7 w-auto" alt="MarketinCrew"/>
+        </a>
+        <a href="https://www.mananmehta.com/mk-studios" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition-opacity">
+          <img src="/images/universe/marketincrew-studio.jpg" class="h-9 w-auto rounded" alt="MK Studios"/>
+        </a>
+        <a href="https://lyonmarketing.co" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition-opacity">
+          <img src="/images/universe/lyon-marketing.png" class="h-7 w-auto rounded" alt="Lyon Marketing Co"/>
+        </a>
       </div>
+      <p class="text-[11px] text-ink-mute mt-4">12 years of marketing DNA. AI Crew is the AI consultancy arm of MarketinCrew.</p>
     </div>
     <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">For You</h4>
       <ul class="space-y-2.5 text-sm">
@@ -336,7 +350,7 @@
     </svg>
   </div>
   <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
-    <span>© 2026 AI Crew · From the makers of <a href="https://marketincrew.com/" target="_blank" rel="noopener" class="text-ink hover:underline">MarketinCrew</a> · 300+ brands shipped</span>
+    <span>© 2026 AI Crew · Founders, makers of <a href="https://marketincrew.com/" target="_blank" rel="noopener" class="text-ink hover:underline">MarketinCrew</a> · 300+ brands shipped</span>
     <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
   </div>
 </footer>
@@ -373,5 +387,23 @@
   });
 </script>
 
+<script>
+// === Canonical mega menu handler (injected) ===
+(function(){
+  document.querySelectorAll('.mega-trigger').forEach(function(trigger){
+    var panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    if (trigger.dataset.megaWired === '1') return;
+    trigger.dataset.megaWired = '1';
+    var timer;
+    var open = function(){ clearTimeout(timer); panel.classList.add('open'); };
+    var close = function(){ timer = setTimeout(function(){ panel.classList.remove('open'); }, 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
+})();
+</script>
 </body>
 </html>

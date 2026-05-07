@@ -54,6 +54,13 @@
   .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
   .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; }
   @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
+
+/* === Canonical mega menu (injected) === */
+.mega-panel { opacity:0 !important; pointer-events:none !important; transform:translateY(-8px) !important; transition:opacity .25s, transform .25s !important; }
+.mega-panel.open { opacity:1 !important; pointer-events:auto !important; transform:translateY(0) !important; }
+.mega-trigger { position:relative; }
+.mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
+
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
@@ -92,7 +99,7 @@
               <div class="rounded-xl overflow-hidden aspect-[5/4] mb-4"><img src="/images/stock/team.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="For companies"/></div>
               <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Audience</div>
               <div class="font-headline font-extrabold text-2xl text-ink group-hover:grad-text transition-all">For Companies</div>
-              <p class="text-sm text-ink-soft mt-2">10 to 200 person teams. Marketing, ops, support, sales — all wired with AI agents and automations.</p>
+              <p class="text-sm text-ink-soft mt-2">10 to 200 person teams. Marketing, ops, support, sales, all wired with AI agents and automations.</p>
             </a>
           </div>
         </div>
@@ -451,7 +458,7 @@
     </svg>
   </div>
   <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
-    <span>© 2026 AI Crew · From the makers of MarketinCrew · 300+ brands shipped</span>
+    <span>© 2026 AI Crew · Founders, makers of MarketinCrew · 300+ brands shipped</span>
     <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
   </div>
 </footer>
@@ -462,7 +469,7 @@
 <script>
   AOS.init({ duration:700, once:true, offset:80 });
 
-  // Mega menu — JS-controlled with delay so cursor can travel from trigger to panel
+  // Mega menu, JS-controlled with delay so cursor can travel from trigger to panel
   document.querySelectorAll('.mega-trigger').forEach(trigger => {
     const panel = trigger.querySelector('.mega-panel');
     if (!panel) return;
@@ -554,6 +561,24 @@
     });
     btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
   });
+</script>
+<script>
+// === Canonical mega menu handler (injected) ===
+(function(){
+  document.querySelectorAll('.mega-trigger').forEach(function(trigger){
+    var panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    if (trigger.dataset.megaWired === '1') return;
+    trigger.dataset.megaWired = '1';
+    var timer;
+    var open = function(){ clearTimeout(timer); panel.classList.add('open'); };
+    var close = function(){ timer = setTimeout(function(){ panel.classList.remove('open'); }, 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
+})();
 </script>
 </body>
 </html>
