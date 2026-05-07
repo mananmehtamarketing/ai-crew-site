@@ -78,6 +78,30 @@
 .testi-card:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 24px 48px -12px rgba(11,19,38,0.18); filter: grayscale(0%); opacity: 1; }
 .testi-card img { width:100%; height:100%; object-fit:cover; }
 
+
+/* === Footer AI CREW shimmer (CSS background-clip animation) === */
+.footer-aicrew-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 22vw;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: center;
+  margin: 0;
+  background: linear-gradient(90deg, #aec6ff 0%, #6ad9c3 25%, #ffbe2e 50%, #6ad9c3 75%, #aec6ff 100%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aicrew-shimmer 8s linear infinite;
+  user-select: none;
+  -webkit-user-select: none;
+}
+@keyframes aicrew-shimmer {
+  0% { background-position: 0% 0%; }
+  100% { background-position: -300% 0%; }
+}
+
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
@@ -386,20 +410,20 @@
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-16">
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/dr-sheths.jpg" class="w-full h-full object-cover" alt="Dr Sheths"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/ls-chemicals.jpg" class="w-full h-full object-cover" alt="LS Chemicals"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/yoga.jpg" class="w-full h-full object-cover" alt="Yoga"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/coffee-with-strangers.jpg" class="w-full h-full object-cover" alt="Coffee with Strangers"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/inventure.jpg" class="w-full h-full object-cover" alt="Inventure"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/rolling-pin.jpg" class="w-full h-full object-cover" alt="Rolling Pin"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/silla.jpg" class="w-full h-full object-cover" alt="Silla"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/rm.jpg" class="w-full h-full object-cover" alt="RM"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/ceque.jpg" class="w-full h-full object-cover" alt="Ceque"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/debs.jpg" class="w-full h-full object-cover" alt="Debs"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/debs-street-food.jpg" class="w-full h-full object-cover" alt="Debs Street Food"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/elam-vital.jpg" class="w-full h-full object-cover" alt="Elam Vital"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/gut-health.jpg" class="w-full h-full object-cover" alt="Gut Health"/></a>
-      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-square rounded-xl overflow-hidden block"><img src="/images/testimonials/we-do-things.jpg" class="w-full h-full object-cover" alt="We Do Things"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/dr-sheths.jpg" class="w-full h-full object-cover" alt="Dr Sheths"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/ls-chemicals.jpg" class="w-full h-full object-cover" alt="LS Chemicals"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/yoga.jpg" class="w-full h-full object-cover" alt="Yoga"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/coffee-with-strangers.jpg" class="w-full h-full object-cover" alt="Coffee with Strangers"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/inventure.jpg" class="w-full h-full object-cover" alt="Inventure"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/rolling-pin.jpg" class="w-full h-full object-cover" alt="Rolling Pin"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/silla.jpg" class="w-full h-full object-cover" alt="Silla"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/rm.jpg" class="w-full h-full object-cover" alt="RM"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/ceque.jpg" class="w-full h-full object-cover" alt="Ceque"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/debs.jpg" class="w-full h-full object-cover" alt="Debs"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/debs-street-food.jpg" class="w-full h-full object-cover" alt="Debs Street Food"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/elam-vital.jpg" class="w-full h-full object-cover" alt="Elam Vital"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/gut-health.jpg" class="w-full h-full object-cover" alt="Gut Health"/></a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener" class="testi-card aspect-[4/5] rounded-xl overflow-hidden block"><img src="/images/testimonials/we-do-things.jpg" class="w-full h-full object-cover" alt="We Do Things"/></a>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto" data-aos="fade-up">
@@ -534,12 +558,8 @@
     <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4><ul class="space-y-2.5 text-sm"><li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li></ul></div>
   </div>
 
-  <div class="max-w-[1400px] mx-auto -mb-8 select-none">
-    <svg viewBox="0 0 800 200" class="w-full" xmlns="http://www.w3.org/2000/svg">
-      <defs><linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#aec6ff"/><stop offset="50%" stop-color="#6ad9c3"/><stop offset="100%" stop-color="#ffbe2e"/></linearGradient></defs>
-      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-stroke" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
-      <text x="50%" y="80%" text-anchor="middle" class="footer-svg-grad" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:200px;letter-spacing:-0.04em;">AI CREW</text>
-    </svg>
+  <div class="max-w-[1400px] mx-auto -mb-8 select-none overflow-hidden">
+    <h2 class="footer-aicrew-text">AI CREW</h2>
   </div>
 
   <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
