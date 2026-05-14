@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>AI for Hospitality, Hotels & F&B | AI Reservations + Reviews + Operations | AI Crew</title>
 <meta name="description" content="AI consultancy for hotels, restaurants, F&B groups, boutique hospitality. AI for reservations, reviews, guest comms, ordering, staff training and operations." />
 <link rel="canonical" href="https://aicrew.io/industries/hospitality" />
@@ -36,7 +36,7 @@
   .mega-trigger { position:relative; }
   .mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
   .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
-  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem 1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); max-height:calc(100vh - 64px); overflow-y:auto; }
+  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem 1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); max-height:calc(100vh - 64px); max-height:calc(100svh - 64px); overflow-y:auto; padding-bottom:max(1.5rem, env(safe-area-inset-bottom)); }
   .mobile-nav.open { display:flex; }
   .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
   .mobile-nav .group-title { font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:#6B7280; font-weight:700; margin-top:.5rem; }
@@ -76,13 +76,43 @@
   -webkit-text-fill-color: transparent;
   animation: aicrew-shimmer 8s linear infinite;
   user-select: none;
+  white-space: nowrap;
   -webkit-user-select: none;
+  white-space: nowrap;
 }
 @keyframes aicrew-shimmer {
   0% { background-position: 0% 0%; }
   100% { background-position: -300% 0%; }
 }
 
+
+  /* ===== MOBILE OVERRIDES ===== */
+  @media (max-width:1023px) {
+    nav { padding-top:env(safe-area-inset-top); }
+  }
+  @media (max-width:767px) {
+    /* Section headings */
+    .section-h2 { font-size:clamp(1.75rem, 8vw, 2rem) !important; }
+    h2.font-headline { font-size:clamp(1.75rem, 8vw, 2.2rem) !important; }
+    h1.font-headline { font-size:clamp(1.9rem, 9vw, 2.6rem) !important; line-height:1.05 !important; }
+    /* Reduce section padding */
+    section.py-24, section.py-20 { padding-top:3rem !important; padding-bottom:3rem !important; }
+    section.py-32 { padding-top:3rem !important; padding-bottom:3rem !important; }
+    /* CTA section */
+    .cta-inner { padding:2.5rem 1.25rem !important; }
+    /* Footer columns */
+    footer .grid { grid-template-columns:1fr 1fr !important; }
+    /* Prevent flex children overflowing */
+    .flex > * { min-width:0; }
+    img { max-width:100%; height:auto; }
+    /* Industry/service hero: stack properly */
+    .hero-split { flex-direction:column !important; }
+    /* FAQ, steps: single column */
+    .grid-cols-2 { grid-template-columns:1fr !important; }
+    .grid-cols-3 { grid-template-columns:1fr !important; }
+    /* Table overflow fix */
+    table { display:block; overflow-x:auto; }
+  }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 <script type="application/ld+json">{
@@ -157,12 +187,12 @@
 </head><body>
 <nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
   <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
-    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter">
+    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter whitespace-nowrap">
       <span class="grad-text">AI</span><span class="text-ink ml-1">CREW</span>
     </a>
 
     <!-- Desktop nav -->
-    <div class="desktop-nav flex items-center gap-2 font-headline text-sm font-semibold">
+    <div class="desktop-nav hidden lg:flex items-center gap-2 font-headline text-sm font-semibold">
       <!-- For You mega -->
       <div class="mega-trigger relative">
         <button class="px-4 py-2 text-ink hover:text-ink/70 flex items-center gap-1 transition-colors">
@@ -245,7 +275,7 @@
           <div class="max-w-[1400px] mx-auto px-10 py-10">
             <div class="grid grid-cols-12 gap-6">
               <div class="col-span-9">
-                <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-5">10 Industries · 1 Playbook each</div>
+                <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-5">12 Industries · 1 Playbook each</div>
                 <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
                   <a href="/industries/tech-b2b/" class="flex items-center gap-3 py-2 group">
                     <img src="/images/stock/tech.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
@@ -287,6 +317,8 @@
                     <img src="/images/stock/manufacturing.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
                     <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Manufacturing</div><div class="text-[11px] text-ink-mute">B2B outreach, RFQ, vendor ops</div></div>
                   </a>
+                  <a href="/industries/retail/" class="flex items-center gap-3 py-2 group"><img src="/images/stock/retail.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Retail</div><div class="text-[11px] text-ink-mute">Loyalty, inventory, in-store AI</div></div></a>
+                  <a href="/industries/sports/" class="flex items-center gap-3 py-2 group"><img src="/images/stock/sports.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Sports &amp; Fitness</div><div class="text-[11px] text-ink-mute">Fan engagement, ops, performance</div></div></a>
                 </div>
               </div>
               <div class="col-span-3">
@@ -551,6 +583,53 @@
   </div>
 </section>
 
+
+<!-- AI HARDWARE SECTION -->
+<section class="py-20 lg:py-28 px-6 lg:px-10 bg-ink overflow-hidden">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-2xl mb-12" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-headline font-bold tracking-wider uppercase text-white/60 mb-6" style="border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.05);">
+        <span class="w-1.5 h-1.5 rounded-full grad-bg"></span>
+        AI Hardware for Hospitality
+      </div>
+      <h2 class="font-headline font-extrabold text-white text-4xl md:text-5xl tracking-tighter leading-[0.95] mb-4">
+        Every guest seen.<br/><span class="grad-text">Every shift covered. Zero blind spots.</span>
+      </h2>
+      <p class="text-white/60 text-lg leading-relaxed">Beyond booking software — AI Crew deploys computer vision into your hotel, restaurant, or event space. Crowd flow, queue alerts, staff zone tracking. Uses your existing cameras. Live in hours.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+      <div class="rounded-2xl p-7 border" style="border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.04);" data-aos="fade-up" data-aos-delay="0">
+        <div class="w-10 h-10 rounded-xl grad-bg flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-ink text-xl">person_pin_circle</span>
+        </div>
+        <h3 class="font-headline font-bold text-white text-lg mb-2">Guest Flow & Queue Monitoring</h3>
+        <p class="text-white/55 text-sm leading-relaxed">AI counts queue length at reception, bar, or restaurant in real time. Automatic staff alerts when wait times cross your threshold. No more long queues going unnoticed on a Friday night.</p>
+        <div class="mt-5 pt-4 border-t border-white/10 text-[11px] font-bold uppercase tracking-widest" style="color:#6ad9c3;">Queue alerts before guests complain</div>
+      </div>
+      <div class="rounded-2xl p-7 border" style="border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.04);" data-aos="fade-up" data-aos-delay="80">
+        <div class="w-10 h-10 rounded-xl grad-bg flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-ink text-xl">security</span>
+        </div>
+        <h3 class="font-headline font-bold text-white text-lg mb-2">Security & Access Control</h3>
+        <p class="text-white/55 text-sm leading-relaxed">Monitor lobby entry, back-of-house corridors, and staff-only zones with camera-based AI. Instant alerts for unauthorized access, left baggage, or loitering near high-value areas.</p>
+        <div class="mt-5 pt-4 border-t border-white/10 text-[11px] font-bold uppercase tracking-widest" style="color:#aec6ff;">Security incidents down 60%</div>
+      </div>
+      <div class="rounded-2xl p-7 border" style="border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.04);" data-aos="fade-up" data-aos-delay="160">
+        <div class="w-10 h-10 rounded-xl grad-bg flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-ink text-xl">restaurant</span>
+        </div>
+        <h3 class="font-headline font-bold text-white text-lg mb-2">Kitchen & Ops Visibility</h3>
+        <p class="text-white/55 text-sm leading-relaxed">Track kitchen throughput by zone, staff coverage at peak hours, and crowd density in dining areas. Know exactly when to call in extra staff before service breaks down.</p>
+        <div class="mt-5 pt-4 border-t border-white/10 text-[11px] font-bold uppercase tracking-widest" style="color:#ffbe2e;">Labour costs matched to real demand</div>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up">
+      <a href="/ai-hardware"><button class="px-7 py-3.5 grad-bg text-ink rounded-xl font-headline font-bold text-sm hover:opacity-90 transition-all inline-flex items-center gap-2">See all AI Hardware use cases <span class="material-symbols-outlined text-base">arrow_forward</span></button></a>
+      <a href="/book-demo"><button class="px-7 py-3.5 border text-white rounded-xl font-headline font-bold text-sm hover:bg-white/10 transition-all" style="border-color:rgba(255,255,255,0.2);">Book a demo</button></a>
+    </div>
+  </div>
+</section>
+
 <footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
   <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
     <div class="col-span-2">
@@ -594,7 +673,7 @@
         <li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li>
       </ul></div>
   </div>
-  <div class="max-w-[1400px] mx-auto -mb-8 select-none overflow-hidden">
+  <div class="w-full -mb-8 select-none overflow-hidden">
     <h2 class="footer-aicrew-text">AI CREW</h2>
   </div>
   <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">

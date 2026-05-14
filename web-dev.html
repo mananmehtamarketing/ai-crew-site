@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>AI Websites &amp; Landing Pages | AI Crew · Built Fast, AI-Ready</title>
 <meta name="description" content="AI Crew builds AI-ready websites, landing pages and micro-sites for founders, lawyers, doctors and professional service businesses. Fast, conversion-first, SEO baked in." />
 <meta name="keywords" content="AI website development, AI landing page, AI website India, AI website for founders, AI web design, conversion-first website" />
@@ -68,25 +68,55 @@
   -webkit-text-fill-color: transparent;
   animation: aicrew-shimmer 8s linear infinite;
   user-select: none;
+  white-space: nowrap;
   -webkit-user-select: none;
+  white-space: nowrap;
 }
 @keyframes aicrew-shimmer {
   0% { background-position: 0% 0%; }
   100% { background-position: -300% 0%; }
 }
 
+
+  /* ===== MOBILE OVERRIDES ===== */
+  @media (max-width:1023px) {
+    nav { padding-top:env(safe-area-inset-top); }
+  }
+  @media (max-width:767px) {
+    /* Section headings */
+    .section-h2 { font-size:clamp(1.75rem, 8vw, 2rem) !important; }
+    h2.font-headline { font-size:clamp(1.75rem, 8vw, 2.2rem) !important; }
+    h1.font-headline { font-size:clamp(1.9rem, 9vw, 2.6rem) !important; line-height:1.05 !important; }
+    /* Reduce section padding */
+    section.py-24, section.py-20 { padding-top:3rem !important; padding-bottom:3rem !important; }
+    section.py-32 { padding-top:3rem !important; padding-bottom:3rem !important; }
+    /* CTA section */
+    .cta-inner { padding:2.5rem 1.25rem !important; }
+    /* Footer columns */
+    footer .grid { grid-template-columns:1fr 1fr !important; }
+    /* Prevent flex children overflowing */
+    .flex > * { min-width:0; }
+    img { max-width:100%; height:auto; }
+    /* Industry/service hero: stack properly */
+    .hero-split { flex-direction:column !important; }
+    /* FAQ, steps: single column */
+    .grid-cols-2 { grid-template-columns:1fr !important; }
+    .grid-cols-3 { grid-template-columns:1fr !important; }
+    /* Table overflow fix */
+    table { display:block; overflow-x:auto; }
+  }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
   <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
-    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter">
+    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter whitespace-nowrap">
       <span class="grad-text">AI</span><span class="text-ink ml-1">CREW</span>
     </a>
 
     <!-- Desktop nav -->
-    <div class="desktop-nav flex items-center gap-2 font-headline text-sm font-semibold">
+    <div class="desktop-nav hidden lg:flex items-center gap-2 font-headline text-sm font-semibold">
       <!-- For You mega -->
       <div class="mega-trigger relative">
         <button class="px-4 py-2 text-ink hover:text-ink/70 flex items-center gap-1 transition-colors">
@@ -169,7 +199,7 @@
           <div class="max-w-[1400px] mx-auto px-10 py-10">
             <div class="grid grid-cols-12 gap-6">
               <div class="col-span-9">
-                <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-5">10 Industries · 1 Playbook each</div>
+                <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-5">12 Industries · 1 Playbook each</div>
                 <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
                   <a href="/industries/tech-b2b/" class="flex items-center gap-3 py-2 group">
                     <img src="/images/stock/tech.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
@@ -211,6 +241,8 @@
                     <img src="/images/stock/manufacturing.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
                     <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Manufacturing</div><div class="text-[11px] text-ink-mute">B2B outreach, RFQ, vendor ops</div></div>
                   </a>
+                  <a href="/industries/retail/" class="flex items-center gap-3 py-2 group"><img src="/images/stock/retail.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Retail</div><div class="text-[11px] text-ink-mute">Loyalty, inventory, in-store AI</div></div></a>
+                  <a href="/industries/sports/" class="flex items-center gap-3 py-2 group"><img src="/images/stock/sports.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Sports &amp; Fitness</div><div class="text-[11px] text-ink-mute">Fan engagement, ops, performance</div></div></a>
                 </div>
               </div>
               <div class="col-span-3">
@@ -375,7 +407,7 @@
     <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4><ul class="space-y-2.5 text-sm"><li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li><li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content</a></li><li><a href="/automations" class="text-ink-soft hover:text-ink">AI Automations</a></li><li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li></ul></div>
     <div><h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4><ul class="space-y-2.5 text-sm"><li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li></ul></div>
   </div>
-  <div class="max-w-[1400px] mx-auto -mb-8 select-none overflow-hidden">
+  <div class="w-full -mb-8 select-none overflow-hidden">
     <h2 class="footer-aicrew-text">AI CREW</h2>
   </div>
   <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">

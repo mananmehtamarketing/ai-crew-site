@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>AI Crew | AI Consultancy for Founders, Professionals & Companies</title>
 <meta name="description" content="AI consultancy and AI workflow automation for founders, lawyers, doctors, CAs, architects and small companies. We sit with you, learn how you make money, and install AI in 21 days. Founders, makers of MarketinCrew." />
 <meta name="keywords" content="AI consultancy, AI consultancy India, AI for founders, AI for lawyers, AI for doctors, AI for CAs, AI workflow automation, AI strategy, AI agency, fractional AI, AI training, AI for small business, AI implementation, AI agents" />
@@ -130,7 +130,7 @@
   .shimmer-rect { animation:shimmer 6s linear infinite; }
 
   /* Mobile nav */
-  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem 1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); max-height:calc(100vh - 64px); overflow-y:auto; }
+  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem 1.5rem; padding-bottom:max(1.5rem, env(safe-area-inset-bottom)); gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); max-height:calc(100vh - 64px); max-height:calc(100svh - 64px); overflow-y:auto; }
   .mobile-nav.open { display:flex; }
   .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
   .mobile-nav .group-title { font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:#6B7280; font-weight:700; margin-top:.5rem; }
@@ -164,6 +164,76 @@
   /* Subtle dot pattern */
   .dot-grid { background-image:radial-gradient(circle, #0B1326 1px, transparent 1px); background:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
 
+  /* ===== PHYSICAL WORLD / AI HARDWARE SECTION ===== */
+  .pw-card { position:relative; border-radius:1rem; overflow:hidden; min-height:280px; transition:all .4s; background:#0B1326; }
+  .pw-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.45; transition:transform 1s; }
+  .pw-card:hover img { transform:scale(1.04); }
+  .pw-card .pw-overlay { position:absolute; inset:0; background:linear-gradient(180deg,rgba(11,19,38,0.15) 0%,rgba(11,19,38,0.90) 60%,rgba(11,19,38,0.98) 100%); }
+  .pw-card .pw-body { position:relative; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:1.75rem; }
+  .pw-card:hover { transform:translateY(-4px); box-shadow:0 24px 60px -12px rgba(0,0,0,0.6); }
+  .pw-result { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; }
+
+  /* ===== INSTAGRAM TESTIMONIALS ===== */
+  .ig-card { cursor:pointer; transition:all .35s; border-radius:1rem; overflow:hidden; position:relative; }
+  .ig-card:hover { transform:translateY(-4px) scale(1.01); box-shadow:0 24px 48px -12px rgba(11,19,38,0.18); }
+  .ig-card .ig-overlay { opacity:0; position:absolute; inset:0; background:linear-gradient(135deg,rgba(193,53,132,0.85),rgba(88,81,219,0.85)); display:flex; align-items:center; justify-content:center; transition:opacity .3s; border-radius:1rem; }
+  .ig-card:hover .ig-overlay { opacity:1; }
+
+  /* ===== MOBILE OVERRIDES ===== */
+  @media (max-width:1023px) {
+    /* Hide desktop hero accordion, show mobile images */
+    #heroAccordion { display:none !important; }
+    .hero-mobile-imgs { display:grid !important; grid-template-columns:repeat(3,1fr) !important; }
+    /* Video section: full overlay on mobile */
+    .video-mobile-cover { background:linear-gradient(180deg,rgba(255,255,255,0.97) 0%,rgba(255,255,255,0.92) 55%,rgba(255,255,255,0.6) 80%,rgba(255,255,255,0) 100%) !important; }
+    /* Accordion caption */
+    .accordion-caption { display:none !important; }
+    /* Navbar safe area */
+    nav { padding-top:env(safe-area-inset-top); }
+  }
+  @media (max-width:767px) {
+    /* Hero heading */
+    h1.font-headline { font-size:clamp(2rem, 9vw, 2.6rem) !important; line-height:1 !important; }
+    /* Section headings */
+    .section-h2 { font-size:clamp(1.75rem, 8vw, 2rem) !important; }
+    /* Prevent flex children overflowing */
+    .flex > * { min-width:0; }
+    /* Images never exceed container */
+    img { max-width:100%; height:auto; }
+    /* Reduce section vertical padding */
+    section.py-24 { padding-top:3.5rem !important; padding-bottom:3.5rem !important; }
+    section.py-32 { padding-top:3.5rem !important; padding-bottom:3.5rem !important; }
+    section.lg\:py-32 { padding-top:3.5rem !important; }
+    /* Footer: stack columns */
+    footer .grid-cols-2 { grid-template-columns:1fr !important; }
+    /* Stats: 2 col on mobile */
+    .stats-grid { grid-template-columns:repeat(2,1fr) !important; }
+    /* Crew pills: horizontal scroll slider */
+    .crew-pills { display:flex !important; overflow-x:auto !important; scroll-snap-type:x mandatory !important; gap:.75rem !important; scrollbar-width:none !important; padding-bottom:.5rem; }
+    .crew-pills::-webkit-scrollbar { display:none; }
+    .crew-pills > * { flex:0 0 82% !important; scroll-snap-align:start !important; }
+    /* PW cards: horizontal scroll slider */
+    .pw-grid { display:flex !important; flex-direction:row !important; overflow-x:auto !important; scroll-snap-type:x mandatory !important; gap:.875rem !important; padding-bottom:1rem !important; scrollbar-width:none !important; margin-left:-1.25rem !important; margin-right:-1.25rem !important; padding-left:1.25rem !important; padding-right:1.25rem !important; }
+    .pw-grid::-webkit-scrollbar { display:none; }
+    .pw-grid > * { flex:0 0 82% !important; scroll-snap-align:start !important; min-width:0 !important; }
+    /* Industry tiles: horizontal scroll slider */
+    .industries-grid { display:flex !important; flex-direction:row !important; overflow-x:auto !important; scroll-snap-type:x mandatory !important; gap:.75rem !important; padding-bottom:1rem !important; scrollbar-width:none !important; margin-left:-1.25rem !important; margin-right:-1.25rem !important; padding-left:1.25rem !important; padding-right:1.25rem !important; }
+    .industries-grid::-webkit-scrollbar { display:none; }
+    .industries-grid > * { flex:0 0 52% !important; scroll-snap-align:start !important; min-width:0 !important; }
+    /* Marquee font */
+    .tool-chip span { font-size:.9rem !important; }
+    /* CTA section padding */
+    .cta-inner { padding:2.5rem 1.25rem !important; }
+    /* footer svg text */
+    .footer-aicrew-text { font-size:32vw !important; }
+    /* Hero body text */
+    .hero-body { font-size:1rem !important; }
+    /* Pillar cards: horizontal scroll */
+    .pillar-slider { display:flex !important; overflow-x:auto !important; scroll-snap-type:x mandatory !important; gap:.875rem !important; padding-bottom:1rem !important; scrollbar-width:none !important; }
+    .pillar-slider::-webkit-scrollbar { display:none; }
+    .pillar-slider > * { flex:0 0 82% !important; scroll-snap-align:start !important; }
+  }
+
 /* === Canonical mega menu (injected) === */
 .mega-panel { opacity:0 !important; pointer-events:none !important; transform:translateY(-8px) !important; transition:opacity .25s, transform .25s !important; }
 .mega-panel.open { opacity:1 !important; pointer-events:auto !important; transform:translateY(0) !important; }
@@ -187,7 +257,9 @@
   -webkit-text-fill-color: transparent;
   animation: aicrew-shimmer 8s linear infinite;
   user-select: none;
+  white-space: nowrap;
   -webkit-user-select: none;
+  white-space: nowrap;
 }
 @keyframes aicrew-shimmer {
   0% { background-position: 0% 0%; }
@@ -202,12 +274,12 @@
 <!-- ============================== NAV ============================== -->
 <nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
   <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
-    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter">
+    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter whitespace-nowrap">
       <span class="grad-text">AI</span><span class="text-ink ml-1">CREW</span>
     </a>
 
     <!-- Desktop nav -->
-    <div class="desktop-nav flex items-center gap-2 font-headline text-sm font-semibold">
+    <div class="desktop-nav hidden lg:flex items-center gap-2 font-headline text-sm font-semibold">
       <!-- For You mega -->
       <div class="mega-trigger relative">
         <button class="px-4 py-2 text-ink hover:text-ink/70 flex items-center gap-1 transition-colors">
@@ -290,7 +362,7 @@
           <div class="max-w-[1400px] mx-auto px-10 py-10">
             <div class="grid grid-cols-12 gap-6">
               <div class="col-span-9">
-                <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-5">10 Industries · 1 Playbook each</div>
+                <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-5">12 Industries · 1 Playbook each</div>
                 <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
                   <a href="/industries/tech-b2b/" class="flex items-center gap-3 py-2 group">
                     <img src="/images/stock/tech.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
@@ -332,6 +404,8 @@
                     <img src="/images/stock/manufacturing.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
                     <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Manufacturing</div><div class="text-[11px] text-ink-mute">B2B outreach, RFQ, vendor ops</div></div>
                   </a>
+                  <a href="/industries/retail/" class="flex items-center gap-3 py-2 group"><img src="/images/stock/retail.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Retail</div><div class="text-[11px] text-ink-mute">Loyalty, inventory, in-store AI</div></div></a>
+                  <a href="/industries/sports/" class="flex items-center gap-3 py-2 group"><img src="/images/stock/sports.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Sports &amp; Fitness</div><div class="text-[11px] text-ink-mute">Fan engagement, ops, performance</div></div></a>
                 </div>
               </div>
               <div class="col-span-3">
@@ -349,6 +423,7 @@
           </div>
         </div>
       </div>
+      <a href="/ai-hardware" class="px-4 py-2 text-ink hover:text-ink/70 transition-colors">AI Hardware</a>
       <a href="/case-studies" class="px-4 py-2 text-ink hover:text-ink/70 transition-colors">Case Studies</a>
       <a href="/about" class="px-4 py-2 text-ink hover:text-ink/70 transition-colors">About</a>
     </div>
@@ -376,6 +451,7 @@
     <a href="/services/ai-training">AI Training for Teams</a>
     <div class="group-title">Explore</div>
     <a href="/industries">Industries</a>
+    <a href="/ai-hardware">AI Hardware</a>
     <a href="/case-studies">Case Studies</a>
     <a href="/about">About</a>
     <a href="/book-demo" class="mobile-cta">Book a Call →</a>
@@ -386,7 +462,7 @@
 
 <!-- ============================== HERO ============================== -->
 <section class="relative overflow-hidden bg-bg-soft">
-  <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-28 grid grid-cols-12 gap-10 items-center">
+  <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-12 lg:py-28 grid grid-cols-12 gap-10 items-center">
 
     <div class="col-span-12 lg:col-span-7" data-aos="fade-up">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-border-soft text-xs font-headline font-bold tracking-wider uppercase text-ink mb-8">
@@ -401,7 +477,7 @@
           <span class="word">companies.</span>
         </span>
       </h1>
-      <p class="text-lg md:text-xl text-ink-soft max-w-2xl leading-relaxed mb-10">
+      <p class="hero-body text-lg md:text-xl text-ink-soft max-w-2xl leading-relaxed mb-10">
         We sit with you, learn how you make money, and install AI across your day, your team and your growth. In 21 days. No jargon. No deck. No fluff.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
@@ -417,9 +493,10 @@
       </div>
     </div>
 
-    <!-- RIGHT: 3-column accordion (founders / professionals / companies) -->
+    <!-- RIGHT: 3-column accordion (desktop) / image grid (mobile) -->
     <div class="col-span-12 lg:col-span-5" data-aos="fade-up" data-aos-delay="200">
-      <div class="flex gap-2 h-[480px] md:h-[520px]" id="heroAccordion">
+      <!-- Desktop accordion -->
+      <div class="gap-2 h-[480px] md:h-[520px] hidden lg:flex" id="heroAccordion">
         <div class="accordion-item relative rounded-2xl overflow-hidden cursor-pointer flex-shrink-0 w-[60px]">
           <img src="/images/stock/founder.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Founders"/>
           <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent"></div>
@@ -440,7 +517,25 @@
           </div>
         </div>
       </div>
-      <div class="mt-4 text-xs text-ink-mute text-center font-headline tracking-wider">Hover the columns to switch audience</div>
+      <!-- Mobile image grid (shown only below lg) -->
+      <div class="hero-mobile-imgs hidden grid-cols-3 gap-2.5 mt-2">
+        <div class="relative rounded-xl overflow-hidden aspect-[3/4]">
+          <img src="/images/stock/founder.jpg" class="w-full h-full object-cover" alt="Founders"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent"></div>
+          <span class="absolute bottom-3 left-3 text-white text-[10px] font-headline font-bold tracking-wider uppercase">Founders</span>
+        </div>
+        <div class="relative rounded-xl overflow-hidden aspect-[3/4]">
+          <img src="/images/stock/professional.jpg" class="w-full h-full object-cover" alt="Professionals"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent"></div>
+          <span class="absolute bottom-3 left-3 text-white text-[10px] font-headline font-bold tracking-wider uppercase">Pros</span>
+        </div>
+        <div class="relative rounded-xl overflow-hidden aspect-[3/4]">
+          <img src="/images/stock/team.jpg" class="w-full h-full object-cover" alt="Companies"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent"></div>
+          <span class="absolute bottom-3 left-3 text-white text-[10px] font-headline font-bold tracking-wider uppercase">Teams</span>
+        </div>
+      </div>
+      <div class="accordion-caption mt-4 text-xs text-ink-mute text-center font-headline tracking-wider">Hover the columns to switch audience</div>
     </div>
   </div>
 </section>
@@ -504,8 +599,8 @@
     poster="/images/video/manan-teaching-poster.jpg">
     <source src="/images/video/manan-teaching.mp4" type="video/mp4"/>
   </video>
-  <!-- White gradient overlay: opaque white on left, pulled back so the right half stays clear -->
-  <div class="absolute inset-0" style="background:linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.96) 18%, rgba(255,255,255,0.88) 28%, rgba(255,255,255,0.55) 38%, rgba(255,255,255,0.18) 48%, rgba(255,255,255,0) 58%);"></div>
+  <!-- White gradient overlay: opaque white on left (desktop) / full top-down overlay (mobile) -->
+  <div class="absolute inset-0 video-mobile-cover" style="background:linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.96) 18%, rgba(255,255,255,0.88) 28%, rgba(255,255,255,0.55) 38%, rgba(255,255,255,0.18) 48%, rgba(255,255,255,0) 58%);"></div>
   <!-- Subtle brand-tinted radial glow behind the headline for warmth -->
   <div class="absolute inset-y-0 left-0 w-3/5 pointer-events-none" style="background:radial-gradient(ellipse at 22% 50%, rgba(106,217,195,0.18) 0%, rgba(174,198,255,0.10) 30%, transparent 55%);"></div>
   <!-- Content -->
@@ -655,7 +750,7 @@
     <a href="/industries" class="text-ink font-headline font-bold flex items-center gap-1 whitespace-nowrap">All industries →</a>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 lg:gap-4">
+  <div class="industries-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 lg:gap-4">
     <a href="/industries/tech-b2b/" class="industry-tile rounded-2xl aspect-[4/5] block">
       <img src="/images/stock/tech.jpg" class="w-full h-full object-cover" alt="Tech and B2B SaaS founders"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Tech &amp; B2B SaaS</div></div>
@@ -699,77 +794,238 @@
   </div>
 </section>
 
+<!-- ============================== AI HARDWARE ============================== -->
+<section class="py-24 lg:py-32 px-6 lg:px-10 bg-ink overflow-hidden">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-3xl mb-14" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-white/40 font-bold mb-4">04 · AI Hardware</div>
+      <h2 class="section-h2 font-headline font-extrabold text-white text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">
+        AI that sees, tracks<br/>
+        <span class="grad-text">and secures the physical world.</span>
+      </h2>
+      <p class="text-lg text-white/65 mt-5 max-w-2xl leading-relaxed">From jewelry showrooms to marathon finish lines — we deploy real-time AI that protects high-value assets, tracks movement, and runs events at scale. White-label technology, managed end-to-end by AI Crew. <a href="/ai-hardware" class="text-white/80 underline underline-offset-4 hover:text-white transition-colors">See all use cases →</a></p>
+    </div>
+
+    <div class="pw-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+
+      <!-- Jewelry & Retail -->
+      <div class="pw-card" data-aos="fade-up">
+        <img src="/images/hardware/jewelry-security.webp" alt="AI security for jewelry showrooms"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(174,198,255,0.15); color:#aec6ff;">Retail &amp; Jewelry</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">AI Showroom Security</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Real-time item tracking with zone-based alerts. AI detects grab-and-run thefts and distraction incidents before they complete. Works across showrooms, exhibitions, and pop-ups.</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#aec6ff"></div>
+            <span class="pw-result" style="color:#aec6ff">Reduces theft incidents by 80%+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Luxury Apparel -->
+      <div class="pw-card" data-aos="fade-up" data-aos-delay="80">
+        <img src="/images/hardware/luxury-retail.webp" alt="AI monitoring for luxury apparel stores"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(106,217,195,0.15); color:#6ad9c3;">Luxury Apparel</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Track Every Piece. Trial Room to Rack.</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">AI monitors designer apparel through trial rooms, display floors, and storage zones. Instant alerts when pieces leave authorised zones. Staff productivity heatmaps included.</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#6ad9c3"></div>
+            <span class="pw-result" style="color:#6ad9c3">90% drop in trial-room incidents</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Events & Weddings -->
+      <div class="pw-card" data-aos="fade-up" data-aos-delay="160">
+        <img src="/images/hardware/wedding-events.webp" alt="AI security for weddings and events"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,190,46,0.15); color:#ffbe2e;">Events &amp; Weddings</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Protect ₹2Cr of Jewelry. On the Move.</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Portable AI security for wedding jewelry, event displays, and trade shows. Activates in seconds, no configuration. Creates a dynamic secure zone wherever the event goes.</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ffbe2e"></div>
+            <span class="pw-result" style="color:#ffbe2e">Zero incidents across 50+ events</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sports -->
+      <div class="pw-card" data-aos="fade-up">
+        <img src="/images/hardware/sports-timing.webp" alt="AI race timing for marathons"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(106,217,195,0.15); color:#6ad9c3;">Sports &amp; Events</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">AI Race Timing. From 10K to Marathon.</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Smart bib-based timing with live leaderboards, online registration, and post-race analytics. Handles marathons, triathlons, and corporate wellness events at any scale.</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#6ad9c3"></div>
+            <span class="pw-result" style="color:#6ad9c3">1,000+ runners · millisecond accuracy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logistics -->
+      <div class="pw-card" data-aos="fade-up" data-aos-delay="80">
+        <img src="/images/hardware/logistics-warehouse.webp" alt="AI tracking for logistics and warehouses"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,190,46,0.15); color:#ffbe2e;">Logistics</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Moving Security Zones for Valuables in Transit.</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Real-time alerts if cargo moves outside zone. Multi-site warehouse monitoring from one dashboard. Tamper detection and 24/7 coverage for high-value shipments.</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ffbe2e"></div>
+            <span class="pw-result" style="color:#ffbe2e">Transit theft eliminated for 3 exporters</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manufacturing -->
+      <div class="pw-card" data-aos="fade-up" data-aos-delay="160">
+        <img src="/images/hardware/manufacturing-qc.webp" alt="AI quality control for manufacturing"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(174,198,255,0.15); color:#aec6ff;">Manufacturing</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Quality Control &amp; Productivity AI</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Camera-based defect detection on production lines. Track worker productivity, idle time, and bottlenecks. Daily consistency reports — no new hardware needed.</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#aec6ff"></div>
+            <span class="pw-result" style="color:#aec6ff">Full visibility across 500+ pieces</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Case study snippet: retail -->
+    <div class="rounded-2xl overflow-hidden border border-white/10" style="background:rgba(255,255,255,0.04);" data-aos="fade-up">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="p-8 lg:p-12 flex flex-col justify-center">
+          <div class="text-xs uppercase tracking-[0.2em] text-white/40 font-bold mb-4">Case Study · Retail</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-white mb-4 leading-tight">"We used to lose 2-3 pieces a month at exhibitions. Since AI Crew deployed their AI security system, we've had zero incidents in 8 months."</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-6">A Mumbai-based jewelry exporter exhibiting at IIJS Trade Fair needed portable AI security for a 3-day show. AI Crew deployed a plug-and-play AI tracking system — zero configuration, active in seconds, monitored 420+ pieces across the display floor.</p>
+          <div class="grid grid-cols-3 gap-4">
+            <div><div class="font-headline font-extrabold text-2xl grad-text">420+</div><div class="text-[10px] uppercase tracking-[0.15em] text-white/40 font-bold mt-1">Items secured</div></div>
+            <div><div class="font-headline font-extrabold text-2xl grad-text">0</div><div class="text-[10px] uppercase tracking-[0.15em] text-white/40 font-bold mt-1">Theft incidents</div></div>
+            <div><div class="font-headline font-extrabold text-2xl grad-text">3 days</div><div class="text-[10px] uppercase tracking-[0.15em] text-white/40 font-bold mt-1">Deployed &amp; live</div></div>
+          </div>
+        </div>
+        <div class="relative min-h-[260px] lg:min-h-0">
+          <img src="/images/stock/manufacturing.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Jewelry showroom AI security"/>
+          <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(11,19,38,0.9) 0%,rgba(11,19,38,0.2) 100%);"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="w-16 h-16 rounded-full grad-bg mx-auto mb-4 flex items-center justify-center">
+                <span class="material-symbols-outlined text-ink text-2xl">security</span>
+              </div>
+              <div class="text-white font-headline font-bold text-sm opacity-80">AI-Powered Physical Security</div>
+              <div class="text-white/50 text-xs mt-1">Deployed and managed end-to-end by AI Crew</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center" data-aos="fade-up">
+      <p class="text-white/45 text-sm mb-5">These are white-label AI deployments — built by our technology partners, managed end-to-end by AI Crew.</p>
+      <a href="/book-demo">
+        <button class="px-8 py-4 bg-white text-ink rounded-xl font-headline font-bold text-base hover:bg-white/90 transition-all inline-flex items-center gap-2">
+          Deploy AI in your physical space
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============================== TESTIMONIAL WALL ============================== -->
 <section class="py-24 lg:py-32 px-6 lg:px-10 bg-bg-soft">
   <div class="max-w-[1400px] mx-auto">
     <div class="text-center mb-14" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">04 · The receipts</div>
-      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6">
-        Trusted by <span class="grad-text">300+ founders</span> <br/>and brands.
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">05 · The receipts</div>
+      <h2 class="section-h2 font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-5">
+        Trusted by <span class="grad-text">300+ founders</span><br/>and brands.
       </h2>
-      <p class="text-lg text-ink-soft max-w-2xl mx-auto">12 years of MarketinCrew DNA. India, Europe, North America.</p>
+      <p class="text-lg text-ink-soft max-w-2xl mx-auto mb-6">12 years of MarketinCrew DNA. India, Europe, North America.</p>
+      <!-- Instagram CTA -->
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-border bg-white hover:shadow-lg hover:border-pink-300 transition-all group">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
+          <defs><linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs>
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="url(#igGrad)"/>
+        </svg>
+        <span class="text-sm font-headline font-bold text-ink group-hover:text-pink-600 transition-colors">See all client testimonials on Instagram</span>
+        <span class="text-ink-mute group-hover:translate-x-1 transition-transform inline-block">→</span>
+      </a>
     </div>
 
-        <!-- Hero pill removed: faces are unique across category pills below -->
-
-    <!-- Category crew pills (each face appears in only one pill) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-14 max-w-5xl mx-auto" data-aos="fade-up">
-      <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border">
+    <!-- Category crew pills — each clickable to Instagram -->
+    <div class="crew-pills grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-14 max-w-5xl mx-auto" data-aos="fade-up">
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener"
+         class="ig-card flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border hover:border-pink-200 hover:shadow-md transition-all group">
         <div class="flex items-center -space-x-2.5">
           <img src="/images/testimonials/faces/ls-chemicals.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/inventure.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
         </div>
-        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink">B2B &amp; Manufacturing</div></div>
+        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink group-hover:text-pink-600 transition-colors">B2B &amp; Manufacturing</div></div>
         <div class="text-xs font-headline font-bold text-ink-mute">+62</div>
-      </div>
-      <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border">
+      </a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener"
+         class="ig-card flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border hover:border-pink-200 hover:shadow-md transition-all group">
         <div class="flex items-center -space-x-2.5">
           <img src="/images/testimonials/faces/dr-sheths.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/gut-health.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/elam-vital.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
         </div>
-        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink">Healthcare &amp; Wellness</div></div>
+        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink group-hover:text-pink-600 transition-colors">Healthcare &amp; Wellness</div></div>
         <div class="text-xs font-headline font-bold text-ink-mute">+48</div>
-      </div>
-      <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border">
+      </a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener"
+         class="ig-card flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border hover:border-pink-200 hover:shadow-md transition-all group">
         <div class="flex items-center -space-x-2.5">
           <img src="/images/testimonials/faces/debs.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/debs-street-food.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/rolling-pin.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
         </div>
-        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink">F&amp;B &amp; Hospitality</div></div>
+        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink group-hover:text-pink-600 transition-colors">F&amp;B &amp; Hospitality</div></div>
         <div class="text-xs font-headline font-bold text-ink-mute">+74</div>
-      </div>
-      <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border">
+      </a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener"
+         class="ig-card flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border hover:border-pink-200 hover:shadow-md transition-all group">
         <div class="flex items-center -space-x-2.5">
           <img src="/images/testimonials/faces/silla.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/we-do-things.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/dr-sheths.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
         </div>
-        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink">D2C &amp; Lifestyle</div></div>
+        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink group-hover:text-pink-600 transition-colors">D2C &amp; Lifestyle</div></div>
         <div class="text-xs font-headline font-bold text-ink-mute">+58</div>
-      </div>
-      <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border">
+      </a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener"
+         class="ig-card flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border hover:border-pink-200 hover:shadow-md transition-all group">
         <div class="flex items-center -space-x-2.5">
           <img src="/images/testimonials/faces/coffee-with-strangers.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/yoga.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/ceque.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
         </div>
-        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink">Founders &amp; Personal Brands</div></div>
+        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink group-hover:text-pink-600 transition-colors">Founders &amp; Personal Brands</div></div>
         <div class="text-xs font-headline font-bold text-ink-mute">+36</div>
-      </div>
-      <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border">
+      </a>
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener"
+         class="ig-card flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-border hover:border-pink-200 hover:shadow-md transition-all group">
         <div class="flex items-center -space-x-2.5">
           <img src="/images/testimonials/faces/rm.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/ls-chemicals.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
           <img src="/images/testimonials/faces/inventure.png" class="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt=""/>
         </div>
-        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink">Tech, SaaS &amp; B2B</div></div>
+        <div class="flex-1"><div class="text-[10px] uppercase tracking-[0.18em] text-ink-mute font-bold">Crew</div><div class="font-headline font-bold text-sm text-ink group-hover:text-pink-600 transition-colors">Tech, SaaS &amp; B2B</div></div>
         <div class="text-xs font-headline font-bold text-ink-mute">+22</div>
-      </div>
+      </a>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 max-w-5xl mx-auto" data-aos="fade-up">
+    <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 max-w-5xl mx-auto" data-aos="fade-up">
       <div class="text-center">
         <div class="font-headline font-extrabold text-5xl md:text-6xl grad-text mb-2">300+</div>
         <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Brands shipped</div>
@@ -787,6 +1043,16 @@
         <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Internal output uplift</div>
       </div>
     </div>
+
+    <!-- Bottom Instagram nudge -->
+    <div class="mt-12 text-center" data-aos="fade-up">
+      <a href="https://www.instagram.com/manan.mehta.marketing/" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 text-sm text-ink-mute font-headline font-semibold hover:text-ink transition-colors group">
+        <span>Read what 300+ clients say about working with us</span>
+        <span class="group-hover:translate-x-1 transition-transform">→</span>
+        <span class="text-xs px-2 py-0.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold ml-1">Instagram</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -795,7 +1061,7 @@
   <div class="max-w-5xl mx-auto relative rounded-[2.5rem] overflow-hidden" data-aos="fade-up">
     <div class="absolute inset-0 grad-bg"></div>
     <div class="absolute inset-0 dot-grid"></div>
-    <div class="relative p-12 md:p-20 text-center">
+    <div class="cta-inner relative p-12 md:p-20 text-center">
       <div class="text-xs uppercase tracking-[0.25em] text-ink font-bold mb-6">Strategy call</div>
       <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-7xl tracking-tighter leading-[0.95] mb-6">
         45 minutes. <br/>
@@ -814,7 +1080,7 @@
 
 <!-- ============================== FOOTER ============================== -->
 <footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
-  <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 mb-16">
     <div class="col-span-2">
       <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
       <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">AI consultancy for founders, professionals and small companies. We sit with you, learn how you make money, and install AI in 21 days.</p>
@@ -864,7 +1130,7 @@
   </div>
 
   <!-- Floating SVG text with shimmer -->
-  <div class="max-w-[1400px] mx-auto -mb-8 select-none overflow-hidden">
+  <div class="w-full -mb-8 select-none overflow-hidden">
     <h2 class="footer-aicrew-text">AI CREW</h2>
   </div>
 
@@ -883,6 +1149,21 @@
   // Mobile menu
   const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
   if (mt && mn) mt.addEventListener('click',()=>mn.classList.toggle('open'));
+
+  // Mobile hero: show image grid below lg breakpoint
+  (function(){
+    const mobileGrid = document.querySelector('.hero-mobile-imgs');
+    if (!mobileGrid) return;
+    function syncHeroDisplay(){
+      if (window.innerWidth < 1024) {
+        mobileGrid.style.display = 'grid';
+      } else {
+        mobileGrid.style.display = 'none';
+      }
+    }
+    syncHeroDisplay();
+    window.addEventListener('resize', syncHeroDisplay);
+  })();
 
   // Mega menu, JS-controlled with delay so cursor can travel from trigger to panel
   document.querySelectorAll('.mega-trigger').forEach(trigger => {
