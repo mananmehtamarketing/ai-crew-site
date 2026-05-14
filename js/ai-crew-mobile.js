@@ -80,9 +80,13 @@
   }
 
   function wireMobileMenu(){
-    var mt = document.getElementById('menuToggle');
+    var mtOrig = document.getElementById('menuToggle');
     var mn = document.getElementById('mobileNav');
-    if (!mt || !mn) return;
+    if (!mtOrig || !mn) return;
+    // Replace the original toggle with a fresh clone first, so any per-page click handler is gone.
+    var mt = mtOrig.cloneNode(true);
+    mtOrig.parentNode.replaceChild(mt, mtOrig);
+    // open/close target the LIVE node `mt`, not the detached one.
     var open = function(){
       mn.classList.add('open'); mt.classList.add('is-open');
       document.body.classList.add('mn-open');
@@ -95,10 +99,7 @@
       document.body.classList.remove('mn-open');
       mn.setAttribute('aria-hidden','true');
     };
-    // Remove any existing toggle handler by cloning the node, then add ours
-    var freshToggle = mt.cloneNode(true);
-    mt.parentNode.replaceChild(freshToggle, mt);
-    freshToggle.addEventListener('click', function(e){
+    mt.addEventListener('click', function(e){
       e.preventDefault();
       if (mn.classList.contains('open')) close(); else open();
     });
