@@ -184,6 +184,7 @@
     }
   ]
 }</script>
+  <link rel="stylesheet" href="/css/ai-crew-mobile.css?v=20260514"/>
 </head><body>
 <nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
   <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
@@ -384,9 +385,9 @@
       </div>
     </div>
     <div class="col-span-12 lg:col-span-5" data-aos="fade-up" data-aos-delay="200">
-      <div class="relative rounded-3xl overflow-hidden aspect-[5/4] shadow-[0_30px_80px_-20px_rgba(11,19,38,0.18)]">
+      <div class="founder-hero-img relative rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(11,19,38,0.18)]" style="aspect-ratio:5/4;">
         <img src="/images/stock/manufacturing.jpg" class="w-full h-full object-cover" alt="Manufacturing"/>
-        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur p-5 rounded-2xl">
+        <div class="founder-hero-quote absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 md:p-5 rounded-2xl">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 rounded-full grad-bg flex items-center justify-center font-bold text-ink text-sm">RG</div>
             <div class="flex-1"><p class="text-sm font-headline italic text-ink leading-snug">"We grew exports 35% in a year without hiring a sales head. AI is doing the cold reach."</p><div class="text-xs text-ink-mute mt-1">Rajesh G. · Director, family manufacturing</div></div>
@@ -396,6 +397,60 @@
     </div>
   </div>
 </section>
+<!-- AI HARDWARE — right under the hero -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-ink overflow-hidden">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-3xl mb-10" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-white/40 font-bold mb-4">AI Hardware · Manufacturing</div>
+      <h2 class="font-headline font-extrabold text-white text-3xl md:text-4xl lg:text-5xl tracking-tighter leading-[0.95]">
+        AI on the factory floor.
+      </h2>
+      <p class="text-white/65 mt-4 max-w-2xl leading-relaxed text-base md:text-lg">Camera-based AI for quality, productivity, and security — no new hardware, runs on the cameras you already have. <a href="/ai-hardware" class="text-white/80 underline underline-offset-4 hover:text-white">See every use case →</a></p>
+    </div>
+    <div class="pw-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up">
+        <img src="/images/hardware/manufacturing-qc.webp" alt="Defect Detection on the Line"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,255,255,0.1); color:#aec6ff;">Quality Control</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Defect Detection on the Line</h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-4">Camera-based defect detection on production lines. Track worker productivity, idle time, and bottlenecks — using your existing cameras.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#aec6ff"></div>
+            <span class="pw-result" style="color:#aec6ff">Full visibility · 500+ pieces</span>
+          </div>
+        </div>
+      </a>
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up">
+        <img src="/images/hardware/logistics-warehouse.webp" alt="Cargo Security in Transit"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,255,255,0.1); color:#ffbe2e;">Logistics</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Cargo Security in Transit</h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-4">Real-time alerts if cargo moves outside zone. Multi-site warehouse monitoring from one dashboard. Tamper detection for high-value shipments.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ffbe2e"></div>
+            <span class="pw-result" style="color:#ffbe2e">Transit theft eliminated</span>
+          </div>
+        </div>
+      </a>
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up">
+        <img src="/images/hardware/jewelry-security.webp" alt="High-Value Inventory Tracking"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,255,255,0.1); color:#6ad9c3;">Asset Tracking</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">High-Value Inventory Tracking</h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-4">AI tracks high-value SKUs through your floor, from receiving to dispatch. Zone-based alerts, shift-level audit logs.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#6ad9c3"></div>
+            <span class="pw-result" style="color:#6ad9c3">Inventory shrink down 60%</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 
 <section class="py-24 lg:py-32 px-6 lg:px-10 max-w-[1400px] mx-auto">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -583,52 +638,6 @@
   </div>
 </section>
 
-<!-- AI HARDWARE SECTION -->
-<section class="py-20 lg:py-28 px-6 lg:px-10 bg-ink overflow-hidden">
-  <div class="max-w-[1400px] mx-auto">
-    <div class="max-w-2xl mb-12" data-aos="fade-up">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-headline font-bold tracking-wider uppercase text-white/60 mb-6" style="border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.05);">
-        <span class="w-1.5 h-1.5 rounded-full grad-bg"></span>
-        AI Hardware for Manufacturing
-      </div>
-      <h2 class="font-headline font-extrabold text-white text-4xl md:text-5xl tracking-tighter leading-[0.95] mb-4">
-        See every defect.<br/><span class="grad-text">Track every worker. In real time.</span>
-      </h2>
-      <p class="text-white/60 text-lg leading-relaxed">Beyond software — AI Crew deploys computer vision directly onto your factory floor using your existing cameras. No new hardware. Live in minutes.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-      <div class="rounded-2xl p-7 border" style="border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.04);" data-aos="fade-up">
-        <div class="w-10 h-10 rounded-xl grad-bg flex items-center justify-center mb-5">
-          <span class="material-symbols-outlined text-ink text-xl">visibility</span>
-        </div>
-        <h3 class="font-headline font-bold text-white text-lg mb-2">AI Quality Control</h3>
-        <p class="text-white/55 text-sm leading-relaxed">Camera-based defect detection on production lines — catches visual defects, dimension errors, and surface flaws that human inspectors miss. Daily consistency reports delivered automatically.</p>
-        <div class="mt-5 pt-4 border-t border-white/10 text-[11px] font-bold uppercase tracking-widest" style="color:#6ad9c3;">Defects caught before shipping</div>
-      </div>
-      <div class="rounded-2xl p-7 border" style="border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.04);" data-aos="fade-up" data-aos-delay="80">
-        <div class="w-10 h-10 rounded-xl grad-bg flex items-center justify-center mb-5">
-          <span class="material-symbols-outlined text-ink text-xl">groups</span>
-        </div>
-        <h3 class="font-headline font-bold text-white text-lg mb-2">Worker Productivity Tracking</h3>
-        <p class="text-white/55 text-sm leading-relaxed">AI heatmaps show which stations are bottlenecks, which workers are most productive, and where idle time clusters. No biometrics — fully anonymous zone-based analytics.</p>
-        <div class="mt-5 pt-4 border-t border-white/10 text-[11px] font-bold uppercase tracking-widest" style="color:#aec6ff;">20-30% productivity uplift reported</div>
-      </div>
-      <div class="rounded-2xl p-7 border" style="border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.04);" data-aos="fade-up" data-aos-delay="160">
-        <div class="w-10 h-10 rounded-xl grad-bg flex items-center justify-center mb-5">
-          <span class="material-symbols-outlined text-ink text-xl">inventory_2</span>
-        </div>
-        <h3 class="font-headline font-bold text-white text-lg mb-2">Warehouse &amp; Inventory AI</h3>
-        <p class="text-white/55 text-sm leading-relaxed">Track finished goods, raw materials, and high-value components across your warehouse in real time. Zone breach alerts, tamper detection, multi-site coverage from one dashboard.</p>
-        <div class="mt-5 pt-4 border-t border-white/10 text-[11px] font-bold uppercase tracking-widest" style="color:#ffbe2e;">Zero hardware investment needed</div>
-      </div>
-    </div>
-    <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up">
-      <a href="/ai-hardware"><button class="px-7 py-3.5 grad-bg text-ink rounded-xl font-headline font-bold text-sm hover:opacity-90 transition-all inline-flex items-center gap-2">See all AI Hardware use cases <span class="material-symbols-outlined text-base">arrow_forward</span></button></a>
-      <a href="/book-demo"><button class="px-7 py-3.5 border text-white rounded-xl font-headline font-bold text-sm hover:bg-white/10 transition-all" style="border-color:rgba(255,255,255,0.2);">Book a demo</button></a>
-    </div>
-  </div>
-</section>
-
 <footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
   <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
     <div class="col-span-2">
@@ -731,5 +740,6 @@
   });
 })();
 </script>
+  <script defer src="/js/ai-crew-mobile.js?v=20260514"></script>
 </body>
 </html>

@@ -97,7 +97,7 @@
   .tool-chip span { font-family:'Plus Jakarta Sans', sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:-0.01em; }
 
   /* Hero rotating word, Framer-style spring slide. Words enter from below, exit upward. */
-  .rotate-word { display:inline-block; position:relative; vertical-align:bottom; overflow:visible; line-height:1.05; padding-bottom:.05em; -webkit-text-fill-color:initial; }
+  .rotate-word { display:inline-block; position:relative; vertical-align:bottom; overflow:visible; line-height:1.05; padding-bottom:.05em; -webkit-text-fill-color:initial; max-width:100%; }
   .rotate-word::before { content: attr(data-longest); visibility:hidden; white-space:nowrap; -webkit-text-fill-color:initial; color:transparent; }
   .rotate-word .word {
     position:absolute; left:0; top:0;
@@ -113,6 +113,14 @@
   }
   .rotate-word .word.active { opacity:1; transform:translateY(0); transition: transform .85s cubic-bezier(0.34, 1.56, 0.64, 1), opacity .35s ease .1s; }
   .rotate-word .word.exiting { opacity:0; transform:translateY(-140px); transition: transform .65s cubic-bezier(0.55, 0, 0.45, 1), opacity .35s ease; }
+  /* Mobile: switch rotate-word to block on its own line so "professionals." never overflows the viewport */
+  @media (max-width:640px) {
+    .rotate-word { display:block; width:100%; }
+    .rotate-word .word { white-space:nowrap; font-size:inherit; }
+    /* Tighter hero badge so the "Founders, makers of MarketinCrew" pill fits on small screens */
+    .hero-eyebrow { font-size:.65rem !important; letter-spacing:.04em !important; padding:.45rem .7rem !important; }
+    .hero-eyebrow span:first-child { width:.4rem !important; height:.4rem !important; }
+  }
 
   /* Hero accordion (restored) */
   .accordion-item { transition:width .7s cubic-bezier(.23,1,.32,1); }
@@ -129,22 +137,44 @@
   @keyframes shimmerOffset { 0%{stop-opacity:0} 30%{stop-opacity:1} 70%{stop-opacity:1} 100%{stop-opacity:0} }
   .shimmer-rect { animation:shimmer 6s linear infinite; }
 
-  /* Mobile nav */
-  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem 1.5rem; padding-bottom:max(1.5rem, env(safe-area-inset-bottom)); gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); max-height:calc(100vh - 64px); max-height:calc(100svh - 64px); overflow-y:auto; }
-  .mobile-nav.open { display:flex; }
-  .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
-  .mobile-nav .group-title { font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:#6B7280; font-weight:700; margin-top:.5rem; }
-  .mobile-nav .mobile-cta { margin-top:.5rem; padding:.875rem 1.5rem; background:#0B1326; color:#fff; border-radius:.5rem; text-align:center; }
+  /* ===== Mobile nav (rebuilt) =====
+     Full-screen overlay sheet, internally scrollable, with collapsible groups. */
+  .mobile-nav { display:none; position:fixed; inset:0; top:64px; background:#fff; padding:0; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); height:calc(100vh - 64px); height:calc(100dvh - 64px); height:calc(100svh - 64px); overflow:hidden; }
+  .mobile-nav.open { display:block; }
+  .mobile-nav-inner { height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; padding:1.25rem 1.25rem calc(2.5rem + env(safe-area-inset-bottom)) 1.25rem; }
+  .mobile-nav a { display:flex; align-items:center; justify-content:space-between; color:#0B1326; font-size:1.05rem; font-weight:600; padding:.85rem .25rem; border-bottom:1px solid #F0F2F5; }
+  .mobile-nav a:last-child { border-bottom:none; }
+  .mobile-nav .mn-group { margin-top:.4rem; }
+  .mobile-nav .mn-section-title { width:100%; display:flex; align-items:center; justify-content:space-between; font-family:'Plus Jakarta Sans',sans-serif; font-size:.72rem; text-transform:uppercase; letter-spacing:.22em; color:#6B7280; font-weight:800; padding:1rem .25rem .5rem; border-bottom:1px solid #E5E7EB; background:transparent; border-left:0; border-right:0; border-top:0; cursor:pointer; }
+  .mobile-nav .mn-section-title .mn-chev { font-size:1.2rem; transition:transform .25s ease; color:#0B1326; }
+  .mobile-nav .mn-section[data-open="false"] .mn-chev { transform:rotate(0deg); }
+  .mobile-nav .mn-section[data-open="true"] .mn-chev { transform:rotate(180deg); }
+  .mobile-nav .mn-section-body { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+  .mobile-nav .mn-section[data-open="true"] .mn-section-body { max-height:1200px; }
+  .mobile-nav .mn-sub a { padding-left:.25rem; font-size:1rem; font-weight:600; }
+  .mobile-nav .mn-sub-desc { font-size:.78rem; color:#6B7280; font-weight:500; max-width:60%; text-align:right; }
+  .mobile-nav .mobile-cta { display:flex !important; justify-content:center !important; margin-top:1.2rem; padding:.95rem 1.5rem; background:#0B1326; color:#fff; border-radius:.6rem; text-align:center; border:none; font-weight:700; }
   .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
   .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; transition:all .25s; }
+  .hamburger.is-open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .hamburger.is-open span:nth-child(2) { opacity:0; }
+  .hamburger.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  /* Lock body scroll while mobile nav is open */
+  body.mn-open { overflow:hidden; touch-action:none; }
   @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
 
-  /* Industries gradient overlay tile */
-  .industry-tile { position:relative; overflow:hidden; transition:all .4s; }
-  .industry-tile img { transition:transform .8s; }
-  .industry-tile:hover img { transform:scale(1.08); }
-  .industry-tile::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%); }
-  .industry-label { position:absolute; bottom:1.25rem; left:1.25rem; right:1.25rem; z-index:2; color:#fff; }
+  /* Industries gradient overlay tile — image-forward, label appears on hover */
+  .industry-tile { position:relative; overflow:hidden; transition:transform .4s, box-shadow .4s; }
+  .industry-tile img { transition:transform .8s ease; }
+  .industry-tile:hover img, .industry-tile:focus-within img { transform:scale(1.08); }
+  .industry-tile::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,19,38,0) 55%, rgba(11,19,38,0.55) 100%); transition:background .4s ease; }
+  .industry-tile:hover::after, .industry-tile:focus-within::after { background:linear-gradient(180deg, rgba(11,19,38,0.1) 30%, rgba(11,19,38,0.9) 100%); }
+  .industry-label { position:absolute; bottom:1.25rem; left:1.25rem; right:1.25rem; z-index:2; color:#fff; transform:translateY(8px); opacity:.9; transition:transform .4s ease, opacity .4s ease; }
+  .industry-tile:hover .industry-label, .industry-tile:focus-within .industry-label { transform:translateY(0); opacity:1; }
+  @media (hover:none) {
+    .industry-tile::after { background:linear-gradient(180deg, rgba(11,19,38,0) 35%, rgba(11,19,38,0.85) 100%); }
+    .industry-label { opacity:1; transform:none; }
+  }
 
   /* Pillar card with image */
   .pillar-card { position:relative; overflow:hidden; transition:all .35s; border:1px solid #E5E7EB; background:#fff; }
@@ -164,14 +194,28 @@
   /* Subtle dot pattern */
   .dot-grid { background-image:radial-gradient(circle, #0B1326 1px, transparent 1px); background:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
 
-  /* ===== PHYSICAL WORLD / AI HARDWARE SECTION ===== */
-  .pw-card { position:relative; border-radius:1rem; overflow:hidden; min-height:280px; transition:all .4s; background:#0B1326; }
-  .pw-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.45; transition:transform 1s; }
-  .pw-card:hover img { transform:scale(1.04); }
-  .pw-card .pw-overlay { position:absolute; inset:0; background:linear-gradient(180deg,rgba(11,19,38,0.15) 0%,rgba(11,19,38,0.90) 60%,rgba(11,19,38,0.98) 100%); }
-  .pw-card .pw-body { position:relative; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:1.75rem; }
+  /* ===== PHYSICAL WORLD / AI HARDWARE SECTION =====
+     Image-forward: photo shows at full opacity; on hover the dark overlay + body slide in to reveal copy. */
+  .pw-card { position:relative; border-radius:1rem; overflow:hidden; min-height:340px; transition:transform .45s cubic-bezier(.23,1,.32,1), box-shadow .45s; background:#0B1326; cursor:pointer; }
+  .pw-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; transition:transform 1s ease, opacity .45s ease; }
+  .pw-card:hover img, .pw-card:focus-within img { transform:scale(1.06); opacity:.55; }
+  /* Soft base gradient so the chip + title stay readable even before hover */
+  .pw-card .pw-overlay { position:absolute; inset:0; background:linear-gradient(180deg,rgba(11,19,38,0) 35%,rgba(11,19,38,0.55) 75%,rgba(11,19,38,0.92) 100%); transition:opacity .45s ease; }
+  .pw-card:hover .pw-overlay, .pw-card:focus-within .pw-overlay { background:linear-gradient(180deg,rgba(11,19,38,0.25) 0%,rgba(11,19,38,0.85) 55%,rgba(11,19,38,0.98) 100%); }
+  .pw-card .pw-body { position:relative; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem 1.75rem 1.75rem; }
+  /* Hide the long paragraph + result line by default; reveal on hover */
+  .pw-card .pw-body p, .pw-card .pw-body .pw-reveal { opacity:0; max-height:0; overflow:hidden; transform:translateY(8px); transition:opacity .35s ease, transform .45s ease, max-height .45s ease, margin .35s ease; margin-top:0; margin-bottom:0; }
+  .pw-card:hover .pw-body p, .pw-card:focus-within .pw-body p { opacity:1; max-height:180px; transform:translateY(0); margin-bottom:1rem; }
+  .pw-card:hover .pw-body .pw-reveal, .pw-card:focus-within .pw-body .pw-reveal { opacity:1; max-height:80px; transform:translateY(0); }
   .pw-card:hover { transform:translateY(-4px); box-shadow:0 24px 60px -12px rgba(0,0,0,0.6); }
   .pw-result { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; }
+  /* Touch / no-hover devices: keep full readable state (mobile sees copy without hover) */
+  @media (hover:none) {
+    .pw-card img { opacity:.55; }
+    .pw-card .pw-overlay { background:linear-gradient(180deg,rgba(11,19,38,0.25) 0%,rgba(11,19,38,0.85) 55%,rgba(11,19,38,0.98) 100%); }
+    .pw-card .pw-body p, .pw-card .pw-body .pw-reveal { opacity:1; max-height:240px; transform:none; }
+    .pw-card .pw-body p { margin-bottom:1rem; }
+  }
 
   /* ===== INSTAGRAM TESTIMONIALS ===== */
   .ig-card { cursor:pointer; transition:all .35s; border-radius:1rem; overflow:hidden; position:relative; }
@@ -184,8 +228,15 @@
     /* Hide desktop hero accordion, show mobile images */
     #heroAccordion { display:none !important; }
     .hero-mobile-imgs { display:grid !important; grid-template-columns:repeat(3,1fr) !important; }
-    /* Video section: full overlay on mobile */
-    .video-mobile-cover { background:linear-gradient(180deg,rgba(255,255,255,0.97) 0%,rgba(255,255,255,0.92) 55%,rgba(255,255,255,0.6) 80%,rgba(255,255,255,0) 100%) !important; }
+    /* Video section mobile: overlay covers only the TOP half so Manan is actually visible in the bottom half.
+       Section becomes a vertical stack: white text panel up top, video full-bleed below. */
+    .video-mobile-cover { background:linear-gradient(180deg,rgba(255,255,255,0.99) 0%,rgba(255,255,255,0.98) 42%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.25) 58%,rgba(255,255,255,0) 70%) !important; }
+    /* Frame the video so Manan's face sits in the bottom visible band, not behind the text or gradient */
+    .video-teach { object-position:50% 18% !important; }
+    /* Give the video section enough vertical room for the visible video band */
+    .video-teach-section { min-height: 920px !important; }
+    /* The empty right column on mobile actually serves to push content up; keep it tall enough */
+    .video-teach-right-spacer { min-height: 380px !important; }
     /* Accordion caption */
     .accordion-caption { display:none !important; }
     /* Navbar safe area */
@@ -242,11 +293,12 @@
 
 
 /* === Footer AI CREW shimmer (CSS background-clip animation) === */
+.footer-aicrew-wrap { padding-top: 2.5rem; padding-bottom: 0.25rem; line-height: 0; }
 .footer-aicrew-text {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
   font-size: 22vw;
-  line-height: 1;
+  line-height: 0.9;
   letter-spacing: -0.04em;
   text-align: center;
   margin: 0;
@@ -259,7 +311,9 @@
   user-select: none;
   white-space: nowrap;
   -webkit-user-select: none;
-  white-space: nowrap;
+  display: block;
+  /* Generous bottom padding inside the gradient text so descenders/clip never crop on mobile */
+  padding-bottom: 0.08em;
 }
 @keyframes aicrew-shimmer {
   0% { background-position: 0% 0%; }
@@ -268,6 +322,7 @@
 
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/ai-crew-mobile.css?v=20260514"/>
 </head>
 <body>
 
@@ -436,25 +491,73 @@
     </div>
   </div>
 
-  <div class="mobile-nav" id="mobileNav">
-    <div class="group-title">For You</div>
-    <a href="/for-founders">For Founders</a>
-    <a href="/for-professionals">For Professionals</a>
-    <a href="/for-companies">For Companies</a>
-    <div class="group-title">Services</div>
-    <a href="/services/ai-strategy-audit">AI Strategy &amp; Audits</a>
-    <a href="/services/ai-workflow-automation">AI Workflow Automation</a>
-    <a href="/services/ai-agents">Custom AI Agents</a>
-    <a href="/content-studio">AI Content Studio</a>
-    <a href="/outreach">AI Outreach</a>
-    <a href="/web-dev">AI Websites</a>
-    <a href="/services/ai-training">AI Training for Teams</a>
-    <div class="group-title">Explore</div>
-    <a href="/industries">Industries</a>
-    <a href="/ai-hardware">AI Hardware</a>
-    <a href="/case-studies">Case Studies</a>
-    <a href="/about">About</a>
-    <a href="/book-demo" class="mobile-cta">Book a Call →</a>
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav-inner">
+
+      <!-- For You -->
+      <div class="mn-section mn-group" data-open="true">
+        <button class="mn-section-title" type="button" aria-expanded="true">For You <span class="mn-chev material-symbols-outlined">expand_more</span></button>
+        <div class="mn-section-body"><div class="mn-sub">
+          <a href="/for-founders">For Founders <span class="mn-sub-desc">Tech, SaaS, agency, D2C</span></a>
+          <a href="/for-professionals">For Professionals <span class="mn-sub-desc">Lawyers, doctors, CAs, advisors</span></a>
+          <a href="/for-companies">For Companies <span class="mn-sub-desc">10-200 person teams</span></a>
+        </div></div>
+      </div>
+
+      <!-- AI Services -->
+      <div class="mn-section mn-group" data-open="false">
+        <button class="mn-section-title" type="button" aria-expanded="false">AI Services <span class="mn-chev material-symbols-outlined">expand_more</span></button>
+        <div class="mn-section-body"><div class="mn-sub">
+          <a href="/services/ai-strategy-audit">AI Strategy &amp; Audits</a>
+          <a href="/services/ai-workflow-automation">AI Workflow Automation</a>
+          <a href="/services/ai-agents">Custom AI Agents</a>
+          <a href="/content-studio">AI Content Studio</a>
+          <a href="/outreach">AI Outreach</a>
+          <a href="/web-dev">AI Websites</a>
+          <a href="/services/ai-training">AI Training for Teams</a>
+        </div></div>
+      </div>
+
+      <!-- Industries -->
+      <div class="mn-section mn-group" data-open="false">
+        <button class="mn-section-title" type="button" aria-expanded="false">Industries <span class="mn-chev material-symbols-outlined">expand_more</span></button>
+        <div class="mn-section-body"><div class="mn-sub">
+          <a href="/industries">All Industries</a>
+          <a href="/industries/tech-b2b/">Tech &amp; B2B SaaS</a>
+          <a href="/industries/healthcare/">Healthcare</a>
+          <a href="/industries/legal/">Legal</a>
+          <a href="/industries/accounting/">Accounting</a>
+          <a href="/industries/wealth-advisory/">Wealth Advisory</a>
+          <a href="/industries/architecture/">Architecture</a>
+          <a href="/industries/creative-agencies/">Creative Agencies</a>
+          <a href="/industries/hospitality/">Hospitality &amp; F&amp;B</a>
+          <a href="/industries/d2c/">D2C &amp; E-commerce</a>
+          <a href="/industries/manufacturing/">Manufacturing</a>
+          <a href="/industries/retail/">Retail</a>
+          <a href="/industries/sports/">Sports &amp; Fitness</a>
+        </div></div>
+      </div>
+
+      <!-- Quick links -->
+      <div class="mn-section mn-group" data-open="true">
+        <button class="mn-section-title" type="button" aria-expanded="true">Explore <span class="mn-chev material-symbols-outlined">expand_more</span></button>
+        <div class="mn-section-body"><div class="mn-sub">
+          <a href="/ai-hardware">AI Hardware</a>
+          <a href="/case-studies">Case Studies</a>
+          <a href="/about">About</a>
+          <a href="/how-we-work">How we work</a>
+          <a href="/built-with-ai">Built with AI</a>
+        </div></div>
+      </div>
+
+      <a href="/book-demo" class="mobile-cta">Book a Call →</a>
+
+      <div class="mt-8 pt-6 border-t border-border-soft text-xs text-ink-mute">
+        <div class="mb-1"><a href="https://marketincrew.com" target="_blank" rel="noopener" class="!border-none !p-0">marketincrew.com</a> · the marketing agency</div>
+        <div class="mb-1"><a href="https://www.mananmehta.com" target="_blank" rel="noopener" class="!border-none !p-0">mananmehta.com</a> · Manan Mehta, founder</div>
+        <div class="mt-3">hello@aicrew.io · Mumbai · Paris</div>
+      </div>
+    </div>
   </div>
 </nav>
 
@@ -465,9 +568,9 @@
   <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-12 lg:py-28 grid grid-cols-12 gap-10 items-center">
 
     <div class="col-span-12 lg:col-span-7" data-aos="fade-up">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-border-soft text-xs font-headline font-bold tracking-wider uppercase text-ink mb-8">
-        <span class="w-1.5 h-1.5 rounded-full grad-bg animate-pulse"></span>
-        Founders, makers of MarketinCrew · 12 years · 300+ brands
+      <div class="hero-eyebrow inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-border-soft text-xs font-headline font-bold tracking-wider uppercase text-ink mb-8 max-w-full">
+        <span class="w-1.5 h-1.5 rounded-full grad-bg animate-pulse flex-shrink-0"></span>
+        <span class="truncate">Founders, makers of MarketinCrew · 12 yrs · 300+ brands</span>
       </div>
       <h1 class="font-headline font-extrabold text-ink leading-[0.95] tracking-tighter text-5xl md:text-6xl lg:text-[80px] mb-7">
         AI consultancy<br/>
@@ -591,10 +694,10 @@
 
 
 <!-- ============================== WHY WORK WITH ME ============================== -->
-<section class="relative overflow-hidden bg-ink">
+<section class="video-teach-section relative overflow-hidden bg-ink">
   <!-- Video: full-bleed background, edge to edge -->
   <video
-    class="absolute inset-0 w-full h-full object-cover"
+    class="video-teach absolute inset-0 w-full h-full object-cover"
     autoplay muted loop playsinline preload="metadata"
     poster="/images/video/manan-teaching-poster.jpg">
     <source src="/images/video/manan-teaching.mp4" type="video/mp4"/>
@@ -636,8 +739,8 @@
         </div>
       </div>
     </div>
-    <!-- Right column intentionally empty so video shows through -->
-    <div class="hidden lg:block lg:col-span-7"></div>
+    <!-- Right column intentionally empty so video shows through. On mobile this is the visible video band. -->
+    <div class="video-teach-right-spacer block lg:col-span-7"></div>
   </div>
   <div class="absolute bottom-6 right-6 z-10 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur text-white text-[11px] font-headline font-bold tracking-wider uppercase border border-white/10">
     Live · Teaching cohort 14
@@ -685,7 +788,7 @@
       <p class="text-lg text-ink-soft mt-5 max-w-2xl">Pick the layers you need. Most clients start with one and add the next two within 90 days.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="pillar-slider grid grid-cols-1 lg:grid-cols-3 gap-6">
       <a href="/for-founders" class="pillar-card rounded-2xl flex flex-col" data-aos="fade-up">
         <div class="img-wrap"><img src="/images/stock/founder.jpg" alt="Founders"/></div>
         <div class="p-8 flex-1 flex flex-col">
@@ -732,6 +835,153 @@
           </ul>
           <span class="text-ink font-headline font-bold text-sm inline-flex items-center gap-1 mt-auto">Wire my company →</span>
         </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== AI HARDWARE ============================== -->
+<section class="py-24 lg:py-32 px-6 lg:px-10 bg-ink overflow-hidden">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-3xl mb-14" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-white/40 font-bold mb-4">04 · AI Hardware</div>
+      <h2 class="section-h2 font-headline font-extrabold text-white text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">
+        AI that sees, tracks<br/>
+        <span class="grad-text">and secures the physical world.</span>
+      </h2>
+      <p class="text-lg text-white/65 mt-5 max-w-2xl leading-relaxed">From jewelry showrooms to marathon finish lines — we deploy real-time AI that protects high-value assets, tracks movement, and runs events at scale. White-label technology, managed end-to-end by AI Crew. <a href="/ai-hardware" class="text-white/80 underline underline-offset-4 hover:text-white transition-colors">See all use cases →</a></p>
+    </div>
+
+    <div class="pw-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+
+      <!-- Jewelry & Retail -->
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up">
+        <img src="/images/hardware/jewelry-security.webp" alt="AI security for jewelry showrooms"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(174,198,255,0.15); color:#aec6ff;">Retail &amp; Jewelry</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">AI Showroom Security</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Real-time item tracking with zone-based alerts. AI detects grab-and-run thefts and distraction incidents before they complete. Works across showrooms, exhibitions, and pop-ups.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#aec6ff"></div>
+            <span class="pw-result" style="color:#aec6ff">Reduces theft incidents by 80%+</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Luxury Apparel -->
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up" data-aos-delay="80">
+        <img src="/images/hardware/luxury-retail.webp" alt="AI monitoring for luxury apparel stores"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(106,217,195,0.15); color:#6ad9c3;">Luxury Apparel</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Track Every Piece. Trial Room to Rack.</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">AI monitors designer apparel through trial rooms, display floors, and storage zones. Instant alerts when pieces leave authorised zones. Staff productivity heatmaps included.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#6ad9c3"></div>
+            <span class="pw-result" style="color:#6ad9c3">90% drop in trial-room incidents</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Events & Weddings -->
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up" data-aos-delay="160">
+        <img src="/images/hardware/wedding-events.webp" alt="AI security for weddings and events"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,190,46,0.15); color:#ffbe2e;">Events &amp; Weddings</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Protect ₹2Cr of Jewelry. On the Move.</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Portable AI security for wedding jewelry, event displays, and trade shows. Activates in seconds, no configuration. Creates a dynamic secure zone wherever the event goes.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ffbe2e"></div>
+            <span class="pw-result" style="color:#ffbe2e">Zero incidents across 50+ events</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Sports -->
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up">
+        <img src="/images/hardware/sports-timing.webp" alt="AI race timing for marathons"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(106,217,195,0.15); color:#6ad9c3;">Sports &amp; Events</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">AI Race Timing. From 10K to Marathon.</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Smart bib-based timing with live leaderboards, online registration, and post-race analytics. Handles marathons, triathlons, and corporate wellness events at any scale.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#6ad9c3"></div>
+            <span class="pw-result" style="color:#6ad9c3">1,000+ runners · millisecond accuracy</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Logistics -->
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up" data-aos-delay="80">
+        <img src="/images/hardware/logistics-warehouse.webp" alt="AI tracking for logistics and warehouses"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,190,46,0.15); color:#ffbe2e;">Logistics</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Moving Security Zones for Valuables in Transit.</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Real-time alerts if cargo moves outside zone. Multi-site warehouse monitoring from one dashboard. Tamper detection and 24/7 coverage for high-value shipments.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ffbe2e"></div>
+            <span class="pw-result" style="color:#ffbe2e">Transit theft eliminated for 3 exporters</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Manufacturing -->
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up" data-aos-delay="160">
+        <img src="/images/hardware/manufacturing-qc.webp" alt="AI quality control for manufacturing"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(174,198,255,0.15); color:#aec6ff;">Manufacturing</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Quality Control &amp; Productivity AI</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">Camera-based defect detection on production lines. Track worker productivity, idle time, and bottlenecks. Daily consistency reports — no new hardware needed.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#aec6ff"></div>
+            <span class="pw-result" style="color:#aec6ff">Full visibility across 500+ pieces</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Case study snippet: retail -->
+    <div class="rounded-2xl overflow-hidden border border-white/10" style="background:rgba(255,255,255,0.04);" data-aos="fade-up">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="p-8 lg:p-12 flex flex-col justify-center">
+          <div class="text-xs uppercase tracking-[0.2em] text-white/40 font-bold mb-4">Case Study · Retail</div>
+          <h3 class="font-headline font-bold text-2xl md:text-3xl text-white mb-4 leading-tight">"We used to lose 2-3 pieces a month at exhibitions. Since AI Crew deployed their AI security system, we've had zero incidents in 8 months."</h3>
+          <p class="text-white/55 text-sm leading-relaxed mb-6">A Mumbai-based jewelry exporter exhibiting at IIJS Trade Fair needed portable AI security for a 3-day show. AI Crew deployed a plug-and-play AI tracking system — zero configuration, active in seconds, monitored 420+ pieces across the display floor.</p>
+          <div class="grid grid-cols-3 gap-4">
+            <div><div class="font-headline font-extrabold text-2xl grad-text">420+</div><div class="text-[10px] uppercase tracking-[0.15em] text-white/40 font-bold mt-1">Items secured</div></div>
+            <div><div class="font-headline font-extrabold text-2xl grad-text">0</div><div class="text-[10px] uppercase tracking-[0.15em] text-white/40 font-bold mt-1">Theft incidents</div></div>
+            <div><div class="font-headline font-extrabold text-2xl grad-text">3 days</div><div class="text-[10px] uppercase tracking-[0.15em] text-white/40 font-bold mt-1">Deployed &amp; live</div></div>
+          </div>
+        </div>
+        <div class="relative min-h-[260px] lg:min-h-0">
+          <img src="/images/stock/manufacturing.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Jewelry showroom AI security"/>
+          <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(11,19,38,0.9) 0%,rgba(11,19,38,0.2) 100%);"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="w-16 h-16 rounded-full grad-bg mx-auto mb-4 flex items-center justify-center">
+                <span class="material-symbols-outlined text-ink text-2xl">security</span>
+              </div>
+              <div class="text-white font-headline font-bold text-sm opacity-80">AI-Powered Physical Security</div>
+              <div class="text-white/50 text-xs mt-1">Deployed and managed end-to-end by AI Crew</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center" data-aos="fade-up">
+      <p class="text-white/45 text-sm mb-5">These are white-label AI deployments — built by our technology partners, managed end-to-end by AI Crew.</p>
+      <a href="/book-demo">
+        <button class="px-8 py-4 bg-white text-ink rounded-xl font-headline font-bold text-base hover:bg-white/90 transition-all inline-flex items-center gap-2">
+          Deploy AI in your physical space
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
       </a>
     </div>
   </div>
@@ -791,153 +1041,14 @@
       <img src="/images/stock/d2c.jpg" class="w-full h-full object-cover" alt="D2C and ecommerce"/>
       <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">D2C &amp; E-commerce</div></div>
     </a>
-  </div>
-</section>
-
-<!-- ============================== AI HARDWARE ============================== -->
-<section class="py-24 lg:py-32 px-6 lg:px-10 bg-ink overflow-hidden">
-  <div class="max-w-[1400px] mx-auto">
-    <div class="max-w-3xl mb-14" data-aos="fade-up">
-      <div class="text-xs uppercase tracking-[0.25em] text-white/40 font-bold mb-4">04 · AI Hardware</div>
-      <h2 class="section-h2 font-headline font-extrabold text-white text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">
-        AI that sees, tracks<br/>
-        <span class="grad-text">and secures the physical world.</span>
-      </h2>
-      <p class="text-lg text-white/65 mt-5 max-w-2xl leading-relaxed">From jewelry showrooms to marathon finish lines — we deploy real-time AI that protects high-value assets, tracks movement, and runs events at scale. White-label technology, managed end-to-end by AI Crew. <a href="/ai-hardware" class="text-white/80 underline underline-offset-4 hover:text-white transition-colors">See all use cases →</a></p>
-    </div>
-
-    <div class="pw-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
-
-      <!-- Jewelry & Retail -->
-      <div class="pw-card" data-aos="fade-up">
-        <img src="/images/hardware/jewelry-security.webp" alt="AI security for jewelry showrooms"/>
-        <div class="pw-overlay"></div>
-        <div class="pw-body">
-          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(174,198,255,0.15); color:#aec6ff;">Retail &amp; Jewelry</div>
-          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">AI Showroom Security</h3>
-          <p class="text-white/55 text-sm leading-relaxed mb-4">Real-time item tracking with zone-based alerts. AI detects grab-and-run thefts and distraction incidents before they complete. Works across showrooms, exhibitions, and pop-ups.</p>
-          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
-            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#aec6ff"></div>
-            <span class="pw-result" style="color:#aec6ff">Reduces theft incidents by 80%+</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Luxury Apparel -->
-      <div class="pw-card" data-aos="fade-up" data-aos-delay="80">
-        <img src="/images/hardware/luxury-retail.webp" alt="AI monitoring for luxury apparel stores"/>
-        <div class="pw-overlay"></div>
-        <div class="pw-body">
-          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(106,217,195,0.15); color:#6ad9c3;">Luxury Apparel</div>
-          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Track Every Piece. Trial Room to Rack.</h3>
-          <p class="text-white/55 text-sm leading-relaxed mb-4">AI monitors designer apparel through trial rooms, display floors, and storage zones. Instant alerts when pieces leave authorised zones. Staff productivity heatmaps included.</p>
-          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
-            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#6ad9c3"></div>
-            <span class="pw-result" style="color:#6ad9c3">90% drop in trial-room incidents</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Events & Weddings -->
-      <div class="pw-card" data-aos="fade-up" data-aos-delay="160">
-        <img src="/images/hardware/wedding-events.webp" alt="AI security for weddings and events"/>
-        <div class="pw-overlay"></div>
-        <div class="pw-body">
-          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,190,46,0.15); color:#ffbe2e;">Events &amp; Weddings</div>
-          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Protect ₹2Cr of Jewelry. On the Move.</h3>
-          <p class="text-white/55 text-sm leading-relaxed mb-4">Portable AI security for wedding jewelry, event displays, and trade shows. Activates in seconds, no configuration. Creates a dynamic secure zone wherever the event goes.</p>
-          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
-            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ffbe2e"></div>
-            <span class="pw-result" style="color:#ffbe2e">Zero incidents across 50+ events</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sports -->
-      <div class="pw-card" data-aos="fade-up">
-        <img src="/images/hardware/sports-timing.webp" alt="AI race timing for marathons"/>
-        <div class="pw-overlay"></div>
-        <div class="pw-body">
-          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(106,217,195,0.15); color:#6ad9c3;">Sports &amp; Events</div>
-          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">AI Race Timing. From 10K to Marathon.</h3>
-          <p class="text-white/55 text-sm leading-relaxed mb-4">Smart bib-based timing with live leaderboards, online registration, and post-race analytics. Handles marathons, triathlons, and corporate wellness events at any scale.</p>
-          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
-            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#6ad9c3"></div>
-            <span class="pw-result" style="color:#6ad9c3">1,000+ runners · millisecond accuracy</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Logistics -->
-      <div class="pw-card" data-aos="fade-up" data-aos-delay="80">
-        <img src="/images/hardware/logistics-warehouse.webp" alt="AI tracking for logistics and warehouses"/>
-        <div class="pw-overlay"></div>
-        <div class="pw-body">
-          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,190,46,0.15); color:#ffbe2e;">Logistics</div>
-          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Moving Security Zones for Valuables in Transit.</h3>
-          <p class="text-white/55 text-sm leading-relaxed mb-4">Real-time alerts if cargo moves outside zone. Multi-site warehouse monitoring from one dashboard. Tamper detection and 24/7 coverage for high-value shipments.</p>
-          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
-            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ffbe2e"></div>
-            <span class="pw-result" style="color:#ffbe2e">Transit theft eliminated for 3 exporters</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Manufacturing -->
-      <div class="pw-card" data-aos="fade-up" data-aos-delay="160">
-        <img src="/images/hardware/manufacturing-qc.webp" alt="AI quality control for manufacturing"/>
-        <div class="pw-overlay"></div>
-        <div class="pw-body">
-          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(174,198,255,0.15); color:#aec6ff;">Manufacturing</div>
-          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Quality Control &amp; Productivity AI</h3>
-          <p class="text-white/55 text-sm leading-relaxed mb-4">Camera-based defect detection on production lines. Track worker productivity, idle time, and bottlenecks. Daily consistency reports — no new hardware needed.</p>
-          <div class="flex items-center gap-2 pt-3 border-t border-white/10">
-            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#aec6ff"></div>
-            <span class="pw-result" style="color:#aec6ff">Full visibility across 500+ pieces</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Case study snippet: retail -->
-    <div class="rounded-2xl overflow-hidden border border-white/10" style="background:rgba(255,255,255,0.04);" data-aos="fade-up">
-      <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="p-8 lg:p-12 flex flex-col justify-center">
-          <div class="text-xs uppercase tracking-[0.2em] text-white/40 font-bold mb-4">Case Study · Retail</div>
-          <h3 class="font-headline font-bold text-2xl md:text-3xl text-white mb-4 leading-tight">"We used to lose 2-3 pieces a month at exhibitions. Since AI Crew deployed their AI security system, we've had zero incidents in 8 months."</h3>
-          <p class="text-white/55 text-sm leading-relaxed mb-6">A Mumbai-based jewelry exporter exhibiting at IIJS Trade Fair needed portable AI security for a 3-day show. AI Crew deployed a plug-and-play AI tracking system — zero configuration, active in seconds, monitored 420+ pieces across the display floor.</p>
-          <div class="grid grid-cols-3 gap-4">
-            <div><div class="font-headline font-extrabold text-2xl grad-text">420+</div><div class="text-[10px] uppercase tracking-[0.15em] text-white/40 font-bold mt-1">Items secured</div></div>
-            <div><div class="font-headline font-extrabold text-2xl grad-text">0</div><div class="text-[10px] uppercase tracking-[0.15em] text-white/40 font-bold mt-1">Theft incidents</div></div>
-            <div><div class="font-headline font-extrabold text-2xl grad-text">3 days</div><div class="text-[10px] uppercase tracking-[0.15em] text-white/40 font-bold mt-1">Deployed &amp; live</div></div>
-          </div>
-        </div>
-        <div class="relative min-h-[260px] lg:min-h-0">
-          <img src="/images/stock/manufacturing.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Jewelry showroom AI security"/>
-          <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(11,19,38,0.9) 0%,rgba(11,19,38,0.2) 100%);"></div>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-center p-8">
-              <div class="w-16 h-16 rounded-full grad-bg mx-auto mb-4 flex items-center justify-center">
-                <span class="material-symbols-outlined text-ink text-2xl">security</span>
-              </div>
-              <div class="text-white font-headline font-bold text-sm opacity-80">AI-Powered Physical Security</div>
-              <div class="text-white/50 text-xs mt-1">Deployed and managed end-to-end by AI Crew</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-10 text-center" data-aos="fade-up">
-      <p class="text-white/45 text-sm mb-5">These are white-label AI deployments — built by our technology partners, managed end-to-end by AI Crew.</p>
-      <a href="/book-demo">
-        <button class="px-8 py-4 bg-white text-ink rounded-xl font-headline font-bold text-base hover:bg-white/90 transition-all inline-flex items-center gap-2">
-          Deploy AI in your physical space
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </button>
-      </a>
-    </div>
+    <a href="/industries/retail/" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/retail.jpg" class="w-full h-full object-cover" alt="Retail"/>
+      <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Retail</div></div>
+    </a>
+    <a href="/industries/sports/" class="industry-tile rounded-2xl aspect-[4/5] block">
+      <img src="/images/stock/sports.jpg" class="w-full h-full object-cover" alt="Sports and Fitness"/>
+      <div class="industry-label"><div class="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80">For</div><div class="font-headline font-bold text-base mt-1">Sports &amp; Fitness</div></div>
+    </a>
   </div>
 </section>
 
@@ -1079,21 +1190,26 @@
 </section>
 
 <!-- ============================== FOOTER ============================== -->
-<footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
-  <div class="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 mb-16">
-    <div class="col-span-2">
+<footer class="site-footer border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-8 md:gap-12 mb-16">
+    <div class="col-span-1 sm:col-span-2 md:col-span-2">
       <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
-      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-6">AI consultancy for founders, professionals and small companies. We sit with you, learn how you make money, and install AI in 21 days.</p>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-5">AI consultancy for founders, professionals and small companies. We sit with you, learn how you make money, and install AI in 21 days.</p>
+      <!-- Manan's other homes -->
+      <ul class="text-sm space-y-1.5 mb-6">
+        <li><a href="https://marketincrew.com" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink">marketincrew.com <span class="text-ink-mute">— the marketing agency</span></a></li>
+        <li><a href="https://www.mananmehta.com" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink">mananmehta.com <span class="text-ink-mute">— Manan Mehta, founder</span></a></li>
+      </ul>
       <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Part of the family</div>
-      <div class="flex items-center gap-6 flex-wrap">
-        <a href="https://marketincrew.com" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition-opacity">
-          <img src="/images/universe/marketincrew.png" class="h-7 w-auto" alt="MarketinCrew"/>
+      <div class="flex items-center gap-4 flex-wrap">
+        <a href="https://marketincrew.com" target="_blank" rel="noopener" class="opacity-85 hover:opacity-100 transition-opacity" title="MarketinCrew">
+          <img src="/images/universe/marketincrew.png" class="h-9 w-9 rounded-xl object-cover bg-white border border-border-soft p-1" alt="MarketinCrew"/>
         </a>
-        <a href="https://www.mananmehta.com/mk-studios" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition-opacity">
-          <img src="/images/universe/marketincrew-studio.jpg" class="h-9 w-auto rounded" alt="MK Studios"/>
+        <a href="https://www.mananmehta.com/mk-studios" target="_blank" rel="noopener" class="opacity-85 hover:opacity-100 transition-opacity" title="MK Studios — the podcast">
+          <img src="/images/universe/marketincrew-podcast.jpg" class="h-9 w-9 rounded-xl object-cover" alt="MK Studios — the podcast"/>
         </a>
-        <a href="https://lyonmarketing.co" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition-opacity">
-          <img src="/images/universe/lyon-marketing.png" class="h-7 w-auto rounded" alt="Lyon Marketing Co"/>
+        <a href="https://lyonmarketing.co" target="_blank" rel="noopener" class="opacity-85 hover:opacity-100 transition-opacity" title="Lyon Marketing Co">
+          <img src="/images/universe/lyon-marketing.png" class="h-9 w-9 rounded-xl object-cover bg-white border border-border-soft p-1" alt="Lyon Marketing Co"/>
         </a>
       </div>
       <p class="text-[11px] text-ink-mute mt-4">12 years of marketing DNA. AI Crew is the AI consultancy arm of MarketinCrew.</p>
@@ -1105,6 +1221,8 @@
         <li><a href="/for-professionals" class="text-ink-soft hover:text-ink">Professionals</a></li>
         <li><a href="/for-companies" class="text-ink-soft hover:text-ink">Companies</a></li>
         <li><a href="/industries" class="text-ink-soft hover:text-ink">All Industries</a></li>
+        <li><a href="/ai-hardware" class="text-ink-soft hover:text-ink">AI Hardware</a></li>
+        <li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case Studies</a></li>
       </ul>
     </div>
     <div>
@@ -1120,8 +1238,28 @@
       </ul>
     </div>
     <div>
+      <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Industries</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/industries/tech-b2b/" class="text-ink-soft hover:text-ink">Tech &amp; B2B SaaS</a></li>
+        <li><a href="/industries/healthcare/" class="text-ink-soft hover:text-ink">Healthcare</a></li>
+        <li><a href="/industries/legal/" class="text-ink-soft hover:text-ink">Legal</a></li>
+        <li><a href="/industries/accounting/" class="text-ink-soft hover:text-ink">Accounting</a></li>
+        <li><a href="/industries/wealth-advisory/" class="text-ink-soft hover:text-ink">Wealth Advisory</a></li>
+        <li><a href="/industries/architecture/" class="text-ink-soft hover:text-ink">Architecture</a></li>
+        <li><a href="/industries/creative-agencies/" class="text-ink-soft hover:text-ink">Creative Agencies</a></li>
+        <li><a href="/industries/hospitality/" class="text-ink-soft hover:text-ink">Hospitality &amp; F&amp;B</a></li>
+        <li><a href="/industries/d2c/" class="text-ink-soft hover:text-ink">D2C &amp; E-commerce</a></li>
+        <li><a href="/industries/manufacturing/" class="text-ink-soft hover:text-ink">Manufacturing</a></li>
+        <li><a href="/industries/retail/" class="text-ink-soft hover:text-ink">Retail</a></li>
+        <li><a href="/industries/sports/" class="text-ink-soft hover:text-ink">Sports &amp; Fitness</a></li>
+      </ul>
+    </div>
+    <div>
       <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4>
       <ul class="space-y-2.5 text-sm">
+        <li><a href="/about" class="text-ink-soft hover:text-ink">About</a></li>
+        <li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li>
+        <li><a href="/built-with-ai" class="text-ink-soft hover:text-ink">Built with AI</a></li>
         <li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case Studies</a></li>
         <li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li>
         <li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li>
@@ -1130,7 +1268,7 @@
   </div>
 
   <!-- Floating SVG text with shimmer -->
-  <div class="w-full -mb-8 select-none overflow-hidden">
+  <div class="footer-aicrew-wrap w-full select-none overflow-hidden">
     <h2 class="footer-aicrew-text">AI CREW</h2>
   </div>
 
@@ -1146,9 +1284,54 @@
 <script>
   AOS.init({ duration:700, once:true, offset:80 });
 
-  // Mobile menu
-  const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
-  if (mt && mn) mt.addEventListener('click',()=>mn.classList.toggle('open'));
+  // ===== Mobile menu (rebuilt) =====
+  (function(){
+    const mt = document.getElementById('menuToggle');
+    const mn = document.getElementById('mobileNav');
+    if (!mt || !mn) return;
+
+    const open = () => {
+      mn.classList.add('open');
+      mt.classList.add('is-open');
+      document.body.classList.add('mn-open');
+      mn.setAttribute('aria-hidden', 'false');
+      // ensure inner scroll starts at top each time
+      const inner = mn.querySelector('.mobile-nav-inner');
+      if (inner) inner.scrollTop = 0;
+    };
+    const close = () => {
+      mn.classList.remove('open');
+      mt.classList.remove('is-open');
+      document.body.classList.remove('mn-open');
+      mn.setAttribute('aria-hidden', 'true');
+    };
+    mt.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (mn.classList.contains('open')) close(); else open();
+    });
+    // Close when an internal link is tapped (so back navigation always works cleanly)
+    mn.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (a && a.getAttribute('href') && !a.target) {
+        close();
+      }
+    });
+    // ESC closes
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mn.classList.contains('open')) close(); });
+    // If page goes through bfcache (back button) and we left it open, force close so scroll works
+    window.addEventListener('pageshow', () => close());
+
+    // Collapsible groups
+    mn.querySelectorAll('.mn-section').forEach(sec => {
+      const btn = sec.querySelector('.mn-section-title');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const open = sec.getAttribute('data-open') === 'true';
+        sec.setAttribute('data-open', open ? 'false' : 'true');
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+    });
+  })();
 
   // Mobile hero: show image grid below lg breakpoint
   (function(){
@@ -1221,6 +1404,30 @@
     });
   })();
 
+  // ===== Auto-scroll horizontal sliders (mobile only) =====
+  (function(){
+    if (window.innerWidth >= 768) return;
+    const selectors = ['.industries-grid', '.pw-grid', '.pillar-slider', '.crew-pills', '.testi-slider'];
+    const speedPxPerFrame = 0.35;
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        if (el.scrollWidth <= el.clientWidth + 10) return;
+        let paused = false, idleTimer;
+        const pause = () => { paused = true; clearTimeout(idleTimer); idleTimer = setTimeout(() => paused = false, 4000); };
+        el.addEventListener('touchstart', pause, {passive:true});
+        el.addEventListener('touchmove', pause, {passive:true});
+        function tick(){
+          if (!paused) {
+            el.scrollLeft += speedPxPerFrame;
+            if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 1) { el.scrollLeft = 0; }
+          }
+          requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    });
+  })();
+
   // Magnetic buttons
   document.querySelectorAll('.mag-btn').forEach(btn => {
     let raf;
@@ -1258,5 +1465,6 @@
   });
 })();
 </script>
+  <script defer src="/js/ai-crew-mobile.js?v=20260514"></script>
 </body>
 </html>

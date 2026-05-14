@@ -184,6 +184,7 @@
     }
   ]
 }</script>
+  <link rel="stylesheet" href="/css/ai-crew-mobile.css?v=20260514"/>
 </head><body>
 <nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
   <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
@@ -384,9 +385,9 @@
       </div>
     </div>
     <div class="col-span-12 lg:col-span-5" data-aos="fade-up" data-aos-delay="200">
-      <div class="relative rounded-3xl overflow-hidden aspect-[5/4] shadow-[0_30px_80px_-20px_rgba(11,19,38,0.18)]">
+      <div class="founder-hero-img relative rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(11,19,38,0.18)]" style="aspect-ratio:5/4;">
         <img src="/images/stock/healthcare.jpg" class="w-full h-full object-cover" alt="Healthcare & Doctors"/>
-        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur p-5 rounded-2xl">
+        <div class="founder-hero-quote absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 md:p-5 rounded-2xl">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 rounded-full grad-bg flex items-center justify-center font-bold text-ink text-sm">DK</div>
             <div class="flex-1"><p class="text-sm font-headline italic text-ink leading-snug">"Three of my five admin hours a day are gone. My drafts go out faster, my client briefs are sharper, and I bill the same."</p><div class="text-xs text-ink-mute mt-1">Dr. Kiran M. · Surgeon, Mumbai</div></div>
@@ -396,6 +397,60 @@
     </div>
   </div>
 </section>
+<!-- AI HARDWARE — right under the hero -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-ink overflow-hidden">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-3xl mb-10" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-white/40 font-bold mb-4">AI Hardware · Healthcare</div>
+      <h2 class="font-headline font-extrabold text-white text-3xl md:text-4xl lg:text-5xl tracking-tighter leading-[0.95]">
+        AI inside your clinic.
+      </h2>
+      <p class="text-white/65 mt-4 max-w-2xl leading-relaxed text-base md:text-lg">Patient flow, equipment tracking, and cold-chain alerts — running on cameras and sensors you already operate. <a href="/ai-hardware" class="text-white/80 underline underline-offset-4 hover:text-white">See every use case →</a></p>
+    </div>
+    <div class="pw-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up">
+        <img src="/images/hardware/manufacturing-qc.webp" alt="Patient Flow & Wait-Time AI"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,255,255,0.1); color:#aec6ff;">OPD & Front Desk</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Patient Flow & Wait-Time AI</h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-4">Camera AI watches OPD and front-desk flow. Surfaces bottlenecks, no-shows, and dwell time per stage.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#aec6ff"></div>
+            <span class="pw-result" style="color:#aec6ff">Avg wait time down 35%</span>
+          </div>
+        </div>
+      </a>
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up">
+        <img src="/images/hardware/jewelry-security.webp" alt="Equipment & Asset Tracking"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,255,255,0.1); color:#6ad9c3;">Equipment & Pharmacy</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Equipment & Asset Tracking</h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-4">AI tracks high-value medical equipment, mobile carts, and pharmacy inventory across the floor.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#6ad9c3"></div>
+            <span class="pw-result" style="color:#6ad9c3">Asset loss · zero in 12 months</span>
+          </div>
+        </div>
+      </a>
+      <a href="/ai-hardware" class="pw-card block" data-aos="fade-up">
+        <img src="/images/hardware/logistics-warehouse.webp" alt="Cold-chain & Stock AI"/>
+        <div class="pw-overlay"></div>
+        <div class="pw-body">
+          <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 w-fit" style="background:rgba(255,255,255,0.1); color:#ffbe2e;">Inventory & Cold Chain</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 leading-tight">Cold-chain & Stock AI</h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-4">Real-time alerts on cold-chain breaches, expiry windows, and stockouts — single dashboard across branches.</p>
+          <div class="pw-reveal flex items-center gap-2 pt-3 border-t border-white/10">
+            <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ffbe2e"></div>
+            <span class="pw-result" style="color:#ffbe2e">Stockouts down 70%</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 
 <section class="py-24 lg:py-32 px-6 lg:px-10 max-w-[1400px] mx-auto">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -583,52 +638,6 @@
   </div>
 </section>
 
-<!-- AI HARDWARE SECTION -->
-<section class="py-20 lg:py-28 px-6 lg:px-10 bg-ink overflow-hidden">
-  <div class="max-w-[1400px] mx-auto">
-    <div class="max-w-2xl mb-12" data-aos="fade-up">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-headline font-bold tracking-wider uppercase text-white/60 mb-6" style="border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.05);">
-        <span class="w-1.5 h-1.5 rounded-full grad-bg"></span>
-        AI Hardware for Healthcare
-      </div>
-      <h2 class="font-headline font-extrabold text-white text-4xl md:text-5xl tracking-tighter leading-[0.95] mb-4">
-        Right staff. Right shift.<br/><span class="grad-text">Zero scheduling chaos.</span>
-      </h2>
-      <p class="text-white/60 text-lg leading-relaxed">AI Crew deploys physical-world AI into clinics, hospitals, and care homes — from intelligent staff scheduling to real-time patient flow monitoring.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-      <div class="rounded-2xl p-7 border" style="border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.04);" data-aos="fade-up">
-        <div class="w-10 h-10 rounded-xl grad-bg flex items-center justify-center mb-5">
-          <span class="material-symbols-outlined text-ink text-xl">calendar_month</span>
-        </div>
-        <h3 class="font-headline font-bold text-white text-lg mb-2">AI Staff Scheduling</h3>
-        <p class="text-white/55 text-sm leading-relaxed">AI auto-schedules your clinical staff based on skills, availability, and patient load. Handles emergency cover, compliance rules, and shift swaps automatically — reducing admin by 80%.</p>
-        <div class="mt-5 pt-4 border-t border-white/10 text-[11px] font-bold uppercase tracking-widest" style="color:#6ad9c3;">80% reduction in scheduling admin</div>
-      </div>
-      <div class="rounded-2xl p-7 border" style="border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.04);" data-aos="fade-up" data-aos-delay="80">
-        <div class="w-10 h-10 rounded-xl grad-bg flex items-center justify-center mb-5">
-          <span class="material-symbols-outlined text-ink text-xl">monitor_heart</span>
-        </div>
-        <h3 class="font-headline font-bold text-white text-lg mb-2">Patient Flow Monitoring</h3>
-        <p class="text-white/55 text-sm leading-relaxed">Camera-based AI tracks patient movement through waiting areas, wards, and consultation rooms. Identifies bottlenecks, flags long-wait situations, and optimises staff deployment in real time.</p>
-        <div class="mt-5 pt-4 border-t border-white/10 text-[11px] font-bold uppercase tracking-widest" style="color:#aec6ff;">Wait times reduced by 35%</div>
-      </div>
-      <div class="rounded-2xl p-7 border" style="border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.04);" data-aos="fade-up" data-aos-delay="160">
-        <div class="w-10 h-10 rounded-xl grad-bg flex items-center justify-center mb-5">
-          <span class="material-symbols-outlined text-ink text-xl">medication</span>
-        </div>
-        <h3 class="font-headline font-bold text-white text-lg mb-2">Medication &amp; Equipment Tracking</h3>
-        <p class="text-white/55 text-sm leading-relaxed">Track medication carts, medical equipment, and controlled substances across your facility. Zone alerts if items leave designated areas. Full audit trail for compliance.</p>
-        <div class="mt-5 pt-4 border-t border-white/10 text-[11px] font-bold uppercase tracking-widest" style="color:#ffbe2e;">Full compliance audit trail</div>
-      </div>
-    </div>
-    <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up">
-      <a href="/ai-hardware"><button class="px-7 py-3.5 grad-bg text-ink rounded-xl font-headline font-bold text-sm hover:opacity-90 transition-all inline-flex items-center gap-2">See all AI Hardware use cases <span class="material-symbols-outlined text-base">arrow_forward</span></button></a>
-      <a href="/book-demo"><button class="px-7 py-3.5 border text-white rounded-xl font-headline font-bold text-sm hover:bg-white/10 transition-all" style="border-color:rgba(255,255,255,0.2);">Book a demo</button></a>
-    </div>
-  </div>
-</section>
-
 <footer class="border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
   <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
     <div class="col-span-2">
@@ -731,5 +740,6 @@
   });
 })();
 </script>
+  <script defer src="/js/ai-crew-mobile.js?v=20260514"></script>
 </body>
 </html>
