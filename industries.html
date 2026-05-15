@@ -107,15 +107,19 @@
     img { max-width:100%; height:auto; }
     /* Industry/service hero: stack properly */
     .hero-split { flex-direction:column !important; }
-    /* FAQ, steps: single column */
-    .grid-cols-2 { grid-template-columns:1fr !important; }
-    .grid-cols-3 { grid-template-columns:1fr !important; }
+    /* FAQ, steps grids: single column on mobile.
+       Scoped to FAQ/step sections only — the tile grid (.industries-grid)
+       and any explicit 2-up needs to remain a 2-column grid. */
+    section.faq-section .grid-cols-2,
+    section.steps-section .grid-cols-2,
+    section.faq-section .grid-cols-3,
+    section.steps-section .grid-cols-3 { grid-template-columns:1fr !important; }
     /* Table overflow fix */
     table { display:block; overflow-x:auto; }
   }
 </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="/css/ai-crew-mobile.css?v=20260515b"/>
+  <link rel="stylesheet" href="/css/ai-crew-mobile.css?v=20260515c"/>
 </head><body class="page-industries">
 <nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
   <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
@@ -317,7 +321,7 @@
 </section>
 
 <section class="py-20 lg:py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
+  <div class="industries-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
     
     <a href="/industries/tech-b2b/" class="group block rounded-2xl overflow-hidden relative aspect-[4/5] industry-tile" data-aos="fade-up">
       <img src="/images/stock/tech.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Tech & B2B SaaS"/>

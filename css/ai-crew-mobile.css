@@ -63,10 +63,12 @@ body.mn-open { overflow:hidden; touch-action:none; }
 /* ===== Hero rotating word — never overflow on mobile =====
    The .word is absolutely-positioned for animation; when rotate-word becomes
    block on small screens we must keep the absolute layer inside the block too,
-   or the animated word floats over the body paragraph below. */
+   or the animated word floats over the body paragraph below. The overflow:hidden
+   on mobile clips outgoing/incoming words during the transition so they don't
+   stack visually (was causing two words to be partially visible at once). */
 .rotate-word { max-width:100%; }
 @media (max-width:640px) {
-  .rotate-word { display:block; width:100%; position:relative; min-height:1.05em; }
+  .rotate-word { display:block; width:100%; position:relative; min-height:1.05em; overflow:hidden !important; padding-bottom:.08em; }
   .rotate-word .word { white-space:nowrap; font-size:inherit; }
   /* Eyebrow chip: stays in viewport AND shows the full pill text on two lines if needed (no truncate) */
   .hero-eyebrow {
@@ -197,7 +199,23 @@ body.mn-open { overflow:hidden; touch-action:none; }
   padding-bottom: 0.08em;
 }
 @media (max-width:767px) {
-  .footer-aicrew-text { font-size:30vw !important; }
+  /* Fits "AICREW" inside narrow phones (down to iPhone SE 320px) without clipping
+     the W on the right edge. Plus Jakarta Sans ExtraBold's W has ink that overhangs
+     its typographic advance by ~3-4% of font-size, so the bounding box can fit
+     while the rendered glyph still gets clipped. Solution: 20vw cap + tight
+     letter-spacing + 0.18em inline padding gives the W breathing room. */
+  .footer-aicrew-text {
+    font-size: clamp(3rem, 20vw, 10rem) !important;
+    letter-spacing: -0.06em !important;
+    padding-left: .18em !important;
+    padding-right: .18em !important;
+    box-sizing: border-box;
+  }
+  .footer-aicrew-wrap {
+    overflow: hidden;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
 }
 
 
@@ -241,10 +259,19 @@ body.mn-open { overflow:hidden; touch-action:none; }
 
 /* ===== /ai-hardware "Where we deploy" cards — force single column on mobile =====
    Previously .hw-grid (which is a 1/2/3-col Tailwind grid) kept rendering as
-   2-col on tablet-sized mobile, so card 2's stats spilled in next to card 1. */
+   2-col on tablet-sized mobile, so card 2's stats spilled in next to card 1.
+   The last 2 cards on /ai-hardware use Tailwind's aspect-[16/7] which (combined
+   with min-height:360px) forced width to 823px and overflowed the column —
+   so all card aspect-ratio overrides need !important to win the cascade. */
 @media (max-width:767px) {
   .hw-grid { display:grid !important; grid-template-columns:1fr !important; gap:1rem !important; }
-  .hw-card { aspect-ratio: 4/3.2; min-height: 360px; }
+  .hw-card {
+    aspect-ratio: 4/3.2 !important;
+    min-height: 360px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
   .hw-card .hw-content { padding: 1.25rem 1.5rem !important; }
   /* Stats grid inside hw-card: keep 3-col but never overflow */
   .hw-card .grid.grid-cols-3 { grid-template-columns:repeat(3, minmax(0, 1fr)) !important; gap:.5rem !important; }
