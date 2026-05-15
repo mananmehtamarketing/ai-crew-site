@@ -103,7 +103,7 @@
     table { display:block; overflow-x:auto; }
   }
 </style>
-  <link rel="stylesheet" href="/css/ai-crew-mobile.css?v=20260514b"/>
+  <link rel="stylesheet" href="/css/ai-crew-mobile.css?v=20260514c"/>
 </head>
 <body>
 
@@ -456,27 +456,90 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-white border-t px-6 lg:px-10 pt-16 pb-8" style="border-color:#E5E7EB;">
-  <div class="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
-    <div class="col-span-1 sm:col-span-2 md:col-span-1">
-      <a href="/" class="font-headline font-extrabold text-xl tracking-tighter whitespace-nowrap mb-4 inline-block"><span class="grad-text">AI</span><span class="text-ink ml-1">CREW</span></a>
-      <p class="text-xs text-ink-mute mt-2">12 years of marketing DNA. AI Crew is the AI consultancy arm of MarketinCrew.</p>
+<footer class="site-footer border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-8 md:gap-12 mb-16">
+    <div class="col-span-1 sm:col-span-2 md:col-span-2">
+      <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-5">AI consultancy for founders, professionals and small companies. We sit with you, learn how you make money, and install AI in 21 days.</p>
+      <!-- Manan's other homes -->
+      <ul class="text-sm space-y-1.5 mb-6">
+        <li><a href="https://marketincrew.com" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink">marketincrew.com <span class="text-ink-mute">— the marketing agency</span></a></li>
+        <li><a href="https://www.mananmehta.com" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink">mananmehta.com <span class="text-ink-mute">— Manan Mehta, founder</span></a></li>
+      </ul>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Part of the family</div>
+      <div class="flex items-center gap-4 flex-wrap">
+        <a href="https://marketincrew.com" target="_blank" rel="noopener" class="opacity-85 hover:opacity-100 transition-opacity" title="MarketinCrew">
+          <img src="/images/universe/marketincrew.png" class="footer-brand-icon h-10 w-10 rounded-xl bg-white border border-border-soft object-contain p-1.5" alt="MarketinCrew"/>
+        </a>
+        <a href="https://www.mananmehta.com/mk-studios" target="_blank" rel="noopener" class="opacity-85 hover:opacity-100 transition-opacity" title="MK Studios — the podcast">
+          <img src="/images/universe/marketincrew-podcast.jpg" class="footer-brand-icon h-10 w-10 rounded-xl bg-white border border-border-soft object-contain p-1.5" alt="MK Studios — the podcast"/>
+        </a>
+        <a href="https://lyonmarketing.co" target="_blank" rel="noopener" class="opacity-85 hover:opacity-100 transition-opacity" title="Lyon Marketing Co">
+          <img src="/images/universe/lyon-marketing.png" class="footer-brand-icon h-10 w-10 rounded-xl bg-white border border-border-soft object-contain p-1.5" alt="Lyon Marketing Co"/>
+        </a>
+      </div>
+      <p class="text-[11px] text-ink-mute mt-4">12 years of marketing DNA. AI Crew is the AI consultancy arm of MarketinCrew.</p>
     </div>
     <div>
       <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">For You</h4>
-      <ul class="space-y-2 text-sm"><li><a href="/for-founders" class="text-ink-soft hover:text-ink">Founders</a></li><li><a href="/for-professionals" class="text-ink-soft hover:text-ink">Professionals</a></li><li><a href="/for-companies" class="text-ink-soft hover:text-ink">Companies</a></li></ul>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/for-founders" class="text-ink-soft hover:text-ink">Founders</a></li>
+        <li><a href="/for-professionals" class="text-ink-soft hover:text-ink">Professionals</a></li>
+        <li><a href="/for-companies" class="text-ink-soft hover:text-ink">Companies</a></li>
+        <li><a href="/industries" class="text-ink-soft hover:text-ink">All Industries</a></li>
+        <li><a href="/ai-hardware" class="text-ink-soft hover:text-ink">AI Hardware</a></li>
+        <li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case Studies</a></li>
+      </ul>
     </div>
     <div>
       <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4>
-      <ul class="space-y-2 text-sm"><li><a href="/services/ai-strategy-audit" class="text-ink-soft hover:text-ink">AI Strategy</a></li><li><a href="/services/ai-agents" class="text-ink-soft hover:text-ink">Custom AI Agents</a></li><li><a href="/ai-hardware" class="text-ink font-semibold hover:text-ink/70">AI Hardware</a></li><li><a href="/content-studio" class="text-ink-soft hover:text-ink">Content Studio</a></li></ul>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/services/ai-strategy-audit" class="text-ink-soft hover:text-ink">AI Strategy &amp; Audits</a></li>
+        <li><a href="/services/ai-workflow-automation" class="text-ink-soft hover:text-ink">Workflow Automation</a></li>
+        <li><a href="/services/ai-agents" class="text-ink-soft hover:text-ink">Custom AI Agents</a></li>
+        <li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content Studio</a></li>
+        <li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li>
+        <li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li>
+        <li><a href="/services/ai-training" class="text-ink-soft hover:text-ink">AI Training</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Industries</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/industries/tech-b2b/" class="text-ink-soft hover:text-ink">Tech &amp; B2B SaaS</a></li>
+        <li><a href="/industries/healthcare/" class="text-ink-soft hover:text-ink">Healthcare</a></li>
+        <li><a href="/industries/legal/" class="text-ink-soft hover:text-ink">Legal</a></li>
+        <li><a href="/industries/accounting/" class="text-ink-soft hover:text-ink">Accounting</a></li>
+        <li><a href="/industries/wealth-advisory/" class="text-ink-soft hover:text-ink">Wealth Advisory</a></li>
+        <li><a href="/industries/architecture/" class="text-ink-soft hover:text-ink">Architecture</a></li>
+        <li><a href="/industries/creative-agencies/" class="text-ink-soft hover:text-ink">Creative Agencies</a></li>
+        <li><a href="/industries/hospitality/" class="text-ink-soft hover:text-ink">Hospitality &amp; F&amp;B</a></li>
+        <li><a href="/industries/d2c/" class="text-ink-soft hover:text-ink">D2C &amp; E-commerce</a></li>
+        <li><a href="/industries/manufacturing/" class="text-ink-soft hover:text-ink">Manufacturing</a></li>
+        <li><a href="/industries/retail/" class="text-ink-soft hover:text-ink">Retail</a></li>
+        <li><a href="/industries/sports/" class="text-ink-soft hover:text-ink">Sports &amp; Fitness</a></li>
+      </ul>
     </div>
     <div>
       <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4>
-      <ul class="space-y-2 text-sm"><li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case Studies</a></li><li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li><li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li></ul>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/about" class="text-ink-soft hover:text-ink">About</a></li>
+        <li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li>
+        <li><a href="/built-with-ai" class="text-ink-soft hover:text-ink">Built with AI</a></li>
+        <li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case Studies</a></li>
+        <li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li>
+        <li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li>
+      </ul>
     </div>
   </div>
-  <div class="max-w-[1400px] mx-auto border-t pt-6 flex flex-col md:flex-row justify-between text-xs text-ink-mute" style="border-color:#E5E7EB;">
-    <span>© 2026 AI Crew · Founders, makers of <a href="https://marketincrew.com" target="_blank" rel="noopener" class="text-ink hover:underline">MarketinCrew</a> · 300+ brands shipped</span>
+
+  <!-- Floating SVG text with shimmer -->
+  <div class="footer-aicrew-wrap w-full select-none overflow-hidden">
+    <h2 class="footer-aicrew-text">AI CREW</h2>
+  </div>
+
+  <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
+    <span>© 2026 AI Crew · Founders, makers of <a href="https://marketincrew.com/" target="_blank" rel="noopener" class="text-ink hover:underline">MarketinCrew</a> · 300+ brands shipped</span>
     <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
   </div>
 </footer>
@@ -498,6 +561,6 @@
     panel.addEventListener('mouseleave',()=>{ t=setTimeout(()=>panel.classList.remove('open'),280); });
   });
 </script>
-  <script defer src="/js/ai-crew-mobile.js?v=20260514b"></script>
+  <script defer src="/js/ai-crew-mobile.js?v=20260514c"></script>
 </body>
 </html>

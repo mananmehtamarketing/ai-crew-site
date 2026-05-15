@@ -178,6 +178,34 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
+/* ===== Footer brand icons — keep logos legible inside the rounded box =====
+   Forces object-contain on every "Part of the family" icon so wide logos
+   don't get center-cropped (was showing "RKE" for MarketinCrew, etc.) */
+.site-footer .flex img,
+.footer-brand-icon {
+  object-fit: contain !important;
+  background:#fff;
+  border-radius: 0.75rem;
+}
+.footer-brand-icon { width:2.5rem; height:2.5rem; padding:.35rem; border:1px solid #F0F2F5; }
+
+
+/* ===== Hero overflow safety net (was: for-founders body text cut off right edge) ===== */
+@media (max-width:767px) {
+  /* Tighten the grid-cols-12 hero gap on mobile so adjacent rows don't push width */
+  section .grid.grid-cols-12 { gap: 1.5rem !important; }
+  /* Every paragraph and h1/h2/h3 must wrap inside the viewport */
+  p, h1, h2, h3, h4, h5, li, span, div, a { overflow-wrap: anywhere; word-break: normal; }
+  /* Belt-and-braces against ANY horizontal scroll source */
+  html, body { overflow-x: hidden !important; max-width: 100vw; }
+  /* Hero specifically: the body paragraph must respect the container */
+  section .hero-body,
+  section p.hero-body,
+  section p.text-lg,
+  section p.text-xl { max-width: 100% !important; }
+}
+
+
 /* ===== Common mobile fixes ===== */
 @media (max-width:767px) {
   /* h1 never overflow */
