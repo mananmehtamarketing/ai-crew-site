@@ -1,5 +1,5 @@
 /* =================================================================
-   AI Crew — Site-wide mobile + UX behaviour (v2026-05-14)
+   AI Crew · Site-wide mobile + UX behaviour (v2026-05-14)
    - Rebuilds the .mobile-nav into the canonical collapsible structure
    - Auto-scrolling horizontal sliders on mobile (industries, hardware, pillars)
    - Closes mobile nav on bfcache restore (fixes the "can't scroll" glitch on back nav)
@@ -8,7 +8,7 @@
   'use strict';
 
   // -----------------------------------------------------------------
-  // 1) Canonical mobile menu HTML — same on every page.
+  // 1) Canonical mobile menu HTML · same on every page.
   //    We rewrite the existing #mobileNav contents so no per-page edits needed.
   // -----------------------------------------------------------------
   var MOBILE_NAV_HTML = ''
@@ -63,8 +63,8 @@
     +   '</div>'
     +   '<a href="/book-demo" class="mobile-cta">Book a Call →</a>'
     +   '<div class="mn-foot">'
-    +     '<div><a href="https://marketincrew.com" target="_blank" rel="noopener">marketincrew.com</a> — the marketing agency</div>'
-    +     '<div><a href="https://www.mananmehta.com" target="_blank" rel="noopener">mananmehta.com</a> — Manan Mehta, founder</div>'
+    +     '<div><a href="https://marketincrew.com" target="_blank" rel="noopener">marketincrew.com</a> · the marketing agency</div>'
+    +     '<div><a href="https://www.mananmehta.com" target="_blank" rel="noopener">mananmehta.com</a> · Manan Mehta, founder</div>'
     +     '<div style="margin-top:.75rem;">hello@aicrew.io · Mumbai · Paris</div>'
     +   '</div>'
     + '</div>';

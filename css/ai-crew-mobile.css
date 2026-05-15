@@ -1,5 +1,5 @@
 /* =================================================================
-   AI Crew — Site-wide mobile + UX overrides (v2026-05-14)
+   AI Crew · Site-wide mobile + UX overrides (v2026-05-14)
    Loaded last so it always wins specificity.
    ================================================================= */
 
@@ -60,7 +60,7 @@ body.mn-open { overflow:hidden; touch-action:none; }
 @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
 
 
-/* ===== Hero rotating word — never overflow on mobile =====
+/* ===== Hero rotating word · never overflow on mobile =====
    The .word is absolutely-positioned for animation; when rotate-word becomes
    block on small screens we must keep the absolute layer inside the block too,
    or the animated word floats over the body paragraph below. The overflow:hidden
@@ -87,7 +87,7 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
-/* ===== Stats grid labels — prevent ugly mid-word breaks on small screens =====
+/* ===== Stats grid labels · prevent ugly mid-word breaks on small screens =====
    "CONTINENTS TAUGHT" was wrapping to "CONTINENT / S TAUGHT" because
    word-break:anywhere is on. Hyphen-break instead. */
 @media (max-width:767px) {
@@ -160,7 +160,7 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
-/* ===== Video section (I teach AI for a living) — mobile fix ===== */
+/* ===== Video section (I teach AI for a living) · mobile fix ===== */
 @media (max-width:1023px) {
   .video-teach-section { min-height:920px !important; }
   .video-mobile-cover {
@@ -176,7 +176,7 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
-/* ===== Footer AI CREW shimmer — never clip on mobile ===== */
+/* ===== Footer AI CREW shimmer · never clip on mobile ===== */
 .footer-aicrew-wrap { padding-top: 2.5rem; padding-bottom: 0.5rem; line-height: 0; }
 .footer-aicrew-text {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -219,7 +219,7 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
-/* ===== /for-founders, /for-professionals, /for-companies — hero image quote ===== */
+/* ===== /for-founders, /for-professionals, /for-companies · hero image quote ===== */
 @media (max-width:767px) {
   .founder-hero-img { aspect-ratio: 4/5 !important; max-height: 460px; }
   .founder-hero-img img { object-position: center 20% !important; }
@@ -229,7 +229,7 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
-/* ===== Footer brand icons — keep logos legible inside the rounded box =====
+/* ===== Footer brand icons · keep logos legible inside the rounded box =====
    Forces object-contain on every "Part of the family" icon so wide logos
    don't get center-cropped (was showing "RKE" for MarketinCrew, etc.) */
 .site-footer .flex img,
@@ -257,11 +257,11 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
-/* ===== /ai-hardware "Where we deploy" cards — force single column on mobile =====
+/* ===== /ai-hardware "Where we deploy" cards · force single column on mobile =====
    Previously .hw-grid (which is a 1/2/3-col Tailwind grid) kept rendering as
    2-col on tablet-sized mobile, so card 2's stats spilled in next to card 1.
    The last 2 cards on /ai-hardware use Tailwind's aspect-[16/7] which (combined
-   with min-height:360px) forced width to 823px and overflowed the column —
+   with min-height:360px) forced width to 823px and overflowed the column , 
    so all card aspect-ratio overrides need !important to win the cascade. */
 @media (max-width:767px) {
   .hw-grid { display:grid !important; grid-template-columns:1fr !important; gap:1rem !important; }
@@ -296,7 +296,7 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
-/* ===== Three Layers home cards — compact mobile w/ read-more =====
+/* ===== Three Layers home cards · compact mobile w/ read-more =====
    Each .pillar-card is a Founders/Pros/Companies tile. On phone the full
    body + bullets + CTA makes the card 800px tall. Truncate to first paragraph
    and add a Read more toggle. */
@@ -326,7 +326,7 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
-/* ===== Industries listing page — tile grid (not horizontal slider) on phone =====
+/* ===== Industries listing page · tile grid (not horizontal slider) on phone =====
    User wants small stacked tiles like the mega-menu, NOT a swipe slider. */
 @media (max-width:767px) {
   /* OVERRIDE the .industries-grid slider rules from above */
@@ -403,4 +403,49 @@ body.mn-open { overflow:hidden; touch-action:none; }
   .industries-grid > * { flex:0 0 64% !important; scroll-snap-align:start !important; min-width:0 !important; }
   /* Footer stack */
   footer .grid-cols-2 { grid-template-columns:1fr !important; }
+  /* Minimum tap target: anchors/buttons in nav/CTAs get min 44x44 finger area.
+     Forms also: inputs at >=16px so iOS Safari doesn't zoom on focus. */
+  a[href].mobile-cta,
+  .mobile-nav a,
+  .mobile-nav .mn-section-title { min-height: 44px; }
+  input, select, textarea { font-size: max(16px, 1rem); }
+  /* Sliders need a hint they're scrollable: faint shadow on right edge */
+  .pw-grid, .industries-grid, .pillar-slider, .crew-pills {
+    -webkit-mask-image: linear-gradient(to right, black 0%, black calc(100% - 24px), transparent 100%);
+    mask-image: linear-gradient(to right, black 0%, black calc(100% - 24px), transparent 100%);
+  }
+}
+
+
+/* ===== iPhone SE / small phones (≤399px) safety net =====
+   Below 400px, hero heading, buttons, and stats labels need to shrink further
+   so nothing gets cropped on 320-375px viewports. */
+@media (max-width:399px) {
+  h1.font-headline { font-size: clamp(1.65rem, 8.5vw, 2.2rem) !important; line-height: 1.04 !important; }
+  h2.font-headline, h2.section-h2 { font-size: clamp(1.4rem, 7vw, 1.85rem) !important; }
+  .hero-eyebrow { font-size: .58rem !important; padding: .4rem .6rem !important; letter-spacing: .03em !important; }
+  /* Stats numbers shrink so 3-up grids fit */
+  .grid.grid-cols-3 .text-3xl,
+  .grid.grid-cols-3 .text-4xl,
+  .grid.grid-cols-3 [class*="text-[2"] { font-size: 1.5rem !important; line-height: 1 !important; }
+  .grid.grid-cols-3 .text-xs,
+  .grid.grid-cols-3 .text-\[10px\],
+  .grid.grid-cols-3 .text-\[11px\] { font-size: .58rem !important; letter-spacing: .04em !important; }
+  /* Tighter section padding */
+  section.py-24, section.py-32, section.py-20 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+  /* Hero body and small CTA pairs */
+  section .hero-body { font-size: .95rem !important; }
+  /* Footer AI CREW shouldn't oversize on tiny phones */
+  .footer-aicrew-text { font-size: clamp(2.5rem, 18vw, 7rem) !important; }
+}
+
+
+/* ===== Touch-friendly buttons across the site ===== */
+@media (max-width:767px) {
+  /* Hero CTAs and inline buttons sized for thumbs (44px min tap) */
+  a.mag-btn,
+  .mag-btn,
+  button.mag-btn,
+  a[class*="px-"][class*="py-"][class*="rounded"]:not(.hamburger),
+  button[class*="px-"][class*="py-"][class*="rounded"] { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 }
