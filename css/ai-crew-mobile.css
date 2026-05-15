@@ -60,13 +60,46 @@ body.mn-open { overflow:hidden; touch-action:none; }
 @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
 
 
-/* ===== Hero rotating word — never overflow on mobile ===== */
+/* ===== Hero rotating word — never overflow on mobile =====
+   The .word is absolutely-positioned for animation; when rotate-word becomes
+   block on small screens we must keep the absolute layer inside the block too,
+   or the animated word floats over the body paragraph below. */
 .rotate-word { max-width:100%; }
 @media (max-width:640px) {
-  .rotate-word { display:block; width:100%; }
+  .rotate-word { display:block; width:100%; position:relative; min-height:1.05em; }
   .rotate-word .word { white-space:nowrap; font-size:inherit; }
-  /* Eyebrow chip stays inside viewport on small screens */
-  .hero-eyebrow { font-size:.65rem !important; letter-spacing:.04em !important; padding:.45rem .7rem !important; }
+  /* Eyebrow chip: stays in viewport AND shows the full pill text on two lines if needed (no truncate) */
+  .hero-eyebrow {
+    font-size:.62rem !important;
+    letter-spacing:.04em !important;
+    padding:.5rem .85rem !important;
+    border-radius:9999px !important;
+    line-height:1.3 !important;
+  }
+  .hero-eyebrow-text {
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    display:inline !important;
+  }
+}
+
+
+/* ===== Stats grid labels — prevent ugly mid-word breaks on small screens =====
+   "CONTINENTS TAUGHT" was wrapping to "CONTINENT / S TAUGHT" because
+   word-break:anywhere is on. Hyphen-break instead. */
+@media (max-width:767px) {
+  .grid.grid-cols-3 .text-xs,
+  .grid.grid-cols-3 .text-\[10px\],
+  .grid.grid-cols-3 .text-\[11px\],
+  .grid.grid-cols-3 .uppercase {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+  }
+  /* When stats labels are very long, allow them to break softly */
+  .grid.grid-cols-3 > div { min-width: 0; }
 }
 
 
