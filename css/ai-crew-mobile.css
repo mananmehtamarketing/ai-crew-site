@@ -440,12 +440,16 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
-/* ===== Touch-friendly buttons across the site ===== */
+/* ===== Touch-friendly buttons across the site =====
+   Min 44x44 finger area on hero CTAs, mobile nav links, mobile CTA.
+   NOTE: do not force display here — Tailwind `.hidden` and visibility
+   classes must keep working, especially on the desktop "Book a Call"
+   button that lives in nav with `hidden lg:block`. min-height alone
+   gives bigger tap zones without un-hiding anything. */
 @media (max-width:767px) {
-  /* Hero CTAs and inline buttons sized for thumbs (44px min tap) */
-  a.mag-btn,
-  .mag-btn,
-  button.mag-btn,
-  a[class*="px-"][class*="py-"][class*="rounded"]:not(.hamburger),
-  button[class*="px-"][class*="py-"][class*="rounded"] { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .mag-btn > button,
+  a[class*="rounded-lg"][class*="bg-ink"],
+  a[class*="rounded-xl"][class*="bg-ink"],
+  button[class*="rounded-lg"][class*="bg-ink"],
+  button[class*="rounded-xl"][class*="bg-ink"] { min-height: 44px; }
 }
