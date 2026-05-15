@@ -239,6 +239,106 @@ body.mn-open { overflow:hidden; touch-action:none; }
 }
 
 
+/* ===== /ai-hardware "Where we deploy" cards — force single column on mobile =====
+   Previously .hw-grid (which is a 1/2/3-col Tailwind grid) kept rendering as
+   2-col on tablet-sized mobile, so card 2's stats spilled in next to card 1. */
+@media (max-width:767px) {
+  .hw-grid { display:grid !important; grid-template-columns:1fr !important; gap:1rem !important; }
+  .hw-card { aspect-ratio: 4/3.2; min-height: 360px; }
+  .hw-card .hw-content { padding: 1.25rem 1.5rem !important; }
+  /* Stats grid inside hw-card: keep 3-col but never overflow */
+  .hw-card .grid.grid-cols-3 { grid-template-columns:repeat(3, minmax(0, 1fr)) !important; gap:.5rem !important; }
+  .hw-card .grid.grid-cols-3 .hw-stat { font-size:1.1rem !important; }
+}
+
+
+/* ===== Footer: 2-column grid on phone (was single column stack on for-founders etc.) ===== */
+@media (max-width:639px) {
+  .site-footer > div:first-of-type {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem 1rem !important;
+  }
+  /* Brand description block always spans both columns */
+  .site-footer > div:first-of-type > div:first-child {
+    grid-column: 1 / -1 !important;
+  }
+  /* Tighter list spacing on mobile so each column doesn't sprawl */
+  .site-footer ul { space-y: .5rem; }
+  .site-footer ul li a { font-size: .85rem !important; }
+  .site-footer h4 { font-size: .65rem !important; letter-spacing: .18em !important; margin-bottom: .75rem !important; }
+}
+
+
+/* ===== Three Layers home cards — compact mobile w/ read-more =====
+   Each .pillar-card is a Founders/Pros/Companies tile. On phone the full
+   body + bullets + CTA makes the card 800px tall. Truncate to first paragraph
+   and add a Read more toggle. */
+@media (max-width:639px) {
+  .pillar-card .img-wrap { aspect-ratio: 16/10 !important; }
+  .pillar-card { padding: 0 !important; }
+  .pillar-card > div.p-8 { padding: 1.25rem 1.25rem 1.5rem !important; }
+  .pillar-card p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .pillar-card ul { display: none !important; }
+  .pillar-card.is-open p { display: block; -webkit-line-clamp: unset; }
+  .pillar-card.is-open ul { display: block !important; }
+  /* "Read more" pseudo-element on each card */
+  .pillar-card::after {
+    content: "Read more";
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: #6B7280;
+    padding: .5rem 1.25rem 1.25rem;
+    text-align: left;
+    pointer-events: none;
+  }
+  .pillar-card.is-open::after { content: "Show less"; }
+}
+
+
+/* ===== Industries listing page — tile grid (not horizontal slider) on phone =====
+   User wants small stacked tiles like the mega-menu, NOT a swipe slider. */
+@media (max-width:767px) {
+  /* OVERRIDE the .industries-grid slider rules from above */
+  body.page-industries .industries-grid,
+  .industries-page .industries-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    scroll-snap-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: .75rem !important;
+  }
+  body.page-industries .industries-grid > *,
+  .industries-page .industries-grid > * {
+    flex: none !important;
+    width: 100% !important;
+    aspect-ratio: 4/5 !important;
+  }
+  body.page-industries .industries-grid > * .industry-label .text-base,
+  .industries-page .industries-grid > * .industry-label .text-base,
+  body.page-industries .industries-grid > * .industry-label .text-xl,
+  .industries-page .industries-grid > * .industry-label .text-xl {
+    font-size: .85rem !important;
+    line-height: 1.1 !important;
+  }
+  body.page-industries .industries-grid > * .industry-label p,
+  .industries-page .industries-grid > * .industry-label p {
+    font-size: .65rem !important;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+
 /* ===== Common mobile fixes ===== */
 @media (max-width:767px) {
   /* h1 never overflow */

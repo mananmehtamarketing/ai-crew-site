@@ -154,10 +154,30 @@
     });
   }
 
+  // -----------------------------------------------------------------
+  // 3) Three-Layers cards: tap to expand on mobile (Read more / Show less)
+  // -----------------------------------------------------------------
+  function wirePillarReadMore(){
+    if (window.innerWidth >= 640) return; // desktop: do nothing
+    document.querySelectorAll('.pillar-card').forEach(function(card){
+      if (card.dataset.readmore === '1') return;
+      card.dataset.readmore = '1';
+      // Intercept the anchor's click so first tap toggles, second tap navigates
+      card.addEventListener('click', function(e){
+        if (!card.classList.contains('is-open')) {
+          e.preventDefault();
+          card.classList.add('is-open');
+        }
+        // second tap: let the link navigate normally
+      });
+    });
+  }
+
   function init(){
     rebuildMobileNav();
     wireMobileMenu();
     wireAutoSliders();
+    wirePillarReadMore();
   }
 
   if (document.readyState === 'loading') {

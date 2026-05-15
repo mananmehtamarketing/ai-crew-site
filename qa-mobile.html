@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI Crew · Mobile QA</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#0B1326;color:#E5E7EB;font-family:-apple-system,BlinkMacSystemFont,"Plus Jakarta Sans","Segoe UI",sans-serif;min-height:100vh}
+  .topbar{position:sticky;top:0;z-index:10;background:#0B1326;border-bottom:1px solid #1f2937;padding:12px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .topbar h1{margin:0;font-size:15px;font-weight:800;letter-spacing:.02em}
+  .topbar .badge{font-size:11px;color:#aec6ff;background:rgba(174,198,255,.1);padding:4px 10px;border-radius:999px;font-weight:700}
+  .topbar select{appearance:none;-webkit-appearance:none;background:#1a2440;color:#fff;border:1px solid #2a3556;border-radius:8px;padding:8px 32px 8px 12px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+  .topbar select:focus{outline:2px solid #6ad9c3}
+  .topbar .size-toggle{display:inline-flex;gap:4px;background:#1a2440;border:1px solid #2a3556;border-radius:8px;padding:3px}
+  .topbar .size-toggle button{background:transparent;color:#9CA3AF;border:0;padding:6px 10px;font-size:11px;font-weight:700;border-radius:6px;cursor:pointer}
+  .topbar .size-toggle button.active{background:#6ad9c3;color:#0B1326}
+  .topbar a.open-tab{margin-left:auto;color:#aec6ff;text-decoration:none;font-size:13px;font-weight:600}
+  .stage{display:flex;justify-content:center;padding:30px 20px 60px}
+  .device{position:relative;background:#000;border-radius:42px;padding:14px 14px 18px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6),0 0 0 1px #1f2937;transition:width .25s ease, height .25s ease}
+  .device .notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:120px;height:24px;background:#000;border-radius:0 0 16px 16px;z-index:2}
+  .device iframe{display:block;width:100%;height:100%;border:0;border-radius:30px;background:#fff}
+  /* Devices */
+  .device.iphone-15{width:390px;height:844px}
+  .device.iphone-15-pro-max{width:430px;height:932px}
+  .device.iphone-se{width:375px;height:667px}
+  .device.pixel-7{width:412px;height:915px}
+  .url-bar{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6B7280;margin-top:10px;text-align:center}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>AI Crew · Mobile QA</h1>
+  <span class="badge" id="badge">iPhone 15 · 390×844</span>
+  <select id="page">
+    <optgroup label="Top">
+      <option value="/">Home</option>
+      <option value="/for-founders">For Founders</option>
+      <option value="/for-professionals">For Professionals</option>
+      <option value="/for-companies">For Companies</option>
+      <option value="/industries">Industries</option>
+      <option value="/ai-hardware">AI Hardware</option>
+      <option value="/about">About</option>
+      <option value="/how-we-work">How we work</option>
+      <option value="/case-studies">Case Studies</option>
+      <option value="/book-demo">Book a Call</option>
+    </optgroup>
+    <optgroup label="Services">
+      <option value="/services/ai-strategy-audit">AI Strategy & Audits</option>
+      <option value="/services/ai-workflow-automation">Workflow Automation</option>
+      <option value="/services/ai-agents">Custom AI Agents</option>
+      <option value="/services/ai-training">AI Training</option>
+      <option value="/content-studio">AI Content Studio</option>
+      <option value="/outreach">AI Outreach</option>
+      <option value="/web-dev">AI Websites</option>
+    </optgroup>
+    <optgroup label="Industries">
+      <option value="/industries/tech-b2b/">Tech & B2B SaaS</option>
+      <option value="/industries/healthcare/">Healthcare</option>
+      <option value="/industries/legal/">Legal</option>
+      <option value="/industries/accounting/">Accounting</option>
+      <option value="/industries/wealth-advisory/">Wealth Advisory</option>
+      <option value="/industries/architecture/">Architecture</option>
+      <option value="/industries/creative-agencies/">Creative Agencies</option>
+      <option value="/industries/hospitality/">Hospitality & F&amp;B</option>
+      <option value="/industries/d2c/">D2C & E-commerce</option>
+      <option value="/industries/manufacturing/">Manufacturing</option>
+      <option value="/industries/retail/">Retail</option>
+      <option value="/industries/sports/">Sports & Fitness</option>
+    </optgroup>
+    <optgroup label="Case Studies">
+      <option value="/case-studies/b2b-saas-14-meetings/">B2B SaaS · 14 meetings</option>
+      <option value="/case-studies/ca-firm-month-end/">CA firm · Month-end</option>
+      <option value="/case-studies/d2c-content-engine/">D2C content engine</option>
+    </optgroup>
+  </select>
+  <div class="size-toggle" id="sizeToggle">
+    <button data-size="iphone-15" class="active">iPhone 15</button>
+    <button data-size="iphone-15-pro-max">15 Pro Max</button>
+    <button data-size="iphone-se">SE</button>
+    <button data-size="pixel-7">Pixel 7</button>
+  </div>
+  <a class="open-tab" id="openTab" target="_blank" rel="noopener">Open ↗</a>
+</div>
+<div class="stage">
+  <div class="device iphone-15" id="device">
+    <div class="notch"></div>
+    <iframe id="frame" src="/"></iframe>
+  </div>
+</div>
+<div class="url-bar" id="urlbar">https://ai-crew-site.vercel.app/</div>
+
+<script>
+(function(){
+  var sel = document.getElementById('page');
+  var fr = document.getElementById('frame');
+  var device = document.getElementById('device');
+  var badge = document.getElementById('badge');
+  var sizeToggle = document.getElementById('sizeToggle');
+  var openTab = document.getElementById('openTab');
+  var urlbar = document.getElementById('urlbar');
+
+  var SIZES = {
+    'iphone-15':         {label:'iPhone 15 · 390×844',      w:390, h:844},
+    'iphone-15-pro-max': {label:'15 Pro Max · 430×932',     w:430, h:932},
+    'iphone-se':         {label:'iPhone SE · 375×667',      w:375, h:667},
+    'pixel-7':           {label:'Pixel 7 · 412×915',        w:412, h:915}
+  };
+
+  function go(path){
+    fr.src = path;
+    openTab.href = path;
+    urlbar.textContent = 'https://ai-crew-site.vercel.app' + path;
+    history.replaceState({}, '', '?p=' + encodeURIComponent(path));
+  }
+
+  function setSize(key){
+    Object.keys(SIZES).forEach(function(k){ device.classList.remove(k); });
+    device.classList.add(key);
+    badge.textContent = SIZES[key].label;
+    sizeToggle.querySelectorAll('button').forEach(function(b){
+      b.classList.toggle('active', b.dataset.size === key);
+    });
+  }
+
+  sel.addEventListener('change', function(){ go(sel.value); });
+  sizeToggle.addEventListener('click', function(e){
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    setSize(btn.dataset.size);
+  });
+
+  // Restore from URL
+  var params = new URLSearchParams(location.search);
+  var startPath = params.get('p') || '/';
+  sel.value = startPath;
+  go(startPath);
+})();
+</script>
+</body>
+</html>
