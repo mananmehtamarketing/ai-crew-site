@@ -2,6 +2,15 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/built-with-ai", "destination": "/about", "permanent": true }
+    {
+      "source": "/built-with-ai",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/cloud-cowork",
+      "destination": "/claude-cowork",
+      "permanent": true
+    }
   ]
 }

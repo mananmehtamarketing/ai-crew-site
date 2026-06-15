@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>AI for Revenue & Taxation Departments | AI Crew</title>
+<meta name="description" content="AI for revenue and taxation departments. Faster property tax, assessments, mutations and refunds, with clear records and an officer approving every decision." />
+<link rel="canonical" href="https://withaicrew.com/government/revenue-taxation" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://withaicrew.com/government/revenue-taxation" />
+<meta property="og:title" content="AI for Revenue & Taxation Departments | AI Crew" />
+<meta property="og:description" content="AI for revenue and taxation departments. Faster property tax, assessments, mutations and refunds, with clear records and an officer approving every decision." />
+<meta property="og:image" content="https://withaicrew.com/images/government/revenue-taxation.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI for Revenue & Taxation Departments | AI Crew" />
+<meta name="twitter:description" content="AI for revenue and taxation departments. Faster property tax, assessments, mutations and refunds, with clear records and an officer approving every decision." />
+<meta name="twitter:image" content="https://withaicrew.com/images/government/revenue-taxation.png" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = { theme: { extend: {
+    colors: {"bg":"#FFFFFF","bg-soft":"#F8F9FB","bg-mute":"#F1F4FA","ink":"#0B1326","ink-soft":"#3A4256","ink-mute":"#6B7280","border":"#E5E7EB","border-soft":"#F0F2F5","accent-1":"#aec6ff","accent-2":"#6ad9c3","accent-3":"#ffbe2e","accent-4":"#0B1326"},
+    fontFamily: {"headline":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"serif":["Instrument Serif","serif"]},
+    borderRadius: {"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","full":"9999px"}
+  }}}
+</script>
+<style><style>
+  body { background:#fff; color:#0B1326; font-family:'Inter',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  .grad-text { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .grad-bg { background:linear-gradient(135deg,#aec6ff 0%,#6ad9c3 50%,#ffbe2e 100%); }
+  .glass-light { background:rgba(255,255,255,0.65); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); }
+  .mega-panel { opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity .25s, transform .25s; }
+  .mega-panel.open { opacity:1; pointer-events:auto; transform:translateY(0); }
+  .mega-trigger { position:relative; }
+  .mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
+  .mag-btn { display:inline-block; transition:transform .25s cubic-bezier(.23,1,.32,1); }
+  .mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:#fff; border-top:1px solid #E5E7EB; padding:1.5rem 1.5rem; gap:1rem; flex-direction:column; z-index:40; box-shadow:0 20px 40px -10px rgba(0,0,0,0.08); max-height:calc(100vh - 64px); max-height:calc(100svh - 64px); overflow-y:auto; padding-bottom:max(1.5rem, env(safe-area-inset-bottom)); }
+  .mobile-nav.open { display:flex; }
+  .mobile-nav a { color:#0B1326; font-size:1.05rem; font-weight:600; padding:.5rem 0; }
+  .mobile-nav .group-title { font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:#6B7280; font-weight:700; margin-top:.5rem; }
+  .mobile-nav .mobile-cta { margin-top:.5rem; padding:.875rem 1.5rem; background:#0B1326; color:#fff; border-radius:.5rem; text-align:center; }
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
+  .hamburger span { display:block; width:22px; height:2px; background:#0B1326; border-radius:2px; transition:all .25s; }
+  @media (max-width:1024px) { .hamburger { display:flex; } .desktop-nav { display:none; } }
+  html { scroll-behavior:smooth; scroll-padding-top:80px; }
+  .glass-card { background:#fff; border:1px solid #E5E7EB; transition:all .35s; }
+  .glass-card:hover { border-color:transparent; box-shadow:0 20px 60px -10px rgba(174,198,255,0.4), 0 0 0 1px rgba(174,198,255,0.3); transform:translateY(-2px); }
+  .dot-grid { background:radial-gradient(circle, #0B1326 1px, transparent 1px); background-size:40px 40px; opacity:0.04; }
+  .industry-tile { position:relative; overflow:hidden; transition:all .4s; }
+  .industry-tile img { transition:transform .8s; }
+  .industry-tile:hover img { transform:scale(1.08); }
+  .industry-tile::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,19,38,0) 30%, rgba(11,19,38,0.85) 100%); }
+
+/* === Canonical mega menu (injected) === */
+.mega-panel { opacity:0 !important; pointer-events:none !important; transform:translateY(-8px) !important; transition:opacity .25s, transform .25s !important; }
+.mega-panel.open { opacity:1 !important; pointer-events:auto !important; transform:translateY(0) !important; }
+.mega-trigger { position:relative; }
+.mega-trigger::after { content:''; position:absolute; left:-8px; right:-8px; top:100%; height:18px; background:transparent; pointer-events:auto; }
+
+
+/* === Footer AI CREW shimmer (CSS background-clip animation) === */
+.footer-aicrew-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 22vw;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: center;
+  margin: 0;
+  background: linear-gradient(90deg, #aec6ff 0%, #6ad9c3 25%, #ffbe2e 50%, #6ad9c3 75%, #aec6ff 100%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aicrew-shimmer 8s linear infinite;
+  user-select: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  white-space: nowrap;
+}
+@keyframes aicrew-shimmer {
+  0% { background-position: 0% 0%; }
+  100% { background-position: -300% 0%; }
+}
+
+
+  /* ===== MOBILE OVERRIDES ===== */
+  @media (max-width:1023px) {
+    nav { padding-top:env(safe-area-inset-top); }
+  }
+  @media (max-width:767px) {
+    /* Section headings */
+    .section-h2 { font-size:clamp(1.75rem, 8vw, 2rem) !important; }
+    h2.font-headline { font-size:clamp(1.75rem, 8vw, 2.2rem) !important; }
+    h1.font-headline { font-size:clamp(1.9rem, 9vw, 2.6rem) !important; line-height:1.05 !important; }
+    /* Reduce section padding */
+    section.py-24, section.py-20 { padding-top:3rem !important; padding-bottom:3rem !important; }
+    section.py-32 { padding-top:3rem !important; padding-bottom:3rem !important; }
+    /* CTA section */
+    .cta-inner { padding:2.5rem 1.25rem !important; }
+    /* Footer columns */
+    footer .grid { grid-template-columns:1fr 1fr !important; }
+    /* Prevent flex children overflowing */
+    .flex > * { min-width:0; }
+    img { max-width:100%; height:auto; }
+    /* Industry/service hero: stack properly */
+    .hero-split { flex-direction:column !important; }
+    /* FAQ, steps: single column */
+    .grid-cols-2 { grid-template-columns:1fr !important; }
+    .grid-cols-3 { grid-template-columns:1fr !important; }
+    /* Table overflow fix */
+    table { display:block; overflow-x:auto; }
+  }
+</style></style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "AI consulting for Revenue & Taxation departments", "description": "AI for revenue and taxation departments. Faster property tax, assessments, mutations and refunds, with clear records and an officer approving every decision.", "provider": {"@type": "Organization", "name": "AI Crew", "url": "https://withaicrew.com"}, "areaServed": ["IN", "US", "GB", "AE", "FR"], "serviceType": "AI Consulting", "url": "https://withaicrew.com/government/revenue-taxation/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where does our citizens' data live?", "acceptedAnswer": {"@type": "Answer", "text": "Wherever your policy requires. We deploy inside your approved environment, on-prem or on sovereign cloud, with no third-party training on your data and full audit logs."}}, {"@type": "Question", "name": "Does the AI make decisions about citizens?", "acceptedAnswer": {"@type": "Answer", "text": "No. The AI drafts, classifies, translates and recommends. A government officer reviews and approves every citizen-facing decision. You keep accountability and the audit trail."}}, {"@type": "Question", "name": "Will it work in regional languages?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We build multilingual intake and responses across English, Hindi and major regional languages, for both text and voice."}}, {"@type": "Question", "name": "Do we have to replace our existing systems?", "acceptedAnswer": {"@type": "Answer", "text": "No. We build on top of what you already run, your portal, your records, your ERP. We integrate, we do not rip and replace."}}, {"@type": "Question", "name": "Is taxpayer data kept confidential?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Deployments run inside your approved environment with strict access controls, no third-party training on your data, and a full audit trail on every AI-assisted draft."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Government", "item": "https://withaicrew.com/government"}, {"@type": "ListItem", "position": 2, "name": "Revenue & Taxation", "item": "https://withaicrew.com/government/revenue-taxation"}]}]}</script>
+  <link rel="stylesheet" href="/css/ai-crew-mobile.css?v=20260515e"/>
+</head><body>
+<nav class="fixed top-0 w-full z-50 glass-light border-b border-border-soft">
+  <div class="flex justify-between items-center px-6 lg:px-10 h-16 max-w-[1400px] mx-auto">
+    <a href="/" class="font-headline font-extrabold text-xl tracking-tighter whitespace-nowrap">
+      <span class="grad-text">AI</span><span class="text-ink ml-1">CREW</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="desktop-nav hidden lg:flex items-center gap-2 font-headline text-sm font-semibold">
+      <!-- For You mega -->
+      <div class="mega-trigger relative">
+        <button class="px-4 py-2 text-ink hover:text-ink/70 flex items-center gap-1 transition-colors">
+          For You
+          <span class="material-symbols-outlined text-base">expand_more</span>
+        </button>
+        <div class="mega-panel fixed left-0 right-0 top-16 bg-white border-b border-border shadow-[0_24px_48px_-12px_rgba(11,19,38,0.12)]">
+          <div class="max-w-[1400px] mx-auto px-10 py-10 grid grid-cols-12 gap-10">
+            <a href="/for-founders" class="col-span-4 group">
+              <div class="rounded-xl overflow-hidden aspect-[5/4] mb-4"><img src="/images/stock/founder.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="For founders"/></div>
+              <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Audience</div>
+              <div class="font-headline font-extrabold text-2xl text-ink group-hover:grad-text transition-all">For Founders</div>
+              <p class="text-sm text-ink-soft mt-2">Tech, SaaS, agency, D2C, F&amp;B founders. Get 10 hours back a week. Build a Founder OS that runs your day.</p>
+            </a>
+            <a href="/for-professionals" class="col-span-4 group">
+              <div class="rounded-xl overflow-hidden aspect-[5/4] mb-4"><img src="/images/stock/professional.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="For professionals"/></div>
+              <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Audience</div>
+              <div class="font-headline font-extrabold text-2xl text-ink group-hover:grad-text transition-all">For Professionals</div>
+              <p class="text-sm text-ink-soft mt-2">Lawyers, doctors, CAs, architects, wealth advisors. AI that handles the grind so you keep the judgment.</p>
+            </a>
+            <a href="/for-companies" class="col-span-4 group">
+              <div class="rounded-xl overflow-hidden aspect-[5/4] mb-4"><img src="/images/stock/team.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="For companies"/></div>
+              <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Audience</div>
+              <div class="font-headline font-extrabold text-2xl text-ink group-hover:grad-text transition-all">For Companies</div>
+              <p class="text-sm text-ink-soft mt-2">10 to 200 person teams. Marketing, ops, support, sales, all wired with AI agents and automations.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Services mega -->
+      <div class="mega-trigger relative">
+        <button class="px-4 py-2 text-ink hover:text-ink/70 flex items-center gap-1 transition-colors">
+          AI Services
+          <span class="material-symbols-outlined text-base">expand_more</span>
+        </button>
+        <div class="mega-panel fixed left-0 right-0 top-16 bg-white border-b border-border shadow-[0_24px_48px_-12px_rgba(11,19,38,0.12)]">
+          <div class="max-w-[1400px] mx-auto px-10 py-12 grid grid-cols-12 gap-10">
+            <div class="col-span-3">
+              <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Strategy</div>
+              <ul class="space-y-3 text-sm">
+                <li><a href="/services/ai-strategy-audit" class="text-ink-soft hover:text-ink font-semibold">AI Strategy &amp; Audits</a><div class="text-xs text-ink-mute mt-1">Map every workflow, score by impact</div></li>
+                <li><a href="/services/ai-training" class="text-ink-soft hover:text-ink font-semibold">AI Training for Teams</a><div class="text-xs text-ink-mute mt-1">Make your team 10x with AI</div></li>
+              </ul>
+            </div>
+            <div class="col-span-3">
+              <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Build</div>
+              <ul class="space-y-3 text-sm">
+                <li><a href="/services/ai-workflow-automation" class="text-ink-soft hover:text-ink font-semibold">AI Workflow Automation</a><div class="text-xs text-ink-mute mt-1">Inbox, calendar, ops, finance</div></li>
+                <li><a href="/services/ai-agents" class="text-ink-soft hover:text-ink font-semibold">Custom AI Agents</a><div class="text-xs text-ink-mute mt-1">Agents that do real work</div></li>
+                <li><a href="/web-dev" class="text-ink-soft hover:text-ink font-semibold">AI Websites</a><div class="text-xs text-ink-mute mt-1">Sites that sell while you sleep</div></li>
+              </ul>
+            </div>
+            <div class="col-span-3">
+              <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Grow</div>
+              <ul class="space-y-3 text-sm">
+                <li><a href="/content-studio" class="text-ink-soft hover:text-ink font-semibold">AI Content Studio</a><div class="text-xs text-ink-mute mt-1">Reels, posts, blogs, video</div></li>
+                <li><a href="/outreach" class="text-ink-soft hover:text-ink font-semibold">AI Outreach</a><div class="text-xs text-ink-mute mt-1">Meetings, on autopilot</div></li>
+                <li><a href="/automations" class="text-ink-soft hover:text-ink font-semibold">AI Automations</a><div class="text-xs text-ink-mute mt-1">Connect every tool you use</div></li>
+                <li><a href="/claude-cowork" class="text-ink-soft hover:text-ink font-semibold">Claude Cowork</a><div class="text-xs text-ink-mute mt-1">$250/mo, done with you</div></li>
+              </ul>
+            </div>
+            <div class="col-span-3">
+              <a href="/case-studies" class="block relative rounded-xl overflow-hidden h-full min-h-[200px]">
+                <img src="/images/stock/companies-hero.jpg" class="absolute inset-0 w-full h-full object-cover" alt="AI Crew clients"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-ink/90 to-ink/10"></div>
+                <div class="relative p-5 h-full flex flex-col justify-end text-white">
+                  <div class="text-xs uppercase tracking-[0.2em] font-bold opacity-80">Featured</div>
+                  <div class="font-headline font-bold text-lg mt-1">14 meetings in month one</div>
+                  <div class="text-xs opacity-80 mt-2">See case studies →</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-trigger relative">
+        <button class="px-4 py-2 text-ink hover:text-ink/70 flex items-center gap-1 transition-colors">Industries<span class="material-symbols-outlined text-base">expand_more</span></button>
+        <div class="mega-panel fixed left-0 right-0 top-16 bg-white border-b border-border shadow-[0_24px_48px_-12px_rgba(11,19,38,0.12)]">
+          <div class="max-w-[1400px] mx-auto px-10 py-10">
+            <div class="grid grid-cols-12 gap-6">
+              <div class="col-span-9">
+                <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-5">12 Industries · 1 Playbook each</div>
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+                  <a href="/industries/tech-b2b/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/tech.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Tech &amp; B2B SaaS</div><div class="text-[11px] text-ink-mute">Outreach, lead scoring, CS agents</div></div>
+                  </a>
+                  <a href="/industries/healthcare/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/healthcare.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Doctors &amp; Clinics</div><div class="text-[11px] text-ink-mute">Clinical scribe, patient intake</div></div>
+                  </a>
+                  <a href="/industries/legal/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/legal.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Lawyers &amp; Law Firms</div><div class="text-[11px] text-ink-mute">Drafting, research, billing</div></div>
+                  </a>
+                  <a href="/industries/accounting/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/finance.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">CAs &amp; Accountants</div><div class="text-[11px] text-ink-mute">Books, GST, audit prep</div></div>
+                  </a>
+                  <a href="/industries/wealth-advisory/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/wealth.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Wealth Advisors</div><div class="text-[11px] text-ink-mute">Reports, review prep, suitability</div></div>
+                  </a>
+                  <a href="/industries/architecture/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/architect.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Architects &amp; Studios</div><div class="text-[11px] text-ink-mute">Mood boards, renderings, briefs</div></div>
+                  </a>
+                  <a href="/industries/creative-agencies/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/creative.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Creative Agencies</div><div class="text-[11px] text-ink-mute">Pitches, content, reporting</div></div>
+                  </a>
+                  <a href="/industries/hospitality/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/hospitality.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Hospitality &amp; F&amp;B</div><div class="text-[11px] text-ink-mute">Reservations, reviews, ops</div></div>
+                  </a>
+                  <a href="/industries/d2c/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/d2c.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">D2C &amp; E-commerce</div><div class="text-[11px] text-ink-mute">Content engine, ads, retention</div></div>
+                  </a>
+                  <a href="/industries/manufacturing/" class="flex items-center gap-3 py-2 group">
+                    <img src="/images/stock/manufacturing.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/>
+                    <div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Manufacturing</div><div class="text-[11px] text-ink-mute">B2B outreach, RFQ, vendor ops</div></div>
+                  </a>
+                  <a href="/industries/retail/" class="flex items-center gap-3 py-2 group"><img src="/images/stock/retail.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Retail</div><div class="text-[11px] text-ink-mute">Loyalty, inventory, in-store AI</div></div></a>
+                  <a href="/industries/sports/" class="flex items-center gap-3 py-2 group"><img src="/images/stock/sports.jpg" class="w-10 h-10 rounded-lg object-cover" alt=""/><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Sports &amp; Fitness</div><div class="text-[11px] text-ink-mute">Fan engagement, ops, performance</div></div></a>
+                </div>
+              </div>
+              <div class="col-span-3">
+                <a href="/industries" class="block relative rounded-xl overflow-hidden h-full min-h-[220px]">
+                  <img src="/images/stock/companies-hero.jpg" class="absolute inset-0 w-full h-full object-cover" alt="All industries"/>
+                  <div class="absolute inset-0 bg-gradient-to-t from-ink/90 to-ink/10"></div>
+                  <div class="relative p-5 h-full flex flex-col justify-end text-white">
+                    <div class="text-xs uppercase tracking-[0.2em] font-bold opacity-80">All industries</div>
+                    <div class="font-headline font-bold text-lg mt-1">See every playbook</div>
+                    <div class="text-xs opacity-80 mt-2">Open the index →</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mega-trigger relative">
+        <button class="px-4 py-2 text-ink hover:text-ink/70 flex items-center gap-1 transition-colors">Government<span class="material-symbols-outlined text-base">expand_more</span></button>
+        <div class="mega-panel fixed left-0 right-0 top-16 bg-white border-b border-border shadow-[0_24px_48px_-12px_rgba(11,19,38,0.12)]">
+          <div class="max-w-[1400px] mx-auto px-10 py-10">
+            <div class="grid grid-cols-12 gap-6">
+              <div class="col-span-9">
+                <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-5">8 Departments · 1 playbook each</div>
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+                  <a href="/government/transport-licensing/" class="flex items-center gap-3 py-2 group"><span class="material-symbols-outlined w-10 h-10 rounded-lg bg-bg-soft flex items-center justify-center text-ink" style="font-size:20px;">directions_car</span><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Transport &amp; Licensing</div><div class="text-[11px] text-ink-mute">Licences, registration, permits</div></div></a>
+                  <a href="/government/water-sanitation/" class="flex items-center gap-3 py-2 group"><span class="material-symbols-outlined w-10 h-10 rounded-lg bg-bg-soft flex items-center justify-center text-ink" style="font-size:20px;">water_drop</span><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Water &amp; Sanitation</div><div class="text-[11px] text-ink-mute">Connections, billing, complaints</div></div></a>
+                  <a href="/government/power-electricity/" class="flex items-center gap-3 py-2 group"><span class="material-symbols-outlined w-10 h-10 rounded-lg bg-bg-soft flex items-center justify-center text-ink" style="font-size:20px;">bolt</span><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Power &amp; Electricity</div><div class="text-[11px] text-ink-mute">Connections, outages, billing</div></div></a>
+                  <a href="/government/municipal-services/" class="flex items-center gap-3 py-2 group"><span class="material-symbols-outlined w-10 h-10 rounded-lg bg-bg-soft flex items-center justify-center text-ink" style="font-size:20px;">location_city</span><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Municipal &amp; Civic</div><div class="text-[11px] text-ink-mute">Grievances, certificates, licences</div></div></a>
+                  <a href="/government/revenue-taxation/" class="flex items-center gap-3 py-2 group"><span class="material-symbols-outlined w-10 h-10 rounded-lg bg-bg-soft flex items-center justify-center text-ink" style="font-size:20px;">receipt_long</span><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Revenue &amp; Taxation</div><div class="text-[11px] text-ink-mute">Property tax, assessments</div></div></a>
+                  <a href="/government/public-safety/" class="flex items-center gap-3 py-2 group"><span class="material-symbols-outlined w-10 h-10 rounded-lg bg-bg-soft flex items-center justify-center text-ink" style="font-size:20px;">local_police</span><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Public Safety &amp; Police</div><div class="text-[11px] text-ink-mute">Complaints, RTI, reports</div></div></a>
+                  <a href="/government/public-health/" class="flex items-center gap-3 py-2 group"><span class="material-symbols-outlined w-10 h-10 rounded-lg bg-bg-soft flex items-center justify-center text-ink" style="font-size:20px;">health_and_safety</span><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Public Health</div><div class="text-[11px] text-ink-mute">Intake, schemes, records</div></div></a>
+                  <a href="/government/citizen-services/" class="flex items-center gap-3 py-2 group"><span class="material-symbols-outlined w-10 h-10 rounded-lg bg-bg-soft flex items-center justify-center text-ink" style="font-size:20px;">support_agent</span><div><div class="font-headline font-bold text-sm text-ink group-hover:grad-text transition-all">Citizen Services</div><div class="text-[11px] text-ink-mute">Helpline, grievances, RTI</div></div></a>
+                  </div>
+              </div>
+              <div class="col-span-3">
+                <a href="/government" class="block relative rounded-xl overflow-hidden h-full min-h-[220px]">
+                  <img src="/images/government/government-hero.png" class="absolute inset-0 w-full h-full object-cover" alt="AI for government"/>
+                  <div class="absolute inset-0 bg-gradient-to-t from-ink/90 to-ink/10"></div>
+                  <div class="relative p-5 h-full flex flex-col justify-end text-white">
+                    <div class="text-xs uppercase tracking-[0.2em] font-bold opacity-80">Public sector</div>
+                    <div class="font-headline font-bold text-lg mt-1">AI for Government</div>
+                    <div class="text-xs opacity-80 mt-2">See all departments →</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/case-studies" class="px-4 py-2 text-ink hover:text-ink/70 transition-colors">Case Studies</a>
+      <a href="/about" class="px-4 py-2 text-ink hover:text-ink/70 transition-colors">About</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a href="/book-demo" class="hidden lg:block mag-btn">
+        <button class="px-5 py-2.5 bg-ink text-white rounded-lg font-headline font-bold text-sm hover:bg-ink/90 transition-all">Book a Call</button>
+      </a>
+      <button class="hamburger" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="group-title">For You</div>
+    <a href="/for-founders">For Founders</a>
+    <a href="/for-professionals">For Professionals</a>
+    <a href="/for-companies">For Companies</a>
+    <div class="group-title">Services</div>
+    <a href="/services/ai-strategy-audit">AI Strategy &amp; Audits</a>
+    <a href="/services/ai-workflow-automation">AI Workflow Automation</a>
+    <a href="/services/ai-agents">Custom AI Agents</a>
+    <a href="/content-studio">AI Content Studio</a>
+    <a href="/outreach">AI Outreach</a>
+    <a href="/web-dev">AI Websites</a>
+    <a href="/services/ai-training">AI Training for Teams</a>
+    <div class="group-title">Explore</div>
+    <a href="/industries">Industries</a>
+    <a href="/government">Government</a>
+    <a href="/case-studies">Case Studies</a>
+    <a href="/about">About</a>
+    <a href="/book-demo" class="mobile-cta">Book a Call →</a>
+  </div>
+</nav>
+<main class="pt-16">
+
+<section class="relative overflow-hidden bg-bg-soft">
+  <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-28 grid grid-cols-12 gap-10 items-center">
+    <div class="col-span-12 lg:col-span-7" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-border-soft text-xs font-headline font-bold tracking-wider uppercase text-ink mb-8">
+        <span class="w-1.5 h-1.5 rounded-full grad-bg animate-pulse"></span>For Revenue & Taxation
+      </div>
+      <h1 class="font-headline font-extrabold text-ink leading-[0.95] tracking-tighter text-5xl md:text-6xl lg:text-[80px] mb-7">AI for revenue &amp; taxation departments.</h1>
+      <p class="text-lg md:text-xl text-ink-soft max-w-2xl leading-relaxed mb-10">Property tax, assessments, mutations, refunds, demand notices. Records are scattered and disputes are slow. AI reconciles, drafts and explains. Your officers assess and sign.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/book-demo" class="mag-btn"><button class="px-8 py-4 bg-ink text-white rounded-xl font-headline font-bold text-base hover:bg-ink/90 transition-all flex items-center gap-2">Book a strategy call<span class="material-symbols-outlined text-lg">arrow_forward</span></button></a>
+        <a href="#what-we-install" class="mag-btn"><button class="px-8 py-4 bg-white border border-border text-ink rounded-xl font-headline font-bold text-base hover:bg-bg-mute transition-all">See what we install</button></a>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="founder-hero-img relative rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(11,19,38,0.18)]" style="aspect-ratio:5/4;">
+        <img src="/images/government/revenue-taxation.png" class="w-full h-full object-cover" alt="Revenue & Taxation"/>
+        <div class="founder-hero-quote absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 md:p-5 rounded-2xl">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full grad-bg flex items-center justify-center font-bold text-ink text-sm">RT</div>
+            <div class="flex-1"><p class="text-sm font-headline italic text-ink leading-snug">"Property records reconciled in minutes and demand notices drafted clean, ready for the officer to sign."</p><div class="text-xs text-ink-mute mt-1">Target outcome, first 90 days</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 lg:py-32 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">Where the backlog builds</div>
+      <h2 class="font-headline font-extrabold text-ink text-3xl md:text-4xl tracking-tighter leading-[0.95] mb-8">The queue you keep fighting.</h2>
+      <div class="space-y-5"><div class="flex gap-4"><span class="material-symbols-outlined text-ink-mute mt-1">close</span><p class="text-ink-soft leading-relaxed">Property and tax records sit across registers, PDFs and old systems.</p></div>
+<div class="flex gap-4"><span class="material-symbols-outlined text-ink-mute mt-1">close</span><p class="text-ink-soft leading-relaxed">Assessments and mutations are slow and inconsistent.</p></div>
+<div class="flex gap-4"><span class="material-symbols-outlined text-ink-mute mt-1">close</span><p class="text-ink-soft leading-relaxed">Disputes need history that takes hours to assemble.</p></div>
+<div class="flex gap-4"><span class="material-symbols-outlined text-ink-mute mt-1">close</span><p class="text-ink-soft leading-relaxed">Demand notices and refunds get delayed and challenged.</p></div></div>
+    </div>
+    <div class="rounded-3xl overflow-hidden aspect-[5/4] lg:aspect-[4/5]" data-aos="fade-up" data-aos-delay="100">
+      <img src="/images/government/revenue-taxation.png" class="w-full h-full object-cover" alt=""/>
+    </div>
+  </div>
+</section>
+
+<section id="what-we-install" class="py-24 lg:py-32 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="max-w-3xl mb-14" data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">What we install for your department</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95]">AI does the grind. <br/><span class="grad-text">Your officers keep the judgement.</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="glass-card p-7 rounded-2xl" data-aos="fade-up"><h3 class="font-headline font-bold text-lg text-ink mb-2">Record reconciliation</h3><p class="text-ink-soft text-sm leading-relaxed">AI reads legacy records and reconciles property, owner and payment data into one clear view for the officer.</p></div>
+<div class="glass-card p-7 rounded-2xl" data-aos="fade-up"><h3 class="font-headline font-bold text-lg text-ink mb-2">Assessment assist</h3><p class="text-ink-soft text-sm leading-relaxed">Draft assessments and mutation notes prepared from the records, with anomalies flagged for review.</p></div>
+<div class="glass-card p-7 rounded-2xl" data-aos="fade-up"><h3 class="font-headline font-bold text-lg text-ink mb-2">Demand & refund drafting</h3><p class="text-ink-soft text-sm leading-relaxed">Notices and refund approvals drafted in your format, ready for officer sign-off.</p></div>
+<div class="glass-card p-7 rounded-2xl" data-aos="fade-up"><h3 class="font-headline font-bold text-lg text-ink mb-2">Dispute history assembly</h3><p class="text-ink-soft text-sm leading-relaxed">The full case history pulled together in seconds so disputes are resolved faster.</p></div>
+<div class="glass-card p-7 rounded-2xl" data-aos="fade-up"><h3 class="font-headline font-bold text-lg text-ink mb-2">Multilingual taxpayer helpdesk</h3><p class="text-ink-soft text-sm leading-relaxed">Citizens check dues, payments and status 24/7 in local languages.</p></div>
+<div class="glass-card p-7 rounded-2xl" data-aos="fade-up"><h3 class="font-headline font-bold text-lg text-ink mb-2">Collections triage</h3><p class="text-ink-soft text-sm leading-relaxed">Pending dues ranked by value and recoverability so officers focus where it counts.</p></div></div>
+  </div>
+</section>
+
+<section class="py-20 px-6 lg:px-10">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12"><div class="text-center"><div class="font-headline font-extrabold text-4xl md:text-5xl grad-text mb-2">60%+</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Faster assessments</div></div>
+<div class="text-center"><div class="font-headline font-extrabold text-4xl md:text-5xl grad-text mb-2">Minutes</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">To assemble a case</div></div>
+<div class="text-center"><div class="font-headline font-extrabold text-4xl md:text-5xl grad-text mb-2">10+</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">Languages supported</div></div>
+<div class="text-center"><div class="font-headline font-extrabold text-4xl md:text-5xl grad-text mb-2">21 days</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold">To first pilot</div></div></div>
+</section>
+
+<section class="py-24 lg:py-32 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-5xl mx-auto mb-16" data-aos="fade-up">
+    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4 text-center">How AI Crew works with government</div>
+    <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] text-center mb-6"><span class="grad-text">21 days.</span><br/>Department &rarr; Workflow &rarr; Frontline.</h2>
+    <p class="text-lg text-ink-soft text-center max-w-3xl mx-auto leading-relaxed">We do not sell AI from a deck. We sit with you, learn how citizens move through your department, and install AI as a system, with a human officer in control of every decision.</p>
+  </div>
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"><div class="glass-card p-8 rounded-2xl" data-aos="fade-up"><div class="grad-bg w-10 h-10 rounded-full flex items-center justify-center font-headline font-extrabold text-ink mb-5">1</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Days 1-3 · Your department</div><h3 class="font-headline font-bold text-2xl text-ink mb-4">We sit with your team.</h3><p class="text-ink-soft leading-relaxed text-sm">We map the citizen journeys, the queues, the paperwork, and exactly where the backlog builds. No deck. We learn how your department actually runs.</p></div>
+<div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100"><div class="grad-bg w-10 h-10 rounded-full flex items-center justify-center font-headline font-extrabold text-ink mb-5">2</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Days 4-10 · The workflow</div><h3 class="font-headline font-bold text-2xl text-ink mb-4">We pick the right first plays.</h3><p class="text-ink-soft leading-relaxed text-sm">We start with the highest-volume, lowest-risk workflows. We build on top of your existing portal and records, not a rip-and-replace.</p></div>
+<div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200"><div class="grad-bg w-10 h-10 rounded-full flex items-center justify-center font-headline font-extrabold text-ink mb-5">3</div><div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-2">Days 11-21 · Your frontline</div><h3 class="font-headline font-bold text-2xl text-ink mb-4">Your officers, faster.</h3><p class="text-ink-soft leading-relaxed text-sm">Staff get AI that drafts, classifies, translates and routes. A human officer reviews and approves every citizen-facing decision. Full audit trail.</p></div>
+</div>
+</section>
+
+<section class="py-20 lg:py-24 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <div data-aos="fade-up">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">The tools we install</div>
+      <h2 class="font-headline font-extrabold text-ink text-3xl md:text-4xl tracking-tighter leading-[0.95] mb-6">In your accounts. In your control.</h2>
+      <p class="text-ink-soft leading-relaxed">Every tool we install lives inside infrastructure you own and approve. On-prem or sovereign cloud, your data residency rules, your access controls. You can run the stack without us after handover.</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="100">
+      <ul class="space-y-3 text-sm"><li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent-2 mt-0.5">check</span><span class="text-ink-soft">OpenAI and Anthropic Claude for drafting, classification and reasoning</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent-2 mt-0.5">check</span><span class="text-ink-soft">Secure OCR and document processing for legacy paper files</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent-2 mt-0.5">check</span><span class="text-ink-soft">Multilingual translation and voice across 10+ Indian languages</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent-2 mt-0.5">check</span><span class="text-ink-soft">Integration with your existing portal, ERP and record systems</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-accent-2 mt-0.5">check</span><span class="text-ink-soft">On-prem or sovereign-cloud deployment for data residency</span></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 lg:py-24 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+    <p class="font-headline italic text-2xl md:text-3xl text-ink leading-snug mb-6">"Scattered records become one clean view, assessments and notices go out faster and cleaner, and disputes are settled with the full history in hand."</p>
+    <div class="text-sm text-ink-mute">What a good rollout delivers</div>
+  </div>
+</section>
+
+<section class="py-24 lg:py-32 px-6 lg:px-10 max-w-[1400px] mx-auto">
+  <div class="max-w-3xl mb-12" data-aos="fade-up">
+    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">Frequently asked</div>
+    <h2 class="font-headline font-extrabold text-ink text-3xl md:text-4xl lg:text-5xl tracking-tighter leading-[0.95]">Questions departments ask us.</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl"><details class="glass-card rounded-2xl p-6" data-aos="fade-up"><summary class="font-headline font-bold text-base text-ink cursor-pointer flex items-start gap-3"><span class="material-symbols-outlined text-ink-mute mt-0.5 transition-transform" style="font-size:20px;">add</span><span class="flex-1">Where does our citizens' data live?</span></summary><p class="text-ink-soft mt-4 leading-relaxed">Wherever your policy requires. We deploy inside your approved environment, on-prem or on sovereign cloud, with no third-party training on your data and full audit logs.</p></details>
+<details class="glass-card rounded-2xl p-6" data-aos="fade-up"><summary class="font-headline font-bold text-base text-ink cursor-pointer flex items-start gap-3"><span class="material-symbols-outlined text-ink-mute mt-0.5 transition-transform" style="font-size:20px;">add</span><span class="flex-1">Does the AI make decisions about citizens?</span></summary><p class="text-ink-soft mt-4 leading-relaxed">No. The AI drafts, classifies, translates and recommends. A government officer reviews and approves every citizen-facing decision. You keep accountability and the audit trail.</p></details>
+<details class="glass-card rounded-2xl p-6" data-aos="fade-up"><summary class="font-headline font-bold text-base text-ink cursor-pointer flex items-start gap-3"><span class="material-symbols-outlined text-ink-mute mt-0.5 transition-transform" style="font-size:20px;">add</span><span class="flex-1">Will it work in regional languages?</span></summary><p class="text-ink-soft mt-4 leading-relaxed">Yes. We build multilingual intake and responses across English, Hindi and major regional languages, for both text and voice.</p></details>
+<details class="glass-card rounded-2xl p-6" data-aos="fade-up"><summary class="font-headline font-bold text-base text-ink cursor-pointer flex items-start gap-3"><span class="material-symbols-outlined text-ink-mute mt-0.5 transition-transform" style="font-size:20px;">add</span><span class="flex-1">Do we have to replace our existing systems?</span></summary><p class="text-ink-soft mt-4 leading-relaxed">No. We build on top of what you already run, your portal, your records, your ERP. We integrate, we do not rip and replace.</p></details>
+<details class="glass-card rounded-2xl p-6" data-aos="fade-up"><summary class="font-headline font-bold text-base text-ink cursor-pointer flex items-start gap-3"><span class="material-symbols-outlined text-ink-mute mt-0.5 transition-transform" style="font-size:20px;">add</span><span class="flex-1">Is taxpayer data kept confidential?</span></summary><p class="text-ink-soft mt-4 leading-relaxed">Yes. Deployments run inside your approved environment with strict access controls, no third-party training on your data, and a full audit trail on every AI-assisted draft.</p></details>
+</div>
+</section>
+
+<section class="py-20 lg:py-24 px-6 lg:px-10 bg-bg-soft">
+  <div class="max-w-3xl mx-auto" data-aos="fade-up">
+    <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-4">Honesty block</div>
+    <h2 class="font-headline font-extrabold text-ink text-3xl md:text-4xl tracking-tighter leading-[0.95] mb-8">What AI Crew does NOT do.</h2>
+    <ul class="space-y-4"><li class="flex items-start gap-3"><span class="material-symbols-outlined text-ink-mute mt-0.5">close</span><span class="text-ink-soft">We do not make the final decision on any approval, penalty or entitlement. An officer always signs.</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-ink-mute mt-0.5">close</span><span class="text-ink-soft">We do not move citizen data outside your approved, audited environment.</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-ink-mute mt-0.5">close</span><span class="text-ink-soft">We do not deploy anything citizen-facing without your review, testing and a full audit trail.</span></li></ul>
+  </div>
+</section>
+
+<section class="py-24 lg:py-32 px-6 lg:px-10">
+  <div class="max-w-5xl mx-auto relative rounded-[2.5rem] overflow-hidden" data-aos="fade-up">
+    <div class="absolute inset-0 grad-bg"></div><div class="absolute inset-0 dot-grid"></div>
+    <div class="relative p-12 md:p-20">
+      <div class="text-xs uppercase tracking-[0.25em] text-ink font-bold mb-6 text-center">Strategy call · Free · No pitch</div>
+      <h2 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-6 text-center">Let us map your department first.</h2>
+      <p class="text-lg text-ink/85 max-w-2xl mx-auto mb-8 text-center leading-relaxed">Come on a call. We map where your citizens wait, where your officers lose time, and where AI fits safely. Then we tell you straight whether it is the right fit. No deck. No pitch.</p>
+      <div class="flex flex-wrap justify-center gap-2 mb-10">
+        <span class="px-4 py-2 rounded-full bg-white/95 text-ink text-xs font-headline font-bold">30-minute walk-through</span>
+        <span class="px-4 py-2 rounded-full bg-white/95 text-ink text-xs font-headline font-bold">Map your citizen journeys</span>
+        <span class="px-4 py-2 rounded-full bg-white/95 text-ink text-xs font-headline font-bold">Human-in-control by design</span>
+        <span class="px-4 py-2 rounded-full bg-white/95 text-ink text-xs font-headline font-bold">Walk away with a 90-day plan</span>
+      </div>
+      <div class="text-center">
+        <a href="/book-demo" class="mag-btn inline-block"><button class="px-10 py-5 bg-ink text-white rounded-xl font-headline font-bold text-lg hover:bg-ink/90 transition-all inline-flex items-center gap-2">Book your strategy call<span class="material-symbols-outlined">arrow_forward</span></button></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer border-t border-border bg-bg pt-20 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-8 md:gap-12 mb-16">
+    <div class="col-span-1 sm:col-span-2 md:col-span-2">
+      <div class="font-headline font-extrabold text-2xl tracking-tighter mb-4"><span class="grad-text">AI</span> <span class="text-ink">CREW</span></div>
+      <p class="text-sm text-ink-soft max-w-sm leading-relaxed mb-5">AI consultancy for founders, professionals and small companies. We sit with you, learn how you make money, and install AI in 21 days.</p>
+      <!-- Manan's other homes -->
+      <ul class="text-sm space-y-1.5 mb-6">
+        <li><a href="https://marketincrew.com" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink">marketincrew.com <span class="text-ink-mute">·  the marketing agency</span></a></li>
+        <li><a href="https://www.mananmehta.com" target="_blank" rel="noopener" class="text-ink-soft hover:text-ink">mananmehta.com <span class="text-ink-mute">·  Manan Mehta, founder</span></a></li>
+      </ul>
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-3">Part of the family</div>
+      <div class="flex items-center gap-4 flex-wrap">
+        <a href="https://marketincrew.com" target="_blank" rel="noopener" class="opacity-85 hover:opacity-100 transition-opacity" title="MarketinCrew">
+          <img src="/images/universe/marketincrew.png" class="footer-brand-icon h-10 w-10 rounded-xl bg-white border border-border-soft object-contain p-1.5" alt="MarketinCrew"/>
+        </a>
+        <a href="https://www.mananmehta.com/mk-studios" target="_blank" rel="noopener" class="opacity-85 hover:opacity-100 transition-opacity" title="MK Studios · the podcast">
+          <img src="/images/universe/marketincrew-podcast.jpg" class="footer-brand-icon h-10 w-10 rounded-xl bg-white border border-border-soft object-contain p-1.5" alt="MK Studios · the podcast"/>
+        </a>
+        <a href="https://lyonmarketing.co" target="_blank" rel="noopener" class="opacity-85 hover:opacity-100 transition-opacity" title="Lyon Marketing Co">
+          <img src="/images/universe/lyon-marketing.png" class="footer-brand-icon h-10 w-10 rounded-xl bg-white border border-border-soft object-contain p-1.5" alt="Lyon Marketing Co"/>
+        </a>
+      </div>
+      <p class="text-[11px] text-ink-mute mt-4">12 years of marketing DNA. AI Crew is the AI consultancy arm of MarketinCrew.</p>
+    </div>
+    <div>
+      <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">For You</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/for-founders" class="text-ink-soft hover:text-ink">Founders</a></li>
+        <li><a href="/for-professionals" class="text-ink-soft hover:text-ink">Professionals</a></li>
+        <li><a href="/for-companies" class="text-ink-soft hover:text-ink">Companies</a></li>
+        <li><a href="/industries" class="text-ink-soft hover:text-ink">All Industries</a></li>
+        <li><a href="/government" class="text-ink-soft hover:text-ink">AI for Government</a></li>
+        <li><a href="/ai-hardware" class="text-ink-soft hover:text-ink">AI Hardware</a></li>
+        <li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case Studies</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Services</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/services/ai-strategy-audit" class="text-ink-soft hover:text-ink">AI Strategy &amp; Audits</a></li>
+        <li><a href="/services/ai-workflow-automation" class="text-ink-soft hover:text-ink">Workflow Automation</a></li>
+        <li><a href="/services/ai-agents" class="text-ink-soft hover:text-ink">Custom AI Agents</a></li>
+        <li><a href="/content-studio" class="text-ink-soft hover:text-ink">AI Content Studio</a></li>
+        <li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li>
+        <li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li>
+        <li><a href="/services/ai-training" class="text-ink-soft hover:text-ink">AI Training</a></li>
+        <li><a href="/claude-cowork" class="text-ink-soft hover:text-ink">Claude Cowork</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Industries</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/industries/tech-b2b/" class="text-ink-soft hover:text-ink">Tech &amp; B2B SaaS</a></li>
+        <li><a href="/industries/healthcare/" class="text-ink-soft hover:text-ink">Healthcare</a></li>
+        <li><a href="/industries/legal/" class="text-ink-soft hover:text-ink">Legal</a></li>
+        <li><a href="/industries/accounting/" class="text-ink-soft hover:text-ink">Accounting</a></li>
+        <li><a href="/industries/wealth-advisory/" class="text-ink-soft hover:text-ink">Wealth Advisory</a></li>
+        <li><a href="/industries/architecture/" class="text-ink-soft hover:text-ink">Architecture</a></li>
+        <li><a href="/industries/creative-agencies/" class="text-ink-soft hover:text-ink">Creative Agencies</a></li>
+        <li><a href="/industries/hospitality/" class="text-ink-soft hover:text-ink">Hospitality &amp; F&amp;B</a></li>
+        <li><a href="/industries/d2c/" class="text-ink-soft hover:text-ink">D2C &amp; E-commerce</a></li>
+        <li><a href="/industries/manufacturing/" class="text-ink-soft hover:text-ink">Manufacturing</a></li>
+        <li><a href="/industries/retail/" class="text-ink-soft hover:text-ink">Retail</a></li>
+        <li><a href="/industries/sports/" class="text-ink-soft hover:text-ink">Sports &amp; Fitness</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold mb-4">Company</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/about" class="text-ink-soft hover:text-ink">About</a></li>
+        <li><a href="/how-we-work" class="text-ink-soft hover:text-ink">How we work</a></li>
+        <li><a href="/built-with-ai" class="text-ink-soft hover:text-ink">Built with AI</a></li>
+        <li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case Studies</a></li>
+        <li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li>
+        <li><a href="mailto:manan.mehta@marketincrew.com" class="text-ink-soft hover:text-ink">manan.mehta@marketincrew.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Floating SVG text with shimmer -->
+  <div class="footer-aicrew-wrap w-full select-none overflow-hidden">
+    <h2 class="footer-aicrew-text">AI CREW</h2>
+  </div>
+
+  <div class="max-w-[1400px] mx-auto border-t border-border-soft pt-6 pb-8 flex flex-col md:flex-row justify-between text-xs text-ink-mute">
+    <span>© 2026 AI Crew · Founders, makers of <a href="https://marketincrew.com/" target="_blank" rel="noopener" class="text-ink hover:underline">MarketinCrew</a> · 300+ brands shipped</span>
+    <span class="mt-2 md:mt-0">Mumbai · Paris · Built in public with AI</span>
+  </div>
+</footer>
+</main>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration:700, once:true, offset:80 });
+  const mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
+  if (mt && mn) mt.addEventListener('click',()=>mn.classList.toggle('open'));
+  // Mega menu hover with delay
+  document.querySelectorAll('.mega-trigger').forEach(trigger => {
+    const panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    let timer;
+    const open = () => { clearTimeout(timer); panel.classList.add('open'); };
+    const close = () => { timer = setTimeout(() => panel.classList.remove('open'), 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
+  document.querySelectorAll('.mag-btn').forEach(btn => {
+    let raf;
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) * 0.25, dy = (e.clientY - cy) * 0.25;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => { btn.style.transform = `translate(${dx}px, ${dy}px)`; });
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
+  });
+</script>
+
+<script>
+// === Canonical mega menu handler (injected) ===
+(function(){
+  document.querySelectorAll('.mega-trigger').forEach(function(trigger){
+    var panel = trigger.querySelector('.mega-panel');
+    if (!panel) return;
+    if (trigger.dataset.megaWired === '1') return;
+    trigger.dataset.megaWired = '1';
+    var timer;
+    var open = function(){ clearTimeout(timer); panel.classList.add('open'); };
+    var close = function(){ timer = setTimeout(function(){ panel.classList.remove('open'); }, 280); };
+    trigger.addEventListener('mouseenter', open);
+    trigger.addEventListener('mouseleave', close);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', close);
+  });
+})();
+</script>
+  <script defer src="/js/ai-crew-mobile.js?v=20260515b"></script>
+</body>
+</html>
