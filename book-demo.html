@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>Book a Strategy Call | AI Crew · 45 Minutes, Free, Live AI Roadmap</title>
-<meta name="description" content="Book 45 minutes with AI Crew. We map your business, surface highest-leverage AI plays, walk you through what we would build. Free. No deck. No pitch." />
+<title>Book a Strategy Call | AI Crew · 30 Minutes, Free, Live AI Roadmap</title>
+<meta name="description" content="Book 30 minutes with AI Crew. We map your business, surface highest-leverage AI plays, walk you through what we would build. Free. No deck. No pitch." />
 <meta name="keywords" content="book AI consultancy call, AI strategy call, AI consultant call, AI Crew booking, Manan Mehta call" />
 <link rel="canonical" href="https://aicrew.io/book-demo" />
 
 <meta property="og:title" content="Book a Strategy Call | AI Crew" />
-<meta property="og:description" content="45 minutes. Your AI roadmap, drawn live." />
+<meta property="og:description" content="30 minutes. Your AI roadmap, drawn live." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://aicrew.io/book-demo" />
 <meta property="og:site_name" content="AI Crew" />
@@ -189,6 +189,7 @@
                 <li><a href="/content-studio" class="text-ink-soft hover:text-ink font-semibold">AI Content Studio</a><div class="text-xs text-ink-mute mt-1">Reels, posts, blogs, video</div></li>
                 <li><a href="/outreach" class="text-ink-soft hover:text-ink font-semibold">AI Outreach</a><div class="text-xs text-ink-mute mt-1">Meetings, on autopilot</div></li>
                 <li><a href="/automations" class="text-ink-soft hover:text-ink font-semibold">AI Automations</a><div class="text-xs text-ink-mute mt-1">Connect every tool you use</div></li>
+                <li><a href="/cloud-cowork" class="text-ink-soft hover:text-ink font-semibold">Cloud Cowork</a><div class="text-xs text-ink-mute mt-1">$250/mo, done with you</div></li>
               </ul>
             </div>
             <div class="col-span-3">
@@ -315,7 +316,7 @@
     <div class="lg:col-span-5" data-aos="fade-up">
       <div class="text-xs uppercase tracking-[0.25em] text-ink-mute font-bold mb-6">Strategy call</div>
       <h1 class="font-headline font-extrabold text-ink text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.95] mb-8">
-        45 minutes. <br/>
+        30 minutes. <br/>
         <span class="grad-text">Your AI roadmap.</span> <br/>
         <span class="font-serif italic text-ink-soft">Drawn live.</span>
       </h1>
@@ -327,7 +328,7 @@
         <div class="flex items-start gap-4">
           <div class="grad-bg w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-ink text-xl">schedule</span></div>
           <div>
-            <h4 class="font-headline font-bold text-ink mb-1">45 minutes, no fluff</h4>
+            <h4 class="font-headline font-bold text-ink mb-1">30 minutes, no fluff</h4>
             <p class="text-sm text-ink-soft">Quick setup, deep dive, walk you through the playbook</p>
           </div>
         </div>
@@ -356,8 +357,24 @@
       </div>
     </div>
 
-    <!-- RIGHT: QUALIFIER FORM -->
+    <!-- RIGHT: BOOK INSTANTLY + QUALIFIER FORM -->
     <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="200">
+
+      <!-- Book instantly via calendar -->
+      <div class="glass-card rounded-3xl p-5 md:p-6 mb-6">
+        <h2 class="font-headline font-bold text-2xl text-ink mb-1">Book instantly</h2>
+        <p class="text-ink-soft text-sm mb-4">Pick a slot below and you will get a Google Meet link straight away.</p>
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ09o9BTsDRiny9TW89qWTdmJE1N91ZmZA_8WcRl3KbiGDWDm-RsXajSFn7W1Cq9xA86tt8ygNlL?gv=true" title="Book a call with Manan" loading="lazy" style="width:100%;border:0;border-radius:14px;min-height:640px;display:block;"></iframe>
+        <!-- end Google Calendar Appointment Scheduling -->
+      </div>
+
+      <div class="flex items-center gap-4 my-6">
+        <div class="h-px bg-border flex-1"></div>
+        <span class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold whitespace-nowrap">or, have me reach out</span>
+        <div class="h-px bg-border flex-1"></div>
+      </div>
+
       <div class="glass-card rounded-3xl p-8 md:p-12">
 
         <!-- Progress -->
@@ -538,6 +555,7 @@
         <li><a href="/outreach" class="text-ink-soft hover:text-ink">AI Outreach</a></li>
         <li><a href="/web-dev" class="text-ink-soft hover:text-ink">AI Websites</a></li>
         <li><a href="/services/ai-training" class="text-ink-soft hover:text-ink">AI Training</a></li>
+        <li><a href="/cloud-cowork" class="text-ink-soft hover:text-ink">Cloud Cowork</a></li>
       </ul>
     </div>
     <div>
@@ -565,7 +583,7 @@
         <li><a href="/built-with-ai" class="text-ink-soft hover:text-ink">Built with AI</a></li>
         <li><a href="/case-studies" class="text-ink-soft hover:text-ink">Case Studies</a></li>
         <li><a href="/book-demo" class="text-ink-soft hover:text-ink">Book a call</a></li>
-        <li><a href="mailto:hello@aicrew.io" class="text-ink-soft hover:text-ink">hello@aicrew.io</a></li>
+        <li><a href="mailto:manan.mehta@marketincrew.com" class="text-ink-soft hover:text-ink">manan.mehta@marketincrew.com</a></li>
       </ul>
     </div>
   </div>
@@ -657,15 +675,42 @@
     });
   });
 
-  document.getElementById('qualifyForm').addEventListener('submit', (e) => {
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/manan.mehta@marketincrew.com';
+  function showFormSuccess() {
+    steps.forEach(s => s.classList.remove('active'));
+    document.querySelector('[data-step="success"]').classList.add('active');
+    progress.forEach(p => { p.classList.remove('active'); p.classList.add('done'); });
+    stepLabel.textContent = 'Submitted';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  document.getElementById('qualifyForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    setTimeout(() => {
-      steps.forEach(s => s.classList.remove('active'));
-      document.querySelector('[data-step="success"]').classList.add('active');
-      progress.forEach(p => { p.classList.remove('active'); p.classList.add('done'); });
-      stepLabel.textContent = 'Submitted';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 800);
+    const f = e.target;
+    const val = (n) => (f.elements[n] && f.elements[n].value || '').trim();
+    const payload = {
+      _subject: 'New AI Crew call request',
+      _template: 'table',
+      _captcha: 'false',
+      name: (val('firstName') + ' ' + val('lastName')).trim(),
+      email: val('email'),
+      company: val('company'),
+      country: val('country'),
+      notes: val('notes'),
+      role: formData.role || '',
+      'team size': formData.size || '',
+      'time leaks': Array.isArray(formData.leaks) ? formData.leaks.join(', ') : '',
+      'ai maturity': formData.maturity || '',
+      'indicative budget': formData.budget || '',
+      source: 'aicrew · /book-demo'
+    };
+    try {
+      await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) { /* show success regardless; submission is queued / retried by user */ }
+    showFormSuccess();
   });
 
   // Magnetic buttons

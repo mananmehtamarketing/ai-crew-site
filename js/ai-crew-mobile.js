@@ -65,7 +65,7 @@
     +   '<div class="mn-foot">'
     +     '<div><a href="https://marketincrew.com" target="_blank" rel="noopener">marketincrew.com</a> · the marketing agency</div>'
     +     '<div><a href="https://www.mananmehta.com" target="_blank" rel="noopener">mananmehta.com</a> · Manan Mehta, founder</div>'
-    +     '<div style="margin-top:.75rem;">hello@aicrew.io · Mumbai · Paris</div>'
+    +     '<div style="margin-top:.75rem;">manan.mehta@marketincrew.com · Mumbai · Paris</div>'
     +   '</div>'
     + '</div>';
 
