@@ -393,22 +393,6 @@
 
     <!-- RIGHT: BOOK INSTANTLY + QUALIFIER FORM -->
     <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="200">
-
-      <!-- Book instantly via calendar -->
-      <div class="glass-card rounded-3xl p-5 md:p-6 mb-6">
-        <h2 class="font-headline font-bold text-2xl text-ink mb-1">Book instantly</h2>
-        <p class="text-ink-soft text-sm mb-4">Pick a slot below and you will get a Google Meet link straight away.</p>
-        <!-- Google Calendar Appointment Scheduling begin -->
-        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ09o9BTsDRiny9TW89qWTdmJE1N91ZmZA_8WcRl3KbiGDWDm-RsXajSFn7W1Cq9xA86tt8ygNlL?gv=true" title="Book a call with Manan" loading="lazy" style="width:100%;border:0;border-radius:14px;min-height:640px;display:block;"></iframe>
-        <!-- end Google Calendar Appointment Scheduling -->
-      </div>
-
-      <div class="flex items-center gap-4 my-6">
-        <div class="h-px bg-border flex-1"></div>
-        <span class="text-xs uppercase tracking-[0.2em] text-ink-mute font-bold whitespace-nowrap">or, have me reach out</span>
-        <div class="h-px bg-border flex-1"></div>
-      </div>
-
       <div class="glass-card rounded-3xl p-8 md:p-12">
 
         <!-- Progress -->
@@ -526,12 +510,24 @@
             </div>
           </div>
 
-          <!-- SUCCESS -->
-          <div class="form-step" data-step="success">
+          <!-- SUCCESS: QUALIFIED, can book directly -->
+          <div class="form-step" data-step="success-book">
+            <div class="text-center py-4">
+              <div class="w-16 h-16 rounded-full grad-bg flex items-center justify-center mx-auto mb-6"><span class="material-symbols-outlined text-ink text-3xl">check</span></div>
+              <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-ink mb-3">You look like a strong fit.</h2>
+              <p class="text-ink-soft text-lg mb-6 max-w-md mx-auto">Grab a 30-minute slot with Manan below. You will get a Google Meet link straight away.</p>
+              <!-- Google Calendar Appointment Scheduling begin -->
+              <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ09o9BTsDRiny9TW89qWTdmJE1N91ZmZA_8WcRl3KbiGDWDm-RsXajSFn7W1Cq9xA86tt8ygNlL?gv=true" title="Book a call with Manan" loading="lazy" style="width:100%;border:0;border-radius:14px;min-height:620px;display:block;"></iframe>
+              <!-- end Google Calendar Appointment Scheduling -->
+            </div>
+          </div>
+
+          <!-- SUCCESS: NOT YET QUALIFIED, team reviews -->
+          <div class="form-step" data-step="success-review">
             <div class="text-center py-8">
               <div class="w-16 h-16 rounded-full grad-bg flex items-center justify-center mx-auto mb-6"><span class="material-symbols-outlined text-ink text-3xl">check</span></div>
-              <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-ink mb-4">Got it.</h2>
-              <p class="text-ink-soft text-lg mb-8 max-w-md mx-auto">I will personally email you within 24 hours with a calendar link. Look out for an email from <strong class="text-ink">manan.mehta@marketincrew.com</strong>.</p>
+              <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-ink mb-4">Got it. Thank you.</h2>
+              <p class="text-ink-soft text-lg mb-8 max-w-md mx-auto">We have your details. Our team will review and reach out within 24 hours if it is the right fit. Look out for an email from <strong class="text-ink">manan.mehta@marketincrew.com</strong>.</p>
               <a href="/" class="text-ink font-headline font-bold inline-flex items-center gap-1">Back to home <span class="material-symbols-outlined">arrow_forward</span></a>
             </div>
           </div>
@@ -724,21 +720,25 @@
   });
 
   const FORM_ENDPOINT = 'https://formsubmit.co/ajax/manan.mehta@marketincrew.com';
-  function showFormSuccess() {
+  // A lead can book Manan directly only if the indicative budget clears this bar.
+  const QUALIFIED_BUDGETS = ['$1k - $3k', '$3k - $10k', '$10k+'];
+  function showResult(stepName, label) {
     steps.forEach(s => s.classList.remove('active'));
-    document.querySelector('[data-step="success"]').classList.add('active');
+    document.querySelector('[data-step="' + stepName + '"]').classList.add('active');
     progress.forEach(p => { p.classList.remove('active'); p.classList.add('done'); });
-    stepLabel.textContent = 'Submitted';
+    stepLabel.textContent = label || 'Submitted';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   document.getElementById('qualifyForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const f = e.target;
     const val = (n) => (f.elements[n] && f.elements[n].value || '').trim();
+    const qualified = QUALIFIED_BUDGETS.indexOf(formData.budget) !== -1;
     const payload = {
-      _subject: 'New AI Crew call request',
+      _subject: qualified ? 'QUALIFIED lead - booking with Manan' : 'New lead (review) - AI Crew',
       _template: 'table',
       _captcha: 'false',
+      status: qualified ? 'Qualified - shown calendar' : 'For review - not shown calendar',
       name: (val('firstName') + ' ' + val('lastName')).trim(),
       email: val('email'),
       company: val('company'),
@@ -748,7 +748,7 @@
       'team size': formData.size || '',
       'time leaks': Array.isArray(formData.leaks) ? formData.leaks.join(', ') : '',
       'ai maturity': formData.maturity || '',
-      'indicative budget': formData.budget || '',
+      'indicative budget': formData.budget || '(not provided)',
       source: 'aicrew · /book-demo'
     };
     try {
@@ -757,8 +757,8 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
       });
-    } catch (err) { /* show success regardless; submission is queued / retried by user */ }
-    showFormSuccess();
+    } catch (err) { /* proceed regardless; submission is queued / retried by user */ }
+    showResult(qualified ? 'success-book' : 'success-review', qualified ? 'You are a fit' : 'Submitted');
   });
 
   // Magnetic buttons
